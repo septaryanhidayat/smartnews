@@ -1049,19 +1049,23 @@ html.dark-mode .trending-tags__item:hover {
 }
 
 /* ==========================================================================
-   11. SIDEBAR WIDGETS
+   11. SIDEBAR WIDGETS (STICKY SCROLL WITH BOUNDARY STOP)
    ========================================================================== */
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 72px;
+  align-self: start;
 }
 
 .sidebar-widget {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 22px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
@@ -1070,49 +1074,52 @@ html.dark-mode .trending-tags__item:hover {
   box-shadow: var(--shadow-md);
 }
 
-.widget-title {
-  font-size: 16px;
+.sidebar-widget .widget-title {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 12px 18px;
+  margin: 0;
+  border-left: 4px solid var(--color-accent);
+  border-bottom: none;
+  font-size: 14px;
   font-weight: 800;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text-main);
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 10px;
-  margin-bottom: 16px;
-  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.widget-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 50px;
-  height: 2px;
-  background-color: var(--color-accent);
+.sidebar-widget .widget-title::after {
+  display: none;
 }
 
-/* Widget Populer (Ranked 1-5) */
-.widget-popular__list {
+.widget-popular__list,
+.widget-recent__list {
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
 }
 
+.widget-tags__cloud {
+  padding: 16px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Ranked Items in Trending */
 .popular-item {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   align-items: flex-start;
-  border-bottom: 1px dashed var(--border-color);
-  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 14px 0;
   transition: var(--transition);
 }
 
-.popular-item:hover {
-  transform: translateX(3px);
+.popular-item:first-child {
+  padding-top: 0;
 }
 
 .popular-item:last-child {
@@ -1120,34 +1127,23 @@ html.dark-mode .trending-tags__item:hover {
   padding-bottom: 0;
 }
 
+.popular-item:hover {
+  transform: translateX(4px);
+}
+
 .popular-item__rank {
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-sm);
-  background-color: var(--bg-muted);
-  color: var(--text-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 15px;
-  transition: var(--transition);
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-primary);
+  min-width: 24px;
+  text-align: center;
+  background: transparent !important;
 }
 
-.popular-item:nth-child(1) .popular-item__rank {
-  background-color: var(--color-accent);
-  color: #ffffff;
-}
-
-.popular-item:nth-child(2) .popular-item__rank {
-  background-color: #e11d48;
-  color: #ffffff;
-}
-
-.popular-item:nth-child(3) .popular-item__rank {
-  background-color: #f97316;
-  color: #ffffff;
+.popular-item__rank--top {
+  color: var(--color-accent) !important;
 }
 
 .popular-item__body {
@@ -1155,23 +1151,26 @@ html.dark-mode .trending-tags__item:hover {
 }
 
 .popular-item__cat {
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 800;
   color: var(--color-accent);
   text-transform: uppercase;
-  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
   display: block;
 }
 
 .popular-item__title {
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 700;
-  line-height: 1.35;
-  margin-bottom: 4px;
+  line-height: 1.38;
+  margin-bottom: 6px;
+  color: var(--text-main);
 }
 
 .popular-item__title a {
   color: var(--text-main);
+  transition: color 0.2s ease;
 }
 
 .popular-item__title a:hover {
@@ -1179,11 +1178,11 @@ html.dark-mode .trending-tags__item:hover {
 }
 
 .popular-item__date {
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--text-light);
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
 
 /* Widget Category / Terbaru */

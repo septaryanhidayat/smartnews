@@ -108,11 +108,11 @@ button, input, textarea, select {
 
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* ==========================================================================
@@ -654,7 +654,7 @@ html.dark-mode .trending-tags__item:hover {
 
 .main-layout__grid {
   display: grid;
-  grid-template-columns: 8fr 4fr;
+  grid-template-columns: minmax(0, 1fr) 320px;
   gap: 32px;
   align-items: start;
 }

@@ -1,16 +1,7 @@
 ---
 deployment:
   tasks:
-    - export TARGET_DIR_1=/home/$USER/smartnews.berandadigital.net/
-    - export TARGET_DIR_2=/home/$USER/public_html/smartnews.berandadigital.net/
-    - |
-      if [ -d "$TARGET_DIR_1" ]; then
-        export DEPLOYPATH="$TARGET_DIR_1"
-      elif [ -d "$TARGET_DIR_2" ]; then
-        export DEPLOYPATH="$TARGET_DIR_2"
-      else
-        export DEPLOYPATH="$TARGET_DIR_1"
-        /bin/mkdir -p "$DEPLOYPATH"
-      fi
-    - /bin/cp -rf * $DEPLOYPATH
-    - /bin/cp -f .env.example $DEPLOYPATH.env.example 2>/dev/null || true
+    - export DEPLOYPATH=/home/berandad/smartnews.berandadigital.net
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -rf * $DEPLOYPATH/
+    - /bin/cp -f .env.example $DEPLOYPATH/.env.example 2>/dev/null || true

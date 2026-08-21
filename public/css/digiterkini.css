@@ -2202,6 +2202,32 @@ textarea.form-control {
   to { width: 0%; }
 }
 
+/* Reading Scroll Progress Meter (Red Bar) */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #cf2e2e, #ef4444, #dc2626);
+  width: 0%;
+  z-index: 99999;
+  transition: width 0.08s ease-out;
+  box-shadow: 0 0 10px rgba(207, 46, 46, 0.85);
+  pointer-events: none;
+}
+
+.footer-attribution-link {
+  color: #60a5fa !important;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-attribution-link:hover {
+  color: #93c5fd !important;
+  text-decoration: underline;
+}
+
 /* ==========================================================================
    16. RESPONSIVE BREAKPOINTS
    ========================================================================== */
@@ -2251,7 +2277,77 @@ textarea.form-control {
   .article-nav {
     grid-template-columns: 1fr;
   }
+
+  /* Centered Footer on Mobile */
+  .site-footer {
+    text-align: center;
+  }
   .footer-main__grid {
     grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 10px auto;
+  }
+  .footer-brand__desc {
+    text-align: center;
+    margin: 12px auto;
+    max-width: 380px;
+  }
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .footer-contact li {
+    justify-content: center;
+    text-align: center;
+  }
+  .footer-socials {
+    justify-content: center;
+    margin: 16px auto 0 auto;
+  }
+  .footer-col__title {
+    text-align: center;
+  }
+  .footer-col__title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .footer-links ul li {
+    text-align: center;
+  }
+  .footer-links ul li a:hover {
+    padding-left: 0;
+    color: var(--color-primary-light);
+  }
+  .footer-badges {
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-copyright {
+    text-align: center;
+  }
+  .footer-copyright .container p {
+    text-align: center;
+    line-height: 1.6;
   }
 }
+

@@ -35,6 +35,9 @@
 </head>
 <body class="@yield('body_class', 'home blog')">
 
+    <!-- READING SCROLL PROGRESS BAR (RED METER) -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
     <!-- 1. FIXED TOP NAVIGATION -->
     <header class="top-nav" id="topNav">
         <div class="top-nav__inner container">
@@ -278,7 +281,7 @@
 
         <div class="footer-copyright">
             <div class="container">
-                <p>Copyright &copy; {{ date('Y') }} SmartNews. All Rights Reserved.</p>
+                <p>Copyright &copy; {{ date('Y') }} <strong>SmartNews</strong> by <a href="https://berandadigital.net" target="_blank" rel="noopener" class="footer-attribution-link">Beranda Teknologi Digital</a>. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

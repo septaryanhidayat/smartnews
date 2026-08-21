@@ -29,7 +29,7 @@ class ArticleAdminController extends Controller
             ->when($status, function ($q) use ($status) {
                 $q->where('status', $status);
             })
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->paginate(15);
 
         $categories = Category::orderBy('name')->get();

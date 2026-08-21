@@ -38,6 +38,6 @@ class Category extends Model
         return $this->hasMany(Article::class)
             ->where('status', 'published')
             ->where('published_at', '<=', now())
-            ->latest('published_at');
+            ->orderBy('published_at', 'desc');
     }
 }

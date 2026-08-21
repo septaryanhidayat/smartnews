@@ -37,7 +37,7 @@ class ArticleController extends Controller
         $inlineRelated = Article::published()
             ->where('category_id', $article->category_id)
             ->where('id', '!=', $article->id)
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->first();
 
         // Related articles grid at bottom
@@ -45,7 +45,7 @@ class ArticleController extends Controller
             ->published()
             ->where('category_id', $article->category_id)
             ->where('id', '!=', $article->id)
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->take(3)
             ->get();
 
@@ -59,7 +59,7 @@ class ArticleController extends Controller
         $sidebarLatest = Article::with(['category', 'user'])
             ->published()
             ->where('id', '!=', $article->id)
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->take(5)
             ->get();
 

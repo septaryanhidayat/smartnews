@@ -22,7 +22,7 @@ class HomeController extends Controller
         $sliderArticles = Article::with(['category', 'user'])
             ->published()
             ->where('is_slider', true)
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->take(6)
             ->get();
 
@@ -30,7 +30,7 @@ class HomeController extends Controller
         if ($sliderArticles->count() < 3) {
             $sliderArticles = Article::with(['category', 'user'])
                 ->published()
-                ->latest('published_at')
+                ->orderBy('published_at', 'desc')
                 ->take(6)
                 ->get();
         }
@@ -39,13 +39,13 @@ class HomeController extends Controller
         $featuredArticle = Article::with(['category', 'user'])
             ->published()
             ->where('is_sticky', true)
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->first();
 
         if (!$featuredArticle) {
             $featuredArticle = Article::with(['category', 'user'])
                 ->published()
-                ->latest('published_at')
+                ->orderBy('published_at', 'desc')
                 ->first();
         }
 
@@ -57,7 +57,7 @@ class HomeController extends Controller
                 ->published()
                 ->where('category_id', $nasionalCategory->id)
                 ->when($featuredArticle, fn($q) => $q->where('id', '!=', $featuredArticle->id))
-                ->latest('published_at')
+                ->orderBy('published_at', 'desc')
                 ->take(6)
                 ->get();
         }
@@ -70,7 +70,7 @@ class HomeController extends Controller
         $latestArticles = Article::with(['category', 'user'])
             ->published()
             ->whereNotIn('id', $excludeIds)
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->paginate(6);
 
         // If AJAX load more request
@@ -93,7 +93,7 @@ class HomeController extends Controller
         // Latest in sidebar
         $sidebarLatest = Article::with(['category', 'user'])
             ->published()
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->take(5)
             ->get();
 

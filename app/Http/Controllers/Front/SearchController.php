@@ -12,19 +12,21 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $query = $request->input('s') ?? $request->input('q');
+        $query = $request->input('q');
 
-        $articles = Article::with(['category', 'user'])
-            ->published()
-            ->when($query, function ($q) use ($query) {
-                $q->where(function ($sub) use ($query) {
-                    $sub->where('title', 'like', "%{$query}%")
-                        ->orWhere('excerpt', 'like', "%{$query}%")
-                        ->orWhere('content', 'like', "%{$query}%");
-                });
-            })
-            ->latest('published_at')
-            ->paginate(10);
+        $articles = collect();
+        if (!empty($query)) {
+            $articles = Article::with(['category', 'user'])
+                ->published()
+                ->where(function ($q) use ($query) {
+                    $q->where('title', 'like', "%{$query}%")
+                      ->orWhere('excerpt', 'like', "%{$query}%")
+                      ->orWhere('content', 'like', "%{$query}%");
+                })
+                ->orderBy('published_at', 'desc')
+                ->paginate(10)
+                ->withQueryString();
+        }
 
         $trendingTags = Tag::withCount('articles')->orderBy('articles_count', 'desc')->take(10)->get();
 
@@ -36,7 +38,7 @@ class SearchController extends Controller
 
         $sidebarLatest = Article::with(['category', 'user'])
             ->published()
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->take(5)
             ->get();
 

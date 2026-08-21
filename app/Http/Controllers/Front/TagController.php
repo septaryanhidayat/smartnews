@@ -17,7 +17,7 @@ class TagController extends Controller
         $articles = $tag->articles()
             ->with(['category', 'user'])
             ->published()
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->paginate(10);
 
         $trendingTags = Tag::withCount('articles')->orderBy('articles_count', 'desc')->take(10)->get();
@@ -30,7 +30,7 @@ class TagController extends Controller
 
         $sidebarLatest = Article::with(['category', 'user'])
             ->published()
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->take(5)
             ->get();
 

@@ -76,7 +76,7 @@ class PageController extends Controller
 
         $sidebarLatest = Article::with(['category', 'user'])
             ->published()
-            ->latest('published_at')
+            ->orderBy('published_at', 'desc')
             ->take(5)
             ->get();
 

@@ -75,7 +75,7 @@ class Article extends Model
 
     public function approvedComments()
     {
-        return $this->hasMany(Comment::class)->where('is_approved', true)->latest();
+        return $this->hasMany(Comment::class)->where('is_approved', true)->orderBy('created_at', 'desc');
     }
 
     public function getReadingTimeAttribute()

@@ -24,7 +24,7 @@ class DashboardController extends Controller
         ];
 
         $latestArticles = Article::with(['category', 'user'])
-            ->latest()
+            ->orderBy('created_at', 'desc')
             ->take(5)
             ->get();
 
@@ -34,7 +34,7 @@ class DashboardController extends Controller
             ->get();
 
         $latestComments = Comment::with('article')
-            ->latest()
+            ->orderBy('created_at', 'desc')
             ->take(5)
             ->get();
 

@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\ArticleAdminController;
 use App\Http\Controllers\Admin\CategoryAdminController;
 use App\Http\Controllers\Admin\CommentAdminController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProfileAdminController;
 use App\Http\Controllers\Admin\TagAdminController;
+use App\Http\Controllers\Admin\UserAdminController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Front\ArticleController;
 use App\Http\Controllers\Front\CategoryController;
@@ -17,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes - Digiterkini News Portal
+| Web Routes - SmartNews Portal
 |--------------------------------------------------------------------------
 */
 
@@ -64,6 +66,13 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/comments', [CommentAdminController::class, 'index'])->name('comments.index');
     Route::post('/comments/{id}/toggle', [CommentAdminController::class, 'toggleApproval'])->name('comments.toggle');
     Route::delete('/comments/{id}', [CommentAdminController::class, 'destroy'])->name('comments.destroy');
+
+    // Users Management
+    Route::resource('users', UserAdminController::class)->except(['show']);
+
+    // Profile Settings
+    Route::get('/profile', [ProfileAdminController::class, 'index'])->name('profile.index');
+    Route::put('/profile', [ProfileAdminController::class, 'update'])->name('profile.update');
 });
 
 // Storage Asset Delivery Route (Ensures 100% reliable image delivery on all web servers)

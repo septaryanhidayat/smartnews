@@ -100,12 +100,18 @@
             <li class="{{ request()->routeIs('admin.comments.*') ? 'active' : '' }}">
                 <a href="{{ route('admin.comments.index') }}"><i class="fas fa-comments"></i> Komentar</a>
             </li>
+            <li class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
+                <a href="{{ route('admin.users.index') }}"><i class="fas fa-users-cog"></i> Kelola Pengguna</a>
+            </li>
+            <li class="{{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
+                <a href="{{ route('admin.profile.index') }}"><i class="fas fa-user-circle"></i> Pengaturan Profil</a>
+            </li>
             <li style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
                 <a href="{{ route('home') }}" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat Website</a>
             </li>
         </ul>
         <div style="padding: 16px 22px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: #64748b;">
-            Logged as: <strong style="color: #fff;">{{ Auth::user()->name }}</strong>
+            Logged as: <a href="{{ route('admin.profile.index') }}" style="color: #60a5fa; font-weight: 700; text-decoration: underline;">{{ Auth::user()->name }}</a>
         </div>
     </aside>
 
@@ -115,7 +121,10 @@
             <div style="font-weight: 700; font-size: 16px;">
                 @yield('page_title', 'Admin Dashboard')
             </div>
-            <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <a href="{{ route('admin.profile.index') }}" class="btn btn-sm" style="background-color: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;">
+                    <i class="fas fa-user-shield"></i> {{ Auth::user()->name }}
+                </a>
                 <a href="{{ route('home') }}" class="btn btn-sm btn-primary" target="_blank">
                     <i class="fas fa-globe"></i> Portal Publik
                 </a>

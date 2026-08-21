@@ -1,8 +1,58 @@
 @extends('layouts.app')
 
-@section('title', $article->title . ' – SmartNews')
-@section('meta_description', $article->excerpt)
+@section('title', $article->title . ' – ' . setting('site_name', 'SmartNews'))
+@section('meta_description', Str::limit(strip_tags($article->excerpt ?: $article->content), 160))
+@section('meta_keywords', $article->tags->pluck('name')->implode(', ') . ', ' . $article->category->name . ', ' . setting('site_keywords'))
+@section('meta_author', $article->user->name ?? setting('site_name', 'SmartNews'))
+@section('canonical_url', route('article.show', $article->slug))
+@section('og_type', 'article')
+@section('og_title', $article->title)
 @section('og_image', $article->image_url)
+
+@section('extra_og_tags')
+    @if($article->published_at || $article->created_at)
+    <meta property="article:published_time" content="{{ optional($article->published_at ?? $article->created_at)->toIso8601String() }}">
+    @endif
+    @if($article->updated_at)
+    <meta property="article:modified_time" content="{{ optional($article->updated_at)->toIso8601String() }}">
+    @endif
+    <meta property="article:section" content="{{ $article->category->name ?? 'Nasional' }}">
+    @foreach($article->tags as $tag)
+    <meta property="article:tag" content="{{ $tag->name }}">
+    @endforeach
+@endsection
+
+@section('schema_jsonld')
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ route('article.show', $article->slug) }}"
+  },
+  "headline": "{{ addslashes($article->title) }}",
+  "description": "{{ addslashes(Str::limit(strip_tags($article->excerpt ?: $article->content), 160)) }}",
+  "image": [
+    "{{ $article->image_url }}"
+  ],
+  "datePublished": "{{ optional($article->published_at ?? $article->created_at)->toIso8601String() }}",
+  "dateModified": "{{ optional($article->updated_at)->toIso8601String() }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ addslashes($article->user->name ?? setting('site_name', 'SmartNews')) }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ addslashes(setting('site_name', 'SmartNews')) }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site_logo() }}"
+    }
+  }
+}
+</script>
+@endsection
 
 @section('content')
 <main id="mainContent" class="main-layout single-layout">

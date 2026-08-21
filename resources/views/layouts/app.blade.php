@@ -5,18 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>@yield('title', 'SmartNews – Portal Berita Terpercaya & Cerdas')</title>
-    <meta name="description" content="@yield('meta_description', 'SmartNews - Portal berita Indonesia terpercaya, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.')">
+    <title>@yield('title', setting('site_name', 'SmartNews') . ' – ' . setting('site_tagline', 'Portal Berita Terpercaya & Cerdas'))</title>
+    <meta name="description" content="@yield('meta_description', setting('site_description', 'SmartNews - Portal berita Indonesia terpercaya, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.'))">
+    <meta name="keywords" content="@yield('meta_keywords', setting('site_keywords', 'smartnews, berita terkini, berita indonesia, portal berita, nasional, politik, ekonomi, teknologi, olahraga'))">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="@yield('meta_author', setting('site_name', 'SmartNews'))">
+    <link rel="canonical" href="@yield('canonical_url', url()->current())">
+    @if(setting('google_site_verification'))
+    <meta name="google-site-verification" content="{{ setting('google_site_verification') }}">
+    @endif
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="@yield('title', 'SmartNews – Portal Berita Terpercaya & Cerdas')">
-    <meta property="og:description" content="@yield('meta_description', 'Portal berita Indonesia terpercaya dan cerdas.')">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="@yield('og_image', asset('images/logo.svg'))">
+    <!-- Open Graph Meta Tags (Facebook, WhatsApp, Telegram, LinkedIn) -->
+    <meta property="og:site_name" content="{{ setting('site_name', 'SmartNews') }}">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:url" content="@yield('canonical_url', url()->current())">
+    <meta property="og:title" content="@yield('og_title', setting('site_name', 'SmartNews') . ' – ' . setting('site_tagline', 'Portal Berita Terpercaya & Cerdas'))">
+    <meta property="og:description" content="@yield('meta_description', setting('site_description', 'Portal berita Indonesia terpercaya dan cerdas.'))">
+    <meta property="og:image" content="@yield('og_image', site_logo())">
+    <meta property="og:image:secure_url" content="@yield('og_image', site_logo())">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="@yield('og_title', setting('site_name', 'SmartNews'))">
+    @yield('extra_og_tags')
+
+    <!-- Twitter / X Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="@yield('canonical_url', url()->current())">
+    <meta name="twitter:title" content="@yield('og_title', setting('site_name', 'SmartNews'))">
+    <meta name="twitter:description" content="@yield('meta_description', setting('site_description', 'Portal berita Indonesia terpercaya dan cerdas.'))">
+    <meta name="twitter:image" content="@yield('og_image', site_logo())">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo.svg') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ site_favicon() }}">
+    <link rel="apple-touch-icon" href="{{ site_favicon() }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +54,9 @@
     <!-- Theme Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/digiterkini.css') }}?v={{ time() }}">
     @stack('styles')
+
+    <!-- JSON-LD Structured Data Schema -->
+    @yield('schema_jsonld')
 </head>
 <body class="@yield('body_class', 'home blog')">
 
@@ -88,7 +113,7 @@
     <aside class="sidebar-drawer" id="sidebarDrawer" role="dialog" aria-label="Menu Navigasi">
         <div class="sidebar-drawer__header">
             <a href="{{ route('home') }}" class="brand-logo-img">
-                <img src="{{ asset('images/logo.svg') }}" alt="SmartNews Logo" class="site-logo-img" style="height: 38px;">
+                <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-img" style="height: 38px;">
             </a>
             <button class="sidebar-drawer__close" id="sidebarClose" aria-label="Tutup menu">
                 <i class="fas fa-times"></i>
@@ -126,14 +151,15 @@
         </div>
 
         <div class="sidebar-drawer__socials">
-            <a href="https://facebook.com" class="sidebar-drawer__social" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com" class="sidebar-drawer__social" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://tiktok.com" class="sidebar-drawer__social" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://youtube.com" class="sidebar-drawer__social" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="{{ setting('social_facebook', 'https://facebook.com') }}" class="sidebar-drawer__social" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="{{ setting('social_twitter', 'https://twitter.com') }}" class="sidebar-drawer__social" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="{{ setting('social_instagram', 'https://instagram.com') }}" class="sidebar-drawer__social" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="{{ setting('social_tiktok', 'https://tiktok.com') }}" class="sidebar-drawer__social" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="{{ setting('social_youtube', 'https://youtube.com') }}" class="sidebar-drawer__social" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
 
         <div class="sidebar-drawer__copyright">
-            <p>Copyright &copy; {{ date('Y') }} SmartNews. All Rights Reserved.</p>
+            <p>Copyright &copy; {{ date('Y') }} {{ setting('site_name', 'SmartNews') }}. All Rights Reserved.</p>
         </div>
     </aside>
 
@@ -142,12 +168,12 @@
         <div class="site-header__inner container">
             <div class="site-header__logo">
                 <a href="{{ route('home') }}" class="logo-link">
-                    <img src="{{ asset('images/logo.svg') }}" alt="SmartNews Logo" class="site-logo-main" style="height: 48px;">
+                    <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-main" style="height: 48px;">
                 </a>
             </div>
 
             <div class="header-banner-ad">
-                <span><i class="fas fa-bolt" style="margin-right: 6px; color: #fbbf24;"></i> Liputan Khusus: Transformasi Nasional Menuju Indonesia Emas</span>
+                <span><i class="fas fa-bolt" style="margin-right: 6px; color: #fbbf24;"></i> {{ setting('site_tagline', 'Portal Berita Terpercaya & Cerdas') }}</span>
             </div>
         </div>
     </section>
@@ -159,7 +185,7 @@
                 <li class="{{ request()->routeIs('home') ? 'current-menu-item' : '' }}">
                     <a href="{{ route('home') }}">Beranda</a>
                 </li>
-                @foreach($drawerCategories as $cat)
+                @foreach(\App\Models\Category::orderBy('order', 'asc')->get() as $cat)
                     <li class="{{ request()->is('kategori/' . $cat->slug) ? 'current-menu-item' : '' }}">
                         <a href="{{ route('category.show', $cat->slug) }}">{{ $cat->name }}</a>
                     </li>
@@ -202,30 +228,31 @@
                     <!-- Col 1: Brand & Contact -->
                     <div class="footer-col footer-col--brand">
                         <a href="{{ route('home') }}" class="footer-logo">
-                            <img src="{{ asset('images/logo-white.svg') }}" alt="SmartNews Logo" style="height: 44px; margin-bottom: 8px;">
+                            <img src="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" style="height: 44px; margin-bottom: 8px;">
                         </a>
                         <p class="footer-brand__desc">
-                            Portal berita Indonesia terpercaya dan cerdas, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.
+                            {{ setting('site_description', 'Portal berita Indonesia terpercaya dan cerdas, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.') }}
                         </p>
                         <ul class="footer-contact">
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Jl. Sudirman Kav. 52–53, Jakarta Pusat 10220</span>
+                                <span>{{ setting('contact_address', 'Jl. Sudirman Kav. 52–53, Jakarta Pusat 10220') }}</span>
                             </li>
                             <li>
                                 <i class="fas fa-phone-alt"></i>
-                                <span>(012) 3456-7890</span>
+                                <span>{{ setting('contact_phone', '(012) 3456-7890') }}</span>
                             </li>
                             <li>
                                 <i class="fas fa-envelope"></i>
-                                <span>redaksi@smartnews.id</span>
+                                <span>{{ setting('contact_email', 'redaksi@smartnews.id') }}</span>
                             </li>
                         </ul>
                         <div class="footer-socials">
-                            <a href="https://facebook.com" class="footer-social" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://twitter.com" class="footer-social" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-                            <a href="https://tiktok.com" class="footer-social" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                            <a href="https://youtube.com" class="footer-social" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="{{ setting('social_facebook', 'https://facebook.com') }}" class="footer-social" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{ setting('social_twitter', 'https://twitter.com') }}" class="footer-social" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                            <a href="{{ setting('social_instagram', 'https://instagram.com') }}" class="footer-social" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="{{ setting('social_tiktok', 'https://tiktok.com') }}" class="footer-social" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="{{ setting('social_youtube', 'https://youtube.com') }}" class="footer-social" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
 
@@ -249,7 +276,7 @@
                         <h4 class="footer-col__title">Kategori Berita</h4>
                         <nav class="footer-links">
                             <ul>
-                                @foreach($drawerCategories->take(6) as $fcat)
+                                @foreach(\App\Models\Category::orderBy('order', 'asc')->take(6)->get() as $fcat)
                                     <li><a href="{{ route('category.show', $fcat->slug) }}">{{ $fcat->name }}</a></li>
                                 @endforeach
                             </ul>

@@ -73,11 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function switchLogo(isDark) {
         const siteLogos = document.querySelectorAll('.site-logo-main, .site-logo-img');
         siteLogos.forEach(logo => {
-            if (isDark) {
-                logo.src = logo.src.replace('logo.svg', 'logo-white.svg');
-            } else {
-                logo.src = logo.src.replace('logo-white.svg', 'logo.svg');
-            }
+            const lightSrc = logo.getAttribute('data-logo-light') || logo.src;
+            const darkSrc = logo.getAttribute('data-logo-dark') || lightSrc;
+            logo.src = isDark ? darkSrc : lightSrc;
         });
     }
 

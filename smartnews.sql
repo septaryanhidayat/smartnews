@@ -368,5 +368,33 @@ CREATE TABLE `cache` (
   PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+-- Struktur tabel: `site_settings`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `site_settings`;
+CREATE TABLE `site_settings` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `site_settings_key_unique` (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `site_settings` (`key`, `value`, `created_at`, `updated_at`) VALUES
+('site_name', 'SmartNews', NOW(), NOW()),
+('site_tagline', 'Portal Berita Terpercaya & Cerdas', NOW(), NOW()),
+('site_description', 'SmartNews - Portal berita Indonesia terpercaya, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.', NOW(), NOW()),
+('site_keywords', 'smartnews, berita terkini, berita indonesia, portal berita, nasional, politik, ekonomi, teknologi, olahraga', NOW(), NOW()),
+('contact_email', 'redaksi@smartnews.id', NOW(), NOW()),
+('contact_phone', '(012) 3456-7890', NOW(), NOW()),
+('contact_address', 'Jl. Sudirman Kav. 52–53, Jakarta Pusat 10220', NOW(), NOW()),
+('social_facebook', 'https://facebook.com', NOW(), NOW()),
+('social_twitter', 'https://twitter.com', NOW(), NOW()),
+('social_instagram', 'https://instagram.com', NOW(), NOW()),
+('social_tiktok', 'https://tiktok.com', NOW(), NOW()),
+('social_youtube', 'https://youtube.com', NOW(), NOW());
+
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;

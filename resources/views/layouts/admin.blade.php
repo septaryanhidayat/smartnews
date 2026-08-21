@@ -106,6 +106,9 @@
             <li class="{{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
                 <a href="{{ route('admin.profile.index') }}"><i class="fas fa-user-circle"></i> Pengaturan Profil</a>
             </li>
+            <li class="{{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
+                <a href="{{ route('admin.settings.index') }}"><i class="fas fa-cog"></i> Pengaturan Website & SEO</a>
+            </li>
             <li style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
                 <a href="{{ route('home') }}" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat Website</a>
             </li>

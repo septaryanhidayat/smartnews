@@ -73,6 +73,10 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     // Profile Settings
     Route::get('/profile', [ProfileAdminController::class, 'index'])->name('profile.index');
     Route::put('/profile', [ProfileAdminController::class, 'update'])->name('profile.update');
+
+    // Website & SEO Settings
+    Route::get('/settings', [App\Http\Controllers\Admin\SettingAdminController::class, 'index'])->name('settings.index');
+    Route::put('/settings', [App\Http\Controllers\Admin\SettingAdminController::class, 'update'])->name('settings.update');
 });
 
 // Storage Asset Delivery Route (Ensures 100% reliable image delivery on all web servers)

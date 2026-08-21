@@ -257,6 +257,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.html) {
                     articleList.insertAdjacentHTML('beforeend', data.html);
                     btnLoadMore.setAttribute('data-page', nextPage);
+
+                    // Observe newly appended feed items
+                    if (window.observeNewFadeUpElements) {
+                        window.observeNewFadeUpElements(articleList);
+                    }
                 }
 
                 if (!data.hasMore) {
@@ -290,9 +295,10 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
 
             const formData = new FormData(commentForm);
+            const actionUrl = commentForm.getAttribute('action');
 
             try {
-                const response = await fetch(commentForm.action, {
+                const response = await fetch(actionUrl, {
                     method: 'POST',
                     body: formData,
                     headers: {
@@ -312,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Prepend new comment to list
                     if (data.comment) {
                         const newCommentHtml = `
-                            <div class="comment-item">
+                            <div class="comment-item fade-up-init fade-up-in">
                                 <div class="comment-item__head">
                                     <span class="comment-item__author"><i class="fas fa-user-circle"></i> ${data.comment.name}</span>
                                     <span class="comment-item__date">Baru saja</span>
@@ -344,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================================================
-       10. READING SCROLL PROGRESS METER (RED INDICATOR)
+       9. READING SCROLL PROGRESS METER (RED INDICATOR)
        ========================================================================== */
     const scrollProgressBar = document.getElementById('scrollProgressBar');
     if (scrollProgressBar) {
@@ -356,6 +362,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
+    /* ==========================================================================
+       10. SCROLL FADE UP ANIMATION OBSERVER
+       ========================================================================== */
+    const animTargets = document.querySelectorAll(
+        '.featured-article, .article-card, .feed-item, .sidebar-widget, .section-head, .single-content, .comments-section, .footer-col'
+    );
+
+    if ('IntersectionObserver' in window) {
+        const fadeUpObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-up-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.08,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        animTargets.forEach(el => {
+            el.classList.add('fade-up-init');
+            fadeUpObserver.observe(el);
+        });
+
+        // Function for newly loaded AJAX feed items
+        window.observeNewFadeUpElements = function(container) {
+            if (container) {
+                container.querySelectorAll('.feed-item:not(.fade-up-init)').forEach(el => {
+                    el.classList.add('fade-up-init');
+                    fadeUpObserver.observe(el);
+                });
+            }
+        };
+    } else {
+        animTargets.forEach(el => el.classList.add('fade-up-in'));
+    }
+
 });
-
-

@@ -2351,3 +2351,45 @@ textarea.form-control {
   }
 }
 
+/* ==========================================================================
+   17. SCROLL FADE UP ANIMATIONS
+   ========================================================================== */
+.fade-up-init {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-up-init.fade-up-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay for grid cards */
+.article-grid .article-card.fade-up-init:nth-child(2) {
+  transition-delay: 0.08s;
+}
+.article-grid .article-card.fade-up-init:nth-child(3) {
+  transition-delay: 0.16s;
+}
+.article-grid .article-card.fade-up-init:nth-child(4) {
+  transition-delay: 0.24s;
+}
+.article-grid .article-card.fade-up-init:nth-child(5) {
+  transition-delay: 0.32s;
+}
+.article-grid .article-card.fade-up-init:nth-child(6) {
+  transition-delay: 0.40s;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+

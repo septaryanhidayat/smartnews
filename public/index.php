@@ -1,5 +1,13 @@
 <?php
 
+if (!enum_exists('SortDirection')) {
+    enum SortDirection
+    {
+        case Ascending;
+        case Descending;
+    }
+}
+
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 

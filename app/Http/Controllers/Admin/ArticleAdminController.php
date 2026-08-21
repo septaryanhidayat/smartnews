@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Tag;
+use App\Services\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -52,7 +53,7 @@ class ArticleAdminController extends Controller
             'excerpt' => 'nullable|string',
             'content' => 'required|string',
             'image' => 'nullable|string',
-            'image_file' => 'nullable|image|max:2048',
+            'image_file' => 'nullable|image|max:8192',
             'image_caption' => 'nullable|string',
             'image_source' => 'nullable|string',
             'media_type' => 'required|in:standard,video,photo',
@@ -68,7 +69,7 @@ class ArticleAdminController extends Controller
 
         $imagePath = $request->input('image');
         if ($request->hasFile('image_file')) {
-            $imagePath = $request->file('image_file')->store('articles', 'public');
+            $imagePath = ImageService::convertToWebp($request->file('image_file'), 'articles', 1200, 80);
         }
 
         // Parse YouTube ID if video url provided
@@ -103,7 +104,7 @@ class ArticleAdminController extends Controller
             $article->tags()->sync($request->input('tags'));
         }
 
-        return redirect()->route('admin.articles.index')->with('success', 'Berita berhasil dipublikasikan!');
+        return redirect()->route('admin.articles.index')->with('success', 'Berita berhasil dipublikasikan dengan format gambar WebP optimal!');
     }
 
     public function edit($id)
@@ -125,7 +126,7 @@ class ArticleAdminController extends Controller
             'excerpt' => 'nullable|string',
             'content' => 'required|string',
             'image' => 'nullable|string',
-            'image_file' => 'nullable|image|max:2048',
+            'image_file' => 'nullable|image|max:8192',
             'image_caption' => 'nullable|string',
             'image_source' => 'nullable|string',
             'media_type' => 'required|in:standard,video,photo',
@@ -144,7 +145,7 @@ class ArticleAdminController extends Controller
             $imagePath = $request->input('image');
         }
         if ($request->hasFile('image_file')) {
-            $imagePath = $request->file('image_file')->store('articles', 'public');
+            $imagePath = ImageService::convertToWebp($request->file('image_file'), 'articles', 1200, 80);
         }
 
         $videoId = $request->input('video_id');

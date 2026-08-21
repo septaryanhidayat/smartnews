@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $article->title . ' – Digiterkini')
+@section('title', $article->title . ' – SmartNews')
 @section('meta_description', $article->excerpt)
 @section('og_image', $article->image_url)
 
@@ -34,7 +34,7 @@
                     <div class="single-meta__left">
                         <span class="single-meta__item">
                             <i class="fas fa-user-circle"></i>
-                            <strong>{{ $article->user->name ?? 'Redaksi' }}</strong>
+                            <strong>{{ $article->user->name ?? 'Redaksi SmartNews' }}</strong>
                         </span>
                         <span class="single-meta__item">
                             <i class="fas fa-calendar-alt"></i>
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                     @else
-                        <img class="single-hero-img" src="{{ $article->image_url }}" alt="{{ $article->title }}">
+                        <img class="single-hero-img" src="{{ $article->image_url }}" alt="{{ $article->title }}" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                     @endif
 
                     @if($article->image_caption || $article->image_source)
@@ -132,7 +132,7 @@
                             <div>
                                 <span class="author-box__role">Jurnalis Senior</span>
                                 <h4 class="author-box__name">{{ $article->user->name ?? 'Bima Saputra' }}</h4>
-                                <span class="author-box__desk">Divisi Redaksi – Digiterkini</span>
+                                <span class="author-box__desk">Divisi Redaksi – SmartNews</span>
                             </div>
                         </div>
                         <p class="author-box__desc">
@@ -149,7 +149,7 @@
                     @if($prevArticle)
                     <a href="{{ route('article.show', $prevArticle->slug) }}" class="article-nav__item article-nav__item--prev">
                         <div class="article-nav__img-wrap">
-                            <img src="{{ $prevArticle->image_url }}" alt="{{ $prevArticle->title }}">
+                            <img src="{{ $prevArticle->image_url }}" alt="{{ $prevArticle->title }}" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                         </div>
                         <div>
                             <span class="article-nav__dir"><i class="fas fa-arrow-left"></i> Artikel Sebelumnya</span>
@@ -163,7 +163,7 @@
                     @if($nextArticle)
                     <a href="{{ route('article.show', $nextArticle->slug) }}" class="article-nav__item article-nav__item--next">
                         <div class="article-nav__img-wrap">
-                            <img src="{{ $nextArticle->image_url }}" alt="{{ $nextArticle->title }}">
+                            <img src="{{ $nextArticle->image_url }}" alt="{{ $nextArticle->title }}" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                         </div>
                         <div>
                             <span class="article-nav__dir">Artikel Selanjutnya <i class="fas fa-arrow-right"></i></span>

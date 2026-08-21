@@ -42,7 +42,7 @@
             <div class="cat-item">
                 <div class="cat-item__img-wrap">
                     <a href="{{ route('article.show', $rec->slug) }}">
-                        <img class="cat-item__img" src="{{ $rec->image_url }}" alt="{{ $rec->title }}" loading="lazy">
+                        <img class="cat-item__img" src="{{ $rec->image_url }}" alt="{{ $rec->title }}" loading="lazy" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                     </a>
                 </div>
                 <div class="cat-item__body">

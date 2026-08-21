@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Admin Panel – Digiterkini')</title>
+    <title>@yield('title', 'Admin Panel – SmartNews')</title>
 
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,8 +79,9 @@
     <!-- Sidebar -->
     <aside class="admin-sidebar">
         <div class="admin-brand">
-            <a href="{{ route('admin.dashboard') }}">
-                <span class="logo-digi">Digi</span><span class="logo-terkini">terkini</span> <span style="font-size: 11px; background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; margin-left: 4px;">CMS</span>
+            <a href="{{ route('admin.dashboard') }}" style="display: flex; align-items: center; gap: 8px;">
+                <img src="{{ asset('images/logo-white.svg') }}" alt="SmartNews Logo" style="height: 32px;">
+                <span style="font-size: 11px; background: rgba(255,255,255,0.15); padding: 2px 6px; border-radius: 4px;">CMS</span>
             </a>
         </div>
         <ul class="admin-menu">

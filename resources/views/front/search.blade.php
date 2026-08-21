@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Hasil Pencarian: "' . $query . '" – Digiterkini')
+@section('title', 'Pencarian: "' . $query . '" – SmartNews')
 
 @section('content')
 <main id="mainContent" class="main-layout">
@@ -16,10 +16,10 @@
                 </ol>
             </nav>
             <h1 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">
-                <i class="fas fa-search" style="color: var(--color-primary);"></i> Hasil Pencarian: "{{ $query }}"
+                Hasil Pencarian: <span style="color: var(--color-primary);">"{{ $query }}"</span>
             </h1>
             <p style="color: var(--text-muted); font-size: 14px;">
-                Ditemukan {{ $articles->total() }} berita yang relevan dengan kata kunci tersebut.
+                Ditemukan <strong>{{ $articles->total() }}</strong> artikel yang sesuai dengan kata kunci Anda.
             </p>
         </div>
 
@@ -31,7 +31,7 @@
                     <article class="feed-item">
                         <div class="feed-item__img-wrap">
                             <a href="{{ route('article.show', $article->slug) }}">
-                                <img class="feed-item__img" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy">
+                                <img class="feed-item__img" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                             </a>
                             @if($article->media_type === 'video')
                                 <div class="media-badge media-badge--video">
@@ -65,9 +65,9 @@
                     </article>
                     @empty
                     <div style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 40px; text-align: center;">
-                        <i class="fas fa-search-minus" style="font-size: 36px; color: var(--text-light); margin-bottom: 12px;"></i>
+                        <i class="fas fa-search" style="font-size: 36px; color: var(--text-light); margin-bottom: 12px;"></i>
                         <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 6px;">Tidak ada berita yang ditemukan</h3>
-                        <p style="color: var(--text-muted); font-size: 14px;">Silakan coba dengan kata kunci lain yang lebih umum.</p>
+                        <p style="color: var(--text-muted); font-size: 14px;">Coba gunakan kata kunci lain yang lebih umum atau periksa ejaan Anda.</p>
                     </div>
                     @endforelse
                 </div>

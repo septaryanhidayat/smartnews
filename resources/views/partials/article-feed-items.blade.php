@@ -2,7 +2,7 @@
 <article class="feed-item">
     <div class="feed-item__img-wrap">
         <a href="{{ route('article.show', $article->slug) }}">
-            <img class="feed-item__img" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy">
+            <img class="feed-item__img" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy" onerror="this.src='{{ asset('images/default-news.webp') }}'">
         </a>
         @if($article->media_type === 'video')
             <div class="media-badge media-badge--video">

@@ -1,47 +1,57 @@
 @extends('layouts.app')
 
-@section('title', 'Digiterkini – Portal Berita Indonesia Terpercaya')
+@section('title', 'SmartNews – Portal Berita Terpercaya & Cerdas')
 
 @section('content')
 <main id="mainContent">
 
-    <!-- 1. HERO SLIDER SECTION -->
+    <!-- 1. HERO SLIDER SECTION (SWIPER CAROUSEL) -->
     @if(isset($sliderArticles) && $sliderArticles->count() > 0)
     <section class="hero-slider-section">
         <div class="container">
             <div class="hero-slider-section__overflow">
-                <div class="hero-swiper-grid">
-                    @foreach($sliderArticles->take(3) as $slide)
-                    <article class="slide-card">
-                        <div class="slide-card__img-wrap">
-                            <a href="{{ route('article.show', $slide->slug) }}" aria-label="{{ $slide->title }}">
-                                <img class="slide-card__img" src="{{ $slide->image_url }}" alt="{{ $slide->title }}">
-                            </a>
-                            @if($slide->media_type === 'video')
-                                <div class="media-badge media-badge--video">
-                                    <i class="fas fa-play"></i> <span>{{ $slide->media_badge ?? '02:07' }}</span>
+                <div class="swiper hero-swiper" id="heroSwiper">
+                    <div class="swiper-wrapper">
+                        @foreach($sliderArticles as $slide)
+                        <div class="swiper-slide">
+                            <article class="slide-card">
+                                <div class="slide-card__img-wrap">
+                                    <a href="{{ route('article.show', $slide->slug) }}" aria-label="{{ $slide->title }}">
+                                        <img class="slide-card__img" src="{{ $slide->image_url }}" alt="{{ $slide->title }}" onerror="this.src='{{ asset('images/default-news.webp') }}'">
+                                    </a>
+                                    @if($slide->media_type === 'video')
+                                        <div class="media-badge media-badge--video">
+                                            <i class="fas fa-play"></i> <span>{{ $slide->media_badge ?? '02:07' }}</span>
+                                        </div>
+                                    @elseif($slide->media_type === 'photo')
+                                        <div class="media-badge media-badge--photo">
+                                            <i class="fas fa-camera"></i> <span>{{ $slide->media_badge ?? '3 Foto' }}</span>
+                                        </div>
+                                    @endif
                                 </div>
-                            @elseif($slide->media_type === 'photo')
-                                <div class="media-badge media-badge--photo">
-                                    <i class="fas fa-camera"></i> <span>{{ $slide->media_badge ?? '3 Foto' }}</span>
+                                <div class="slide-card__overlay">
+                                    <a class="slide-card__cat" href="{{ route('category.show', $slide->category->slug) }}">
+                                        {{ $slide->category->name }}
+                                    </a>
+                                    <h3 class="slide-card__title">
+                                        <a href="{{ route('article.show', $slide->slug) }}">
+                                            {{ $slide->title }}
+                                        </a>
+                                    </h3>
+                                    <span class="slide-card__time">
+                                        <i class="fas fa-clock"></i> {{ $slide->published_at ? $slide->published_at->format('d F Y') : $slide->created_at->format('d F Y') }}
+                                    </span>
                                 </div>
-                            @endif
+                            </article>
                         </div>
-                        <div class="slide-card__overlay">
-                            <a class="slide-card__cat" href="{{ route('category.show', $slide->category->slug) }}">
-                                {{ $slide->category->name }}
-                            </a>
-                            <h3 class="slide-card__title">
-                                <a href="{{ route('article.show', $slide->slug) }}">
-                                    {{ $slide->title }}
-                                </a>
-                            </h3>
-                            <span class="slide-card__time">
-                                <i class="fas fa-clock"></i> {{ $slide->published_at ? $slide->published_at->format('d F Y') : $slide->created_at->format('d F Y') }}
-                            </span>
-                        </div>
-                    </article>
-                    @endforeach
+                        @endforeach
+                    </div>
+
+                    <!-- Swiper Navigation Arrows -->
+                    <div class="swiper-button-prev hero-swiper__prev" aria-label="Slide sebelumnya"></div>
+                    <div class="swiper-button-next hero-swiper__next" aria-label="Slide berikutnya"></div>
+                    <!-- Swiper Pagination -->
+                    <div class="swiper-pagination hero-swiper__pagination"></div>
                 </div>
             </div>
         </div>
@@ -61,7 +71,7 @@
                     <article class="featured-article">
                         <div class="featured-article__img-wrap">
                             <a href="{{ route('article.show', $featuredArticle->slug) }}" aria-label="{{ $featuredArticle->title }}">
-                                <img class="featured-article__img" src="{{ $featuredArticle->image_url }}" alt="{{ $featuredArticle->title }}">
+                                <img class="featured-article__img" src="{{ $featuredArticle->image_url }}" alt="{{ $featuredArticle->title }}" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                             </a>
                         </div>
                         <div class="featured-article__body">

@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>@yield('title', 'Digiterkini – Portal Berita Indonesia Terpercaya')</title>
-    <meta name="description" content="@yield('meta_description', 'Portal berita Indonesia terpercaya, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.')">
+    <title>@yield('title', 'SmartNews – Portal Berita Terpercaya & Cerdas')</title>
+    <meta name="description" content="@yield('meta_description', 'SmartNews - Portal berita Indonesia terpercaya, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.')">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="@yield('title', 'Digiterkini – Portal Berita Indonesia Terpercaya')">
-    <meta property="og:description" content="@yield('meta_description', 'Portal berita Indonesia terpercaya.')">
+    <meta property="og:title" content="@yield('title', 'SmartNews – Portal Berita Terpercaya & Cerdas')">
+    <meta property="og:description" content="@yield('meta_description', 'Portal berita Indonesia terpercaya dan cerdas.')">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="@yield('og_image', asset('images/logo.png'))">
+    <meta property="og:image" content="@yield('og_image', asset('images/logo.svg'))">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo.svg') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +25,9 @@
     
     <!-- FontAwesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Swiper Carousel CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Theme Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/digiterkini.css') }}">
@@ -50,7 +56,7 @@
                         class="search-form__input"
                         name="q"
                         type="search"
-                        placeholder="Masukkan kata kunci..."
+                        placeholder="Masukkan kata kunci berita..."
                         autocomplete="off"
                         value="{{ request('q') ?? request('s') }}"
                     />
@@ -78,10 +84,8 @@
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <aside class="sidebar-drawer" id="sidebarDrawer" role="dialog" aria-label="Menu Navigasi">
         <div class="sidebar-drawer__header">
-            <a href="{{ route('home') }}" class="brand-logo-text">
-                <span class="brand-title">
-                    <span class="logo-digi">Digi</span><span class="logo-terkini">terkini</span>
-                </span>
+            <a href="{{ route('home') }}" class="brand-logo-img">
+                <img src="{{ asset('images/logo.svg') }}" alt="SmartNews Logo" class="site-logo-img" style="height: 38px;">
             </a>
             <button class="sidebar-drawer__close" id="sidebarClose" aria-label="Tutup menu">
                 <i class="fas fa-times"></i>
@@ -126,7 +130,7 @@
         </div>
 
         <div class="sidebar-drawer__copyright">
-            <p>Copyright &copy; {{ date('Y') }} Digiterkini. All Rights Reserved.</p>
+            <p>Copyright &copy; {{ date('Y') }} SmartNews. All Rights Reserved.</p>
         </div>
     </aside>
 
@@ -134,11 +138,8 @@
     <section class="site-header">
         <div class="site-header__inner container">
             <div class="site-header__logo">
-                <a href="{{ route('home') }}" class="brand-logo-text">
-                    <span class="brand-title">
-                        <span class="logo-digi">Digi</span><span class="logo-terkini">terkini</span>
-                    </span>
-                    <span class="brand-tagline">PORTAL BERITA INDONESIA TERPERCAYA</span>
+                <a href="{{ route('home') }}" class="logo-link">
+                    <img src="{{ asset('images/logo.svg') }}" alt="SmartNews Logo" class="site-logo-main" style="height: 48px;">
                 </a>
             </div>
 
@@ -197,13 +198,11 @@
                 <div class="footer-main__grid">
                     <!-- Col 1: Brand & Contact -->
                     <div class="footer-col footer-col--brand">
-                        <a href="{{ route('home') }}" class="brand-logo-text" style="color: #ffffff;">
-                            <span class="brand-title">
-                                <span class="logo-digi" style="color: #60a5fa;">Digi</span><span class="logo-terkini" style="color: var(--color-accent);">terkini</span>
-                            </span>
+                        <a href="{{ route('home') }}" class="footer-logo">
+                            <img src="{{ asset('images/logo-white.svg') }}" alt="SmartNews Logo" style="height: 44px; margin-bottom: 8px;">
                         </a>
                         <p class="footer-brand__desc">
-                            Portal berita Indonesia terpercaya, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.
+                            Portal berita Indonesia terpercaya dan cerdas, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.
                         </p>
                         <ul class="footer-contact">
                             <li>
@@ -216,7 +215,7 @@
                             </li>
                             <li>
                                 <i class="fas fa-envelope"></i>
-                                <span>redaksi@digiterkini.id</span>
+                                <span>redaksi@smartnews.id</span>
                             </li>
                         </ul>
                         <div class="footer-socials">
@@ -279,7 +278,7 @@
 
         <div class="footer-copyright">
             <div class="container">
-                <p>Copyright &copy; {{ date('Y') }} Digiterkini by Digitalkit. All Rights Reserved.</p>
+                <p>Copyright &copy; {{ date('Y') }} SmartNews. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -291,16 +290,22 @@
 
     <!-- MODAL COPY LINK TOAST -->
     <div class="copy-modal" id="copyModal" role="alert" aria-live="polite">
-        <div class="copy-modal__icon">
-            <i class="fas fa-check"></i>
+        <div class="copy-modal__inner">
+            <div class="copy-modal__icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="copy-modal__body">
+                <p class="copy-modal__title">Link Tersalin!</p>
+                <p class="copy-modal__desc">Link artikel berhasil disalin ke clipboard.</p>
+            </div>
         </div>
-        <div class="copy-modal__body">
-            <p class="copy-modal__title">Link Tersalin!</p>
-            <p class="copy-modal__desc">Link artikel berhasil disalin ke clipboard.</p>
-        </div>
+        <div class="copy-modal__progress" id="copyModalProgress"></div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Swiper JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Theme Custom Scripts -->
     <script src="{{ asset('js/digiterkini.js') }}"></script>
     @stack('scripts')
 </body>

@@ -1,27 +1,27 @@
 @extends('layouts.app')
 
-@section('title', 'Topik: #' . $tag->name . ' – Digiterkini')
+@section('title', 'Tag: #' . $tag->name . ' – SmartNews')
 
 @section('content')
 <main id="mainContent" class="main-layout">
     <div class="container">
         
         <!-- Tag Header -->
-        <div style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px; border-left: 5px solid var(--color-accent);">
+        <div style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px;">
             <nav class="breadcrumb" style="margin-bottom: 8px;">
                 <ol class="breadcrumb__list">
                     <li class="breadcrumb__item"><a href="{{ route('home') }}">Home</a></li>
                     <li class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></li>
-                    <li class="breadcrumb__item breadcrumb__item--active">Topik Tag</li>
+                    <li class="breadcrumb__item">Topik</li>
                     <li class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></li>
                     <li class="breadcrumb__item breadcrumb__item--active">#{{ $tag->name }}</li>
                 </ol>
             </nav>
             <h1 style="font-size: 26px; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">
-                <i class="fas fa-hashtag" style="color: var(--color-accent);"></i> {{ $tag->name }}
+                <i class="fas fa-tag" style="color: var(--color-primary); font-size: 22px;"></i> #{{ $tag->name }}
             </h1>
             <p style="color: var(--text-muted); font-size: 14px;">
-                Menampilkan kumpulan berita yang berhubungan dengan topik <strong>#{{ $tag->name }}</strong>
+                Menampilkan seluruh berita dengan topik atau tagar #{{ $tag->name }}
             </p>
         </div>
 
@@ -33,7 +33,7 @@
                     <article class="feed-item">
                         <div class="feed-item__img-wrap">
                             <a href="{{ route('article.show', $article->slug) }}">
-                                <img class="feed-item__img" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy">
+                                <img class="feed-item__img" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                             </a>
                             @if($article->media_type === 'video')
                                 <div class="media-badge media-badge--video">
@@ -68,7 +68,7 @@
                     @empty
                     <div style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 40px; text-align: center;">
                         <i class="fas fa-tags" style="font-size: 36px; color: var(--text-light); margin-bottom: 12px;"></i>
-                        <p style="color: var(--text-muted); font-size: 15px;">Belum ada artikel dengan tag ini.</p>
+                        <p style="color: var(--text-muted); font-size: 15px;">Belum ada artikel dengan tagar ini.</p>
                     </div>
                     @endforelse
                 </div>

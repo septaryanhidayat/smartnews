@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Daftar Akun – Digiterkini')
+@section('title', 'Daftar Akun – SmartNews')
 
 @section('content')
 <main id="mainContent" class="main-layout">
@@ -8,11 +8,11 @@
         <div style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-md);">
             
             <div style="text-align: center; margin-bottom: 24px;">
-                <span class="brand-title" style="justify-content: center; font-size: 28px;">
-                    <span class="logo-digi">Digi</span><span class="logo-terkini">terkini</span>
-                </span>
+                <a href="{{ route('home') }}" style="display: inline-block; margin-bottom: 12px;">
+                    <img src="{{ asset('images/logo.svg') }}" alt="SmartNews Logo" class="site-logo-main" style="height: 44px; margin: 0 auto;">
+                </a>
                 <h2 style="font-size: 20px; font-weight: 700; margin-top: 8px;">Daftar Akun Baru</h2>
-                <p style="font-size: 13px; color: var(--text-muted);">Bergabunglah dengan komunitas pembaca & jurnalis Digiterkini</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Bergabunglah dengan komunitas pembaca & jurnalis SmartNews</p>
             </div>
 
             @if($errors->any())

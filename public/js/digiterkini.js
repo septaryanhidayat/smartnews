@@ -1,271 +1,346 @@
 /**
- * Digiterkini News Portal - JavaScript Controller
+ * SmartNews Portal - Interactive JavaScript & Animations
  */
 
-(function () {
-  'use strict';
+document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Dark Mode Toggle
-  const DARK_MODE_KEY = 'bk-darkmode';
-  const html = document.documentElement;
-  const darkModeBtn = document.getElementById('darkModeBtn');
-  const drawerDarkModeBtn = document.getElementById('drawerDarkModeBtn');
-
-  function initDarkMode() {
-    const isDark = localStorage.getItem(DARK_MODE_KEY) === '1';
-    if (isDark) {
-      html.classList.add('dark-mode');
-      updateDarkModeIcons(true);
-    }
-  }
-
-  function toggleDarkMode() {
-    const isDark = html.classList.toggle('dark-mode');
-    localStorage.setItem(DARK_MODE_KEY, isDark ? '1' : '0');
-    updateDarkModeIcons(isDark);
-  }
-
-  function updateDarkModeIcons(isDark) {
-    const iconClass = isDark ? 'fa-sun' : 'fa-moon';
-    if (darkModeBtn) {
-      const icon = darkModeBtn.querySelector('i');
-      if (icon) {
-        icon.className = `fas ${iconClass}`;
-      }
-    }
-    if (drawerDarkModeBtn) {
-      const icon = drawerDarkModeBtn.querySelector('i');
-      if (icon) {
-        icon.className = `fas ${iconClass}`;
-      }
-    }
-  }
-
-  if (darkModeBtn) {
-    darkModeBtn.addEventListener('click', toggleDarkMode);
-  }
-  if (drawerDarkModeBtn) {
-    drawerDarkModeBtn.addEventListener('click', toggleDarkMode);
-  }
-
-  initDarkMode();
-
-  // 2. Mobile Sidebar Drawer
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNavToggle = document.getElementById('mobileNavToggle');
-  const sidebarOverlay = document.getElementById('sidebarOverlay');
-  const sidebarDrawer = document.getElementById('sidebarDrawer');
-  const sidebarClose = document.getElementById('sidebarClose');
-
-  function openSidebar() {
-    if (sidebarOverlay) sidebarOverlay.classList.add('active');
-    if (sidebarDrawer) sidebarDrawer.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeSidebar() {
-    if (sidebarOverlay) sidebarOverlay.classList.remove('active');
-    if (sidebarDrawer) sidebarDrawer.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  if (menuToggle) menuToggle.addEventListener('click', openSidebar);
-  if (mobileNavToggle) mobileNavToggle.addEventListener('click', openSidebar);
-  if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
-  if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeSidebar();
-  });
-
-  // 3. Font Size Resizer (Single Article)
-  const articleBody = document.getElementById('articleBody');
-  const fontDecrease = document.getElementById('fontDecrease');
-  const fontReset = document.getElementById('fontReset');
-  const fontIncrease = document.getElementById('fontIncrease');
-  const fontBtns = [fontDecrease, fontReset, fontIncrease];
-
-  if (articleBody) {
-    const defaultFontSize = 16.5; // in px
-    let currentFontSize = defaultFontSize;
-
-    function setFontSize(size, activeBtn) {
-      currentFontSize = size;
-      articleBody.style.fontSize = size + 'px';
-      fontBtns.forEach((btn) => btn && btn.classList.remove('font-resizer__btn--active'));
-      if (activeBtn) activeBtn.classList.add('font-resizer__btn--active');
+    /* ==========================================================================
+       1. HERO SLIDER SWIPER INITIALIZATION
+       ========================================================================== */
+    if (typeof Swiper !== 'undefined' && document.getElementById('heroSwiper')) {
+        new Swiper('#heroSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 18,
+            loop: true,
+            speed: 700,
+            autoplay: {
+                delay: 4500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 18,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
+            },
+            navigation: {
+                nextEl: '.hero-swiper__next',
+                prevEl: '.hero-swiper__prev',
+            },
+            pagination: {
+                el: '.hero-swiper__pagination',
+                clickable: true,
+            },
+        });
     }
 
-    if (fontDecrease) {
-      fontDecrease.addEventListener('click', function () {
-        setFontSize(14.5, fontDecrease);
-      });
+    /* ==========================================================================
+       2. DARK / LIGHT THEME TOGGLE WITH LOGO SWITCH
+       ========================================================================== */
+    const darkModeBtn = document.getElementById('darkModeBtn');
+    const drawerDarkModeBtn = document.getElementById('drawerDarkModeBtn');
+    const html = document.documentElement;
+
+    function applyTheme(isDark) {
+        if (isDark) {
+            html.classList.add('dark-mode');
+            localStorage.setItem('smartnews_theme', 'dark');
+            updateDarkModeIcons(true);
+            switchLogo(true);
+        } else {
+            html.classList.remove('dark-mode');
+            localStorage.setItem('smartnews_theme', 'light');
+            updateDarkModeIcons(false);
+            switchLogo(false);
+        }
     }
-    if (fontReset) {
-      fontReset.addEventListener('click', function () {
-        setFontSize(defaultFontSize, fontReset);
-      });
+
+    function updateDarkModeIcons(isDark) {
+        const iconClass = isDark ? 'fa-sun' : 'fa-moon';
+        if (darkModeBtn) {
+            darkModeBtn.innerHTML = `<i class="fas ${iconClass}"></i>`;
+        }
+        if (drawerDarkModeBtn) {
+            drawerDarkModeBtn.innerHTML = `<i class="fas ${iconClass}"></i>`;
+        }
     }
-    if (fontIncrease) {
-      fontIncrease.addEventListener('click', function () {
-        setFontSize(19.5, fontIncrease);
-      });
-    }
-  }
 
-  // 4. Copy Link Button with Modal Toast
-  const copyBtns = document.querySelectorAll('.js-copy-link');
-  const copyModal = document.getElementById('copyModal');
-  let copyTimeout = null;
-
-  copyBtns.forEach((btn) => {
-    btn.addEventListener('click', function () {
-      const url = this.getAttribute('data-url') || window.location.href;
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(url).then(showCopyToast);
-      } else {
-        // Fallback
-        const dummy = document.createElement('input');
-        document.body.appendChild(dummy);
-        dummy.value = url;
-        dummy.select();
-        document.execCommand('copy');
-        document.body.removeChild(dummy);
-        showCopyToast();
-      }
-    });
-  });
-
-  function showCopyToast() {
-    if (!copyModal) return;
-    copyModal.classList.add('active');
-    if (copyTimeout) clearTimeout(copyTimeout);
-    copyTimeout = setTimeout(() => {
-      copyModal.classList.remove('active');
-    }, 3000);
-  }
-
-  // 5. Back to Top Button
-  const backToTop = document.getElementById('backToTop');
-  if (backToTop) {
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 400) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
-
-    backToTop.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // 6. AJAX Load More Articles
-  const btnLoadMore = document.getElementById('btnLoadMore');
-  const articleList = document.getElementById('articleList');
-
-  if (btnLoadMore && articleList) {
-    let currentPage = parseInt(btnLoadMore.getAttribute('data-page') || '1', 10);
-    let isLoading = false;
-
-    btnLoadMore.addEventListener('click', function () {
-      if (isLoading) return;
-      isLoading = true;
-      btnLoadMore.disabled = true;
-      const originalText = btnLoadMore.innerHTML;
-      btnLoadMore.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memuat...';
-
-      const nextPage = currentPage + 1;
-      const url = `/?page=${nextPage}`;
-
-      fetch(url, {
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest',
-        },
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.html) {
-            articleList.insertAdjacentHTML('beforeend', data.html);
-            currentPage = nextPage;
-            btnLoadMore.setAttribute('data-page', currentPage);
-
-            if (!data.hasMore) {
-              btnLoadMore.parentElement.remove();
+    function switchLogo(isDark) {
+        const siteLogos = document.querySelectorAll('.site-logo-main, .site-logo-img');
+        siteLogos.forEach(logo => {
+            if (isDark) {
+                logo.src = logo.src.replace('logo.svg', 'logo-white.svg');
             } else {
-              btnLoadMore.disabled = false;
-              btnLoadMore.innerHTML = originalText;
+                logo.src = logo.src.replace('logo-white.svg', 'logo.svg');
             }
-          } else {
-            btnLoadMore.parentElement.remove();
-          }
-          isLoading = false;
-        })
-        .catch(() => {
-          btnLoadMore.disabled = false;
-          btnLoadMore.innerHTML = originalText;
-          isLoading = false;
+        });
+    }
+
+    // Initialize Theme from localStorage or system preference
+    const savedTheme = localStorage.getItem('smartnews_theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        applyTheme(true);
+    } else {
+        applyTheme(false);
+    }
+
+    if (darkModeBtn) {
+        darkModeBtn.addEventListener('click', () => {
+            const isDark = html.classList.contains('dark-mode');
+            applyTheme(!isDark);
+        });
+    }
+
+    if (drawerDarkModeBtn) {
+        drawerDarkModeBtn.addEventListener('click', () => {
+            const isDark = html.classList.contains('dark-mode');
+            applyTheme(!isDark);
+        });
+    }
+
+    /* ==========================================================================
+       3. OFFCANVAS MOBILE DRAWER & BACKDROP
+       ========================================================================== */
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNavToggle = document.getElementById('mobileNavToggle');
+    const sidebarDrawer = document.getElementById('sidebarDrawer');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const sidebarClose = document.getElementById('sidebarClose');
+
+    function openDrawer() {
+        if (sidebarDrawer && sidebarOverlay) {
+            sidebarDrawer.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeDrawer() {
+        if (sidebarDrawer && sidebarOverlay) {
+            sidebarDrawer.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', openDrawer);
+    if (mobileNavToggle) mobileNavToggle.addEventListener('click', openDrawer);
+    if (sidebarClose) sidebarClose.addEventListener('click', closeDrawer);
+    if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeDrawer);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sidebarDrawer && sidebarDrawer.classList.contains('active')) {
+            closeDrawer();
+        }
+    });
+
+    /* ==========================================================================
+       4. BACK TO TOP BUTTON
+       ========================================================================== */
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 350) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    /* ==========================================================================
+       5. DYNAMIC FONT RESIZER (SINGLE ARTICLE)
+       ========================================================================== */
+    const articleBody = document.getElementById('articleBody');
+    const fontDecrease = document.getElementById('fontDecrease');
+    const fontReset = document.getElementById('fontReset');
+    const fontIncrease = document.getElementById('fontIncrease');
+    const resizerBtns = [fontDecrease, fontReset, fontIncrease];
+
+    if (articleBody && fontReset) {
+        const sizes = {
+            small: '14.5px',
+            default: '16.5px',
+            large: '19.5px'
+        };
+
+        function setFontSize(sizeKey, activeBtn) {
+            articleBody.style.fontSize = sizes[sizeKey];
+            resizerBtns.forEach(btn => btn && btn.classList.remove('font-resizer__btn--active'));
+            if (activeBtn) activeBtn.classList.add('font-resizer__btn--active');
+        }
+
+        if (fontDecrease) fontDecrease.addEventListener('click', () => setFontSize('small', fontDecrease));
+        if (fontReset) fontReset.addEventListener('click', () => setFontSize('default', fontReset));
+        if (fontIncrease) fontIncrease.addEventListener('click', () => setFontSize('large', fontIncrease));
+    }
+
+    /* ==========================================================================
+       6. COPY LINK TO CLIPBOARD MODAL TOAST
+       ========================================================================== */
+    const copyBtns = document.querySelectorAll('.js-copy-link');
+    const copyModal = document.getElementById('copyModal');
+    let copyModalTimeout = null;
+
+    copyBtns.forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const urlToCopy = btn.getAttribute('data-url') || window.location.href;
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(urlToCopy);
+                } else {
+                    const tempInput = document.createElement('input');
+                    tempInput.value = urlToCopy;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                }
+
+                showCopyToast();
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
         });
     });
-  }
 
-  // 7. AJAX Comment Submission (Single Article)
-  const commentForm = document.getElementById('commentForm');
-  const commentList = document.getElementById('commentList');
+    function showCopyToast() {
+        if (!copyModal) return;
+        copyModal.classList.add('active');
 
-  if (commentForm) {
-    commentForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const submitBtn = commentForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+        if (copyModalTimeout) clearTimeout(copyModalTimeout);
+        copyModalTimeout = setTimeout(() => {
+            copyModal.classList.remove('active');
+        }, 3000);
+    }
 
-      const formData = new FormData(commentForm);
-      const actionUrl = commentForm.getAttribute('action');
+    /* ==========================================================================
+       7. AJAX LOAD MORE NEWS FEED
+       ========================================================================== */
+    const btnLoadMore = document.getElementById('btnLoadMore');
+    const articleList = document.getElementById('articleList');
 
-      fetch(actionUrl, {
-        method: 'POST',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest',
-          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-        },
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnText;
+    if (btnLoadMore && articleList) {
+        btnLoadMore.addEventListener('click', async () => {
+            let currentPage = parseInt(btnLoadMore.getAttribute('data-page') || 1);
+            let nextPage = currentPage + 1;
 
-          if (data.success) {
-            commentForm.reset();
-            const alertBox = document.getElementById('commentAlert');
-            if (alertBox) {
-              alertBox.style.display = 'block';
-              alertBox.innerText = data.message;
-              setTimeout(() => { alertBox.style.display = 'none'; }, 4000);
+            btnLoadMore.disabled = true;
+            btnLoadMore.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memuat...';
+
+            try {
+                const response = await fetch(`/?page=${nextPage}`, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+
+                if (!response.ok) throw new Error('Network error');
+
+                const data = await response.json();
+
+                if (data.html) {
+                    articleList.insertAdjacentHTML('beforeend', data.html);
+                    btnLoadMore.setAttribute('data-page', nextPage);
+                }
+
+                if (!data.hasMore) {
+                    btnLoadMore.parentElement.innerHTML = '<p style="color: var(--text-muted); font-size: 13.5px; font-weight: 600;">Semua berita telah dimuat.</p>';
+                } else {
+                    btnLoadMore.disabled = false;
+                    btnLoadMore.innerHTML = '<i class="fas fa-sync-alt"></i> Muat Lainnya';
+                }
+            } catch (err) {
+                console.error('Error loading more articles:', err);
+                btnLoadMore.disabled = false;
+                btnLoadMore.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Gagal, coba lagi';
             }
-
-            if (data.comment && commentList) {
-              const newCommentHtml = `
-                <div class="comment-item">
-                  <div class="comment-item__head">
-                    <span class="comment-item__author"><i class="fas fa-user-circle"></i> ${data.comment.name}</span>
-                    <span class="comment-item__date">${data.comment.created_at}</span>
-                  </div>
-                  <p class="comment-item__text">${data.comment.comment}</p>
-                </div>
-              `;
-              commentList.insertAdjacentHTML('afterbegin', newCommentHtml);
-            }
-          }
-        })
-        .catch(() => {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnText;
-          alert('Terjadi kesalahan saat mengirim komentar. Silakan coba lagi.');
         });
-    });
-  }
-})();
+    }
+
+    /* ==========================================================================
+       8. AJAX COMMENT SUBMISSION
+       ========================================================================== */
+    const commentForm = document.getElementById('commentForm');
+    const commentList = document.getElementById('commentList');
+    const commentAlert = document.getElementById('commentAlert');
+
+    if (commentForm && commentList) {
+        commentForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = commentForm.querySelector('.btn-submit');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+
+            const formData = new FormData(commentForm);
+
+            try {
+                const response = await fetch(commentForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json'
+                    }
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    commentAlert.style.display = 'block';
+                    commentAlert.style.backgroundColor = '#d1fae5';
+                    commentAlert.style.color = '#065f46';
+                    commentAlert.innerHTML = `<i class="fas fa-check-circle"></i> ${data.message}`;
+
+                    // Prepend new comment to list
+                    if (data.comment) {
+                        const newCommentHtml = `
+                            <div class="comment-item">
+                                <div class="comment-item__head">
+                                    <span class="comment-item__author"><i class="fas fa-user-circle"></i> ${data.comment.name}</span>
+                                    <span class="comment-item__date">Baru saja</span>
+                                </div>
+                                <p class="comment-item__text">${data.comment.comment}</p>
+                            </div>
+                        `;
+                        commentList.insertAdjacentHTML('afterbegin', newCommentHtml);
+                    }
+
+                    commentForm.reset();
+                } else {
+                    commentAlert.style.display = 'block';
+                    commentAlert.style.backgroundColor = '#fee2e2';
+                    commentAlert.style.color = '#991b1b';
+                    commentAlert.innerHTML = `<i class="fas fa-exclamation-circle"></i> Terjadi kesalahan dalam mengirim komentar.`;
+                }
+            } catch (err) {
+                console.error(err);
+                commentAlert.style.display = 'block';
+                commentAlert.style.backgroundColor = '#fee2e2';
+                commentAlert.style.color = '#991b1b';
+                commentAlert.innerHTML = `<i class="fas fa-exclamation-circle"></i> Gagal menghubungi server.`;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
+    }
+
+});

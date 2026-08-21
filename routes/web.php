@@ -65,3 +65,12 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::post('/comments/{id}/toggle', [CommentAdminController::class, 'toggleApproval'])->name('comments.toggle');
     Route::delete('/comments/{id}', [CommentAdminController::class, 'destroy'])->name('comments.destroy');
 });
+
+// Storage Asset Delivery Route (Ensures 100% reliable image delivery on all web servers)
+Route::get('/storage/{path}', function ($path) {
+    $filePath = storage_path('app/public/' . $path);
+    if (file_exists($filePath)) {
+        return response()->file($filePath);
+    }
+    return response()->file(public_path('images/default-news.webp'));
+})->where('path', '.*');

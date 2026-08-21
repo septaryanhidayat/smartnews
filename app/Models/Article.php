@@ -88,12 +88,30 @@ class Article extends Model
     public function getImageUrlAttribute()
     {
         if (empty($this->image)) {
-            return asset('images/default-news.jpg');
+            return asset('images/default-news.webp');
         }
+
         if (Str::startsWith($this->image, ['http://', 'https://'])) {
             return $this->image;
         }
-        return asset('storage/' . $this->image);
+
+        if (Str::startsWith($this->image, 'articles/')) {
+            return asset('images/' . $this->image);
+        }
+
+        if (Str::startsWith($this->image, 'images/')) {
+            return asset($this->image);
+        }
+
+        if (file_exists(public_path('images/' . $this->image))) {
+            return asset('images/' . $this->image);
+        }
+
+        if (file_exists(public_path('storage/' . $this->image))) {
+            return asset('storage/' . $this->image);
+        }
+
+        return asset('images/default-news.webp');
     }
 
     public function scopePublished($query)

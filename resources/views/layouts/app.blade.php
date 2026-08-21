@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Theme Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('css/digiterkini.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/digiterkini.css') }}?v={{ time() }}">
     @stack('styles')
 </head>
 <body class="@yield('body_class', 'home blog')">
@@ -309,7 +309,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Theme Custom Scripts -->
-    <script src="{{ asset('js/digiterkini.js') }}"></script>
+    <script src="{{ asset('js/digiterkini.js') }}?v={{ time() }}"></script>
     @stack('scripts')
 </body>
 </html>

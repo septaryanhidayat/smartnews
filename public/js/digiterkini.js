@@ -79,9 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize Theme from localStorage or system preference
+    // Initialize Theme: Default to light mode on first visit unless user explicitly chose dark
     const savedTheme = localStorage.getItem('smartnews_theme');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (savedTheme === 'dark') {
         applyTheme(true);
     } else {
         applyTheme(false);

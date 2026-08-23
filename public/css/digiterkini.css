@@ -328,6 +328,8 @@ html.dark-mode .btn-login {
 .header-banner-ad {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   color: #fff;
   padding: 10px 20px;
@@ -2249,6 +2251,24 @@ textarea.form-control {
   }
   .top-nav__center {
     display: none;
+  }
+  .site-header {
+    padding: 12px 0;
+  }
+  .site-header__inner {
+    justify-content: center;
+  }
+  .site-header__logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .site-header__logo .site-logo-main {
+    height: 42px;
+    max-width: 100%;
+  }
+  .header-banner-ad {
+    display: none !important;
   }
   .main-nav {
     display: none;

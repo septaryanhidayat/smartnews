@@ -55,8 +55,18 @@
     <link rel="stylesheet" href="{{ asset('css/digiterkini.css') }}?v={{ time() }}">
     @stack('styles')
 
-    <!-- JSON-LD Structured Data Schema -->
-    @yield('schema_jsonld')
+    <!-- Early theme init: Default to light mode unless user explicitly selected dark -->
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('smartnews_theme') === 'dark') {
+                    document.documentElement.classList.add('dark-mode');
+                } else {
+                    document.documentElement.classList.remove('dark-mode');
+                }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body class="@yield('body_class', 'home blog')">
 

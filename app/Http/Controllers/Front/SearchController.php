@@ -16,12 +16,14 @@ class SearchController extends Controller
 
         $articles = collect();
         if (!empty($query)) {
+            // SECURITY: Escape LIKE wildcards to prevent SQL LIKE injection
+            $escapedQuery = str_replace(['%', '_'], ['\\%', '\\_'], $query);
             $articles = Article::with(['category', 'user'])
                 ->published()
-                ->where(function ($q) use ($query) {
-                    $q->where('title', 'like', "%{$query}%")
-                      ->orWhere('excerpt', 'like', "%{$query}%")
-                      ->orWhere('content', 'like', "%{$query}%");
+                ->where(function ($q) use ($escapedQuery) {
+                    $q->where('title', 'like', "%{$escapedQuery}%")
+                      ->orWhere('excerpt', 'like', "%{$escapedQuery}%")
+                      ->orWhere('content', 'like', "%{$escapedQuery}%");
                 })
                 ->orderBy('published_at', 'desc')
                 ->paginate(10)

@@ -117,7 +117,13 @@ if (!function_exists('ad_render')) {
             $html .= '</div>';
         } elseif ($type === 'code') {
             $code = setting("ad_{$slot}_code");
-            $html .= '<div class="ad-code-wrap">' . $code . '</div>';
+            // SECURITY: Strip dangerous script patterns while allowing trusted ad platforms
+            // Trusted: Google AdSense (pagead2.googlesyndication.com), Google Tag Manager
+            // Blocked: inline event handlers, javascript: URIs, data: URIs, unknown script sources
+            $sanitized = preg_replace('/on\w+\s*=\s*["\'][^"\']*["\']/i', '', $code ?? '');
+            $sanitized = preg_replace('/javascript\s*:/i', '', $sanitized);
+            $sanitized = preg_replace('/data\s*:\s*text\/html/i', '', $sanitized);
+            $html .= '<div class="ad-code-wrap">' . $sanitized . '</div>';
         }
 
         $html .= '</div>';

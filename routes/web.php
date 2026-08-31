@@ -30,7 +30,7 @@ Route::get('/berita/{slug}', [ArticleController::class, 'show'])->name('article.
 Route::get('/kategori/{slug}', [CategoryController::class, 'show'])->name('category.show');
 Route::get('/tag/{slug}', [TagController::class, 'show'])->name('tag.show');
 Route::get('/cari', [SearchController::class, 'index'])->name('search');
-Route::post('/berita/{slug}/komentar', [CommentController::class, 'store'])->name('comment.store');
+Route::post('/berita/{slug}/komentar', [CommentController::class, 'store'])->middleware('throttle:comment')->name('comment.store');
 
 // Static Pages
 Route::get('/halaman/{page}', [PageController::class, 'show'])->name('page.show');
@@ -44,12 +44,12 @@ Route::get('/pasang-iklan', fn() => redirect()->route('page.show', 'pasang-iklan
 Route::get('/privacy-policy', fn() => redirect()->route('page.show', 'privacy-policy'))->name('page.privacy');
 Route::get('/terms', fn() => redirect()->route('page.show', 'terms'))->name('page.terms');
 
-// Authentication Routes
+// Authentication Routes (Rate Limited for brute-force & mass-registration protection)
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:login');
     Route::get('/daftar', [AuthController::class, 'showRegister'])->name('register');
-    Route::post('/daftar', [AuthController::class, 'register']);
+    Route::post('/daftar', [AuthController::class, 'register'])->middleware('throttle:register');
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
@@ -88,11 +88,22 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::put('/profile', [ProfileAdminController::class, 'update'])->name('profile.update');
 });
 
-// Storage Asset Delivery Route (Ensures 100% reliable image delivery on all web servers)
+// Storage Asset Delivery Route (Hardened against path traversal)
 Route::get('/storage/{path}', function ($path) {
-    $filePath = storage_path('app/public/' . $path);
-    if (file_exists($filePath)) {
-        return response()->file($filePath);
+    // SECURITY: Block directory traversal, null bytes, and absolute paths
+    if (str_contains($path, '..') || str_contains($path, "\0") || str_starts_with($path, '/') || str_starts_with($path, '\\')) {
+        abort(403, 'Akses Ditolak.');
     }
+
+    // Normalize and resolve the real path to ensure it stays within storage/app/public
+    $basePath = realpath(storage_path('app/public'));
+    $filePath = storage_path('app/public/' . $path);
+    $realFile = realpath($filePath);
+
+    // Verify the resolved file is actually inside the allowed base directory
+    if ($realFile && $basePath && str_starts_with($realFile, $basePath) && is_file($realFile)) {
+        return response()->file($realFile);
+    }
+
     return response()->file(public_path('images/default-news.webp'));
 })->where('path', '.*');

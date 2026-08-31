@@ -32,7 +32,8 @@ class ArticleAdminController extends Controller
                 $q->where('user_id', $user->id);
             })
             ->when($search, function ($q) use ($search) {
-                $q->where('title', 'like', "%{$search}%");
+                $escaped = str_replace(['%', '_'], ['\\%', '\\_'], $search);
+                $q->where('title', 'like', "%{$escaped}%");
             })
             ->when($categoryId, function ($q) use ($categoryId) {
                 $q->where('category_id', $categoryId);

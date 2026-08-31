@@ -250,4 +250,23 @@ class ArticleAdminController extends Controller
         $article->delete();
         return redirect()->route('admin.articles.index')->with('success', 'Berita berhasil dihapus.');
     }
+
+    /**
+     * Inline image upload for WYSIWYG Editor
+     */
+    public function uploadImage(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|max:10240',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $path = ImageService::convertToWebp($request->file('image'), 'articles', 1200, 80);
+            return response()->json([
+                'url' => asset('images/' . $path),
+            ]);
+        }
+
+        return response()->json(['error' => 'Gagal mengunggah gambar'], 400);
+    }
 }

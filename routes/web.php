@@ -61,6 +61,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::post('/clear-logs', [DashboardController::class, 'clearLogs'])->name('logs.clear');
 
     // Articles (Accessible by all roles; authors scoped to own articles)
+    Route::post('articles/upload-image', [ArticleAdminController::class, 'uploadImage'])->name('articles.upload-image');
     Route::post('articles/{id}/toggle-sticky', [ArticleAdminController::class, 'toggleSticky'])->name('articles.toggle-sticky');
     Route::resource('articles', ArticleAdminController::class)->except(['show']);
 

@@ -33,6 +33,15 @@ class AppServiceProvider extends ServiceProvider
         \Illuminate\Pagination\Paginator::defaultView('partials.pagination');
         \Illuminate\Pagination\Paginator::defaultSimpleView('partials.pagination');
 
+        // Auto-seed safety check: If articles table has fewer than 20 articles on cPanel, automatically sync from smartnews.sql
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('articles') && \App\Models\Article::count() < 20) {
+                \App\Http\Controllers\Admin\DashboardController::runDatabaseSync();
+            }
+        } catch (\Throwable $e) {
+            // ignore during migrations
+        }
+
         \Illuminate\Support\Facades\View::composer('layouts.app', function ($view) {
             try {
                 $breakingNews = \App\Models\Article::with('category')

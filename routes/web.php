@@ -56,6 +56,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middl
 // Admin Panel Routes
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::match(['get', 'post'], '/sync-database', [DashboardController::class, 'syncDatabase'])->name('sync-database');
     Route::post('/clear-logs', [DashboardController::class, 'clearLogs'])->name('logs.clear');
 
     // Articles (Accessible by all roles; authors scoped to own articles)

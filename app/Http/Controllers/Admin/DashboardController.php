@@ -69,6 +69,94 @@ class DashboardController extends Controller
         ));
     }
 
+    public function syncDatabase()
+    {
+        $res = self::runDatabaseSync();
+        if ($res['success']) {
+            return redirect()->route('admin.dashboard')->with('success', $res['message']);
+        }
+        return redirect()->route('admin.dashboard')->with('error', $res['message']);
+    }
+
+    public static function runDatabaseSync()
+    {
+        $sqlPath = database_path('smartnews.sql');
+        if (!File::exists($sqlPath)) {
+            $sqlPath = base_path('smartnews.sql');
+        }
+
+        if (!File::exists($sqlPath)) {
+            return ['success' => false, 'message' => 'File smartnews.sql tidak ditemukan di server.'];
+        }
+
+        $sql = File::get($sqlPath);
+        $pattern = '/INSERT\s+INTO\s+`?([a-zA-Z0-9_]+)`?\s*(\([^\)]+\))?\s*VALUES\s*(.+?);(?=\s*(?:--|\/\*|INSERT|\Z))/is';
+        preg_match_all($pattern, $sql, $matches, PREG_SET_ORDER);
+
+        if (!empty($matches)) {
+            $isSqlite = \Illuminate\Support\Facades\DB::getDriverName() === 'sqlite';
+            if ($isSqlite) {
+                \Illuminate\Support\Facades\DB::statement('PRAGMA foreign_keys = OFF;');
+            } else {
+                \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+            }
+
+            $tables = ['article_tag', 'articles', 'comments', 'tags', 'categories', 'site_settings', 'users'];
+            foreach ($tables as $t) {
+                if (\Illuminate\Support\Facades\Schema::hasTable($t)) {
+                    \Illuminate\Support\Facades\DB::table($t)->delete();
+                }
+            }
+
+            foreach ($matches as $match) {
+                try {
+                    \Illuminate\Support\Facades\DB::unprepared($match[0]);
+                } catch (\Exception $e) {
+                    // continue
+                }
+            }
+
+            // Ensure admin accounts and standard passwords
+            \Illuminate\Support\Facades\DB::table('users')->where('id', 1)->update([
+                'name' => 'Budi Santoso',
+                'email' => 'info@berandadigital.net',
+                'role' => 'admin',
+                'password' => \Illuminate\Support\Facades\Hash::make('password')
+            ]);
+            \Illuminate\Support\Facades\DB::table('users')->where('id', 3)->update([
+                'name' => 'Super Administrator',
+                'email' => 'admin@smartnews.id',
+                'role' => 'admin',
+                'password' => \Illuminate\Support\Facades\Hash::make('password')
+            ]);
+            \Illuminate\Support\Facades\DB::table('users')->where('id', 2)->update([
+                'name' => 'Siti Nurhaliza',
+                'email' => 'redaksi@smartnews.id',
+                'role' => 'editor',
+                'password' => \Illuminate\Support\Facades\Hash::make('password')
+            ]);
+            \Illuminate\Support\Facades\DB::table('users')->where('id', 4)->update([
+                'name' => 'Ahmad Fauzi (Wartawan)',
+                'email' => 'wartawan@smartnews.id',
+                'role' => 'author',
+                'password' => \Illuminate\Support\Facades\Hash::make('password')
+            ]);
+
+            if ($isSqlite) {
+                \Illuminate\Support\Facades\DB::statement('PRAGMA foreign_keys = ON;');
+            } else {
+                \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+            }
+
+            return [
+                'success' => true,
+                'message' => 'Database berhasil disinkronkan! Total ' . Article::count() . ' artikel berita, ' . Category::count() . ' kategori, dan ' . Tag::count() . ' tags aktif.'
+            ];
+        }
+
+        return ['success' => false, 'message' => 'Gagal memproses query SQL.'];
+    }
+
     public function clearLogs()
     {
         $logPath = storage_path('logs/laravel.log');

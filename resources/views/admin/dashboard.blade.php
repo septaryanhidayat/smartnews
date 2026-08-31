@@ -80,6 +80,25 @@
 @endpush
 
 @section('content')
+<!-- Quick Sync Database Action Bar (Super Admin & Editors) -->
+<div class="card" style="margin-bottom: 20px; background: linear-gradient(135deg, #1e293b, #0f172a); color: #fff; border: 1px solid #334155; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 20px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(59, 130, 246, 0.2); color: #60a5fa; display: flex; align-items: center; justify-content: center; font-size: 18px;">
+            <i class="fas fa-database"></i>
+        </div>
+        <div>
+            <div style="font-weight: 700; font-size: 13.5px; color: #f8fafc;">Sinkronisasi Database Portal (83 Berita & 16 Kategori)</div>
+            <div style="font-size: 11.5px; color: #94a3b8; margin-top: 1px;">Gunakan tombol ini setelah melakukan Git Pull / Deploy di cPanel untuk mengisi ulang 83 berita lengkap & 16 kategori.</div>
+        </div>
+    </div>
+    <form action="{{ route('admin.sync-database') }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menyinkronkan seluruh 83 berita, 16 kategori, dan 84 tags? Data lama akan diperbarui.');">
+        @csrf
+        <button type="submit" class="btn btn-sm btn-success" style="font-weight: 700; background-color: #059669; border-color: #059669; color: #ffffff; padding: 8px 16px; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fas fa-sync-alt"></i> Sinkronkan Database Sekarang
+        </button>
+    </form>
+</div>
+
 <!-- 1. Stats Metric Cards (6 Columns) -->
 <div class="stats-grid">
     

@@ -85,7 +85,7 @@
         <div class="sn-container sn-topbar__inner">
             <span class="sn-topbar__badge">PROMO</span>
             <span class="sn-topbar__text">
-                Portal Berita AI Siap Pakai <strong>Mulai Rp 1,5 Jt - 3 Jt</strong> + Free Domain & Hosting
+                Solusi Portal Berita AI Siap Terbit & Monetisasi Iklan + Free Domain & Cloud Hosting
                 <a href="#harga" class="sn-topbar__link">Lihat Paket &rarr;</a>
             </span>
         </div>
@@ -122,42 +122,46 @@
             <div class="sn-hero__grid sn-fade-init">
                 <!-- Left Column: Copywriting & CTA -->
                 <div class="sn-hero__left">
-                    <div class="sn-pill-badge">
-                        <i class="fas fa-bolt"></i>
-                        <span>SOLUSI PRAKTIS WEBSITE MEDIA ONLINE SIAP TERBIT & SIAP MONETISASI IKLAN</span>
+                    <div class="sn-hero__text-block">
+                        <div class="sn-pill-badge">
+                            <i class="fas fa-bolt"></i>
+                            <span>SOLUSI PRAKTIS WEBSITE MEDIA ONLINE SIAP TERBIT & SIAP MONETISASI IKLAN</span>
+                        </div>
+
+                        <h1 class="sn-hero__title">
+                            Miliki Website Portal Berita Modern Berteknologi AI: <span class="sn-gradient-brand-text">Siap Terbit, Otomatis Masuk Google, & Berpenghasilan Iklan</span>
+                        </h1>
+
+                        <p class="sn-hero__lead">
+                            Solusi praktis punya portal berita profesional tanpa ribet coding. Dilengkapi <strong>Asisten AI SEO</strong> untuk mempermudah liputan tembus halaman 1 Google, <strong>6 Posisi Iklan Siap Cuan</strong>, dan langsung online lengkap dengan <strong>Free Hosting NVMe & Domain</strong>!
+                        </p>
                     </div>
 
-                    <h1 class="sn-hero__title">
-                        Miliki Website Portal Berita Modern Berteknologi AI: <span class="sn-gradient-brand-text">Siap Terbit, Otomatis Masuk Google, & Berpenghasilan Iklan</span>
-                    </h1>
+                    <div class="sn-hero__cta-block">
+                        <!-- 4 Interactive AI Chips -->
+                        <div class="sn-ai-chips-row">
+                            <span class="sn-ai-chip"><i class="fas fa-robot" style="color: #1a56db;"></i> Asisten AI SEO</span>
+                            <span class="sn-ai-chip"><i class="fas fa-bolt" style="color: #cf2e2e;"></i> Loading 0.4s WebP</span>
+                            <span class="sn-ai-chip"><i class="fas fa-dollar-sign" style="color: #059669;"></i> 6 Slot Iklan</span>
+                            <span class="sn-ai-chip"><i class="fas fa-shield-alt" style="color: #7c3aed;"></i> Standar Pers</span>
+                        </div>
 
-                    <p class="sn-hero__lead">
-                        Solusi praktis punya portal berita profesional tanpa ribet coding. Dilengkapi <strong>Asisten AI SEO</strong> untuk mempermudah liputan tembus halaman 1 Google, <strong>6 Posisi Iklan Siap Cuan</strong>, dan langsung online lengkap dengan <strong>Free Hosting NVMe & Domain</strong>!
-                    </p>
+                        <div class="sn-hero__actions">
+                            <a href="#harga" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" title="Pesan Paket Website Sekarang">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Pesan Sekarang</span>
+                            </a>
+                            <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--blue sn-btn--lg" title="Coba Live Demo Portal Berita">
+                                <i class="fas fa-desktop"></i>
+                                <span>Lihat Demo Website</span>
+                            </a>
+                        </div>
 
-                    <!-- 4 Interactive AI Chips -->
-                    <div class="sn-ai-chips-row">
-                        <span class="sn-ai-chip"><i class="fas fa-robot" style="color: #1a56db;"></i> Asisten AI SEO</span>
-                        <span class="sn-ai-chip"><i class="fas fa-bolt" style="color: #cf2e2e;"></i> Loading 0.4s WebP</span>
-                        <span class="sn-ai-chip"><i class="fas fa-dollar-sign" style="color: #059669;"></i> 6 Slot Iklan</span>
-                        <span class="sn-ai-chip"><i class="fas fa-shield-alt" style="color: #7c3aed;"></i> Standar Pers</span>
-                    </div>
-
-                    <div class="sn-hero__actions">
-                        <a href="#harga" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" title="Pesan Paket Website Sekarang">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span>Pesan Sekarang</span>
-                        </a>
-                        <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--blue sn-btn--lg" title="Coba Live Demo Portal Berita">
-                            <i class="fas fa-desktop"></i>
-                            <span>Lihat Demo Website</span>
-                        </a>
-                    </div>
-
-                    <div class="sn-hero__trust">
-                        <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Buka 0.4 Detik (Lighthouse 95+)</span></div>
-                        <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Pedoman Media Siber Ready</span></div>
-                        <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>100% Hak Milik Full Source Code</span></div>
+                        <div class="sn-hero__trust">
+                            <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Buka 0.4 Detik (Lighthouse 95+)</span></div>
+                            <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Pedoman Media Siber Ready</span></div>
+                            <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>100% Hak Milik Full Source Code</span></div>
+                        </div>
                     </div>
                 </div>
 
@@ -170,7 +174,7 @@
                             <span>Skor AI SEO: 98/100 (A+)</span>
                         </div>
 
-                        <!-- 1. Laptop Mockup Frame -->
+                        <!-- 1. Laptop Mockup Frame (Realistic 16:10 Laptop) -->
                         <div class="sn-laptop-frame">
                             <div class="sn-laptop-header">
                                 <div class="sn-laptop-dots">

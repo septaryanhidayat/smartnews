@@ -244,104 +244,64 @@
                 <!-- Card 1: Frontend & Pembaca -->
                 <div class="sn-feature-card-dense sn-card-accent--blue sn-fade-init">
                     <div class="sn-feature-card-dense__head">
-                        <div class="sn-head-left">
-                            <div class="sn-feature-icon sn-icon--blue"><i class="fas fa-desktop"></i></div>
-                            <div class="sn-feature-card-dense__title">1. Portal Berita & Pembaca</div>
-                        </div>
-                        <span class="sn-feature-category-badge sn-badge--blue">Frontend</span>
-                    </div>
-
-                    <div class="sn-feature-tags-cloud">
-                        <span class="sn-feature-tag-chip"><i class="fas fa-moon"></i> Dark Mode</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-sync-alt"></i> Ajax Feed</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-thumbtack"></i> Sticky Post</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-language"></i> Dual Bahasa</span>
+                        <div class="sn-feature-icon sn-icon--blue"><i class="fas fa-desktop"></i></div>
+                        <div class="sn-feature-card-dense__title">1. Portal Berita & Pembaca</div>
                     </div>
 
                     <ul class="sn-dense-list">
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Hero Slider Berita Utama:</strong> Carousel foto tajam berita pilihan dengan kontrol slide.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Headline Sticky Post:</strong> Sematkan 1 berita penting sebagai sajian utama beranda.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Feed Infinite Load AJAX:</strong> Muat puluhan berita berkelanjutan tanpa jeda reload.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Dark Mode & Dual Bahasa:</strong> Pilihan tema gelap/terang dan alih bahasa ID/EN instan.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Estimasi Waktu & Progress Bar:</strong> Indikator durasi baca dan garis progress merah.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Hero Slider Berita:</strong> Carousel foto tajam liputan penting.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Headline Sticky Post:</strong> Sematkan 1 liputan di posisi utama.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Feed AJAX Realtime:</strong> Muat puluhan berita tanpa reload.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Dark Mode & 2 Bahasa:</strong> Pilihan tema gelap/terang & ID/EN.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Waktu Baca & Progress Bar:</strong> Indikator estimasi menit baca.</span></li>
                     </ul>
                 </div>
 
                 <!-- Card 2: Ruang Redaksi & AI SEO -->
                 <div class="sn-feature-card-dense sn-card-accent--red sn-fade-init">
                     <div class="sn-feature-card-dense__head">
-                        <div class="sn-head-left">
-                            <div class="sn-feature-icon sn-icon--red"><i class="fas fa-newspaper"></i></div>
-                            <div class="sn-feature-card-dense__title">2. Ruang Redaksi & AI SEO</div>
-                        </div>
-                        <span class="sn-feature-category-badge sn-badge--red">Redaksi & AI</span>
-                    </div>
-
-                    <div class="sn-feature-tags-cloud">
-                        <span class="sn-feature-tag-chip"><i class="fas fa-robot"></i> Skor SEO 0-100</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-bolt"></i> Auto WebP</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-list-ol"></i> AI Summary</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-users-cog"></i> Multi Wartawan</span>
+                        <div class="sn-feature-icon sn-icon--red"><i class="fas fa-newspaper"></i></div>
+                        <div class="sn-feature-card-dense__title">2. Ruang Redaksi & AI SEO</div>
                     </div>
 
                     <ul class="sn-dense-list">
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Editor Lengkap Nyaman:</strong> Format teks Word, tabel, video, dan align tulisan fleksibel.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Upload Foto Auto-WebP:</strong> Foto otomatis diperkecil (30-60 KB) tanpa buram.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>AI SEO Analyzer Live:</strong> Audit otomatis kelayakan artikel tembus halaman 1 Google.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Ringkasan Cerdas AI:</strong> Ekstraksi 3 poin inti liputan ramah Google AI Overviews.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Hak Akses Bertingkat:</strong> Super Admin, Editor, dan Wartawan (kelola artikel sendiri).</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Editor Nyaman ala Word:</strong> Format teks, tabel, video, dan align tulisan.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Upload Foto Auto-WebP:</strong> Kompresi otomatis (30-60 KB) tajam.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>AI SEO Analyzer Live:</strong> Audit otomatis skor artikel tembus Google.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Ringkasan Cerdas AI:</strong> Ekstraksi 3 poin inti liputan otomatis.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Multi Wartawan (RBAC):</strong> Hak akses Admin, Editor, dan Wartawan.</span></li>
                     </ul>
                 </div>
 
                 <!-- Card 3: Manajemen Ruang Banner Mandiri -->
                 <div class="sn-feature-card-dense sn-card-accent--green sn-fade-init">
                     <div class="sn-feature-card-dense__head">
-                        <div class="sn-head-left">
-                            <div class="sn-feature-icon sn-icon--green"><i class="fas fa-image"></i></div>
-                            <div class="sn-feature-card-dense__title">3. Manajemen Ruang Banner & Iklan</div>
-                        </div>
-                        <span class="sn-feature-category-badge sn-badge--green">Ruang Banner</span>
-                    </div>
-
-                    <div class="sn-feature-tags-cloud">
-                        <span class="sn-feature-tag-chip"><i class="fas fa-ad"></i> 6 Posisi Banner</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-handshake"></i> Sponsor Lokal</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-magic"></i> Auto In-Article</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-sliders-h"></i> Kontrol Admin</span>
+                        <div class="sn-feature-icon sn-icon--green"><i class="fas fa-image"></i></div>
+                        <div class="sn-feature-card-dense__title">3. Manajemen Ruang Banner</div>
                     </div>
 
                     <ul class="sn-dense-list">
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Header Banner Atas:</strong> Ruang banner visual premium di bagian paling atas beranda.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>In-Feed Beranda:</strong> Posisi banner menyatu natural di sela-sela urutan berita terkini.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto In-Content:</strong> Otomatis tersisip rapi di tengah paragraf bacaan artikel.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Sidebar Sticky Banner:</strong> Mendukung ukuran standar display 300x250 & 300x600.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Bebas Kelola Mandiri:</strong> Pasang banner sponsor kerjasama daerah, instansi, atau jaringan iklan.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Header Banner Atas:</strong> Slot banner visual premium di beranda.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>In-Feed Banner:</strong> Posisi menyatu di sela-sela urutan berita.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto In-Article:</strong> Otomatis tersisip rapi di tengah artikel.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Sidebar Sticky Banner:</strong> Support display 300x250 & 300x600.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Bebas Pasang Sponsor:</strong> Fleksibel pasang mitra instansi & daerah.</span></li>
                     </ul>
                 </div>
 
                 <!-- Card 4: Standar Dewan Pers & Keamanan -->
                 <div class="sn-feature-card-dense sn-card-accent--purple sn-fade-init">
                     <div class="sn-feature-card-dense__head">
-                        <div class="sn-head-left">
-                            <div class="sn-feature-icon sn-icon--purple"><i class="fas fa-shield-alt"></i></div>
-                            <div class="sn-feature-card-dense__title">4. Standar Dewan Pers & Server</div>
-                        </div>
-                        <span class="sn-feature-category-badge sn-badge--purple">Legalitas & Proteksi</span>
-                    </div>
-
-                    <div class="sn-feature-tags-cloud">
-                        <span class="sn-feature-tag-chip"><i class="fas fa-balance-scale"></i> Pedoman Media Siber</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-lock"></i> SSL HTTPS</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-user-shield"></i> Anti Brute Force</span>
-                        <span class="sn-feature-tag-chip"><i class="fab fa-git-alt"></i> Auto Deploy</span>
+                        <div class="sn-feature-icon sn-icon--purple"><i class="fas fa-shield-alt"></i></div>
+                        <div class="sn-feature-card-dense__title">4. Standar Dewan Pers & Server</div>
                     </div>
 
                     <ul class="sn-dense-list">
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Pedoman Media Siber:</strong> Format resmi sesuai standar Dewan Pers Indonesia.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Susunan Redaksi:</strong> Halaman resmi Pemred, Redaktur Pelaksana, dan Wartawan.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Kode Etik & Hak Jawab:</strong> Klausul perlindungan hukum pers yang siap pakai.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Proteksi Keamanan:</strong> Anti brute-force login, anti spam, dan proteksi SSL.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto-Deploy Git cPanel:</strong> Pembaruan kode tersinkronisasi 1 klik dari GitHub.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Pedoman Media Siber:</strong> Format resmi Dewan Pers Indonesia.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Susunan Redaksi:</strong> Struktur Pemred, Redaktur, dan Wartawan.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Kode Etik & Hak Jawab:</strong> Perlindungan hukum pers siap pakai.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Keamanan Anti Brute Force:</strong> Proteksi login dan SSL HTTPS.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto Deploy cPanel Git:</strong> Sinkronisasi update kode 1 klik.</span></li>
                     </ul>
                 </div>
             </div>
@@ -509,88 +469,202 @@
                 </table>
             </div>
 
-            <!-- Supported Payment Channels & Security Guarantee Bar -->
-            <div class="sn-payment-trust-bar sn-fade-init">
-                <div class="sn-pay-left">
-                    <span class="sn-pay-title"><i class="fas fa-credit-card" style="color: #1a56db;"></i> Pembayaran Resmi Didukung:</span>
-                    <div class="sn-pay-badges">
-                        <span class="sn-pay-badge sn-pay-badge--qris"><i class="fas fa-qrcode"></i> QRIS</span>
-                        <span class="sn-pay-badge"><i class="fas fa-university"></i> BCA VA</span>
-                        <span class="sn-pay-badge"><i class="fas fa-university"></i> BRI VA</span>
-                        <span class="sn-pay-badge"><i class="fas fa-university"></i> Mandiri VA</span>
-                        <span class="sn-pay-badge"><i class="fas fa-university"></i> BNI VA</span>
-                        <span class="sn-pay-badge"><i class="fas fa-store"></i> Indomaret & Alfamart</span>
+            <!-- Automated Smooth Infinite Payment Channel Slider -->
+            <div class="sn-pay-slider-box sn-fade-init">
+                <div class="sn-pay-slider-head">
+                    <div class="sn-pay-slider-title">
+                        <i class="fas fa-credit-card" style="color: #1a56db;"></i>
+                        <span>Channel Pembayaran Resmi Didukung (QRIS, VA Bank & E-Money):</span>
+                    </div>
+                    <div class="sn-pay-slider-sec">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% Transaksi Aman & Terenkripsi SSL 256-bit</span>
                     </div>
                 </div>
-                <div class="sn-pay-security">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>100% Transaksi Terjamin Aman (SSL 256-bit)</span>
+                <div class="sn-pay-marquee-wrap">
+                    <div class="sn-pay-marquee-track">
+                        <!-- Set 1 -->
+                        <span class="sn-pay-chip sn-pay-chip--qris"><i class="fas fa-qrcode"></i> QRIS Realtime</span>
+                        <span class="sn-pay-chip"><i class="fas fa-university"></i> BCA Virtual Account</span>
+                        <span class="sn-pay-chip"><i class="fas fa-university"></i> BRI Virtual Account</span>
+                        <span class="sn-pay-chip"><i class="fas fa-university"></i> Mandiri Virtual Account</span>
+                        <span class="sn-pay-chip"><i class="fas fa-university"></i> BNI Virtual Account</span>
+                        <span class="sn-pay-chip"><i class="fas fa-university"></i> Permata Virtual Account</span>
+                        <span class="sn-pay-chip"><i class="fas fa-wallet"></i> Gopay / OVO / Dana / ShopeePay</span>
+                        <!-- Set 2 (Seamless Infinite Loop) -->
+                        <span class="sn-pay-chip sn-pay-chip--qris"><i class="fas fa-qrcode"></i> QRIS Realtime</span>
+                        <span class="sn-pay-chip"><i class="fas fa-university"></i> BCA Virtual Account</span>
+                        <span class="sn-pay-chip"><i class="fas fa-university"></i> BRI Virtual Account</span>
+                        <span class="sn-pay-chip"><i class="fas fa-university"></i> Mandiri Virtual Account</span>
+                        <span class="sn-pay-chip"><i class="fas fa-university"></i> BNI Virtual Account</span>
+                        <span class="sn-pay-chip"><i class="fas fa-university"></i> Permata Virtual Account</span>
+                        <span class="sn-pay-chip"><i class="fas fa-wallet"></i> Gopay / OVO / Dana / ShopeePay</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. CLIENT TESTIMONIALS SECTION -->
+    <!-- 7. CLIENT TESTIMONIALS SECTION (8 AUTO-SLIDING TESTIMONIALS) -->
     <section class="sn-section sn-section--alt" id="testimoni">
         <div class="sn-container">
             <div class="sn-section-header sn-fade-init">
                 <span class="sn-section-tag">TESTIMONI PENGGUNA</span>
                 <h2 class="sn-section-title">Dipercaya Pengelola Portal Media di Berbagai Daerah</h2>
                 <p class="sn-section-desc">
-                    Inilah pengalaman rekan-rekan redaksi dan pemilik portal media online yang telah mempercayakan websitenya pada SmartNews CMS.
+                    Inilah pengalaman rekan-rekan redaksi dan pemilik portal berita yang telah mempercayakan medianya pada SmartNews CMS.
                 </p>
             </div>
 
-            <div class="sn-testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="sn-testimonial-card sn-fade-init">
-                    <div class="sn-testi-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <!-- Auto Slider Carousel Container -->
+            <div class="sn-testi-slider-container sn-fade-init" id="testiSlider">
+                <div class="sn-testi-track" id="testiTrack">
+                    <!-- Testimonial 1 -->
+                    <div class="sn-testi-slide">
+                        <div class="sn-testi-card-inner">
+                            <div class="sn-testi-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="sn-testi-quote">
+                                "Kecepatan website sangat luar biasa, buka berita cuma 0.4 detik. Tim wartawan kami di lapangan yang masih awam teknologi langsung bisa pakai editornya tanpa kendala. Sangat membantu operasional harian redaksi."
+                            </p>
+                            <div class="sn-testi-meta">
+                                <div class="sn-testi-avatar-simple">H</div>
+                                <div class="sn-testi-name-clean">Hendra</div>
+                                <div class="sn-testi-role-clean">Pemimpin Redaksi Media Daerah</div>
+                            </div>
+                        </div>
                     </div>
-                    <p class="sn-testi-quote">
-                        "Kecepatan website sangat luar biasa, buka berita cuma 0.4 detik. Tim wartawan kami di lapangan yang masih awam teknologi langsung bisa pakai editornya tanpa kendala. Sangat membantu operasional redaksi harian kami."
-                    </p>
-                    <div class="sn-testi-author">
-                        <div class="sn-testi-avatar">HK</div>
-                        <div>
-                            <div class="sn-testi-name">Hendra Kusuma, S.Sos</div>
-                            <div class="sn-testi-role">Pemimpin Redaksi LintasSumsel.com</div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="sn-testi-slide">
+                        <div class="sn-testi-card-inner">
+                            <div class="sn-testi-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="sn-testi-quote">
+                                "Sangat lengkap karena sudah ada halaman Pedoman Media Siber dan susunan redaksi sesuai standar Dewan Pers. Proses setup servernya cepat dan langsung online siap dipakai tanpa ribet setting teknis."
+                            </p>
+                            <div class="sn-testi-meta">
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #059669 0%, #1a56db 100%);">R</div>
+                                <div class="sn-testi-name-clean">Rahmat</div>
+                                <div class="sn-testi-role-clean">Pengelola Portal Berita</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="sn-testi-slide">
+                        <div class="sn-testi-card-inner">
+                            <div class="sn-testi-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="sn-testi-quote">
+                                "Asisten AI SEO sangat membantu mengecek kelayakan artikel sebelum terbit. Desain tampilannya elegan dan terlihat seperti portal media berita nasional ternama saat dibuka di HP pembaca."
+                            </p>
+                            <div class="sn-testi-meta">
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #7c3aed 0%, #cf2e2e 100%);">S</div>
+                                <div class="sn-testi-name-clean">Siti</div>
+                                <div class="sn-testi-role-clean">Pemilik Media Siber</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="sn-testi-slide">
+                        <div class="sn-testi-card-inner">
+                            <div class="sn-testi-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="sn-testi-quote">
+                                "Fitur upload foto otomatis format WebP membuat server sangat hemat bandwidth. Halaman berita terbuka seketika bahkan saat pembaca menggunakan sinyal HP yang terbatas."
+                            </p>
+                            <div class="sn-testi-meta">
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #2563eb 0%, #059669 100%);">B</div>
+                                <div class="sn-testi-name-clean">Budi</div>
+                                <div class="sn-testi-role-clean">Pengelola Berita Komunitas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="sn-testi-slide">
+                        <div class="sn-testi-card-inner">
+                            <div class="sn-testi-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="sn-testi-quote">
+                                "Manajemen multi-wartawan sangat rapi. Setiap jurnalis kami memiliki akun sendiri dan bisa fokus menulis liputan lapangan, sementara editor tinggal memvalidasi sebelum tayang."
+                            </p>
+                            <div class="sn-testi-meta">
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);">A</div>
+                                <div class="sn-testi-name-clean">Agus</div>
+                                <div class="sn-testi-role-clean">Redaktur Berita Online</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="sn-testi-slide">
+                        <div class="sn-testi-card-inner">
+                            <div class="sn-testi-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="sn-testi-quote">
+                                "Pilihan tampilan Dark Mode dan peralihan bahasa sangat disukai oleh pembaca kami. Tampilannya bersih, tidak berat, dan sangat nyaman dibaca berlama-lama."
+                            </p>
+                            <div class="sn-testi-meta">
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #db2777 0%, #9333ea 100%);">D</div>
+                                <div class="sn-testi-name-clean">Dewi</div>
+                                <div class="sn-testi-role-clean">Jurnalis Independen</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 7 -->
+                    <div class="sn-testi-slide">
+                        <div class="sn-testi-card-inner">
+                            <div class="sn-testi-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="sn-testi-quote">
+                                "Bantuan teknis saat instalasi sangat cepat dan ramah. Semua data demo langsung terpasang rapi sehingga kami bisa langsung mengisi berita tanpa harus membuat kategori dari nol."
+                            </p>
+                            <div class="sn-testi-meta">
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);">F</div>
+                                <div class="sn-testi-name-clean">Fauzi</div>
+                                <div class="sn-testi-role-clean">Pengelola Portal Informasi</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 8 -->
+                    <div class="sn-testi-slide">
+                        <div class="sn-testi-card-inner">
+                            <div class="sn-testi-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="sn-testi-quote">
+                                "Struktur website sangat ramah mesin pencari Google. Berita liputan kami cepat terindeks otomatis tanpa perlu membeli plugin SEO mahal lagi."
+                            </p>
+                            <div class="sn-testi-meta">
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);">R</div>
+                                <div class="sn-testi-name-clean">Ridwan</div>
+                                <div class="sn-testi-role-clean">Pemimpin Redaksi Media Siber</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
-                <div class="sn-testimonial-card sn-fade-init">
-                    <div class="sn-testi-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="sn-testi-quote">
-                        "Sangat lengkap karena sudah ada halaman Pedoman Media Siber dan susunan redaksi sesuai standar Dewan Pers. Proses setup servernya cepat dan langsung online siap dipakai tanpa ribet setting teknis."
-                    </p>
-                    <div class="sn-testi-author">
-                        <div class="sn-testi-avatar" style="background: linear-gradient(135deg, #059669 0%, #1a56db 100%);">RH</div>
-                        <div>
-                            <div class="sn-testi-name">Rahmat Hidayat, S.I.Kom</div>
-                            <div class="sn-testi-role">Direktur PT Media Nusantara Siber</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="sn-testimonial-card sn-fade-init">
-                    <div class="sn-testi-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="sn-testi-quote">
-                        "Asisten AI SEO sangat membantu mengecek kelayakan artikel sebelum terbit. Desain tampilannya mewah dan terlihat seperti portal media berita nasional ternama saat dibuka di HP pembaca."
-                    </p>
-                    <div class="sn-testi-author">
-                        <div class="sn-testi-avatar" style="background: linear-gradient(135deg, #7c3aed 0%, #cf2e2e 100%);">SN</div>
-                        <div>
-                            <div class="sn-testi-name">Siti Nurhaliza</div>
-                            <div class="sn-testi-role">Pengelola Media Daerah WartaKini.id</div>
-                        </div>
-                    </div>
+                <!-- Navigation Controls -->
+                <div class="sn-testi-nav">
+                    <button type="button" class="sn-testi-btn" id="testiPrev" aria-label="Testimoni Sebelumnya">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="sn-testi-dots" id="testiDots"></div>
+                    <button type="button" class="sn-testi-btn" id="testiNext" aria-label="Testimoni Berikutnya">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -648,7 +722,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="sn-faq-content">
-                        Tersedia metode pembayaran instan via <strong>QRIS (BCA, Gopay, OVO, Dana, ShopeePay)</strong>, <strong>Virtual Account Bank (BCA, BRI, Mandiri, BNI, Permata)</strong>, atau gerai kasir Alfamart/Indomaret dengan konfirmasi otomatis.
+                        Tersedia metode pembayaran instan via <strong>QRIS (BCA, Gopay, OVO, Dana, ShopeePay)</strong> atau <strong>Virtual Account Bank (BCA, BRI, Mandiri, BNI, Permata)</strong> dengan konfirmasi transaksi otomatis secara realtime.
                     </div>
                 </div>
 
@@ -685,7 +759,7 @@
         </div>
     </section>
 
-    <!-- 9. FOOTER -->
+    <!-- 10. FOOTER -->
     <footer class="sn-footer-main">
         <div class="sn-container sn-footer-main__inner">
             <div>
@@ -695,6 +769,7 @@
                 <li><a href="{{ route('home') }}" class="sn-footer-link">Live Demo</a></li>
                 <li><a href="#fitur" class="sn-footer-link">Fitur</a></li>
                 <li><a href="#harga" class="sn-footer-link">Pilihan Harga</a></li>
+                <li><a href="#testimoni" class="sn-footer-link">Testimoni</a></li>
                 <li><a href="#faq" class="sn-footer-link">FAQ</a></li>
                 <li><a href="{{ route('login') }}" class="sn-footer-link">Login Admin</a></li>
             </ul>
@@ -739,19 +814,15 @@
                     <div class="sn-form-group">
                         <label class="sn-form-label" for="payMethod">Pilihan Metode Pembayaran:</label>
                         <select id="payMethod" name="payment_method" class="sn-form-select" required>
-                            <optgroup label="QRIS Realtime (Semua E-Wallet & Bank)">
+                            <optgroup label="QRIS Realtime (Semua E-Wallet & Mobile Banking)">
                                 <option value="QRIS" selected>QRIS (BCA, Gopay, OVO, Dana, ShopeePay, Livin Mandiri)</option>
                             </optgroup>
-                            <optgroup label="Virtual Account Bank (Otomatis)">
+                            <optgroup label="Virtual Account Bank (Konfirmasi Otomatis)">
                                 <option value="BCAVA">BCA Virtual Account</option>
                                 <option value="BRIVA">BRI Virtual Account</option>
                                 <option value="MANDIRIVA">Mandiri Virtual Account</option>
                                 <option value="BNIVA">BNI Virtual Account</option>
                                 <option value="PERMATAVA">Permata Virtual Account</option>
-                            </optgroup>
-                            <optgroup label="Gerai Retail (Kasir)">
-                                <option value="ALFAMART">Alfamart / Alfamidi</option>
-                                <option value="INDOMARET">Indomaret</option>
                             </optgroup>
                         </select>
                     </div>
@@ -810,9 +881,95 @@
                     navbar.classList.remove('scrolled');
                 }
             }, { passive: true });
+
+            // 5. 8-Testimonial Auto Slider Carousel
+            const track = document.getElementById('testiTrack');
+            const slides = document.querySelectorAll('.sn-testi-slide');
+            const dotsContainer = document.getElementById('testiDots');
+            const prevBtn = document.getElementById('testiPrev');
+            const nextBtn = document.getElementById('testiNext');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            let slideInterval = null;
+
+            // Generate Dots
+            if (dotsContainer && totalSlides > 0) {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('sn-testi-dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        goToSlide(i);
+                        resetInterval();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateSlider() {
+                if (!track) return;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                const dots = document.querySelectorAll('.sn-testi-dot');
+                dots.forEach((dot, idx) => {
+                    if (idx === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = (index + totalSlides) % totalSlides;
+                updateSlider();
+            }
+
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    resetInterval();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    resetInterval();
+                });
+            }
+
+            function startInterval() {
+                slideInterval = setInterval(nextSlide, 3500);
+            }
+
+            function resetInterval() {
+                if (slideInterval) clearInterval(slideInterval);
+                startInterval();
+            }
+
+            const sliderContainer = document.getElementById('testiSlider');
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', () => {
+                    if (slideInterval) clearInterval(slideInterval);
+                });
+                sliderContainer.addEventListener('mouseleave', () => {
+                    startInterval();
+                });
+            }
+
+            startInterval();
         });
 
-        // 5. Checkout Modal
+        // 6. Checkout Modal
         function openOrderModal(pkgId, pkgName, pkgPrice) {
             document.getElementById('modalPkgId').value = pkgId;
             document.getElementById('modalPkgName').innerText = pkgName;

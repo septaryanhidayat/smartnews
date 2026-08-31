@@ -116,11 +116,11 @@
             <div class="top-nav__right">
                 <!-- Language Switcher Pill -->
                 <div class="lang-switcher">
-                    <a href="{{ route('lang.switch', 'id') }}" class="lang-btn {{ app()->getLocale() === 'id' ? 'active' : '' }}" title="Bahasa Indonesia">
+                    <a href="{{ route('lang.switch', 'id') }}" onclick="switchLanguage('id'); return false;" class="lang-btn {{ app()->getLocale() === 'id' ? 'active' : '' }}" title="Bahasa Indonesia">
                         <span>ID</span>
                     </a>
                     <span class="lang-divider">|</span>
-                    <a href="{{ route('lang.switch', 'en') }}" class="lang-btn {{ app()->getLocale() === 'en' ? 'active' : '' }}" title="English Language">
+                    <a href="{{ route('lang.switch', 'en') }}" onclick="switchLanguage('en'); return false;" class="lang-btn {{ app()->getLocale() === 'en' ? 'active' : '' }}" title="English Language">
                         <span>EN</span>
                     </a>
                 </div>
@@ -215,11 +215,11 @@
         <div style="padding: 0 20px 16px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 14px;">
             <span style="font-size: 13px; font-weight: 600;">Bahasa / Language:</span>
             <div class="lang-switcher">
-                <a href="{{ route('lang.switch', 'id') }}" class="lang-btn {{ app()->getLocale() === 'id' ? 'active' : '' }}" title="Bahasa Indonesia">
+                <a href="{{ route('lang.switch', 'id') }}" onclick="switchLanguage('id'); return false;" class="lang-btn {{ app()->getLocale() === 'id' ? 'active' : '' }}" title="Bahasa Indonesia">
                     <span>ID</span>
                 </a>
                 <span class="lang-divider">|</span>
-                <a href="{{ route('lang.switch', 'en') }}" class="lang-btn {{ app()->getLocale() === 'en' ? 'active' : '' }}" title="English Language">
+                <a href="{{ route('lang.switch', 'en') }}" onclick="switchLanguage('en'); return false;" class="lang-btn {{ app()->getLocale() === 'en' ? 'active' : '' }}" title="English Language">
                     <span>EN</span>
                 </a>
             </div>
@@ -492,6 +492,42 @@
 
     <!-- Swiper JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Google Translate Engine for Dual-Language Auto-Switching -->
+    <div id="google_translate_element" style="display: none;"></div>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'id,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function switchLanguage(lang) {
+            var hostname = window.location.hostname;
+            var parts = hostname.split('.');
+            var domain = parts.length > 2 ? '.' + parts.slice(-2).join('.') : '.' + hostname;
+
+            if (lang === 'en') {
+                document.cookie = "googtrans=/id/en; path=/";
+                document.cookie = "googtrans=/id/en; domain=" + hostname + "; path=/";
+                document.cookie = "googtrans=/id/en; domain=" + domain + "; path=/";
+                document.cookie = "locale=en; path=/; max-age=31536000";
+                window.location.href = "{{ route('lang.switch', 'en') }}";
+            } else {
+                document.cookie = "googtrans=/id/id; path=/";
+                document.cookie = "googtrans=/id/id; domain=" + hostname + "; path=/";
+                document.cookie = "googtrans=/id/id; domain=" + domain + "; path=/";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + hostname + "; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + domain + "; path=/;";
+                document.cookie = "locale=id; path=/; max-age=31536000";
+                window.location.href = "{{ route('lang.switch', 'id') }}";
+            }
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 
     <!-- Theme Custom Scripts -->
     <script src="{{ asset('js/smartnews.js') }}?v={{ time() }}"></script>

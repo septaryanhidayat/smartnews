@@ -17,6 +17,13 @@ class LocaleController extends Controller
         if (in_array($locale, ['id', 'en'], true)) {
             Session::put('locale', $locale);
             Cookie::queue(Cookie::make('locale', $locale, 60 * 24 * 365, '/'));
+
+            if ($locale === 'en') {
+                Cookie::queue(Cookie::make('googtrans', '/id/en', 60 * 24 * 365, '/'));
+            } else {
+                Cookie::queue(Cookie::make('googtrans', '/id/id', 60 * 24 * 365, '/'));
+                Cookie::queue(Cookie::forget('googtrans'));
+            }
         }
 
         $prev = url()->previous();

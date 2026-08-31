@@ -136,12 +136,12 @@
                 </button>
 
                 @auth
-                    <a href="{{ route('admin.dashboard') }}" class="btn-admin" title="{{ __('messages.admin_panel') }}">
+                    <a href="{{ route('admin.dashboard') }}" class="btn-admin d-desktop-only" title="{{ __('messages.admin_panel') }}">
                         <i class="fas fa-tachometer-alt"></i> <span class="btn-text">Admin</span>
                     </a>
                 @else
                     <a href="{{ route('register') }}" class="btn-order d-desktop-only">{{ __('messages.register') }}</a>
-                    <a href="{{ route('login') }}" class="btn-login" title="{{ __('messages.login') }}">
+                    <a href="{{ route('login') }}" class="btn-login d-desktop-only" title="{{ __('messages.login') }}">
                         <i class="fas fa-user-circle"></i> <span class="btn-text">{{ __('messages.login') }}</span>
                     </a>
                 @endauth
@@ -187,6 +187,24 @@
             <button class="sidebar-drawer__close" id="sidebarClose" aria-label="Tutup menu">
                 <i class="fas fa-times"></i>
             </button>
+        </div>
+
+        <!-- Auth Status Box in Drawer -->
+        <div style="padding: 14px 20px; border-bottom: 1px solid var(--border-color);">
+            @auth
+                <a href="{{ route('admin.dashboard') }}" class="btn-admin" style="display: flex; align-items: center; justify-content: center; padding: 9px; border-radius: 8px; font-weight: 700; text-decoration: none;">
+                    <i class="fas fa-tachometer-alt"></i> &nbsp;Panel Admin
+                </a>
+            @else
+                <div style="display: flex; gap: 8px;">
+                    <a href="{{ route('login') }}" class="btn-login" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 8px; border-radius: 8px; font-weight: 600; text-decoration: none;">
+                        <i class="fas fa-sign-in-alt"></i> &nbsp;{{ __('messages.login') }}
+                    </a>
+                    <a href="{{ route('register') }}" class="btn-order" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 8px; border-radius: 8px; font-weight: 600; text-decoration: none;">
+                        {{ __('messages.register') }}
+                    </a>
+                </div>
+            @endauth
         </div>
 
         <div style="padding: 16px 20px 0;">

@@ -124,16 +124,16 @@
                 <div class="sn-hero__left">
                     <div class="sn-hero__text-block">
                         <div class="sn-pill-badge">
-                            <i class="fas fa-bolt"></i>
-                            <span>SOLUSI PRAKTIS WEBSITE MEDIA ONLINE SIAP TERBIT & SIAP MONETISASI IKLAN</span>
+                            <i class="fas fa-certificate" style="color: #1a56db;"></i>
+                            <span>PORTAL MEDIA RESMI STANDAR DEWAN PERS & GOOGLE NEWS</span>
                         </div>
 
                         <h1 class="sn-hero__title">
-                            Miliki Website Portal Berita Modern Berteknologi AI: <span class="sn-gradient-brand-text">Siap Terbit, Otomatis Masuk Google, & Berpenghasilan Iklan</span>
+                            Bangun Portal Berita Profesional Berteknologi AI: <span class="sn-gradient-brand-text">Cepat Terindeks Google & Maksimalkan Penghasilan Iklan</span>
                         </h1>
 
                         <p class="sn-hero__lead">
-                            Solusi praktis punya portal berita profesional tanpa ribet coding. Dilengkapi <strong>Asisten AI SEO</strong> untuk mempermudah liputan tembus halaman 1 Google, <strong>6 Posisi Iklan Siap Cuan</strong>, dan langsung online lengkap dengan <strong>Free Hosting NVMe & Domain</strong>!
+                            Platform media siber modern siap pakai tanpa perlu keahlian teknis. Dilengkapi <strong>Asisten Penulis AI SEO</strong>, <strong>6 Ruang Iklan Strategis</strong>, serta gratis <strong>Cloud Hosting NVMe dan Domain</strong> pilihan Anda.
                         </p>
                     </div>
 
@@ -228,7 +228,7 @@
         </div>
     </section>
 
-    <!-- 5. COMPACT 4-CATEGORY FEATURE SHOWCASE -->
+    <!-- 5. RICH 4-CATEGORY FEATURE SHOWCASE -->
     <section class="sn-section sn-section--alt" id="fitur">
         <div class="sn-container">
             <div class="sn-section-header sn-fade-init">
@@ -240,67 +240,107 @@
             </div>
 
             <div class="sn-compact-features">
-                <!-- Box 1: Frontend & Pembaca -->
-                <div class="sn-feature-card-dense sn-fade-init">
+                <!-- Card 1: Frontend & Pembaca -->
+                <div class="sn-feature-card-dense sn-card-accent--blue sn-fade-init">
                     <div class="sn-feature-card-dense__head">
-                        <div class="sn-feature-icon sn-icon--blue"><i class="fas fa-desktop"></i></div>
-                        <div class="sn-feature-card-dense__title">1. Portal Berita & Pengalaman Pembaca</div>
+                        <div class="sn-head-left">
+                            <div class="sn-feature-icon sn-icon--blue"><i class="fas fa-desktop"></i></div>
+                            <div class="sn-feature-card-dense__title">1. Portal Berita & Pembaca</div>
+                        </div>
+                        <span class="sn-feature-category-badge sn-badge--blue">Frontend</span>
                     </div>
+
+                    <div class="sn-feature-tags-cloud">
+                        <span class="sn-feature-tag-chip"><i class="fas fa-moon"></i> Dark Mode</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-sync-alt"></i> Ajax Feed</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-thumbtack"></i> Sticky Post</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-language"></i> Dual Bahasa</span>
+                    </div>
+
                     <ul class="sn-dense-list">
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Hero Slider Berita Utama:</strong> Carousel berita pilihan dengan kontrol jumlah slide.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Headline Sticky Post:</strong> Sematkan 1 artikel penting sebagai berita utama beranda.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Feed Infinite Load:</strong> Muat berita terus menerus via AJAX tanpa reload halaman.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Dark Mode & Dual Bahasa:</strong> Ganti tema gelap/terang dan switch bahasa ID/EN instan.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Estimasi Waktu & Progress Bar:</strong> Indikator waktu baca dan garis progress merah.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Komentar Realtime & Social Share:</strong> Berbagi ke WhatsApp/Facebook dengan 1 klik.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Hero Slider Berita Utama:</strong> Carousel foto tajam berita pilihan dengan kontrol slide.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Headline Sticky Post:</strong> Sematkan 1 berita penting sebagai sajian utama beranda.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Feed Infinite Load AJAX:</strong> Muat puluhan berita berkelanjutan tanpa jeda reload.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Dark Mode & Dual Bahasa:</strong> Pilihan tema gelap/terang dan alih bahasa ID/EN instan.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Estimasi Waktu & Progress Bar:</strong> Indikator durasi baca dan garis progress merah.</span></li>
                     </ul>
                 </div>
 
-                <!-- Box 2: Ruang Redaksi & AI SEO -->
-                <div class="sn-feature-card-dense sn-fade-init">
+                <!-- Card 2: Ruang Redaksi & AI SEO -->
+                <div class="sn-feature-card-dense sn-card-accent--red sn-fade-init">
                     <div class="sn-feature-card-dense__head">
-                        <div class="sn-feature-icon sn-icon--red"><i class="fas fa-newspaper"></i></div>
-                        <div class="sn-feature-card-dense__title">2. Ruang Redaksi & Asisten AI SEO</div>
+                        <div class="sn-head-left">
+                            <div class="sn-feature-icon sn-icon--red"><i class="fas fa-newspaper"></i></div>
+                            <div class="sn-feature-card-dense__title">2. Ruang Redaksi & AI SEO</div>
+                        </div>
+                        <span class="sn-feature-category-badge sn-badge--red">Redaksi & AI</span>
                     </div>
+
+                    <div class="sn-feature-tags-cloud">
+                        <span class="sn-feature-tag-chip"><i class="fas fa-robot"></i> Skor SEO 0-100</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-bolt"></i> Auto WebP</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-list-ol"></i> AI Summary</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-users-cog"></i> Multi Wartawan</span>
+                    </div>
+
                     <ul class="sn-dense-list">
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Editor Lengkap ala Word:</strong> Bold, Italic, Rata Kiri/Tengah/Kanan/Penuh, Tabel, Video.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Upload Foto Lokal Auto-WebP:</strong> Foto otomatis diperkecil (30-60 KB) tanpa pecah.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>AI SEO Analyzer (Skor 0-100):</strong> Audit live saat menulis sesuai standar Google.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Ringkasan Cerdas AI (3 Poin):</strong> Ekstraksi inti liputan siap untuk Google AI Overviews.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Hak Akses Bertingkat (RBAC):</strong> Super Admin, Editor, dan Wartawan (kelola pos sendiri).</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Jadwal Terbit Otomatis:</strong> Simpan liputan sebagai draft atau jadwalkan jam terbit.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Editor Lengkap Nyaman:</strong> Format teks Word, tabel, video, dan align tulisan fleksibel.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Upload Foto Auto-WebP:</strong> Foto otomatis diperkecil (30-60 KB) tanpa buram.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>AI SEO Analyzer Live:</strong> Audit otomatis kelayakan artikel tembus halaman 1 Google.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Ringkasan Cerdas AI:</strong> Ekstraksi 3 poin inti liputan ramah Google AI Overviews.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Hak Akses Bertingkat:</strong> Super Admin, Editor, dan Wartawan (kelola artikel sendiri).</span></li>
                     </ul>
                 </div>
 
-                <!-- Box 3: Mesin Iklan & Monetisasi -->
-                <div class="sn-feature-card-dense sn-fade-init">
+                <!-- Card 3: Mesin Monetisasi Iklan -->
+                <div class="sn-feature-card-dense sn-card-accent--green sn-fade-init">
                     <div class="sn-feature-card-dense__head">
-                        <div class="sn-feature-icon sn-icon--green"><i class="fas fa-dollar-sign"></i></div>
-                        <div class="sn-feature-card-dense__title">3. Mesin Monetisasi (6 Slot Iklan Cuan)</div>
+                        <div class="sn-head-left">
+                            <div class="sn-feature-icon sn-icon--green"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="sn-feature-card-dense__title">3. Mesin Monetisasi Iklan</div>
+                        </div>
+                        <span class="sn-feature-category-badge sn-badge--green">Monetisasi</span>
                     </div>
+
+                    <div class="sn-feature-tags-cloud">
+                        <span class="sn-feature-tag-chip"><i class="fas fa-ad"></i> 6 Posisi Iklan</span>
+                        <span class="sn-feature-tag-chip"><i class="fab fa-google"></i> AdSense Ready</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-image"></i> Banner Mandiri</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-magic"></i> Auto In-Article</span>
+                    </div>
+
                     <ul class="sn-dense-list">
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Header Banner Atas:</strong> Posisi premium dengan impresi pembaca tertinggi.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>In-Feed Beranda:</strong> Iklan menyatu natural di sela-sela daftar berita terkini.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Sidebar Kolom Samping:</strong> Mendukung ukuran standar banner 300x250 / 300x600.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto In-Content (Tengah Teks):</strong> Otomatis disisipkan di tengah paragraf berita.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Atas & Bawah Artikel:</strong> Posisi strategis di awal dan akhir liputan berita.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Support Google AdSense:</strong> Maupun upload banner gambar sponsor langsung.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Header Banner Atas:</strong> Posisi premium dengan tingkat pandang pembaca tertinggi.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>In-Feed Beranda:</strong> Iklan menyatu natural di sela-sela urutan berita terkini.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto In-Content:</strong> Otomatis tersisip rapi di tengah paragraf bacaan artikel.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Sidebar Sticky Banner:</strong> Mendukung ukuran standar display 300x250 & 300x600.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Bebas Pasang Iklan:</strong> Support script Google AdSense maupun upload banner sponsor lokal.</span></li>
                     </ul>
                 </div>
 
-                <!-- Box 4: Dewan Pers & Keamanan -->
-                <div class="sn-feature-card-dense sn-fade-init">
+                <!-- Card 4: Standar Dewan Pers & Keamanan -->
+                <div class="sn-feature-card-dense sn-card-accent--purple sn-fade-init">
                     <div class="sn-feature-card-dense__head">
-                        <div class="sn-feature-icon sn-icon--purple"><i class="fas fa-shield-alt"></i></div>
-                        <div class="sn-feature-card-dense__title">4. Standar Dewan Pers & Keamanan Server</div>
+                        <div class="sn-head-left">
+                            <div class="sn-feature-icon sn-icon--purple"><i class="fas fa-shield-alt"></i></div>
+                            <div class="sn-feature-card-dense__title">4. Standar Dewan Pers & Server</div>
+                        </div>
+                        <span class="sn-feature-category-badge sn-badge--purple">Legalitas & Proteksi</span>
                     </div>
+
+                    <div class="sn-feature-tags-cloud">
+                        <span class="sn-feature-tag-chip"><i class="fas fa-balance-scale"></i> Pedoman Media Siber</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-lock"></i> SSL HTTPS</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-user-shield"></i> Anti Brute Force</span>
+                        <span class="sn-feature-tag-chip"><i class="fab fa-git-alt"></i> Auto Deploy</span>
+                    </div>
+
                     <ul class="sn-dense-list">
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Pedoman Media Siber:</strong> Format resmi sesuai Peraturan Dewan Pers Indonesia.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Susunan Redaksi Lengkap:</strong> Struktur Pemred, Redaktur Pelaksana, dan Wartawan.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Kode Etik, Hak Jawab & Disclaimer:</strong> Klausul hukum perlindungan pers siap pakai.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Anti Brute-Force & Anti Spam:</strong> Rate limiting login dan proteksi formulir komentar.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Security Headers & SSL:</strong> Proteksi keamanan HSTS HTTPS dan anti celah traversal.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto-Deploy Git cPanel:</strong> Pembaruan kode dari GitHub tersinkronisasi 1 klik.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Pedoman Media Siber:</strong> Format resmi sesuai standar Dewan Pers Indonesia.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Susunan Redaksi:</strong> Halaman resmi Pemred, Redaktur Pelaksana, dan Wartawan.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Kode Etik & Hak Jawab:</strong> Klausul perlindungan hukum pers yang siap pakai.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Proteksi Keamanan:</strong> Anti brute-force login, anti spam, dan proteksi SSL.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto-Deploy Git cPanel:</strong> Pembaruan kode tersinkronisasi 1 klik dari GitHub.</span></li>
                     </ul>
                 </div>
             </div>
@@ -331,7 +371,7 @@
                     <ul class="sn-price-features">
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Full Source Code Laravel 13 & PHP 8.4</strong> (Hak Milik Lifetime)</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Database SQL Lengkap</strong> + Data Berita Demo</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Dokumentasi Panduan Lengkap (PDF)</strong> Langkah Instalasi</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Panduan Lengkap</strong> Langkah Pemasangan Mandiri</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bebas Dipasang</strong> di domain mana saja</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Fitur AI SEO Engine</strong> & 6 Slot Iklan Cuan</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-times-circle"></i> <span>Hosting & Domain (Disediakan pembeli)</span></li>
@@ -460,7 +500,7 @@
                         </tr>
                         <tr>
                             <td><strong>Garansi & Perbaikan Error / Bug</strong></td>
-                            <td>Panduan PDF Lengkap</td>
+                            <td>Panduan Instalasi Lengkap</td>
                             <td class="sn-highlight">Garansi 6 Bulan</td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>LIFETIME FULL SERVICE</strong></td>
                         </tr>

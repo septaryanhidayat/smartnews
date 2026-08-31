@@ -161,82 +161,58 @@
                 </div>
             </div>
 
-            <!-- REAL SMARTNEWS PORTAL UI SHOWCASE (Dynamic Real Content from DB) -->
-            <div class="sn-preview-box sn-fade-init" id="preview">
-                <div class="sn-preview-topbar">
-                    <div class="sn-preview-dots">
-                        <span class="sn-preview-dot sn-dot--red"></span>
-                        <span class="sn-preview-dot sn-dot--yellow"></span>
-                        <span class="sn-preview-dot sn-dot--green"></span>
-                    </div>
-                    <div class="sn-preview-url">
-                        <i class="fas fa-lock" style="color: #10b981;"></i>
-                        <span>https://portalberita-anda.com</span>
-                    </div>
-                    <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--outline" style="padding: 3px 10px; font-size: 11px;">
-                        <i class="fas fa-external-link-alt"></i> Buka Demo Asli
-                    </a>
+            <!-- REAL SMARTNEWS PORTAL UI SHOWCASE (Interactive Tabbed Screenshots) -->
+            <div class="sn-showcase-wrapper sn-fade-init" id="preview">
+                <!-- Interactive Tabs -->
+                <div class="sn-showcase-tabs">
+                    <button type="button" class="sn-showcase-tab active" onclick="switchScreenshot(0)">
+                        <i class="fas fa-star" style="color: #f59e0b;"></i>
+                        <span>1. Beranda, Slider & Headline</span>
+                    </button>
+                    <button type="button" class="sn-showcase-tab" onclick="switchScreenshot(1)">
+                        <i class="fas fa-th-large" style="color: #1a56db;"></i>
+                        <span>2. Grid Liputan & Terpopuler</span>
+                    </button>
+                    <button type="button" class="sn-showcase-tab" onclick="switchScreenshot(2)">
+                        <i class="fas fa-stream" style="color: #059669;"></i>
+                        <span>3. Feed Berita & Standar Pers</span>
+                    </button>
                 </div>
 
-                <div class="sn-preview-body">
-                    <div class="sn-preview-header">
-                        <div class="sn-preview-logo">
-                            SMART<span style="color: #ef4444;">NEWS</span> <span style="font-size: 9.5px; background: #cf2e2e; padding: 1px 5px; border-radius: 3px;">BREAKING</span>
+                <!-- Browser Display Mockup -->
+                <div class="sn-preview-box">
+                    <div class="sn-preview-topbar">
+                        <div class="sn-preview-dots">
+                            <span class="sn-preview-dot sn-dot--red"></span>
+                            <span class="sn-preview-dot sn-dot--yellow"></span>
+                            <span class="sn-preview-dot sn-dot--green"></span>
                         </div>
-                        <div style="font-size: 11px; color: #94a3b8;">
-                            <span>Portal Berita Cerdas & Terpercaya Indonesia</span>
+                        <div class="sn-preview-url">
+                            <i class="fas fa-lock" style="color: #10b981;"></i>
+                            <span>https://smartnews.berandadigital.net</span>
                         </div>
+                        <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--outline" style="padding: 3px 10px; font-size: 11px;">
+                            <i class="fas fa-external-link-alt"></i> Buka Demo Asli
+                        </a>
                     </div>
 
-                    <div class="sn-preview-grid">
-                        <!-- Real Featured Article -->
-                        <div class="sn-card-featured" style="background-image: url('{{ $featuredArticle->image_url ?? asset('images/default-news.webp') }}');">
-                            <span class="sn-card-tag">{{ strtoupper($featuredArticle->category->name ?? 'NASIONAL') }}</span>
-                            <div class="sn-card-title">{{ Str::limit($featuredArticle->title ?? 'Transformasi Digital Media Siber Indonesia Menuju Standar Jurnalisme Berkualitas', 85) }}</div>
-                            <div class="sn-card-meta">
-                                <i class="fas fa-user-edit"></i> {{ $featuredArticle->user->name ?? 'Redaksi' }} &bull; <i class="fas fa-clock"></i> {{ $featuredArticle->reading_time ?? '4' }} Menit Baca &bull; <i class="fas fa-eye"></i> {{ number_format($featuredArticle->views ?? 12500) }} Views
-                            </div>
-                        </div>
-
-                        <!-- Real Sidebar Articles -->
-                        <div class="sn-preview-side">
-                            @if(isset($previewArticles) && $previewArticles->count() > 0)
-                                @foreach($previewArticles as $pArt)
-                                <div class="sn-side-item">
-                                    <div class="sn-side-thumb" style="background-image: url('{{ $pArt->image_url ?? asset('images/default-news.webp') }}');"></div>
-                                    <div>
-                                        <strong style="color: #fff; font-size: 11.5px; line-height: 1.3; display: block;">{{ Str::limit($pArt->title, 55) }}</strong>
-                                        <div style="color: #94a3b8; font-size: 10px; margin-top: 2px;">{{ $pArt->category->name ?? 'Berita' }} &bull; {{ $pArt->published_at ? $pArt->published_at->diffForHumans() : 'Baru saja' }}</div>
-                                    </div>
-                                </div>
-                                @endforeach
-                            @else
-                                <div class="sn-side-item">
-                                    <div class="sn-side-thumb"></div>
-                                    <div>
-                                        <strong style="color: #fff;">Pemerintah Rilis Kebijakan Media Baru</strong>
-                                        <div style="color: #94a3b8; font-size: 10px; margin-top: 2px;">Nasional &bull; 2 jam lalu</div>
-                                    </div>
-                                </div>
-                                <div class="sn-side-item">
-                                    <div class="sn-side-thumb"></div>
-                                    <div>
-                                        <strong style="color: #fff;">Peluang Bisnis Portal Media Daerah</strong>
-                                        <div style="color: #94a3b8; font-size: 10px; margin-top: 2px;">Bisnis &bull; 4 jam lalu</div>
-                                    </div>
-                                </div>
-                            @endif
-
-                            <div style="background: rgba(239, 68, 68, 0.12); border: 1px dashed rgba(239, 68, 68, 0.4); border-radius: 6px; padding: 6px; text-align: center; font-size: 10px; color: #fca5a5;">
-                                <i class="fas fa-ad"></i> SLOT IKLAN SIDEBAR (300x250)
-                            </div>
-                        </div>
+                    <!-- 3 Real Screenshot Views -->
+                    <div class="sn-screenshot-display">
+                        <img src="{{ asset('images/landing/preview-hero.png') }}" alt="Tampilan Beranda, Slider Carousel & Headline SmartNews" class="sn-screenshot-img active" id="screenImg0" loading="lazy">
+                        <img src="{{ asset('images/landing/preview-grid.png') }}" alt="Tampilan Grid Berita Multimedia & Sidebar Terpopuler SmartNews" class="sn-screenshot-img" id="screenImg1" loading="lazy">
+                        <img src="{{ asset('images/landing/preview-feed.png') }}" alt="Tampilan Feed Infinite Berita & Footer Standar Dewan Pers SmartNews" class="sn-screenshot-img" id="screenImg2" loading="lazy">
                     </div>
 
-                    <div class="sn-preview-badges-row">
-                        <span class="sn-mini-badge"><i class="fas fa-robot" style="color: #10b981;"></i> Skor AI SEO: 98/100 (A+)</span>
-                        <span class="sn-mini-badge"><i class="fas fa-bolt" style="color: #f59e0b;"></i> Loading: 0.4 Detik (WebP)</span>
-                        <span class="sn-mini-badge"><i class="fas fa-shield-alt" style="color: #60a5fa;"></i> Pedoman Media Siber Ready</span>
+                    <!-- Bottom Caption Bar -->
+                    <div class="sn-screenshot-caption">
+                        <div>
+                            <div class="sn-caption-text" id="screenCaptionTitle">Tampilan Atas: Header, Breaking News Ticker, Slider Carousel & Berita Utama Sticky</div>
+                            <div class="sn-caption-sub">Desain portal berita modern dengan kombinasi warna elegan, responsif di semua perangkat.</div>
+                        </div>
+                        <div class="sn-preview-badges-row" style="margin-top: 0;">
+                            <span class="sn-mini-badge"><i class="fas fa-robot" style="color: #10b981;"></i> AI SEO Ready</span>
+                            <span class="sn-mini-badge"><i class="fas fa-bolt" style="color: #f59e0b;"></i> WebP 0.4s</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -747,6 +723,49 @@
                 closeOrderModal();
             }
         });
+
+        // 6. Interactive Screenshot Showcase Switcher
+        const screenshotData = [
+            {
+                title: "Tampilan Atas: Header, Breaking News Ticker, Slider Carousel & Berita Utama Sticky",
+                sub: "Desain portal berita modern dengan kombinasi warna elegan, responsif di semua perangkat."
+            },
+            {
+                title: "Tampilan Tengah: 6 Grid Berita Multimedia & Sidebar Berita Terpopuler 1-5",
+                sub: "Tata letak berita rapi dilengkapi tag kategori, estimasi waktu baca, dan widget terpopuler."
+            },
+            {
+                title: "Tampilan Bawah: Feed Berita Ajax, Widget Topik Hangat & Footer Standar Dewan Pers",
+                sub: "Navigasi lengkap mencakup susunan redaksi, pedoman media siber, dan tautan verifikasi pers."
+            }
+        ];
+
+        function switchScreenshot(index) {
+            const tabs = document.querySelectorAll('.sn-showcase-tab');
+            tabs.forEach((tab, i) => {
+                if (i === index) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            for (let i = 0; i < 3; i++) {
+                const img = document.getElementById('screenImg' + i);
+                if (img) {
+                    if (i === index) {
+                        img.classList.add('active');
+                    } else {
+                        img.classList.remove('active');
+                    }
+                }
+            }
+
+            const captionTitle = document.getElementById('screenCaptionTitle');
+            if (captionTitle && screenshotData[index]) {
+                captionTitle.innerText = screenshotData[index].title;
+            }
+        }
     </script>
 </body>
 </html>

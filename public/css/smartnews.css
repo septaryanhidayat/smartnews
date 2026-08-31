@@ -3374,33 +3374,33 @@ textarea.form-control {
 
 @media (max-width: 768px) {
   body {
-    padding-top: 54px;
+    padding-top: 56px;
   }
   .top-nav {
-    height: 50px;
+    height: 56px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
   .top-nav__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
-    gap: 6px;
+    padding: 0 12px;
+    gap: 8px;
     height: 100%;
   }
   .top-nav__left {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    max-width: 125px;
+    max-width: 155px;
   }
   .top-nav__brand-mobile {
     display: flex;
     align-items: center;
   }
   .site-logo-mobile-top {
-    height: 26px;
-    max-width: 115px;
+    height: 35px;
+    max-width: 150px;
     object-fit: contain;
     display: block;
   }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $article->title . ' – ' . setting('site_name', 'SmartNews'))
+@section('title', $article->title . ' - ' . setting('site_name', 'SmartNews'))
 @section('meta_description', Str::limit(strip_tags($article->excerpt ?: $article->content), 160))
 @section('meta_keywords', $article->tags->pluck('name')->implode(', ') . ', ' . $article->category->name . ', ' . setting('site_keywords'))
 @section('meta_author', $article->user->name ?? setting('site_name', 'SmartNews'))

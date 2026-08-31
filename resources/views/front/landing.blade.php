@@ -2,8 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jual Source Code & Jasa Pembuatan Website Portal Berita Media Online – SmartNews CMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Jual Source Code & Jasa Pembuatan Website Portal Berita Media Online - SmartNews CMS</title>
     <meta name="description" content="Paket Lengkap Website Portal Berita Media Online SmartNews CMS. Pilihan harga: Rp 1,5 Jt (Source Code), Rp 3 Jt (Siap Pakai + Hosting & Domain), Rp 5 Jt (VIP Lifetime Update & Full Servis). Dilengkapi AI SEO Analyzer, 6 Slot Iklan Cuan & Standar Dewan Pers.">
     <meta name="keywords" content="source code portal berita, jasa pembuatan web media online, script web berita laravel, cms portal berita php, web berita siap pakai, smartnews cms, website standar dewan pers">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -13,7 +13,7 @@
     <meta property="og:site_name" content="SmartNews Digital Media Solution">
     <meta property="og:type" content="product">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="Miliki Website Portal Berita Media Online Sendiri – SmartNews CMS">
+    <meta property="og:title" content="Miliki Website Portal Berita Media Online Sendiri - SmartNews CMS">
     <meta property="og:description" content="Solusi lengkap pembuatan website media online profesional: AI SEO Analyzer, 6 Slot Iklan, Standar Dewan Pers, Full Source Code Lifetime. Mulai Rp 1,5 Juta.">
     <meta property="og:image" content="{{ site_logo() }}">
 
@@ -24,7 +24,7 @@
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- FontAwesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -70,7 +70,7 @@
       'aggregateRating' => [
         '@type' => 'AggregateRating',
         'ratingValue' => '4.9',
-        'reviewCount' => '148',
+        'reviewCount' => '156',
       ],
     ], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
     </script>
@@ -83,7 +83,7 @@
     <!-- 1. TOP ANNOUNCEMENT BAR -->
     <div class="sn-topbar">
         <div class="sn-container sn-topbar__inner">
-            <span class="sn-topbar__badge">🔥 PROMO TERBATAS</span>
+            <span class="sn-topbar__badge">PROMO</span>
             <span class="sn-topbar__text">
                 Website Portal Berita Siap Terbit <strong>Mulai Rp 1,5 Jt - 3 Jt</strong> + Free Domain & Hosting!
                 <a href="#harga" class="sn-topbar__link">Lihat Paket &rarr;</a>
@@ -100,10 +100,8 @@
             </a>
 
             <ul class="sn-nav-menu">
-                <li><a href="#fitur" class="sn-nav-link">Fitur Lengkap</a></li>
-                <li><a href="#ai-seo" class="sn-nav-link">AI SEO & Editor</a></li>
-                <li><a href="#monetisasi" class="sn-nav-link">Slot Iklan</a></li>
-                <li><a href="#dewan-pers" class="sn-nav-link">Standar Pers</a></li>
+                <li><a href="#fitur" class="sn-nav-link">Fitur Utama</a></li>
+                <li><a href="#preview" class="sn-nav-link">Tampilan Demo</a></li>
                 <li><a href="#harga" class="sn-nav-link">Pilihan Harga</a></li>
                 <li><a href="#faq" class="sn-nav-link">FAQ</a></li>
             </ul>
@@ -129,11 +127,11 @@
                 </div>
 
                 <h1 class="sn-hero__title">
-                    Bangun Portal Media Online Profesional Sendiri — <span class="sn-gradient-brand-text">Siap Terbit, Dilengkapi AI SEO & 6 Slot Iklan Cuan</span>
+                    Bangun Portal Media Online Profesional Sendiri: <span class="sn-gradient-brand-text">Siap Terbit, Dilengkapi AI SEO & 6 Slot Iklan Cuan</span>
                 </h1>
 
                 <p class="sn-hero__lead">
-                    Solusi instan untuk Penerbit Media, Wartawan, Media Daerah, Kampus, dan Perusahaan Pers. Dilengkapi <strong>Editor Berita ala Word</strong>, <strong>Asisten AI SEO Cerdas</strong>, <strong>6 Slot Iklan Cuan</strong>, dan <strong>Kompresi Gambar WebP Super Cepat</strong>. Pilih beli source code mandiri atau terima jadi langsung online!
+                    Solusi instan untuk Penerbit Media, Wartawan, Media Daerah, Kampus, dan Perusahaan Pers. Dilengkapi <strong>Editor Berita ala Word</strong>, <strong>Asisten AI SEO Cerdas</strong>, <strong>6 Slot Iklan Cuan</strong>, dan <strong>Kompresi Gambar WebP Super Cepat</strong>. Beli source code mandiri atau terima jadi langsung online!
                 </p>
 
                 <div class="sn-hero__actions">
@@ -151,50 +149,71 @@
                     <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Kecepatan Buka 0.4 Detik (Lighthouse 95+)</span></div>
                     <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Pedoman Media Siber Dewan Pers Ready</span></div>
                     <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>AI SEO Analyzer & Ringkasan Cerdas</span></div>
-                    <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Support Pembayaran Tripay & WhatsApp</span></div>
+                    <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>6 Slot Iklan Cuan Siap Monetisasi</span></div>
                 </div>
             </div>
 
-            <!-- Interactive Device Frame Preview with Live Demo Embed -->
-            <div class="sn-preview-container sn-fade-init">
-                <div class="sn-browser-mockup">
-                    <div class="sn-browser-bar">
-                        <div class="sn-browser-dots">
-                            <span class="sn-browser-dot sn-dot--red"></span>
-                            <span class="sn-browser-dot sn-dot--yellow"></span>
-                            <span class="sn-browser-dot sn-dot--green"></span>
-                        </div>
-                        <div class="sn-browser-url">
-                            <i class="fas fa-lock" style="color: #10b981;"></i>
-                            <span>https://mediaberita-anda.com</span>
-                        </div>
-                        <a href="{{ route('home') }}" target="_blank" class="sn-browser-action-btn">
-                            <i class="fas fa-external-link-alt"></i> <span>Buka Full Demo</span>
-                        </a>
+            <!-- Visual UI Preview Card (Fast Loading & Zero Lag) -->
+            <div class="sn-preview-box sn-fade-init" id="preview">
+                <div class="sn-preview-topbar">
+                    <div class="sn-preview-dots">
+                        <span class="sn-preview-dot sn-dot--red"></span>
+                        <span class="sn-preview-dot sn-dot--yellow"></span>
+                        <span class="sn-preview-dot sn-dot--green"></span>
                     </div>
-
-                    <!-- Live Embedded Portal Viewport -->
-                    <iframe src="{{ route('home') }}" class="sn-iframe-viewport" title="Live Preview SmartNews Portal" loading="lazy"></iframe>
+                    <div class="sn-preview-url">
+                        <i class="fas fa-lock" style="color: #10b981;"></i>
+                        <span>https://mediaberita-anda.com</span>
+                    </div>
+                    <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--outline" style="padding: 3px 10px; font-size: 11px;">
+                        <i class="fas fa-external-link-alt"></i> Buka Web Asli
+                    </a>
                 </div>
 
-                <!-- Floating Interactive Badges -->
-                <div class="sn-float-badge sn-float-badge--left">
-                    <div class="sn-float-badge__icon sn-badge-bg--blue">
-                        <i class="fas fa-chart-line"></i>
+                <div class="sn-preview-body">
+                    <div class="sn-preview-header">
+                        <div class="sn-preview-logo">
+                            SMART<span style="color: #ef4444;">NEWS</span> <span style="font-size: 10px; background: #cf2e2e; padding: 1px 5px; border-radius: 3px;">BREAKING</span>
+                        </div>
+                        <div style="font-size: 11px; color: #94a3b8;">
+                            <span>Trending: Pilkada 2026, Ekonomi Digital, AI Teknologi</span>
+                        </div>
                     </div>
-                    <div>
-                        <div class="sn-float-badge__title">Skor AI SEO: 98/100 (Grade A+)</div>
-                        <div class="sn-float-badge__sub">Audit Otomatis Google Helpful Content</div>
-                    </div>
-                </div>
 
-                <div class="sn-float-badge sn-float-badge--right">
-                    <div class="sn-float-badge__icon sn-badge-bg--red">
-                        <i class="fas fa-tachometer-alt"></i>
+                    <div class="sn-preview-grid">
+                        <div class="sn-card-featured">
+                            <span class="sn-card-tag">NASIONAL</span>
+                            <div class="sn-card-title">Transformasi Digital Media Siber Indonesia Menuju Standar Jurnalisme Berkualitas</div>
+                            <div class="sn-card-meta">
+                                <i class="fas fa-user-edit"></i> Redaksi &bull; <i class="fas fa-clock"></i> 5 Menit Baca &bull; <i class="fas fa-eye"></i> 14.820 Views
+                            </div>
+                        </div>
+
+                        <div class="sn-preview-side">
+                            <div class="sn-side-item">
+                                <div class="sn-side-thumb"></div>
+                                <div>
+                                    <strong style="color: #fff;">Pemerintah Rilis Kebijakan Media Baru</strong>
+                                    <div style="color: #94a3b8; font-size: 10.5px; margin-top: 2px;">2 jam lalu</div>
+                                </div>
+                            </div>
+                            <div class="sn-side-item">
+                                <div class="sn-side-thumb"></div>
+                                <div>
+                                    <strong style="color: #fff;">Peluang Bisnis Portal Media Daerah</strong>
+                                    <div style="color: #94a3b8; font-size: 10.5px; margin-top: 2px;">4 jam lalu</div>
+                                </div>
+                            </div>
+                            <div style="background: rgba(239, 68, 68, 0.12); border: 1px dashed rgba(239, 68, 68, 0.4); border-radius: 6px; padding: 7px; text-align: center; font-size: 10.5px; color: #fca5a5;">
+                                <i class="fas fa-ad"></i> SLOT IKLAN SIDEBAR (300x250)
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <div class="sn-float-badge__title">Loading: 0.4 Detik</div>
-                        <div class="sn-float-badge__sub">Kompresi Gambar WebP 30-60 KB</div>
+
+                    <div class="sn-preview-badges-row">
+                        <span class="sn-mini-badge"><i class="fas fa-chart-line" style="color: #10b981;"></i> Skor AI SEO: 98/100 (A+)</span>
+                        <span class="sn-mini-badge"><i class="fas fa-bolt" style="color: #f59e0b;"></i> Loading: 0.4 Detik (WebP)</span>
+                        <span class="sn-mini-badge"><i class="fas fa-shield-alt" style="color: #60a5fa;"></i> Pedoman Media Siber</span>
                     </div>
                 </div>
             </div>
@@ -225,344 +244,190 @@
         </div>
     </section>
 
-    <!-- 5. 80+ FITUR LENGKAP CMS (SESUAI IMPLEMENTATION PLAN) -->
+    <!-- 5. COMPACT 4-CATEGORY FEATURE SHOWCASE -->
     <section class="sn-section sn-section--alt" id="fitur">
         <div class="sn-container">
             <div class="sn-section-header sn-fade-init">
-                <span class="sn-section-tag">FITUR LENGKAP TANPA PERLU CODING</span>
+                <span class="sn-section-tag">FITUR LENGKAP SIAP PAKAI</span>
                 <h2 class="sn-section-title">Semua Fasilitas Media Online Modern Sudah Tersedia</h2>
                 <p class="sn-section-desc">
-                    Tidak perlu lagi membeli puluhan plugin berbayar atau menyewa programmer mahal. SmartNews CMS telah dirancang lengkap dari tampilan pembaca, ruang redaksi, mesin iklan, hingga kepatuhan hukum pers.
+                    Tinggal pakai tanpa perlu menyewa programmer atau membeli plugin tambahan. Seluruh sistem telah terintegrasi dari pembaca, ruang redaksi, mesin iklan, hingga legalitas pers.
                 </p>
             </div>
 
-            <!-- Group A: Tampilan Depan / Frontend Pembaca -->
-            <div class="sn-feature-block sn-fade-init">
-                <h3 class="sn-feature-block__head">
-                    <i class="fas fa-desktop"></i>
-                    <span>A. Tampilan Depan & Pengalaman Pembaca (Frontend)</span>
-                </h3>
-                <div class="sn-feature-cards">
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-red-subtle"><i class="fas fa-images"></i></div>
-                        <h4 class="sn-feature-item__title">Hero Slider Berita Utama</h4>
-                        <p class="sn-feature-item__text">Carousel otomatis menampilkan berita pilihan dengan foto tajam, judul, waktu terbit, dan kontrol jumlah slide dari admin.</p>
+            <div class="sn-compact-features">
+                <!-- Box 1: Frontend & Pembaca -->
+                <div class="sn-feature-card-dense sn-fade-init">
+                    <div class="sn-feature-card-dense__head">
+                        <div class="sn-feature-icon sn-icon--blue"><i class="fas fa-desktop"></i></div>
+                        <div class="sn-feature-card-dense__title">1. Portal Berita & Pengalaman Pembaca</div>
                     </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-blue-subtle"><i class="fas fa-thumbtack"></i></div>
-                        <h4 class="sn-feature-item__title">Headline Sticky Post</h4>
-                        <p class="sn-feature-item__text">Sematkan satu artikel berita paling penting sebagai headline utama beranda yang langsung menarik perhatian pembaca.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-green-subtle"><i class="fas fa-stream"></i></div>
-                        <h4 class="sn-feature-item__title">Feed Berita Infinite Load</h4>
-                        <p class="sn-feature-item__text">Pengunjung bisa memuat berita terus-menerus via AJAX tanpa reload halaman, atau memilih mode tombol dan penomoran standar.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-amber-subtle"><i class="fas fa-moon"></i></div>
-                        <h4 class="sn-feature-item__title">Dark Mode / Mode Gelap</h4>
-                        <p class="sn-feature-item__text">Tombol ganti tema gelap dan terang instan di header dengan logo otomatis menyesuaikan dan tersimpan di browser pengunjung.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-purple-subtle"><i class="fas fa-language"></i></div>
-                        <h4 class="sn-feature-item__title">Dual Bahasa Otomatis (ID | EN)</h4>
-                        <p class="sn-feature-item__text">Switch bahasa Indonesia dan Inggris instan di seluruh isi berita, komentar, kutipan, dan sidebar tanpa merusak tampilan.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-cyan-subtle"><i class="fas fa-tachometer-alt"></i></div>
-                        <h4 class="sn-feature-item__title">Estimasi Waktu & Progress Bar</h4>
-                        <p class="sn-feature-item__text">Kalkulasi otomatis estimasi waktu baca (menit) dan indikator garis merah di atas layar saat membaca artikel.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Group B: Ruang Redaksi & Editor Berita -->
-            <div class="sn-feature-block sn-fade-init" id="ai-seo">
-                <h3 class="sn-feature-block__head">
-                    <i class="fas fa-newspaper"></i>
-                    <span>B. Ruang Redaksi & Manajemen Berita (WordPress-Style CMS)</span>
-                </h3>
-                <div class="sn-feature-cards">
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-blue-subtle"><i class="fas fa-file-word"></i></div>
-                        <h4 class="sn-feature-item__title">Editor Berita Lengkap ala MS Word</h4>
-                        <p class="sn-feature-item__text">Tulis berita leluasa dengan fitur: Bold, Italic, Underline, Rata Kiri/Tengah/Kanan/Penuh (Justify), Tabel, Video Embed, dan Poin Nomor.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-red-subtle"><i class="fas fa-upload"></i></div>
-                        <h4 class="sn-feature-item__title">Upload Foto Lokal Auto-WebP</h4>
-                        <p class="sn-feature-item__text">Upload foto utama dan foto sisipan langsung dari laptop/HP, otomatis dikompresi menjadi format WebP ringan (30-60 KB) tanpa pecah.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-green-subtle"><i class="fas fa-robot"></i></div>
-                        <h4 class="sn-feature-item__title">AI SEO Analyzer (Skor 0-100)</h4>
-                        <p class="sn-feature-item__text">Audit otomatis 6 parameter Google Helpful Content secara live saat menulis: panjang judul, kedalaman isi, meta excerpt, dan taksonomi tag.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-amber-subtle"><i class="fas fa-brain"></i></div>
-                        <h4 class="sn-feature-item__title">Ringkasan Cerdas AI (3 Poin)</h4>
-                        <p class="sn-feature-item__text">Ekstraksi 3 poin inti sari liputan berita otomatis di bagian atas artikel, siap untuk cuplikan Google AI Overviews & SGE.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-purple-subtle"><i class="fas fa-users-cog"></i></div>
-                        <h4 class="sn-feature-item__title">Hak Akses Redaksi (RBAC)</h4>
-                        <p class="sn-feature-item__text">Tiga tingkatan akun: Super Admin (kontrol penuh), Editor (tinjau & terbitkan), dan Wartawan/Penulis (hanya kelola artikel miliknya sendiri).</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-cyan-subtle"><i class="fas fa-calendar-alt"></i></div>
-                        <h4 class="sn-feature-item__title">Jadwal Terbit & Status Draft</h4>
-                        <p class="sn-feature-item__text">Simpan liputan sebagai draft atau jadwalkan tanggal dan jam publikasi berita di masa mendatang secara otomatis.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Group C: Monetisasi & Mesin Iklan -->
-            <div class="sn-feature-block sn-fade-init" id="monetisasi">
-                <h3 class="sn-feature-block__head">
-                    <i class="fas fa-dollar-sign"></i>
-                    <span>C. Mesin Monetisasi & Pengelolaan Iklan (6 Slot Siap Cuan)</span>
-                </h3>
-                <div class="sn-feature-cards">
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-green-subtle"><i class="fas fa-ad"></i></div>
-                        <h4 class="sn-feature-item__title">Slot Iklan Header (Top Banner)</h4>
-                        <p class="sn-feature-item__text">Posisi premium di bagian atas website di bawah navigasi, impresi sangat tinggi dan cocok untuk branding sponsor utama.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-blue-subtle"><i class="fas fa-layer-group"></i></div>
-                        <h4 class="sn-feature-item__title">In-Feed Beranda (Di Sela Berita)</h4>
-                        <p class="sn-feature-item__text">Iklan menyatu natural di antara daftar berita terkini di halaman utama, menghasilkan rasio klik (CTR) sangat tinggi.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-red-subtle"><i class="fas fa-columns"></i></div>
-                        <h4 class="sn-feature-item__title">Sidebar Banner Kolom Samping</h4>
-                        <p class="sn-feature-item__text">Tampil di bilah samping beranda, kategori, tag, dan halaman baca berita. Mendukung ukuran standar 300x250 atau 300x600.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-amber-subtle"><i class="fas fa-file-alt"></i></div>
-                        <h4 class="sn-feature-item__title">Atas Konten Artikel</h4>
-                        <p class="sn-feature-item__text">Muncul di awal baca berita tepat setelah ringkasan AI dan sebelum paragraf pertama isi liputan.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-purple-subtle"><i class="fas fa-paragraph"></i></div>
-                        <h4 class="sn-feature-item__title">Auto In-Content (Tengah Paragraf)</h4>
-                        <p class="sn-feature-item__text">Sistem otomatis menyisipkan iklan di tengah-tengah paragraf artikel berita tanpa perlu diedit manual satu per satu.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-cyan-subtle"><i class="fas fa-arrow-down"></i></div>
-                        <h4 class="sn-feature-item__title">Bawah Konten (Penutup Artikel)</h4>
-                        <p class="sn-feature-item__text">Tampil tepat setelah paragraf penutup artikel sebelum kolom komentar dan rekomendasi berita terkait.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Group D: Dewan Pers & Keamanan -->
-            <div class="sn-feature-block sn-fade-init" id="dewan-pers">
-                <h3 class="sn-feature-block__head">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>D. Standar Legalitas Dewan Pers & Keamanan Server</span>
-                </h3>
-                <div class="sn-feature-cards">
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-blue-subtle"><i class="fas fa-balance-scale"></i></div>
-                        <h4 class="sn-feature-item__title">Halaman Pedoman Media Siber</h4>
-                        <p class="sn-feature-item__text">Format lengkap pedoman pemberitaan sesuai Peraturan Dewan Pers No. 1/Peraturan-DP/III/2012 sudah tersedia.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-red-subtle"><i class="fas fa-id-card"></i></div>
-                        <h4 class="sn-feature-item__title">Struktur Susunan Redaksi Resmi</h4>
-                        <p class="sn-feature-item__text">Bagan organisasi redaksi: Pemimpin Redaksi, Redaktur Pelaksana, Koordinator Liputan, dan Wartawan Daerah.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-green-subtle"><i class="fas fa-gavel"></i></div>
-                        <h4 class="sn-feature-item__title">Kode Etik & Hak Jawab</h4>
-                        <p class="sn-feature-item__text">Klausul hukum disclaimer, tata cara permohonan hak jawab, ralat, dan perlindungan privasi data narasumber.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-amber-subtle"><i class="fas fa-shield-virus"></i></div>
-                        <h4 class="sn-feature-item__title">Proteksi Anti Brute-Force & Spam</h4>
-                        <p class="sn-feature-item__text">Pembatasan percobaan login (rate limiting 5 req/menit) dan proteksi formulir komentar anti-flood spam.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-purple-subtle"><i class="fas fa-lock"></i></div>
-                        <h4 class="sn-feature-item__title">Security Headers & Anti-Path Traversal</h4>
-                        <p class="sn-feature-item__text">Middleware keamanan aktif: X-Frame-Options, X-Content-Type-Options, HSTS HTTPS, dan proteksi berkas sistem.</p>
-                    </div>
-                    <div class="sn-feature-item">
-                        <div class="sn-feature-item__icon sn-bg-cyan-subtle"><i class="fas fa-server"></i></div>
-                        <h4 class="sn-feature-item__title">Auto-Deploy cPanel Git Version Control</h4>
-                        <p class="sn-feature-item__text">Konfigurasi `.cpanel.yml` terpasang sehingga update kode dari GitHub langsung sinkron ke hosting dengan satu klik.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. SPOTLIGHT HIGHLIGHTS (AI SEO & STANDAR PERS) -->
-    <section class="sn-section">
-        <div class="sn-container">
-            <div class="sn-spotlight-box sn-fade-init">
-                <div>
-                    <span class="sn-section-tag">TEKNOLOGI AI GOOGLE 2026</span>
-                    <h2 class="sn-section-title">Asisten AI SEO Cerdas yang Membimbing Wartawan Menulis Berita</h2>
-                    <p class="sn-section-desc">
-                        Tidak perlu ahli SEO untuk masuk halaman 1 Google. SmartNews CMS secara otomatis menganalisis kualitas artikel saat wartawan mengetik dan memberikan skor serta saran perbaikan langsung di layar.
-                    </p>
-                    <ul class="sn-checklist-group">
-                        <li class="sn-checklist-row"><i class="fas fa-check-circle"></i> <span>Menganalisis panjang judul (optimal 40-80 karakter agar tidak terpotong di Google).</span></li>
-                        <li class="sn-checklist-row"><i class="fas fa-check-circle"></i> <span>Mengevaluasi kedalaman liputan (> 400 kata untuk Google Helpful Content).</span></li>
-                        <li class="sn-checklist-row"><i class="fas fa-check-circle"></i> <span>Memastikan ketersediaan ringkasan AI 3 poin untuk cuplikan Google AI Overviews.</span></li>
-                        <li class="sn-checklist-row"><i class="fas fa-check-circle"></i> <span>Mengecek keterkaitan rubrik dan tag kata kunci pencarian.</span></li>
+                    <ul class="sn-dense-list">
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Hero Slider Berita Utama:</strong> Carousel berita pilihan dengan kontrol jumlah slide.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Headline Sticky Post:</strong> Sematkan 1 artikel penting sebagai berita utama beranda.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Feed Infinite Load:</strong> Muat berita terus menerus via AJAX tanpa reload halaman.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Dark Mode & Dual Bahasa:</strong> Ganti tema gelap/terang dan switch bahasa ID/EN instan.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Estimasi Waktu & Progress Bar:</strong> Indikator waktu baca dan garis progress merah.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Komentar Realtime & Social Share:</strong> Berbagi ke WhatsApp/Facebook dengan 1 klik.</span></li>
                     </ul>
-                    <a href="#harga" class="sn-btn sn-btn--primary">Pilih Paket Website Sekarang &rarr;</a>
                 </div>
 
-                <div class="sn-spotlight-card">
-                    <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--sn-border); padding-bottom: 14px; margin-bottom: 16px;">
-                        <span style="font-weight: 800; color: #0f172a; font-size: 16px;"><i class="fas fa-robot" style="color: #1a56db;"></i> Live AI SEO Assistant</span>
-                        <span style="background: #d1fae5; color: #065f46; font-weight: 800; font-size: 12px; padding: 4px 12px; border-radius: 99px;">98 / 100 (Grade A+)</span>
+                <!-- Box 2: Ruang Redaksi & AI SEO -->
+                <div class="sn-feature-card-dense sn-fade-init">
+                    <div class="sn-feature-card-dense__head">
+                        <div class="sn-feature-icon sn-icon--red"><i class="fas fa-newspaper"></i></div>
+                        <div class="sn-feature-card-dense__title">2. Ruang Redaksi & Asisten AI SEO</div>
                     </div>
-                    <div style="background: #f8fafc; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; font-size: 13.5px; color: #334155;">
-                        <strong style="color: #059669;"><i class="fas fa-check-circle"></i> Judul Sangat Optimal:</strong> 56 karakter dengan kata kunci utama yang kuat.
+                    <ul class="sn-dense-list">
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Editor Lengkap ala Word:</strong> Bold, Italic, Rata Kiri/Tengah/Kanan/Penuh, Tabel, Video.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Upload Foto Lokal Auto-WebP:</strong> Foto otomatis diperkecil (30-60 KB) tanpa pecah.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>AI SEO Analyzer (Skor 0-100):</strong> Audit live saat menulis sesuai standar Google.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Ringkasan Cerdas AI (3 Poin):</strong> Ekstraksi inti liputan siap untuk Google AI Overviews.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Hak Akses Bertingkat (RBAC):</strong> Super Admin, Editor, dan Wartawan (kelola pos sendiri).</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Jadwal Terbit Otomatis:</strong> Simpan liputan sebagai draft atau jadwalkan jam terbit.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Box 3: Mesin Iklan & Monetisasi -->
+                <div class="sn-feature-card-dense sn-fade-init">
+                    <div class="sn-feature-card-dense__head">
+                        <div class="sn-feature-icon sn-icon--green"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="sn-feature-card-dense__title">3. Mesin Monetisasi (6 Slot Iklan Cuan)</div>
                     </div>
-                    <div style="background: #f8fafc; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; font-size: 13.5px; color: #334155;">
-                        <strong style="color: #059669;"><i class="fas fa-check-circle"></i> Ringkasan Cerdas AI:</strong> 3 bullet points siap untuk Google AI Overviews.
+                    <ul class="sn-dense-list">
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Header Banner Atas:</strong> Posisi premium dengan impresi pembaca tertinggi.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>In-Feed Beranda:</strong> Iklan menyatu natural di sela-sela daftar berita terkini.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Sidebar Kolom Samping:</strong> Mendukung ukuran standar banner 300x250 / 300x600.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto In-Content (Tengah Teks):</strong> Otomatis disisipkan di tengah paragraf berita.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Atas & Bawah Artikel:</strong> Posisi strategis di awal dan akhir liputan berita.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Support Google AdSense:</strong> Maupun upload banner gambar sponsor langsung.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Box 4: Dewan Pers & Keamanan -->
+                <div class="sn-feature-card-dense sn-fade-init">
+                    <div class="sn-feature-card-dense__head">
+                        <div class="sn-feature-icon sn-icon--purple"><i class="fas fa-shield-alt"></i></div>
+                        <div class="sn-feature-card-dense__title">4. Standar Dewan Pers & Keamanan Server</div>
                     </div>
-                    <div style="background: #f8fafc; border-radius: 10px; padding: 12px 14px; font-size: 13.5px; color: #334155;">
-                        <strong style="color: #059669;"><i class="fas fa-check-circle"></i> Gambar Utama WebP:</strong> Resolusi tinggi 1200px dengan kompresi 45 KB.
-                    </div>
+                    <ul class="sn-dense-list">
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Pedoman Media Siber:</strong> Format resmi sesuai Peraturan Dewan Pers Indonesia.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Susunan Redaksi Lengkap:</strong> Struktur Pemred, Redaktur Pelaksana, dan Wartawan.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Kode Etik, Hak Jawab & Disclaimer:</strong> Klausul hukum perlindungan pers siap pakai.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Anti Brute-Force & Anti Spam:</strong> Rate limiting login dan proteksi formulir komentar.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Security Headers & SSL:</strong> Proteksi keamanan HSTS HTTPS dan anti celah traversal.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto-Deploy Git cPanel:</strong> Pembaruan kode dari GitHub tersinkronisasi 1 klik.</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. PILIHAN HARGA (3 PRICING TIERS: 1.5 JUTA, 3 JUTA, 5 JUTA + TRIPAY PAYMENT GATEWAY) -->
-    <section class="sn-section sn-section--alt" id="harga">
+    <!-- 6. PILIHAN HARGA (3 PRICING TIERS: 1.5 JUTA, 3 JUTA, 5 JUTA) -->
+    <section class="sn-section" id="harga">
         <div class="sn-container">
             <div class="sn-section-header sn-fade-init">
-                <span class="sn-section-tag">PILIHAN INVESTASI CERDAS</span>
+                <span class="sn-section-tag">PILIHAN PAKET INVESTASI</span>
                 <h2 class="sn-section-title">Pilih Paket yang Sesuai dengan Kebutuhan Anda</h2>
                 <p class="sn-section-desc">
-                    Tersedia opsi beli source code mandiri untuk programmer, paket siap pakai terima jadi untuk redaksi, hingga paket VIP dengan garansi dan update fitur selamanya. Mendukung pembayaran instan via **Tripay (QRIS / VA / E-Wallet)** dan **WhatsApp**.
+                    Tersedia paket beli source code mandiri untuk programmer, paket siap pakai terima jadi untuk redaksi, hingga paket VIP dengan update dan garansi selamanya.
                 </p>
             </div>
 
-            <div class="sn-pricing-wrapper">
-                <!-- TIER 1: Rp 1.500.000 (Source Code Only) -->
-                <div class="sn-tier-card sn-fade-init">
-                    <div class="sn-tier-header">
-                        <h3 class="sn-tier-name">Paket Starter</h3>
-                        <p class="sn-tier-desc">Hanya Source Code (Untuk Programmer / Developer Mandiri)</p>
-                        <div class="sn-tier-price-box">
-                            <div class="sn-tier-price">Rp 1.500.000</div>
-                            <div class="sn-tier-period">Sekali Bayar (Hak Milik Lifetime)</div>
-                        </div>
+            <div class="sn-pricing-grid">
+                <!-- TIER 1: Rp 1.500.000 (Source Code Saja) -->
+                <div class="sn-price-card sn-fade-init">
+                    <div class="sn-price-card__header">
+                        <h3 class="sn-price-card__plan">Paket Starter</h3>
+                        <p class="sn-price-card__for">Hanya Source Code (Untuk Programmer / Developer Mandiri)</p>
+                        <div class="sn-price-card__amount">Rp 1.500.000</div>
+                        <div class="sn-price-card__type">Sekali Bayar (Hak Milik Lifetime)</div>
                     </div>
 
-                    <ul class="sn-tier-features">
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Full Source Code SmartNews CMS</strong> (Laravel 12)</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Database SQL Lengkap</strong> + Data Berita Demo</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bebas Dipasang</strong> di domain mana saja tanpa lisensi kunci</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Panduan Instalasi</strong> Dokumentasi PDF & Video Lengkap</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Modul AI SEO Engine</strong> & 6 Slot Iklan Cuan</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span>Update perbaikan bug versi saat ini (Support 1 Bulan)</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-times-circle"></i> <span>Hosting & Domain (Disediakan pembeli sendiri)</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-times-circle"></i> <span>Jasa instalasi server (Instalasi mandiri oleh pembeli)</span></li>
+                    <ul class="sn-price-features">
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Full Source Code SmartNews CMS</strong> (Laravel 12)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Database SQL Lengkap</strong> + Data Berita Demo</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bebas Dipasang</strong> di domain mana saja (Lifetime)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Panduan Instalasi</strong> Dokumentasi PDF & Video Lengkap</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Modul AI SEO Engine</strong> & 6 Slot Iklan Cuan</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span>Update perbaikan bug versi saat ini (Support 1 Bulan)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-times-circle"></i> <span>Hosting & Domain (Disediakan pembeli sendiri)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-times-circle"></i> <span>Jasa instalasi server (Instalasi mandiri oleh pembeli)</span></li>
                     </ul>
 
-                    <div class="sn-tier-actions">
-                        <button type="button" class="sn-btn sn-btn--tripay sn-btn--block" onclick="openTripayModal('pkg1', 'Paket Starter (Source Code Saja)', 1500000)">
-                            <i class="fas fa-credit-card"></i> <span>Bayar Otomatis Tripay</span>
+                    <div class="sn-price-actions">
+                        <button type="button" class="sn-btn sn-btn--blue sn-btn--block" onclick="openOrderModal('pkg1', 'Paket Starter (Source Code Saja)', 1500000)">
+                            <i class="fas fa-shopping-cart"></i> <span>Pesan Paket (Rp 1,5 Jt)</span>
                         </button>
-                        <a href="{{ $waUrlPkg1 }}" target="_blank" class="sn-btn sn-btn--outline sn-btn--block" title="Pesan Paket Source Code Saja">
-                            <i class="fab fa-whatsapp"></i> <span>Pesan via WhatsApp</span>
+                        <a href="{{ $waUrlPkg1 }}" target="_blank" class="sn-btn sn-btn--outline sn-btn--block" title="Pesan via WhatsApp">
+                            <i class="fab fa-whatsapp"></i> <span>Chat WhatsApp</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- TIER 2: Rp 3.000.000 (Siap Pakai + Hosting + Domain + Update 1 Tahun) -> BEST SELLER -->
-                <div class="sn-tier-card sn-tier-card--featured sn-fade-init">
-                    <div class="sn-tier-ribbon">⭐ REKOMENDASI TERBAIK — SIAP TERBIT</div>
+                <div class="sn-price-card sn-price-card--featured sn-fade-init">
+                    <div class="sn-price-ribbon">⭐ REKOMENDASI TERBAIK: SIAP PAKAI</div>
 
-                    <div class="sn-tier-header">
-                        <h3 class="sn-tier-name">Paket Siap Pakai (Pro)</h3>
-                        <p class="sn-tier-desc">Kode + Hosting + Domain + Setup + Update 1 Tahun (Terima Jadi Online)</p>
-                        <div class="sn-tier-price-box">
-                            <div class="sn-tier-price">Rp 3.000.000</div>
-                            <div class="sn-tier-period">Sekali Bayar (Tanpa Biaya Bulanan)</div>
-                        </div>
+                    <div class="sn-price-card__header">
+                        <h3 class="sn-price-card__plan">Paket Siap Pakai (Pro)</h3>
+                        <p class="sn-price-card__for">Kode + Hosting + Domain + Setup + Update 1 Tahun (Terima Jadi)</p>
+                        <div class="sn-price-card__amount">Rp 3.000.000</div>
+                        <div class="sn-price-card__type">Sekali Bayar (Tanpa Biaya Bulanan)</div>
                     </div>
 
-                    <ul class="sn-tier-features">
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Semua fasilitas Paket Starter (1,5 Juta)</strong></span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Cloud Hosting NVMe Cepat (1 Tahun)</strong></span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Domain Bebas Pilih</strong> (.com, .net, .web.id, .my.id 1 Thn)</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Jasa Instalasi & Setup Server 100%</strong> sampai online</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Desain Logo Eksklusif & Favicon</strong> Brand Media</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Import Data Demo Lengkap</strong> (Langsung persis demo)</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Update Fitur & Sistem 1 Tahun Penuh</strong> (Update berkala)</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Garansi Setup & Bantuan Teknis 6 Bulan</strong></span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Sertifikat Keamanan SSL (HTTPS)</strong> Aktif Otomatis</span></li>
+                    <ul class="sn-price-features">
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Semua fasilitas Paket Starter (1,5 Juta)</strong></span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Cloud Hosting NVMe Cepat (1 Tahun)</strong></span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Domain Bebas Pilih</strong> (.com, .net, .web.id, .my.id 1 Thn)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Jasa Instalasi & Setup Server 100%</strong> sampai online</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Desain Logo Eksklusif & Favicon</strong> Brand Media</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Import Data Demo Lengkap</strong> (Persis demo)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Update Fitur & Sistem 1 Tahun Penuh</strong> (Berkala)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Garansi Setup & Bantuan Teknis 6 Bulan</strong></span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Sertifikat Keamanan SSL (HTTPS)</strong> Aktif Otomatis</span></li>
                     </ul>
 
-                    <div class="sn-tier-actions">
-                        <button type="button" class="sn-btn sn-btn--primary sn-btn--block sn-pulse" onclick="openTripayModal('pkg2', 'Paket Pro (Siap Pakai + Hosting & Domain)', 3000000)">
-                            <i class="fas fa-bolt"></i> <span>Bayar Otomatis Tripay (QRIS/VA)</span>
+                    <div class="sn-price-actions">
+                        <button type="button" class="sn-btn sn-btn--primary sn-btn--block sn-pulse" onclick="openOrderModal('pkg2', 'Paket Pro (Siap Pakai + Hosting & Domain)', 3000000)">
+                            <i class="fas fa-bolt"></i> <span>Ambil Paket Siap Pakai (3 Jt)</span>
                         </button>
-                        <a href="{{ $waUrlPkg2 }}" target="_blank" class="sn-btn sn-btn--whatsapp sn-btn--block" title="Pesan Paket Siap Pakai Rp 3 Juta">
+                        <a href="{{ $waUrlPkg2 }}" target="_blank" class="sn-btn sn-btn--whatsapp sn-btn--block" title="Pesan via WhatsApp">
                             <i class="fab fa-whatsapp"></i> <span>Pesan via WhatsApp (3 Jt)</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- TIER 3: Rp 5.000.000 (VIP Lifetime Update & Full Servis) -->
-                <div class="sn-tier-card sn-fade-init">
-                    <div class="sn-tier-ribbon sn-tier-ribbon--vip">👑 VIP FULL SERVICE & GARANSI LIFETIME</div>
+                <div class="sn-price-card sn-fade-init">
+                    <div class="sn-price-ribbon sn-price-ribbon--vip">👑 VIP FULL SERVICE & GARANSI LIFETIME</div>
 
-                    <div class="sn-tier-header">
-                        <h3 class="sn-tier-name">Paket Enterprise VIP</h3>
-                        <p class="sn-tier-desc">Full Servis & Lifetime Update Selamanya (Bebas Pusing Teknis Seumur Hidup)</p>
-                        <div class="sn-tier-price-box">
-                            <div class="sn-tier-price">Rp 5.000.000</div>
-                            <div class="sn-tier-period">Sekali Bayar (Garansi & Update Selamanya)</div>
-                        </div>
+                    <div class="sn-price-card__header">
+                        <h3 class="sn-price-card__plan">Paket Enterprise VIP</h3>
+                        <p class="sn-price-card__for">Full Servis & Lifetime Update (Bebas Pusing Selamanya)</p>
+                        <div class="sn-price-card__amount">Rp 5.000.000</div>
+                        <div class="sn-price-card__type">Sekali Bayar (Garansi & Update Selamanya)</div>
                     </div>
 
-                    <ul class="sn-tier-features">
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Semua fasilitas Paket Siap Pakai (3 Juta)</strong></span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Cloud Hosting NVMe Dedicated / High Spec</strong> (1 Tahun)</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>LIFETIME Free Update Fitur Baru</strong> (Dapat update gratis selamanya)</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FULL SERVIS Perbaikan Error / Bug Selamanya</strong> (Lifetime Warranty)</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Prioritas Support VIP via WhatsApp 24/7</strong></span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Integrasi Payment Gateway Tripay</strong> (QRIS, VA, E-Wallet)</span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bantuan Setup Google Search Console & AdSense</strong></span></li>
-                        <li class="sn-tier-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Konsultasi Dokumen Standar Dewan Pers</strong></span></li>
+                    <ul class="sn-price-features">
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Semua fasilitas Paket Siap Pakai (3 Juta)</strong></span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Cloud Hosting NVMe Dedicated / High Spec</strong> (1 Tahun)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>LIFETIME Free Update Fitur Baru</strong> (Gratis selamanya)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FULL SERVIS Perbaikan Error / Bug Selamanya</strong> (Lifetime)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Prioritas Support VIP via WhatsApp 24/7</strong></span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bantuan Integrasi Payment Gateway</strong> (QRIS & VA)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bantuan Setup Google Search Console & AdSense</strong></span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Konsultasi Dokumen Standar Dewan Pers</strong></span></li>
                     </ul>
 
-                    <div class="sn-tier-actions">
-                        <button type="button" class="sn-btn sn-btn--tripay sn-btn--block" onclick="openTripayModal('pkg3', 'Paket Enterprise VIP (Lifetime Update & Full Servis)', 5000000)">
-                            <i class="fas fa-crown"></i> <span>Bayar Otomatis Tripay</span>
+                    <div class="sn-price-actions">
+                        <button type="button" class="sn-btn sn-btn--blue sn-btn--block" onclick="openOrderModal('pkg3', 'Paket Enterprise VIP (Lifetime Update & Full Servis)', 5000000)">
+                            <i class="fas fa-crown"></i> <span>Pesan Paket VIP (Rp 5 Jt)</span>
                         </button>
-                        <a href="{{ $waUrlPkg3 }}" target="_blank" class="sn-btn sn-btn--whatsapp sn-btn--block" title="Pesan Paket Ultimate VIP Rp 5 Juta">
+                        <a href="{{ $waUrlPkg3 }}" target="_blank" class="sn-btn sn-btn--whatsapp sn-btn--block" title="Pesan via WhatsApp">
                             <i class="fab fa-whatsapp"></i> <span>Pesan VIP via WhatsApp (5 Jt)</span>
                         </a>
                     </div>
-                </div>
-            </div>
-
-            <!-- TRIPAY PAYMENT CHANNELS BANNER -->
-            <div class="sn-tripay-banner sn-fade-init">
-                <div class="sn-tripay-banner__title">
-                    <i class="fas fa-shield-alt" style="color: #1a56db;"></i>
-                    <span>Didukung Pembayaran Otomatis & Realtime via Tripay Payment Gateway:</span>
-                </div>
-                <div class="sn-payment-logos">
-                    <span class="sn-pay-pill"><i class="fas fa-qrcode" style="color: #dc2626;"></i> QRIS (Gopay/OVO/Dana/BCA/ShopeePay)</span>
-                    <span class="sn-pay-pill"><i class="fas fa-university" style="color: #1a56db;"></i> BCA Virtual Account</span>
-                    <span class="sn-pay-pill"><i class="fas fa-university" style="color: #059669;"></i> BRI Virtual Account</span>
-                    <span class="sn-pay-pill"><i class="fas fa-university" style="color: #d97706;"></i> Mandiri Virtual Account</span>
-                    <span class="sn-pay-pill"><i class="fas fa-university" style="color: #e11d48;"></i> BNI Virtual Account</span>
-                    <span class="sn-pay-pill"><i class="fas fa-store" style="color: #dc2626;"></i> Alfamart / Indomaret</span>
                 </div>
             </div>
 
@@ -573,7 +438,7 @@
                         <tr>
                             <th>Fasilitas & Fitur</th>
                             <th>Paket Starter (1,5 Jt)</th>
-                            <th class="sn-col-highlight" style="color: #991b1b;">Paket Siap Pakai (3 Jt) ⭐</th>
+                            <th class="sn-highlight" style="color: #991b1b;">Paket Siap Pakai (3 Jt) ⭐</th>
                             <th>Paket VIP Ultimate (5 Jt) 👑</th>
                         </tr>
                     </thead>
@@ -581,50 +446,44 @@
                         <tr>
                             <td><strong>Full Source Code SmartNews (Laravel 12)</strong></td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> Ya (Lifetime)</td>
-                            <td class="sn-col-highlight"><i class="fas fa-check" style="color: #10b981;"></i> Ya (Lifetime)</td>
+                            <td class="sn-highlight"><i class="fas fa-check" style="color: #10b981;"></i> Ya (Lifetime)</td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> Ya (Lifetime)</td>
                         </tr>
                         <tr>
                             <td><strong>Cloud Hosting NVMe (1 Tahun)</strong></td>
-                            <td><i class="fas fa-times" style="color: #cbd5e1;"></i> Tidak Termasuk</td>
-                            <td class="sn-col-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk (1 Tahun)</strong></td>
+                            <td><i class="fas fa-times" style="color: #cbd5e1;"></i> Tidak</td>
+                            <td class="sn-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk (1 Tahun)</strong></td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk (High Spec)</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Domain Bebas (.com/.net/.web.id/.my.id)</strong></td>
-                            <td><i class="fas fa-times" style="color: #cbd5e1;"></i> Tidak Termasuk</td>
-                            <td class="sn-col-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk (1 Tahun)</strong></td>
+                            <td><i class="fas fa-times" style="color: #cbd5e1;"></i> Tidak</td>
+                            <td class="sn-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk (1 Tahun)</strong></td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk (1 Tahun)</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Jasa Setup Server & Import Data Demo</strong></td>
-                            <td><i class="fas fa-times" style="color: #cbd5e1;"></i> Instal Sendiri</td>
-                            <td class="sn-col-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Free Setup 100%</strong></td>
+                            <td><i class="fas fa-times" style="color: #cbd5e1;"></i> Mandiri</td>
+                            <td class="sn-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Free Setup 100%</strong></td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>Free Setup 100%</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Free Desain Logo & Favicon Media</strong></td>
-                            <td><i class="fas fa-times" style="color: #cbd5e1;"></i> Tidak Termasuk</td>
-                            <td class="sn-col-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk</strong></td>
+                            <td><i class="fas fa-times" style="color: #cbd5e1;"></i> Tidak</td>
+                            <td class="sn-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk</strong></td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Update Fitur & Sistem SmartNews</strong></td>
                             <td>Bugfix 1 Bulan</td>
-                            <td class="sn-col-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Gratis Update 1 Tahun</strong></td>
+                            <td class="sn-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Gratis Update 1 Tahun</strong></td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>LIFETIME FREE UPDATE</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Garansi & Perbaikan Error / Bug</strong></td>
                             <td>Panduan PDF/Video</td>
-                            <td class="sn-col-highlight">Garansi 6 Bulan</td>
+                            <td class="sn-highlight">Garansi 6 Bulan</td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>LIFETIME FULL SERVICE</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Support Payment Gateway Tripay</strong></td>
-                            <td>Dokumentasi</td>
-                            <td class="sn-col-highlight">Dokumentasi</td>
-                            <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>Dibantu sampai Aktif</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -632,8 +491,8 @@
         </div>
     </section>
 
-    <!-- 8. FAQ SECTION (PERTANYAAN UMUM) -->
-    <section class="sn-section" id="faq">
+    <!-- 7. FAQ SECTION (PERTANYAAN UMUM) -->
+    <section class="sn-section sn-section--alt" id="faq">
         <div class="sn-container">
             <div class="sn-section-header sn-fade-init">
                 <span class="sn-section-tag">JAWABAN CEPAT</span>
@@ -650,8 +509,8 @@
                     </div>
                     <div class="sn-faq-content">
                         <strong>Paket 1,5 Juta (Starter)</strong> khusus untuk Anda yang paham teknis dan ingin memasang source code sendiri di hosting pribadi.<br><br>
-                        <strong>Paket 3 Juta (Siap Pakai - Best Seller)</strong> adalah paket terima jadi paling praktis: sudah kami sediakan Cloud Hosting 1 tahun, Domain pilihan, jasa instalasi server, desain logo, import data berita demo, dan **Gratis update sistem selama 1 tahun**.<br><br>
-                        <strong>Paket 5 Juta (VIP Ultimate)</strong> adalah kemitraan VIP seumur hidup: jika di masa depan ada error/masalah teknis akan kami perbaiki gratis selamanya (lifetime full servis), mendapatkan update fitur-fitur baru SmartNews tanpa bayar lagi seumur hidup, serta bantuan integrasi Tripay Payment Gateway dan Google AdSense.
+                        <strong>Paket 3 Juta (Siap Pakai - Best Seller)</strong> adalah paket terima jadi paling praktis: sudah kami sediakan Cloud Hosting 1 tahun, Domain pilihan, jasa instalasi server, desain logo, import data berita demo, dan update fitur gratis selama 1 tahun.<br><br>
+                        <strong>Paket 5 Juta (VIP Ultimate)</strong> adalah kemitraan VIP seumur hidup: jika di masa depan ada error/masalah teknis akan kami perbaiki gratis selamanya (lifetime full servis), dan mendapatkan update fitur-fitur baru SmartNews tanpa biaya lagi seumur hidup.
                     </div>
                 </div>
 
@@ -684,7 +543,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="sn-faq-content">
-                        Kami mendukung 2 metode pembayaran yang sangat fleksibel: (1) **Pembayaran Otomatis Realtime via Tripay** (QRIS, BCA VA, BRI VA, Mandiri VA, BNI VA, Permata VA, Alfamart, Indomaret), atau (2) **Transfer Bank & Konsultasi langsung via WhatsApp**.
+                        Tersedia metode pembayaran instan via <strong>QRIS (BCA, Gopay, OVO, Dana, ShopeePay)</strong>, <strong>Virtual Account Bank (BCA, BRI, Mandiri, BNI)</strong>, atau transfer bank langsung dengan konfirmasi via WhatsApp.
                     </div>
                 </div>
 
@@ -702,7 +561,7 @@
         </div>
     </section>
 
-    <!-- 9. FINAL CTA SECTION -->
+    <!-- 8. FINAL CTA SECTION -->
     <section class="sn-cta-section">
         <div class="sn-container sn-fade-init">
             <h2 class="sn-cta-title">Waktunya Memulai Bisnis Media Online Anda Hari Ini!</h2>
@@ -710,22 +569,22 @@
                 Dapatkan portal berita berkecepatan tinggi, berfitur AI SEO cerdas, siap menghasilkan cuan iklan, dan memenuhi standar Dewan Pers Indonesia.
             </p>
             <div class="sn-cta-buttons">
-                <button type="button" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" onclick="openTripayModal('pkg2', 'Paket Pro (Siap Pakai + Hosting & Domain)', 3000000)">
+                <button type="button" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" onclick="openOrderModal('pkg2', 'Paket Pro (Siap Pakai + Hosting & Domain)', 3000000)">
                     <i class="fas fa-shopping-cart"></i> <span>Pesan Paket Siap Pakai (Rp 3 Juta)</span>
                 </button>
                 <a href="{{ $waUrlPkg2 }}" target="_blank" class="sn-btn sn-btn--whatsapp sn-btn--lg" title="Konsultasi via WhatsApp">
-                    <i class="fab fa-whatsapp" style="font-size: 20px;"></i>
+                    <i class="fab fa-whatsapp" style="font-size: 18px;"></i>
                     <span>Konsultasi via WhatsApp</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 10. FOOTER -->
+    <!-- 9. FOOTER -->
     <footer class="sn-footer-main">
         <div class="sn-container sn-footer-main__inner">
             <div>
-                &copy; {{ date('Y') }} <strong>SmartNews CMS</strong> — Solusi Portal Media Online Profesional Indonesia. All Rights Reserved.
+                &copy; {{ date('Y') }} <strong>SmartNews CMS</strong> - Solusi Portal Media Online Profesional Indonesia. All Rights Reserved.
             </div>
             <ul class="sn-footer-links">
                 <li><a href="{{ route('home') }}" class="sn-footer-link">Live Demo</a></li>
@@ -737,24 +596,24 @@
         </div>
     </footer>
 
-    <!-- TRIPAY CHECKOUT MODAL POPUP -->
-    <div class="sn-modal-backdrop" id="tripayModal">
+    <!-- CHECKOUT ORDER MODAL POPUP -->
+    <div class="sn-modal-backdrop" id="orderModal">
         <div class="sn-modal-box">
             <div class="sn-modal-header">
-                <div style="font-weight: 800; font-size: 16px;">
-                    <i class="fas fa-shield-alt"></i> Checkout Pembayaran Tripay
+                <div style="font-weight: 800; font-size: 15px;">
+                    <i class="fas fa-shopping-bag"></i> Formulir Pemesanan & Pembayaran
                 </div>
-                <button type="button" class="sn-modal-close" onclick="closeTripayModal()">&times;</button>
+                <button type="button" class="sn-modal-close" onclick="closeOrderModal()">&times;</button>
             </div>
             <div class="sn-modal-body">
                 <form action="{{ route('landing.tripay.checkout') }}" method="POST">
                     @csrf
                     <input type="hidden" name="package_id" id="modalPkgId" value="pkg2">
 
-                    <div style="background: #f8fafc; border: 1px solid var(--sn-border); border-radius: 8px; padding: 12px 16px; margin-bottom: 18px;">
-                        <div style="font-size: 12px; color: var(--sn-text-subtle);">Paket Terpilih:</div>
-                        <div id="modalPkgName" style="font-size: 15px; font-weight: 800; color: var(--sn-text-main);">Paket Pro (Siap Pakai + Hosting & Domain)</div>
-                        <div id="modalPkgPrice" style="font-size: 18px; font-weight: 900; color: var(--sn-red); margin-top: 2px;">Rp 3.000.000</div>
+                    <div style="background: #f8fafc; border: 1px solid var(--sn-border); border-radius: 6px; padding: 10px 14px; margin-bottom: 14px;">
+                        <div style="font-size: 11.5px; color: var(--sn-text-subtle);">Paket Terpilih:</div>
+                        <div id="modalPkgName" style="font-size: 14.5px; font-weight: 800; color: var(--sn-text-main);">Paket Pro (Siap Pakai + Hosting & Domain)</div>
+                        <div id="modalPkgPrice" style="font-size: 17px; font-weight: 900; color: var(--sn-red); margin-top: 2px;">Rp 3.000.000</div>
                     </div>
 
                     <div class="sn-form-group">
@@ -773,10 +632,10 @@
                     </div>
 
                     <div class="sn-form-group">
-                        <label class="sn-form-label" for="payMethod">Pilihan Saluran Pembayaran (Tripay):</label>
+                        <label class="sn-form-label" for="payMethod">Pilihan Metode Pembayaran:</label>
                         <select id="payMethod" name="payment_method" class="sn-form-select" required>
-                            <optgroup label="QRIS (Instant Realtime)">
-                                <option value="QRIS" selected>QRIS (BCA, Gopay, OVO, Dana, ShopeePay, LinkAja)</option>
+                            <optgroup label="QRIS Realtime (Semua E-Wallet & Bank)">
+                                <option value="QRIS" selected>QRIS (BCA, Gopay, OVO, Dana, ShopeePay, Livin Mandiri)</option>
                             </optgroup>
                             <optgroup label="Virtual Account Bank (Otomatis)">
                                 <option value="BCAVA">BCA Virtual Account</option>
@@ -792,15 +651,15 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="sn-btn sn-btn--primary sn-btn--block sn-btn--lg" style="margin-top: 18px;">
-                        <i class="fas fa-lock"></i> <span>Lanjutkan Pembayaran Instan &rarr;</span>
+                    <button type="submit" class="sn-btn sn-btn--primary sn-btn--block sn-btn--lg" style="margin-top: 14px;">
+                        <i class="fas fa-lock"></i> <span>Lanjutkan Pembayaran &rarr;</span>
                     </button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Minimal Vanilla JS (Animations & Tripay Modal) -->
+    <!-- Minimal Vanilla JS -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // 1. Reading Scroll Progress Bar
@@ -821,7 +680,7 @@
                         entry.target.classList.add('sn-in');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.08 });
             fadeElements.forEach(el => observer.observe(el));
 
             // 3. FAQ Accordion
@@ -840,7 +699,7 @@
             // 4. Sticky Navbar Shadow
             const navbar = document.getElementById('snNavbar');
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 30) {
+                if (window.scrollY > 20) {
                     navbar.classList.add('scrolled');
                 } else {
                     navbar.classList.remove('scrolled');
@@ -848,22 +707,21 @@
             }, { passive: true });
         });
 
-        // 5. Tripay Checkout Modal Functions
-        function openTripayModal(pkgId, pkgName, pkgPrice) {
+        // 5. Checkout Modal
+        function openOrderModal(pkgId, pkgName, pkgPrice) {
             document.getElementById('modalPkgId').value = pkgId;
             document.getElementById('modalPkgName').innerText = pkgName;
             document.getElementById('modalPkgPrice').innerText = 'Rp ' + Number(pkgPrice).toLocaleString('id-ID');
-            document.getElementById('tripayModal').classList.add('show');
+            document.getElementById('orderModal').classList.add('show');
         }
 
-        function closeTripayModal() {
-            document.getElementById('tripayModal').classList.remove('show');
+        function closeOrderModal() {
+            document.getElementById('orderModal').classList.remove('show');
         }
 
-        // Close on background click
-        document.getElementById('tripayModal').addEventListener('click', function(e) {
+        document.getElementById('orderModal').addEventListener('click', function(e) {
             if (e.target === this) {
-                closeTripayModal();
+                closeOrderModal();
             }
         });
     </script>

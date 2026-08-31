@@ -4,7 +4,7 @@
     $isEdit = isset($user);
 @endphp
 
-@section('title', ($isEdit ? 'Edit Pengguna: ' . $user->name : 'Tambah Pengguna Baru') . ' – Admin Panel')
+@section('title', ($isEdit ? 'Edit Pengguna: ' . $user->name : 'Tambah Pengguna Baru') . ' - Admin Panel')
 @section('page_title', $isEdit ? 'Edit Data Pengguna' : 'Tambah Pengguna Baru')
 
 @section('content')

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Pengaturan Profil – Admin Panel')
+@section('title', 'Pengaturan Profil - Admin Panel')
 @section('page_title', 'Pengaturan Profil Akun')
 
 @section('content')

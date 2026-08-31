@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Manajemen Iklan (Ads Management) – SmartNews Admin')
+@section('title', 'Manajemen Iklan (Ads Management) - SmartNews Admin')
 @section('page_title', 'Manajemen Iklan (Ads Management)')
 
 @section('content')

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Pengaturan Website & SEO – Admin Panel')
+@section('title', 'Pengaturan Website & SEO - Admin Panel')
 @section('page_title', 'Pengaturan Website, Logo & SEO')
 
 @section('content')

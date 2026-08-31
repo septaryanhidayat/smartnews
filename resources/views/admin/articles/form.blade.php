@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 
-@section('title', isset($article) ? 'Edit Berita – ' . Str::limit($article->title, 40) : 'Tulis Berita Baru – SmartNews')
+@section('title', isset($article) ? 'Edit Berita - ' . Str::limit($article->title, 40) : 'Tulis Berita Baru - SmartNews')
 
 @push('styles')
 <!-- Summernote Lite WYSIWYG (Full Word-like Rich Text Editor) -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" rel="stylesheet">
 <style>
-    /* WordPress CMS Style Editor Layout */
+    /* CMS Editor Layout */
     .wp-editor-layout {
         display: grid;
         grid-template-columns: 1fr 340px;

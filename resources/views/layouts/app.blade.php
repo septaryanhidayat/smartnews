@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>@yield('title', setting('site_name', 'SmartNews') . ' – ' . setting('site_tagline', 'Portal Berita Terpercaya & Cerdas'))</title>
+    <title>@yield('title', setting('site_name', 'SmartNews') . ' - ' . setting('site_tagline', 'Portal Berita Terpercaya & Cerdas'))</title>
     <meta name="description" content="@yield('meta_description', setting('site_description', 'SmartNews - Portal berita Indonesia terpercaya, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.'))">
     <meta name="keywords" content="@yield('meta_keywords', setting('site_keywords', 'smartnews, berita terkini, berita indonesia, portal berita, nasional, politik, ekonomi, teknologi, olahraga'))">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -20,7 +20,7 @@
     <meta property="og:locale" content="{{ app()->getLocale() === 'en' ? 'en_US' : 'id_ID' }}">
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="@yield('canonical_url', url()->current())">
-    <meta property="og:title" content="@yield('og_title', setting('site_name', 'SmartNews') . ' – ' . setting('site_tagline', 'Portal Berita Terpercaya & Cerdas'))">
+    <meta property="og:title" content="@yield('og_title', setting('site_name', 'SmartNews') . ' - ' . setting('site_tagline', 'Portal Berita Terpercaya & Cerdas'))">
     <meta property="og:description" content="@yield('meta_description', setting('site_description', 'Portal berita Indonesia terpercaya dan cerdas.'))">
     <meta property="og:image" content="@yield('og_image', site_logo())">
     <meta property="og:image:secure_url" content="@yield('og_image', site_logo())">

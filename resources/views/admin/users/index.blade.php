@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Kelola Pengguna – Admin Panel')
+@section('title', 'Kelola Pengguna - Admin Panel')
 @section('page_title', 'Kelola Pengguna (User Management)')
 
 @section('content')

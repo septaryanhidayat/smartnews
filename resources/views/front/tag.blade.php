@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tag: #' . $tag->name . ' – SmartNews')
+@section('title', 'Tag: #' . $tag->name . ' - SmartNews')
 
 @section('content')
 <main id="mainContent" class="main-layout">

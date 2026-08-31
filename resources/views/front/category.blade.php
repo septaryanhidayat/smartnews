@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Kategori: ' . $category->name . ' – SmartNews')
+@section('title', 'Kategori: ' . $category->name . ' - SmartNews')
 @section('meta_description', $category->description ?? 'Berita terkini kategori ' . $category->name)
 
 @section('content')

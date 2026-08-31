@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'SmartNews – Portal Berita Terpercaya & Cerdas')
+@section('title', 'SmartNews - Portal Berita Terpercaya & Cerdas')
 
 @section('content')
 <main id="mainContent">

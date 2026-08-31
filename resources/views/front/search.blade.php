@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Pencarian: "' . $query . '" – SmartNews')
+@section('title', 'Pencarian: "' . $query . '" - SmartNews')
 
 @section('content')
 <main id="mainContent" class="main-layout">

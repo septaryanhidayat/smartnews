@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $pageData['title'] . ' – ' . setting('site_name', 'SmartNews'))
+@section('title', $pageData['title'] . ' - ' . setting('site_name', 'SmartNews'))
 
 @section('content')
 <main id="mainContent" class="main-layout single-layout">

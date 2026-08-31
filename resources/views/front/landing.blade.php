@@ -34,31 +34,31 @@
 
     <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "SmartNews CMS - Paket Lengkap Website Portal Berita Media Online",
-      "image": "{{ site_logo() }}",
-      "description": "Paket instan pembuatan website media online profesional siap terbit dengan AI SEO Analyzer, 6 Slot Iklan Monetisasi, Cloud Hosting 1 Tahun, Domain Pilihan, Free Desain Logo & Full Source Code Lifetime.",
-      "brand": {
-        "@type": "Brand",
-        "name": "SmartNews"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "{{ url()->current() }}",
-        "priceCurrency": "IDR",
-        "price": "3000000",
-        "priceValidUntil": "2027-12-31",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "128"
-      }
-    }
+    {!! json_encode([
+      '@context' => 'https://schema.org/',
+      '@type' => 'Product',
+      'name' => 'SmartNews CMS - Paket Lengkap Website Portal Berita Media Online',
+      'image' => site_logo(),
+      'description' => 'Paket instan pembuatan website media online profesional siap terbit dengan AI SEO Analyzer, 6 Slot Iklan Monetisasi, Cloud Hosting 1 Tahun, Domain Pilihan, Free Desain Logo & Full Source Code Lifetime.',
+      'brand' => [
+        '@type' => 'Brand',
+        'name' => 'SmartNews',
+      ],
+      'offers' => [
+        '@type' => 'Offer',
+        'url' => url()->current(),
+        'priceCurrency' => 'IDR',
+        'price' => '3000000',
+        'priceValidUntil' => '2027-12-31',
+        'availability' => 'https://schema.org/InStock',
+        'itemCondition' => 'https://schema.org/NewCondition',
+      ],
+      'aggregateRating' => [
+        '@type' => 'AggregateRating',
+        'ratingValue' => '4.9',
+        'reviewCount' => '128',
+      ],
+    ], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
     </script>
 </head>
 <body class="landing-page-body">

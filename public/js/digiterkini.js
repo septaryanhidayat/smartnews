@@ -301,6 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const urlToCopy = btn.getAttribute('data-url') || window.location.href;
 
+            const customMsg = btn.getAttribute('data-feedback');
             try {
                 if (navigator.clipboard && window.isSecureContext) {
                     await navigator.clipboard.writeText(urlToCopy);
@@ -313,21 +314,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.body.removeChild(tempInput);
                 }
 
-                showCopyToast();
+                showCopyToast(customMsg);
             } catch (err) {
                 console.error('Failed to copy text: ', err);
             }
         });
     });
 
-    function showCopyToast() {
+    function showCopyToast(customMsg) {
         if (!copyModal) return;
+        const descEl = copyModal.querySelector('.copy-modal__desc');
+        if (descEl && customMsg) {
+            descEl.textContent = customMsg;
+        } else if (descEl) {
+            descEl.textContent = 'Link tautan artikel berhasil disalin ke clipboard.';
+        }
+
         copyModal.classList.add('active');
 
         if (copyModalTimeout) clearTimeout(copyModalTimeout);
         copyModalTimeout = setTimeout(() => {
             copyModal.classList.remove('active');
-        }, 3000);
+        }, 3200);
     }
 
     /* ==========================================================================

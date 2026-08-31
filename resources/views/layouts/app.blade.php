@@ -35,6 +35,12 @@
     <meta name="twitter:title" content="@yield('og_title', setting('site_name', 'SmartNews'))">
     <meta name="twitter:description" content="@yield('meta_description', setting('site_description', 'Portal berita Indonesia terpercaya dan cerdas.'))">
     <meta name="twitter:image" content="@yield('og_image', site_logo())">
+    @if(setting('social_twitter'))
+    <meta name="twitter:site" content="{{ '@' . ltrim(parse_url(setting('social_twitter'), PHP_URL_PATH), '/') }}">
+    @endif
+
+    <!-- Schema.org JSON-LD Structured Data for SEO -->
+    @yield('schema_jsonld')
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ site_favicon() }}">

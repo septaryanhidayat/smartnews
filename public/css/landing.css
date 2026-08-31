@@ -487,37 +487,37 @@ body.sn-landing-body {
   border-radius: 0 0 4px 4px;
 }
 
-/* 2. Floating Smartphone Frame Overlapping */
+/* 2. Floating Smartphone Frame Overlapping (Authentic Phone Proportion) */
 .sn-phone-frame {
   position: absolute;
   right: -10px;
-  bottom: -20px;
-  width: 155px;
+  bottom: -25px;
+  width: 132px;
   background: #0f172a;
-  border-radius: 20px;
-  padding: 6px;
-  border: 2px solid #334155;
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.4);
+  border-radius: 22px;
+  padding: 5px;
+  border: 2.5px solid #334155;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
   z-index: 5;
   animation: floatPhone 4s ease-in-out infinite alternate;
 }
 
 @keyframes floatPhone {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
+  100% { transform: translateY(-7px); }
 }
 
 .sn-phone-notch {
-  width: 40px;
+  width: 32px;
   height: 4px;
-  background: #334155;
-  border-radius: 3px;
+  background: #020617;
+  border-radius: 99px;
   margin: 2px auto 4px auto;
 }
 
 .sn-phone-screen {
   background: #060911;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   line-height: 0;
 }
@@ -526,7 +526,7 @@ body.sn-landing-body {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 220px;
+  max-height: 250px;
   object-fit: cover;
   object-position: top center;
 }
@@ -1075,15 +1075,22 @@ body.sn-landing-body {
 /* 13. MOBILE & TABLET MEDIA QUERIES */
 @media (max-width: 992px) {
   .sn-hero__grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 22px;
+  }
+  .sn-hero__right {
+    order: -1; /* Mockup tampil paling atas sekali sebelum tulisan portal media */
+    width: 100%;
+    margin-bottom: 8px;
   }
   .sn-hero__left {
+    order: 2;
     text-align: center;
   }
   .sn-hero__title {
-    font-size: 28px;
+    font-size: 27px;
   }
   .sn-ai-chips-row {
     justify-content: center;
@@ -1136,7 +1143,42 @@ body.sn-landing-body {
     font-size: 11.5px;
   }
   .sn-hero {
-    padding: 24px 0 32px 0;
+    padding: 18px 0 28px 0;
+  }
+  .sn-hero__grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .sn-hero__right {
+    order: -1;
+    margin-bottom: 12px;
+  }
+  .sn-hero__left {
+    order: 2;
+  }
+  .sn-dual-mockup {
+    max-width: 320px;
+  }
+  .sn-hero-float-badge {
+    top: -6px;
+    left: 4px;
+    font-size: 9.5px;
+    padding: 3px 8px;
+  }
+  .sn-phone-frame {
+    width: 95px;
+    right: -6px;
+    bottom: -12px;
+    border-radius: 16px;
+    padding: 3.5px;
+  }
+  .sn-phone-notch {
+    width: 24px;
+    height: 3px;
+    margin: 1px auto 3px auto;
+  }
+  .sn-phone-screen {
+    border-radius: 12px;
   }
   .sn-hero__title {
     font-size: 21px;
@@ -1163,11 +1205,6 @@ body.sn-landing-body {
   .sn-ai-chip {
     font-size: 10.5px;
     padding: 4px 9px;
-  }
-  .sn-phone-frame {
-    width: 120px;
-    right: 0;
-    bottom: -15px;
   }
   .sn-section {
     padding: 32px 0;

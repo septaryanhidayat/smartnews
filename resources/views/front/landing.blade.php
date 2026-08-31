@@ -123,8 +123,8 @@
                 <!-- Left Column: Copywriting & CTA -->
                 <div class="sn-hero__left">
                     <div class="sn-pill-badge">
-                        <i class="fas fa-robot"></i>
-                        <span>PORTAL MEDIA RESMI LARAVEL 13 & PHP 8.4 DENGAN AI CERDAS</span>
+                        <i class="fas fa-bolt"></i>
+                        <span>SOLUSI PRAKTIS WEBSITE MEDIA ONLINE SIAP TERBIT & SIAP MONETISASI IKLAN</span>
                     </div>
 
                     <h1 class="sn-hero__title">

@@ -582,7 +582,7 @@
     </script>
 
     <!-- Theme Custom Scripts -->
-    <script src="{{ asset('js/smartnews.js') }}?v=1.6" defer></script>
+    <script src="{{ asset('js/smartnews.js') }}?v=1.7" defer></script>
     @stack('scripts')
 </body>
 </html>

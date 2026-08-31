@@ -25,7 +25,7 @@
                             <article class="slide-card">
                                 <div class="slide-card__img-wrap">
                                     <a href="{{ route('article.show', $slide->slug) }}" aria-label="{{ $slide->title }}">
-                                        <img class="slide-card__img" src="{{ $slide->image_url }}" alt="{{ $slide->title }}" width="500" height="300" {{ $loop->first ? 'fetchpriority="high"' : 'loading="lazy"' }} decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
+                                        <img class="slide-card__img" src="{{ $slide->image_url }}" alt="{{ $slide->title }}" width="500" height="300" {{ $loop->first ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"' }} decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                                     </a>
                                     @if($slide->media_type === 'video')
                                         <div class="media-badge media-badge--video">

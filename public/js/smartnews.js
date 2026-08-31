@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         new Swiper('#heroSwiper', {
             slidesPerView: 1.15,
             spaceBetween: 12,
-            loop: true,
+            rewind: true,
             speed: 700,
             autoplay: {
                 delay: 4500,

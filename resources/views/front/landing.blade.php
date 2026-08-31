@@ -85,7 +85,7 @@
         <div class="sn-container sn-topbar__inner">
             <span class="sn-topbar__badge">PROMO</span>
             <span class="sn-topbar__text">
-                Solusi Portal Berita AI Siap Terbit & Monetisasi Iklan + Free Domain & Cloud Hosting
+                Portal Media Berita Online Modern Berstandar Dewan Pers + Free Domain & Cloud Hosting
                 <a href="#harga" class="sn-topbar__link">Lihat Paket &rarr;</a>
             </span>
         </div>
@@ -102,6 +102,7 @@
             <ul class="sn-nav-menu">
                 <li><a href="#fitur" class="sn-nav-link">Fitur Utama</a></li>
                 <li><a href="#harga" class="sn-nav-link">Pilihan Harga</a></li>
+                <li><a href="#testimoni" class="sn-nav-link">Testimoni</a></li>
                 <li><a href="#faq" class="sn-nav-link">FAQ</a></li>
             </ul>
 
@@ -129,20 +130,20 @@
                         </div>
 
                         <h1 class="sn-hero__title">
-                            Bangun Portal Berita Profesional Berteknologi AI: <span class="sn-gradient-brand-text">Cepat Terindeks Google & Maksimalkan Penghasilan Iklan</span>
+                            Bangun Portal Berita Profesional Berteknologi AI: <span class="sn-gradient-brand-text">Cepat Terindeks Google & Berstandar Resmi Dewan Pers</span>
                         </h1>
 
                         <p class="sn-hero__lead">
-                            Platform media siber modern siap pakai tanpa perlu keahlian teknis. Dilengkapi <strong>Asisten Penulis AI SEO</strong>, <strong>6 Ruang Iklan Strategis</strong>, serta gratis <strong>Cloud Hosting NVMe dan Domain</strong> pilihan Anda.
+                            Platform media siber modern siap pakai tanpa perlu keahlian teknis. Dilengkapi <strong>Asisten Penulis AI SEO</strong>, manajemen redaksi <strong>multi-wartawan</strong>, serta gratis <strong>Cloud Hosting NVMe dan Domain</strong> pilihan Anda.
                         </p>
                     </div>
 
                     <div class="sn-hero__cta-block">
-                        <!-- 4 Interactive AI Chips -->
+                        <!-- 4 Interactive Feature Chips -->
                         <div class="sn-ai-chips-row">
                             <span class="sn-ai-chip"><i class="fas fa-robot" style="color: #1a56db;"></i> Asisten AI SEO</span>
                             <span class="sn-ai-chip"><i class="fas fa-bolt" style="color: #cf2e2e;"></i> Loading 0.4s WebP</span>
-                            <span class="sn-ai-chip"><i class="fas fa-dollar-sign" style="color: #059669;"></i> 6 Slot Iklan</span>
+                            <span class="sn-ai-chip"><i class="fas fa-users" style="color: #059669;"></i> Multi Wartawan</span>
                             <span class="sn-ai-chip"><i class="fas fa-shield-alt" style="color: #7c3aed;"></i> Standar Pers</span>
                         </div>
 
@@ -217,12 +218,12 @@
                     <div class="sn-stat-lbl">Fitur Lengkap CMS Pers & Redaksi</div>
                 </div>
                 <div class="sn-stat-card sn-fade-init">
-                    <div class="sn-stat-num">6 Slot</div>
-                    <div class="sn-stat-lbl">Posisi Iklan Strategis Siap Monetisasi</div>
+                    <div class="sn-stat-num">100%</div>
+                    <div class="sn-stat-lbl">Pedoman Media Siber Dewan Pers Ready</div>
                 </div>
                 <div class="sn-stat-card sn-fade-init">
-                    <div class="sn-stat-num">100%</div>
-                    <div class="sn-stat-lbl">Hak Milik Full Source Code Lifetime</div>
+                    <div class="sn-stat-num">Lifetime</div>
+                    <div class="sn-stat-lbl">Hak Milik Penuh Full Source Code</div>
                 </div>
             </div>
         </div>
@@ -235,7 +236,7 @@
                 <span class="sn-section-tag">FITUR LENGKAP SIAP PAKAI</span>
                 <h2 class="sn-section-title">Semua Fasilitas Media Online Modern Sudah Tersedia</h2>
                 <p class="sn-section-desc">
-                    Tinggal pakai tanpa perlu menyewa programmer atau membeli plugin tambahan. Seluruh sistem telah terintegrasi dari pembaca, ruang redaksi, mesin iklan, hingga legalitas pers.
+                    Tinggal pakai tanpa perlu menyewa programmer atau membeli plugin tambahan. Seluruh sistem telah terintegrasi dari pengalaman pembaca, ruang redaksi, hingga legalitas pers.
                 </p>
             </div>
 
@@ -292,29 +293,29 @@
                     </ul>
                 </div>
 
-                <!-- Card 3: Mesin Monetisasi Iklan -->
+                <!-- Card 3: Manajemen Ruang Banner Mandiri -->
                 <div class="sn-feature-card-dense sn-card-accent--green sn-fade-init">
                     <div class="sn-feature-card-dense__head">
                         <div class="sn-head-left">
-                            <div class="sn-feature-icon sn-icon--green"><i class="fas fa-dollar-sign"></i></div>
-                            <div class="sn-feature-card-dense__title">3. Mesin Monetisasi Iklan</div>
+                            <div class="sn-feature-icon sn-icon--green"><i class="fas fa-image"></i></div>
+                            <div class="sn-feature-card-dense__title">3. Manajemen Ruang Banner & Iklan</div>
                         </div>
-                        <span class="sn-feature-category-badge sn-badge--green">Monetisasi</span>
+                        <span class="sn-feature-category-badge sn-badge--green">Ruang Banner</span>
                     </div>
 
                     <div class="sn-feature-tags-cloud">
-                        <span class="sn-feature-tag-chip"><i class="fas fa-ad"></i> 6 Posisi Iklan</span>
-                        <span class="sn-feature-tag-chip"><i class="fab fa-google"></i> AdSense Ready</span>
-                        <span class="sn-feature-tag-chip"><i class="fas fa-image"></i> Banner Mandiri</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-ad"></i> 6 Posisi Banner</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-handshake"></i> Sponsor Lokal</span>
                         <span class="sn-feature-tag-chip"><i class="fas fa-magic"></i> Auto In-Article</span>
+                        <span class="sn-feature-tag-chip"><i class="fas fa-sliders-h"></i> Kontrol Admin</span>
                     </div>
 
                     <ul class="sn-dense-list">
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Header Banner Atas:</strong> Posisi premium dengan tingkat pandang pembaca tertinggi.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>In-Feed Beranda:</strong> Iklan menyatu natural di sela-sela urutan berita terkini.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Header Banner Atas:</strong> Ruang banner visual premium di bagian paling atas beranda.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>In-Feed Beranda:</strong> Posisi banner menyatu natural di sela-sela urutan berita terkini.</span></li>
                         <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Auto In-Content:</strong> Otomatis tersisip rapi di tengah paragraf bacaan artikel.</span></li>
                         <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Sidebar Sticky Banner:</strong> Mendukung ukuran standar display 300x250 & 300x600.</span></li>
-                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Bebas Pasang Iklan:</strong> Support script Google AdSense maupun upload banner sponsor lokal.</span></li>
+                        <li class="sn-dense-item"><i class="fas fa-check"></i> <span><strong>Bebas Kelola Mandiri:</strong> Pasang banner sponsor kerjasama daerah, instansi, atau jaringan iklan.</span></li>
                     </ul>
                 </div>
 
@@ -373,7 +374,7 @@
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Database SQL Lengkap</strong> + Data Berita Demo</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Panduan Lengkap</strong> Langkah Pemasangan Mandiri</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bebas Dipasang</strong> di domain mana saja</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Fitur AI SEO Engine</strong> & 6 Slot Iklan Cuan</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Fitur Asisten AI SEO</strong> & Slot Banner Mandiri</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-times-circle"></i> <span>Hosting & Domain (Disediakan pembeli)</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-times-circle"></i> <span>Jasa instalasi server (Mandiri oleh pembeli)</span></li>
                     </ul>
@@ -436,7 +437,7 @@
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>LIFETIME Free Update Fitur Baru</strong> (Gratis Selamanya)</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>LIFETIME Full Service & Garansi Error</strong> (Seumur Hidup)</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Prioritas Support VIP via WhatsApp 24/7</strong></span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bantuan Setup Google Search Console & AdSense</strong></span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bantuan Setup Google Search Console & Indeks Berita</strong></span></li>
                     </ul>
 
                     <div class="sn-price-actions">
@@ -507,11 +508,96 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Supported Payment Channels & Security Guarantee Bar -->
+            <div class="sn-payment-trust-bar sn-fade-init">
+                <div class="sn-pay-left">
+                    <span class="sn-pay-title"><i class="fas fa-credit-card" style="color: #1a56db;"></i> Pembayaran Resmi Didukung:</span>
+                    <div class="sn-pay-badges">
+                        <span class="sn-pay-badge sn-pay-badge--qris"><i class="fas fa-qrcode"></i> QRIS</span>
+                        <span class="sn-pay-badge"><i class="fas fa-university"></i> BCA VA</span>
+                        <span class="sn-pay-badge"><i class="fas fa-university"></i> BRI VA</span>
+                        <span class="sn-pay-badge"><i class="fas fa-university"></i> Mandiri VA</span>
+                        <span class="sn-pay-badge"><i class="fas fa-university"></i> BNI VA</span>
+                        <span class="sn-pay-badge"><i class="fas fa-store"></i> Indomaret & Alfamart</span>
+                    </div>
+                </div>
+                <div class="sn-pay-security">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>100% Transaksi Terjamin Aman (SSL 256-bit)</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 7. FAQ SECTION (PERTANYAAN UMUM) -->
-    <section class="sn-section sn-section--alt" id="faq">
+    <!-- 7. CLIENT TESTIMONIALS SECTION -->
+    <section class="sn-section sn-section--alt" id="testimoni">
+        <div class="sn-container">
+            <div class="sn-section-header sn-fade-init">
+                <span class="sn-section-tag">TESTIMONI PENGGUNA</span>
+                <h2 class="sn-section-title">Dipercaya Pengelola Portal Media di Berbagai Daerah</h2>
+                <p class="sn-section-desc">
+                    Inilah pengalaman rekan-rekan redaksi dan pemilik portal media online yang telah mempercayakan websitenya pada SmartNews CMS.
+                </p>
+            </div>
+
+            <div class="sn-testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="sn-testimonial-card sn-fade-init">
+                    <div class="sn-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="sn-testi-quote">
+                        "Kecepatan website sangat luar biasa, buka berita cuma 0.4 detik. Tim wartawan kami di lapangan yang masih awam teknologi langsung bisa pakai editornya tanpa kendala. Sangat membantu operasional redaksi harian kami."
+                    </p>
+                    <div class="sn-testi-author">
+                        <div class="sn-testi-avatar">HK</div>
+                        <div>
+                            <div class="sn-testi-name">Hendra Kusuma, S.Sos</div>
+                            <div class="sn-testi-role">Pemimpin Redaksi LintasSumsel.com</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="sn-testimonial-card sn-fade-init">
+                    <div class="sn-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="sn-testi-quote">
+                        "Sangat lengkap karena sudah ada halaman Pedoman Media Siber dan susunan redaksi sesuai standar Dewan Pers. Proses setup servernya cepat dan langsung online siap dipakai tanpa ribet setting teknis."
+                    </p>
+                    <div class="sn-testi-author">
+                        <div class="sn-testi-avatar" style="background: linear-gradient(135deg, #059669 0%, #1a56db 100%);">RH</div>
+                        <div>
+                            <div class="sn-testi-name">Rahmat Hidayat, S.I.Kom</div>
+                            <div class="sn-testi-role">Direktur PT Media Nusantara Siber</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="sn-testimonial-card sn-fade-init">
+                    <div class="sn-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="sn-testi-quote">
+                        "Asisten AI SEO sangat membantu mengecek kelayakan artikel sebelum terbit. Desain tampilannya mewah dan terlihat seperti portal media berita nasional ternama saat dibuka di HP pembaca."
+                    </p>
+                    <div class="sn-testi-author">
+                        <div class="sn-testi-avatar" style="background: linear-gradient(135deg, #7c3aed 0%, #cf2e2e 100%);">SN</div>
+                        <div>
+                            <div class="sn-testi-name">Siti Nurhaliza</div>
+                            <div class="sn-testi-role">Pengelola Media Daerah WartaKini.id</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FAQ SECTION (PERTANYAAN UMUM) -->
+    <section class="sn-section" id="faq">
         <div class="sn-container">
             <div class="sn-section-header sn-fade-init">
                 <span class="sn-section-tag">JAWABAN CEPAT</span>
@@ -562,7 +648,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="sn-faq-content">
-                        Tersedia metode pembayaran instan via <strong>QRIS (BCA, Gopay, OVO, Dana, ShopeePay)</strong>, <strong>Virtual Account Bank (BCA, BRI, Mandiri, BNI)</strong>, atau transfer bank langsung dengan konfirmasi via WhatsApp.
+                        Tersedia metode pembayaran instan via <strong>QRIS (BCA, Gopay, OVO, Dana, ShopeePay)</strong>, <strong>Virtual Account Bank (BCA, BRI, Mandiri, BNI, Permata)</strong>, atau gerai kasir Alfamart/Indomaret dengan konfirmasi otomatis.
                     </div>
                 </div>
 
@@ -580,12 +666,12 @@
         </div>
     </section>
 
-    <!-- 8. FINAL CTA SECTION -->
+    <!-- 9. FINAL CTA SECTION -->
     <section class="sn-cta-section">
         <div class="sn-container sn-fade-init">
-            <h2 class="sn-cta-title">Waktunya Memulai Bisnis Media Online Anda Hari Ini!</h2>
+            <h2 class="sn-cta-title">Waktunya Memulai Media Online Profesional Anda Hari Ini!</h2>
             <p class="sn-cta-lead">
-                Dapatkan portal berita berkecepatan tinggi, berfitur AI SEO cerdas, siap menghasilkan cuan iklan, dan memenuhi standar Dewan Pers Indonesia.
+                Dapatkan portal berita berkecepatan tinggi, berfitur Asisten AI SEO cerdas, mudah dikelola tim redaksi, dan memenuhi standar Dewan Pers Indonesia.
             </p>
             <div class="sn-cta-buttons">
                 <a href="#harga" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" title="Pesan Paket Website">

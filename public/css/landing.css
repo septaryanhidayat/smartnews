@@ -949,6 +949,149 @@ body.sn-landing-body {
   font-weight: 700;
 }
 
+/* 8.5. PAYMENT CHANNELS & SECURITY GUARANTEE BAR */
+.sn-payment-trust-bar {
+  background: #ffffff;
+  border: 1px solid var(--sn-border);
+  border-radius: var(--sn-radius-md);
+  padding: 18px 24px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: var(--sn-shadow-sm);
+}
+
+.sn-pay-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.sn-pay-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--sn-text-main);
+  white-space: nowrap;
+}
+
+.sn-pay-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sn-pay-badge {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--sn-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sn-pay-badge--qris { background: #fef2f2; color: #991b1b; border-color: #fecaca; }
+
+.sn-pay-security {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sn-green);
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 6px 12px;
+  border-radius: var(--sn-radius-full);
+  white-space: nowrap;
+}
+
+/* 8.6. CLIENT TESTIMONIALS SECTION */
+.sn-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sn-testimonial-card {
+  background: #ffffff;
+  border: 1px solid var(--sn-border);
+  border-radius: var(--sn-radius-md);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--sn-trans);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03);
+  position: relative;
+}
+
+.sn-testimonial-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+  box-shadow: var(--sn-shadow-md);
+}
+
+.sn-testi-stars {
+  color: #f59e0b;
+  font-size: 13px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 3px;
+}
+
+.sn-testi-quote {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--sn-text-muted);
+  margin-bottom: 18px;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.sn-testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.sn-testi-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a56db 0%, #cf2e2e 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.sn-testi-name {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--sn-text-main);
+  line-height: 1.2;
+}
+
+.sn-testi-role {
+  font-size: 11.5px;
+  color: var(--sn-text-subtle);
+  margin-top: 2px;
+}
+
 /* 9. FAQ ACCORDION */
 .sn-faq-list {
   max-width: 720px;
@@ -1202,6 +1345,23 @@ body.sn-landing-body {
   }
   .sn-stats__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .sn-testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .sn-payment-trust-bar {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .sn-pay-left {
+    justify-content: center;
+  }
+  .sn-pay-badges {
+    justify-content: center;
   }
 }
 

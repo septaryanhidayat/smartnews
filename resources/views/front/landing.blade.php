@@ -531,7 +531,7 @@
                             <div class="sn-testi-meta">
                                 <div class="sn-testi-avatar-simple">DS</div>
                                 <div class="sn-testi-name-clean">Dedi Supriyadi</div>
-                                <div class="sn-testi-role-clean">Pengelola Media Daerah (Padang)</div>
+                                <div class="sn-testi-role-clean">Pengelola Media Online</div>
                             </div>
                         </div>
                     </div>
@@ -548,7 +548,7 @@
                             <div class="sn-testi-meta">
                                 <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #059669 0%, #1a56db 100%);">TP</div>
                                 <div class="sn-testi-name-clean">Teguh Prasetyo</div>
-                                <div class="sn-testi-role-clean">Pengelola Portal Berita (Semarang)</div>
+                                <div class="sn-testi-role-clean">Pengelola Portal Berita</div>
                             </div>
                         </div>
                     </div>
@@ -565,7 +565,7 @@
                             <div class="sn-testi-meta">
                                 <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #7c3aed 0%, #cf2e2e 100%);">NH</div>
                                 <div class="sn-testi-name-clean">Nurul Hidayati</div>
-                                <div class="sn-testi-role-clean">Pemilik Website Berita (Makassar)</div>
+                                <div class="sn-testi-role-clean">Pemilik Website Berita</div>
                             </div>
                         </div>
                     </div>
@@ -582,7 +582,7 @@
                             <div class="sn-testi-meta">
                                 <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #2563eb 0%, #059669 100%);">WS</div>
                                 <div class="sn-testi-name-clean">Wahyu Setiawan</div>
-                                <div class="sn-testi-role-clean">Pengelola Media Online (Samarinda)</div>
+                                <div class="sn-testi-role-clean">Pengelola Media Online</div>
                             </div>
                         </div>
                     </div>
@@ -599,7 +599,7 @@
                             <div class="sn-testi-meta">
                                 <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);">IM</div>
                                 <div class="sn-testi-name-clean">Ilham Maulana</div>
-                                <div class="sn-testi-role-clean">Pengelola Portal Informasi (Malang)</div>
+                                <div class="sn-testi-role-clean">Pengelola Portal Informasi</div>
                             </div>
                         </div>
                     </div>
@@ -616,7 +616,7 @@
                             <div class="sn-testi-meta">
                                 <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #db2777 0%, #9333ea 100%);">MA</div>
                                 <div class="sn-testi-name-clean">Maya Anggraini</div>
-                                <div class="sn-testi-role-clean">Jurnalis & Pengelola Web (Yogyakarta)</div>
+                                <div class="sn-testi-role-clean">Jurnalis & Pengelola Web</div>
                             </div>
                         </div>
                     </div>
@@ -628,12 +628,12 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="sn-testi-quote">
-                                "Bantuan teknis saat setup server sangat cepat dan ramah. Semua data berita demo langsung terpasang sehingga kami bisa langsung mengisi liputan daerah."
+                                "Bantuan teknis saat setup server sangat cepat dan ramah. Semua data berita demo langsung terpasang sehingga kami bisa langsung mengisi liputan."
                             </p>
                             <div class="sn-testi-meta">
                                 <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);">AF</div>
                                 <div class="sn-testi-name-clean">Ahmad Fauzi</div>
-                                <div class="sn-testi-role-clean">Pengelola Media Berita (Palembang)</div>
+                                <div class="sn-testi-role-clean">Pengelola Media Berita</div>
                             </div>
                         </div>
                     </div>
@@ -650,7 +650,7 @@
                             <div class="sn-testi-meta">
                                 <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);">YP</div>
                                 <div class="sn-testi-name-clean">Yudi Pratama</div>
-                                <div class="sn-testi-role-clean">Pemilik Portal Media (Bandung)</div>
+                                <div class="sn-testi-role-clean">Pemilik Portal Media</div>
                             </div>
                         </div>
                     </div>
@@ -841,7 +841,7 @@
         <div class="sn-sp-avatar" id="spAvatar">TP</div>
         <div class="sn-sp-body">
             <div id="spText">
-                <strong>Teguh P.</strong> (Semarang) baru saja memesan <strong>Paket Siap Pakai (Pro)</strong>
+                <strong>Teguh P.</strong> baru saja memesan <strong>Paket Siap Pakai (Pro)</strong>
             </div>
             <div class="sn-sp-time">
                 <i class="fas fa-check-circle" style="color: #10b981;"></i>
@@ -1017,14 +1017,14 @@
 
             // 6. Live Rotating Social Proof Toast
             const purchases = [
-                { name: "Teguh P.", city: "Semarang", pkg: "Paket Siap Pakai (Pro)", time: "2 menit yang lalu", av: "TP", bg: "linear-gradient(135deg, #1a56db, #3b82f6)" },
-                { name: "Ahmad F.", city: "Palembang", pkg: "Paket Starter", time: "5 menit yang lalu", av: "AF", bg: "linear-gradient(135deg, #059669, #10b981)" },
-                { name: "Wahyu S.", city: "Samarinda", pkg: "Paket Siap Pakai (Pro)", time: "8 menit yang lalu", av: "WS", bg: "linear-gradient(135deg, #7c3aed, #a855f7)" },
-                { name: "Dedi S.", city: "Padang", pkg: "Paket Enterprise VIP", time: "12 menit yang lalu", av: "DS", bg: "linear-gradient(135deg, #cf2e2e, #ef4444)" },
-                { name: "Nurul H.", city: "Makassar", pkg: "Paket Siap Pakai (Pro)", time: "16 menit yang lalu", av: "NH", bg: "linear-gradient(135deg, #0284c7, #06b6d4)" },
-                { name: "Yudi P.", city: "Bandung", pkg: "Paket Siap Pakai (Pro)", time: "21 menit yang lalu", av: "YP", bg: "linear-gradient(135deg, #ea580c, #f97316)" },
-                { name: "Ilham M.", city: "Malang", pkg: "Paket Enterprise VIP", time: "28 menit yang lalu", av: "IM", bg: "linear-gradient(135deg, #2563eb, #1d4ed8)" },
-                { name: "Bambang K.", city: "Surabaya", pkg: "Paket Siap Pakai (Pro)", time: "35 menit yang lalu", av: "BK", bg: "linear-gradient(135deg, #059669, #047857)" }
+                { name: "Teguh P.", pkg: "Paket Siap Pakai (Pro)", time: "2 menit yang lalu", av: "TP", bg: "linear-gradient(135deg, #1a56db, #3b82f6)" },
+                { name: "Ahmad F.", pkg: "Paket Starter", time: "5 menit yang lalu", av: "AF", bg: "linear-gradient(135deg, #059669, #10b981)" },
+                { name: "Wahyu S.", pkg: "Paket Siap Pakai (Pro)", time: "8 menit yang lalu", av: "WS", bg: "linear-gradient(135deg, #7c3aed, #a855f7)" },
+                { name: "Dedi S.", pkg: "Paket Enterprise VIP", time: "12 menit yang lalu", av: "DS", bg: "linear-gradient(135deg, #cf2e2e, #ef4444)" },
+                { name: "Nurul H.", pkg: "Paket Siap Pakai (Pro)", time: "16 menit yang lalu", av: "NH", bg: "linear-gradient(135deg, #0284c7, #06b6d4)" },
+                { name: "Yudi P.", pkg: "Paket Siap Pakai (Pro)", time: "21 menit yang lalu", av: "YP", bg: "linear-gradient(135deg, #ea580c, #f97316)" },
+                { name: "Ilham M.", pkg: "Paket Enterprise VIP", time: "28 menit yang lalu", av: "IM", bg: "linear-gradient(135deg, #2563eb, #1d4ed8)" },
+                { name: "Bambang K.", pkg: "Paket Siap Pakai (Pro)", time: "35 menit yang lalu", av: "BK", bg: "linear-gradient(135deg, #059669, #047857)" }
             ];
             let spIndex = 0;
             const spToast = document.getElementById('socialProofToast');
@@ -1041,7 +1041,7 @@
                     spAvatarEl.style.background = item.bg;
                 }
                 if (spTextEl) {
-                    spTextEl.innerHTML = '<strong>' + item.name + '</strong> (' + item.city + ') baru saja memesan <strong>' + item.pkg + '</strong>';
+                    spTextEl.innerHTML = '<strong>' + item.name + '</strong> baru saja memesan <strong>' + item.pkg + '</strong>';
                 }
                 if (spTimeEl) {
                     spTimeEl.innerText = item.time + ' • Transaksi Terverifikasi';

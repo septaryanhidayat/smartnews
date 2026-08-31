@@ -15,6 +15,7 @@
     <!-- 1. HERO SLIDER SECTION (SWIPER CAROUSEL) -->
     @if(isset($sliderArticles) && $sliderArticles->count() > 0)
     <section class="hero-slider-section" aria-label="Berita Utama Pilihan">
+        <h2 class="sr-only">Berita Pilihan Utama</h2>
         <div class="container">
             <div class="hero-slider-section__overflow">
                 <div class="swiper hero-swiper hero-swiper--cols-{{ min($heroSliderCols, 8) }}" id="heroSwiper" data-per-view="{{ $heroSliderCols }}">
@@ -40,11 +41,11 @@
                                     <a class="slide-card__cat" href="{{ route('category.show', $slide->category->slug) }}">
                                         {{ $slide->category->name }}
                                     </a>
-                                    <h2 class="slide-card__title">
+                                    <h3 class="slide-card__title">
                                         <a href="{{ route('article.show', $slide->slug) }}">
                                             {{ $slide->title }}
                                         </a>
-                                    </h2>
+                                    </h3>
                                     <span class="slide-card__time">
                                         <i class="fas fa-clock"></i> {{ $slide->published_at ? $slide->published_at->format('d F Y') : $slide->created_at->format('d F Y') }}
                                     </span>

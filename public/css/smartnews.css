@@ -2070,20 +2070,20 @@ html.dark-mode .trending-tags__item:hover {
 }
 
 /* ==========================================================================
-   ARTICLE ENGAGEMENT BAR (POST VIEWS ON LEFT & SOCIAL SHARE ON RIGHT)
+   ARTICLE ENGAGEMENT BAR (POST VIEWS & SOCIAL SHARE)
    ========================================================================== */
 .article-engagement-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin: 24px 0 20px 0;
-  padding: 12px 18px;
+  margin: 20px 0 16px 0;
+  padding: 10px 16px;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg, 12px);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius-md, 10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 html.dark-mode .article-engagement-bar {
@@ -2094,8 +2094,8 @@ html.dark-mode .article-engagement-bar {
 .article-views-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13.5px;
+  gap: 6px;
+  font-size: 13px;
   color: var(--text-muted, #64748b);
   font-weight: 500;
   white-space: nowrap;
@@ -2103,7 +2103,7 @@ html.dark-mode .article-engagement-bar {
 
 .article-views-badge i {
   color: var(--color-primary, #1a56db);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .article-views-badge strong {
@@ -2134,19 +2134,20 @@ html.dark-mode .article-views-badge strong {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 24px 0 16px 0;
-  width: 100%;
+  margin: 16px 0;
+  max-width: 100%;
 }
 
 .article-share-bar {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 14px;
+  gap: 8px;
+  padding: 6px 12px;
   background-color: var(--bg-muted, #f1f5f9);
   border: 1px solid var(--border-color, #e2e8f0);
   border-radius: var(--radius-full, 999px);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
 .dark-mode .article-share-bar {
@@ -2157,8 +2158,8 @@ html.dark-mode .article-views-badge strong {
 .article-share-bar__label {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 12px;
+  gap: 4px;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--text-muted, #64748b);
   white-space: nowrap;
@@ -2167,14 +2168,14 @@ html.dark-mode .article-views-badge strong {
 
 .article-share-bar__label i {
   color: var(--color-primary, #1a56db);
-  font-size: 12px;
+  font-size: 11.5px;
 }
 
 .article-share-bar__icons {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  flex-wrap: nowrap;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 
 .share-btn {
@@ -2190,15 +2191,14 @@ html.dark-mode .article-views-badge strong {
   border: none;
   cursor: pointer;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, filter 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
   user-select: none;
   flex-shrink: 0;
 }
 
 .share-btn:hover {
-  transform: translateY(-2px) scale(1.12);
+  transform: translateY(-2px) scale(1.1);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
-  filter: brightness(1.08);
 }
 
 .share-btn--wa { background-color: #25d366; }
@@ -2232,8 +2232,8 @@ html.dark-mode .article-views-badge strong {
   .article-engagement-bar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-    padding: 14px 16px;
+    gap: 8px;
+    padding: 10px 14px;
   }
   .article-engagement-bar .article-share-container {
     width: 100%;
@@ -2241,7 +2241,16 @@ html.dark-mode .article-views-badge strong {
   }
   .article-engagement-bar .article-share-bar {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+  .article-share-bar__icons {
+    gap: 4px;
+  }
+  .share-btn {
+    width: 27px;
+    height: 27px;
+    font-size: 11.5px;
   }
 }
 
@@ -2635,21 +2644,22 @@ html.dark-mode .article-views-badge strong {
   gap: 6px;
 }
 
-/* Author Box */
+/* Compact Author Box */
 .author-box {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 12px;
   background-color: var(--bg-muted);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 22px;
-  margin-bottom: 30px;
+  border-radius: var(--radius-md, 10px);
+  padding: 10px 14px;
+  margin-bottom: 24px;
 }
 
 .author-box__avatar {
   flex-shrink: 0;
-  width: 74px;
-  height: 74px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--color-primary);
@@ -2663,39 +2673,45 @@ html.dark-mode .article-views-badge strong {
 
 .author-box__body {
   flex: 1;
+  min-width: 0;
 }
 
 .author-box__header {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 8px;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
 }
 
 .author-box__role {
   display: inline-block;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   color: var(--color-primary);
   text-transform: uppercase;
+  background-color: rgba(26, 86, 219, 0.08);
+  padding: 1px 6px;
+  border-radius: 4px;
 }
 
 .author-box__name {
-  font-size: 17px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 700;
   color: var(--text-main);
+  margin: 0;
 }
 
 .author-box__desk {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--text-light);
-  display: block;
 }
 
 .author-box__desc {
-  font-size: 13.5px;
+  font-size: 12px;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.35;
+  margin: 0;
 }
 
 /* Article Prev/Next Navigation */

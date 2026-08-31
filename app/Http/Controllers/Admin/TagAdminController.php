@@ -9,10 +9,18 @@ use Illuminate\Support\Str;
 
 class TagAdminController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $tags = Tag::withCount('articles')->orderBy('name')->paginate(20);
-        return view('admin.tags.index', compact('tags'));
+        $search = $request->input('search');
+        $tags = Tag::withCount('articles')
+            ->when($search, function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")->orWhere('slug', 'like', "%{$search}%");
+            })
+            ->orderBy('name')
+            ->paginate(25)
+            ->withQueryString();
+
+        return view('admin.tags.index', compact('tags', 'search'));
     }
 
     public function store(Request $request)

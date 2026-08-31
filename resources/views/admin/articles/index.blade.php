@@ -12,20 +12,30 @@
     </div>
 
     <!-- Filter Bar -->
-    <form action="{{ route('admin.articles.index') }}" method="GET" style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
-        <input type="text" name="search" class="form-control" style="max-width: 260px;" placeholder="Cari judul..." value="{{ $search }}">
-        <select name="category_id" class="form-control" style="max-width: 180px;">
+    <form action="{{ route('admin.articles.index') }}" method="GET" style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; align-items: center;">
+        <input type="text" name="search" class="form-control" style="max-width: 240px;" placeholder="Cari judul berita..." value="{{ $search }}">
+        <select name="category_id" class="form-control" style="max-width: 170px;">
             <option value="">Semua Kategori</option>
             @foreach($categories as $cat)
                 <option value="{{ $cat->id }}" {{ $categoryId == $cat->id ? 'selected' : '' }}>{{ $cat->name }}</option>
             @endforeach
         </select>
-        <select name="status" class="form-control" style="max-width: 150px;">
+        <select name="status" class="form-control" style="max-width: 140px;">
             <option value="">Semua Status</option>
             <option value="published" {{ $status == 'published' ? 'selected' : '' }}>Published</option>
             <option value="draft" {{ $status == 'draft' ? 'selected' : '' }}>Draft</option>
         </select>
+        <select name="per_page" class="form-control" style="max-width: 130px;" onchange="this.form.submit()">
+            <option value="20" {{ ($perPageInput ?? '20') == '20' ? 'selected' : '' }}>Tampil 20</option>
+            <option value="50" {{ ($perPageInput ?? '') == '50' ? 'selected' : '' }}>Tampil 50</option>
+            <option value="100" {{ ($perPageInput ?? '') == '100' ? 'selected' : '' }}>Tampil 100</option>
+            <option value="500" {{ ($perPageInput ?? '') == '500' ? 'selected' : '' }}>Tampil 500</option>
+            <option value="all" {{ ($perPageInput ?? '') == 'all' || ($perPageInput ?? '') == 'semua' ? 'selected' : '' }}>Tampil Semua</option>
+        </select>
         <button type="submit" class="btn btn-primary"><i class="fas fa-filter"></i> Filter</button>
+        @if($search || $categoryId || $status || ($perPageInput ?? '20') != '20')
+            <a href="{{ route('admin.articles.index') }}" class="btn btn-secondary" style="background-color: #94a3b8; color: #fff;"><i class="fas fa-undo"></i> Reset</a>
+        @endif
     </form>
 
     <table>

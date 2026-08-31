@@ -19,9 +19,16 @@ class ArticleAdminController extends Controller
         $search = $request->input('search');
         $categoryId = $request->input('category_id');
         $status = $request->input('status');
+        $perPageInput = $request->input('per_page', '20');
+
+        if ($perPageInput === 'all' || $perPageInput === 'semua') {
+            $perPage = 10000;
+        } else {
+            $perPage = in_array((int)$perPageInput, [20, 50, 100, 500]) ? (int)$perPageInput : 20;
+        }
 
         $articles = Article::with(['category', 'user'])
-            ->when($user->isAuthor(), function ($q) use ($user) {
+            ->when($user && $user->isAuthor(), function ($q) use ($user) {
                 $q->where('user_id', $user->id);
             })
             ->when($search, function ($q) use ($search) {
@@ -34,11 +41,12 @@ class ArticleAdminController extends Controller
                 $q->where('status', $status);
             })
             ->orderBy('published_at', 'desc')
-            ->paginate(15);
+            ->paginate($perPage)
+            ->withQueryString();
 
         $categories = Category::orderBy('name')->get();
 
-        return view('admin.articles.index', compact('articles', 'categories', 'search', 'categoryId', 'status'));
+        return view('admin.articles.index', compact('articles', 'categories', 'search', 'categoryId', 'status', 'perPageInput'));
     }
 
     public function create()

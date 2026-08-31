@@ -91,14 +91,40 @@ class Article extends Model
      */
     public function getAiSummaryPointsAttribute()
     {
+        $cleanBullet = function ($text) {
+            if (empty($text)) return '';
+            $text = html_entity_decode($text, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+            $text = html_entity_decode($text, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+            $text = strip_tags(str_replace(['<br>', '<br/>', '</p>'], ' ', $text));
+            $text = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $text);
+            $text = preg_replace('/<style\b[^>]*>(.*?)<\/style>/is', '', $text);
+            $text = preg_replace('/^\s*(?:[A-Za-z\s]+,\s*)?SmartNews\s*[-–—]\s*/iu', '', $text);
+            $text = preg_replace('/^\s*(?:[A-Z\s]+,\s*[A-Z\s]+\s*[-–—]\s*)/u', '', $text);
+            $text = preg_replace('/\(\*\)\s*&nbsp;/u', '', $text);
+            $text = preg_replace('/\(\*\)/u', '', $text);
+            $text = str_replace(['&nbsp;', '&#160;', '\u00a0'], ' ', $text);
+            $text = ltrim(trim($text), "•-*0123456789. \t\n\r");
+            $text = trim($text, " \t\n\r\0\x0B\"'“”\\/`");
+            return $text;
+        };
+
+        $isValidSentence = function ($s) {
+            if (mb_strlen($s) < 25 || mb_strlen($s) > 280) return false;
+            // Reject any string that looks like code
+            if (preg_match('/(?:<script|function\s*\(|var\s+|const\s+|window\.|document\.|style=|class=|[{}\[\];<=>])/i', $s)) {
+                return false;
+            }
+            return true;
+        };
+
         // 1. If explicit ai_summary is provided in database
         if (!empty($this->ai_summary)) {
             $lines = preg_split('/\r\n|\r|\n/', trim($this->ai_summary));
             $points = [];
             foreach ($lines as $line) {
-                $line = trim(ltrim(trim($line), '•-*0123456789.'));
-                if (!empty($line)) {
-                    $points[] = $line;
+                $cleaned = $cleanBullet($line);
+                if ($isValidSentence($cleaned)) {
+                    $points[] = $cleaned;
                 }
             }
             if (count($points) > 0) {
@@ -108,35 +134,38 @@ class Article extends Model
 
         // 2. Intelligent extraction from article content and excerpt
         $points = [];
-
-        // Parse HTML paragraphs
         $text = strip_tags(str_replace(['</p>', '</blockquote>', '</li>', '<br>', '<br/>'], "\n", $this->content));
         $paragraphs = array_filter(array_map('trim', explode("\n", $text)));
 
         foreach ($paragraphs as $para) {
             $sentences = preg_split('/(?<=[.!?])\s+/', $para, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($sentences as $s) {
-                $s = stripslashes(trim($s));
-                $s = trim($s, " \t\n\r\0\x0B\"'“”\\/`");
-                if (mb_strlen($s) >= 30 && mb_strlen($s) <= 240) {
-                    if (!in_array($s, $points)) {
-                        $points[] = $s;
-                        if (count($points) >= 3) {
-                            break 2;
-                        }
+                $cleaned = $cleanBullet($s);
+                if ($isValidSentence($cleaned) && !in_array($cleaned, $points)) {
+                    $points[] = $cleaned;
+                    if (count($points) >= 3) {
+                        break 2;
                     }
                 }
             }
         }
 
         if (count($points) < 2 && !empty($this->excerpt)) {
-            $points[] = stripslashes(trim($this->excerpt, " \t\n\r\0\x0B\"'“”\\/`"));
+            $cleanedExcerpt = $cleanBullet($this->excerpt);
+            if ($isValidSentence($cleanedExcerpt)) {
+                $points[] = $cleanedExcerpt;
+            }
         }
 
-        return count($points) > 0 ? $points : [
-            $this->title,
-            'Simak ulasan mendalam dan fakta selengkapnya pada liputan artikel berikut ini.'
-        ];
+        if (count($points) === 0) {
+            $cleanedTitle = $cleanBullet($this->title);
+            $points[] = $cleanedTitle ?: $this->title;
+            $points[] = app()->getLocale() === 'en'
+                ? 'Read the full coverage and in-depth report in the article below.'
+                : 'Simak ulasan mendalam dan fakta selengkapnya pada liputan artikel berikut ini.';
+        }
+
+        return $points;
     }
 
     public function getImageUrlAttribute()

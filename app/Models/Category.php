@@ -40,4 +40,31 @@ class Category extends Model
             ->where('published_at', '<=', now())
             ->orderBy('published_at', 'desc');
     }
+
+    public function getNameAttribute($value)
+    {
+        if (app()->getLocale() === 'en') {
+            $catEn = [
+                'nasional' => 'National',
+                'internasional' => 'International',
+                'politik' => 'Politics',
+                'ekonomi' => 'Economy',
+                'olahraga' => 'Sports',
+                'teknologi' => 'Technology',
+                'otomotif' => 'Automotive',
+                'kesehatan' => 'Health',
+                'travel' => 'Travel',
+                'berita' => 'News',
+                'kriminal' => 'Crime',
+                'pencak-silat' => 'Martial Arts',
+                'advertorial' => 'Advertorial',
+                'nusantara' => 'Archipelago',
+                'sumbar' => 'West Sumatra',
+                'sumsel' => 'South Sumatra',
+            ];
+            $slug = strtolower($this->attributes['slug'] ?? \Illuminate\Support\Str::slug($value));
+            return $catEn[$slug] ?? $value;
+        }
+        return $value;
+    }
 }

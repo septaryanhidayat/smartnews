@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
 
     <!-- Open Graph Meta Tags (Facebook, WhatsApp, Telegram, LinkedIn) -->
     <meta property="og:site_name" content="{{ setting('site_name', 'SmartNews') }}">
-    <meta property="og:locale" content="id_ID">
+    <meta property="og:locale" content="{{ app()->getLocale() === 'en' ? 'en_US' : 'id_ID' }}">
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="@yield('canonical_url', url()->current())">
     <meta property="og:title" content="@yield('og_title', setting('site_name', 'SmartNews') . ' – ' . setting('site_tagline', 'Portal Berita Terpercaya & Cerdas'))">

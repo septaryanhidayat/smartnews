@@ -105,13 +105,16 @@
 
             <div class="top-nav__center">
                 <form class="search-form" action="{{ route('search') }}" method="GET" role="search">
+                    <label for="topNavSearchInput" class="sr-only">{{ __('messages.search') }}</label>
                     <button class="search-form__btn" type="submit" aria-label="Cari">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
                     </button>
                     <input
+                        id="topNavSearchInput"
                         class="search-form__input"
                         name="q"
                         type="search"
+                        aria-label="{{ __('messages.search_placeholder') }}"
                         placeholder="{{ __('messages.search_placeholder') }}"
                         autocomplete="off"
                         value="{{ request('q') ?? request('s') }}"
@@ -122,41 +125,41 @@
             <div class="top-nav__right">
                 <!-- Language Switcher Pill -->
                 <div class="lang-switcher">
-                    <a href="{{ route('lang.switch', 'id') }}" onclick="switchLanguage('id'); return false;" class="lang-btn {{ app()->getLocale() === 'id' ? 'active' : '' }}" title="Bahasa Indonesia">
+                    <a href="{{ route('lang.switch', 'id') }}" onclick="switchLanguage('id'); return false;" class="lang-btn {{ app()->getLocale() === 'id' ? 'active' : '' }}" aria-label="Bahasa Indonesia" title="Bahasa Indonesia">
                         <span>ID</span>
                     </a>
-                    <span class="lang-divider">|</span>
-                    <a href="{{ route('lang.switch', 'en') }}" onclick="switchLanguage('en'); return false;" class="lang-btn {{ app()->getLocale() === 'en' ? 'active' : '' }}" title="English Language">
+                    <span class="lang-divider" aria-hidden="true">|</span>
+                    <a href="{{ route('lang.switch', 'en') }}" onclick="switchLanguage('en'); return false;" class="lang-btn {{ app()->getLocale() === 'en' ? 'active' : '' }}" aria-label="English Language" title="English Language">
                         <span>EN</span>
                     </a>
                 </div>
 
                 <!-- Mobile Search Toggle Button (visible on mobile) -->
                 <button class="btn-mobile-search" id="mobileSearchToggle" aria-label="{{ __('messages.search') }}" title="{{ __('messages.search') }}">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search" aria-hidden="true"></i>
                 </button>
 
                 <!-- Dark Mode Toggle Button -->
                 <button class="btn-dark-mode" id="darkModeBtn" aria-label="{{ __('messages.dark_mode') }}" title="{{ __('messages.dark_mode') }}">
-                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
 
                 @auth
-                    <a href="{{ route('admin.dashboard') }}" class="btn-admin d-desktop-only" title="{{ __('messages.admin_panel') }}">
+                    <a href="{{ route('admin.dashboard') }}" class="btn-admin d-desktop-only" title="{{ __('messages.admin_panel') }}" aria-label="{{ __('messages.admin_panel') }}">
                         <i class="fas fa-tachometer-alt"></i> <span class="btn-text">Admin</span>
                     </a>
                 @else
-                    <a href="{{ route('landing') }}" class="btn-order d-desktop-only" style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: #ffffff !important; font-weight: 700; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);" title="Pesan Website Portal Berita Siap Pakai Rp 3 Juta">
+                    <a href="{{ route('landing') }}" class="btn-order d-desktop-only" style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: #ffffff !important; font-weight: 700; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);" title="Pesan Website Portal Berita Siap Pakai Rp 3 Juta" aria-label="Pesan Web Portal Berita">
                         <i class="fas fa-shopping-cart" style="font-size: 11px;"></i> <span>Pesan Web</span>
                     </a>
-                    <a href="{{ route('login') }}" class="btn-login d-desktop-only" title="{{ __('messages.login') }}">
+                    <a href="{{ route('login') }}" class="btn-login d-desktop-only" title="{{ __('messages.login') }}" aria-label="{{ __('messages.login') }}">
                         <i class="fas fa-user-circle"></i> <span class="btn-text">{{ __('messages.login') }}</span>
                     </a>
                 @endauth
 
                 <!-- Mobile Menu Hamburger Button (visible on mobile) -->
                 <button class="menu-toggle-mobile" id="mobileMenuToggle" aria-label="Menu">
-                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
@@ -165,20 +168,22 @@
         <div class="mobile-search-bar" id="mobileSearchBar">
             <div class="container">
                 <form class="search-form search-form--mobile" action="{{ route('search') }}" method="GET" role="search">
+                    <label for="mobileSearchInput" class="sr-only">{{ __('messages.search') }}</label>
                     <button class="search-form__btn" type="submit" aria-label="Cari">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
                     </button>
                     <input
                         class="search-form__input"
                         id="mobileSearchInput"
                         name="q"
                         type="search"
+                        aria-label="{{ __('messages.search_placeholder') }}"
                         placeholder="Ketik kata kunci berita lalu tekan enter..."
                         autocomplete="off"
                         value="{{ request('q') ?? request('s') }}"
                     />
                     <button class="mobile-search-close" id="mobileSearchClose" type="button" aria-label="Tutup pencarian">
-                        <i class="fas fa-times"></i>
+                        <i class="fas fa-times" aria-hidden="true"></i>
                     </button>
                 </form>
             </div>
@@ -189,11 +194,11 @@
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <aside class="sidebar-drawer" id="sidebarDrawer" role="dialog" aria-label="Menu Navigasi">
         <div class="sidebar-drawer__header">
-            <a href="{{ route('home') }}" class="brand-logo-img">
+            <a href="{{ route('home') }}" class="brand-logo-img" aria-label="{{ setting('site_name', 'SmartNews') }}">
                 <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-img" style="height: 38px;">
             </a>
             <button class="sidebar-drawer__close" id="sidebarClose" aria-label="Tutup menu">
-                <i class="fas fa-times"></i>
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
         </div>
 
@@ -216,9 +221,10 @@
         </div>
 
         <div style="padding: 16px 20px 0;">
-            <form class="search-form" action="{{ route('search') }}" method="GET">
-                <button class="search-form__btn" type="submit"><i class="fas fa-search"></i></button>
-                <input class="search-form__input" name="q" type="search" placeholder="{{ __('messages.search_placeholder') }}" value="{{ request('q') }}">
+            <form class="search-form" action="{{ route('search') }}" method="GET" role="search">
+                <label for="drawerSearchInput" class="sr-only">{{ __('messages.search') }}</label>
+                <button class="search-form__btn" type="submit" aria-label="Cari"><i class="fas fa-search" aria-hidden="true"></i></button>
+                <input id="drawerSearchInput" class="search-form__input" name="q" type="search" aria-label="{{ __('messages.search_placeholder') }}" placeholder="{{ __('messages.search_placeholder') }}" value="{{ request('q') }}">
             </form>
         </div>
 
@@ -253,8 +259,8 @@
 
         <div style="padding: 0 20px 16px; display: flex; align-items: center; justify-content: space-between;">
             <span style="font-size: 13px; font-weight: 600;">{{ __('messages.dark_mode') }}:</span>
-            <button class="btn-dark-mode" id="drawerDarkModeBtn" aria-label="Toggle tema">
-                <i class="fas fa-moon"></i>
+            <button class="btn-dark-mode" id="drawerDarkModeBtn" aria-label="Toggle tema mode gelap">
+                <i class="fas fa-moon" aria-hidden="true"></i>
             </button>
         </div>
 
@@ -275,7 +281,7 @@
     <section class="site-branding" id="siteBranding">
         <div class="container site-branding__inner">
             <div class="site-branding__logo">
-                <a href="{{ route('home') }}" class="custom-logo-link" rel="home">
+                <a href="{{ route('home') }}" class="custom-logo-link" rel="home" aria-label="{{ setting('site_name', 'SmartNews') }}">
                     <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-main" style="height: 48px;">
                 </a>
             </div>
@@ -411,7 +417,7 @@
                 <div class="footer-main__grid">
                     <!-- Col 1: Brand & Contact -->
                     <div class="footer-col footer-col--brand">
-                        <a href="{{ route('home') }}" class="footer-logo">
+                        <a href="{{ route('home') }}" class="footer-logo" aria-label="{{ setting('site_name', 'SmartNews') }}">
                             <img src="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" style="height: 44px; margin-bottom: 8px;">
                         </a>
                         <p class="footer-brand__desc">

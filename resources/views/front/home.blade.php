@@ -5,6 +5,8 @@
 @section('content')
 <main id="mainContent">
 
+    <h1 class="sr-only">{{ setting('site_name', 'SmartNews') }} - {{ setting('site_tagline', 'Portal Berita Terpercaya & Cerdas') }}</h1>
+
     @php
         $heroSliderCols = (int) setting('hero_slider_count', 3);
         if ($heroSliderCols < 1) $heroSliderCols = 3;
@@ -12,7 +14,7 @@
 
     <!-- 1. HERO SLIDER SECTION (SWIPER CAROUSEL) -->
     @if(isset($sliderArticles) && $sliderArticles->count() > 0)
-    <section class="hero-slider-section">
+    <section class="hero-slider-section" aria-label="Berita Utama Pilihan">
         <div class="container">
             <div class="hero-slider-section__overflow">
                 <div class="swiper hero-swiper hero-swiper--cols-{{ min($heroSliderCols, 8) }}" id="heroSwiper" data-per-view="{{ $heroSliderCols }}">
@@ -53,8 +55,8 @@
                     </div>
 
                     <!-- Swiper Navigation Arrows -->
-                    <div class="swiper-button-prev hero-swiper__prev" aria-label="Slide sebelumnya"></div>
-                    <div class="swiper-button-next hero-swiper__next" aria-label="Slide berikutnya"></div>
+                    <button class="swiper-button-prev hero-swiper__prev" type="button" aria-label="Slide sebelumnya"></button>
+                    <button class="swiper-button-next hero-swiper__next" type="button" aria-label="Slide berikutnya"></button>
                     <!-- Swiper Pagination -->
                     <div class="swiper-pagination hero-swiper__pagination"></div>
                 </div>

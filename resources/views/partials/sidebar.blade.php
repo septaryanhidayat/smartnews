@@ -44,7 +44,7 @@
             @foreach($sidebarLatest as $rec)
             <div class="cat-item">
                 <div class="cat-item__img-wrap">
-                    <a href="{{ route('article.show', $rec->slug) }}">
+                    <a href="{{ route('article.show', $rec->slug) }}" aria-label="{{ $rec->title }}">
                         <img class="cat-item__img" src="{{ $rec->image_url }}" alt="{{ $rec->title }}" loading="lazy" decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                     </a>
                 </div>

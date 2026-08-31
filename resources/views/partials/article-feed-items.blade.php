@@ -7,7 +7,7 @@
     @if($isHighlight)
     <article class="feed-item feed-item--big">
         <div class="feed-item__img-wrap feed-item__img-wrap--big">
-            <a href="{{ route('article.show', $article->slug) }}">
+            <a href="{{ route('article.show', $article->slug) }}" aria-label="{{ $article->title }}">
                 <img class="feed-item__img feed-item__img--big" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy" decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
             </a>
             @if($article->media_type === 'video')
@@ -48,7 +48,7 @@
     @else
     <article class="feed-item">
         <div class="feed-item__img-wrap">
-            <a href="{{ route('article.show', $article->slug) }}">
+            <a href="{{ route('article.show', $article->slug) }}" aria-label="{{ $article->title }}">
                 <img class="feed-item__img" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy" decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
             </a>
             @if($article->media_type === 'video')

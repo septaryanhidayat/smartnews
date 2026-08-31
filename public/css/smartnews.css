@@ -22,8 +22,8 @@
   --bg-hover: #f1f5f9;
   
   --text-main: #0f172a;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
+  --text-muted: #475569;
+  --text-light: #64748b;
   --text-inverse: #ffffff;
   
   --border-color: #e2e8f0;
@@ -52,8 +52,8 @@ html.dark-mode {
   --bg-hover: #1e293b;
   
   --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-light: #64748b;
+  --text-muted: #cbd5e1;
+  --text-light: #94a3b8;
   
   --border-color: #1e293b;
   --border-light: #1e293b;
@@ -61,6 +61,19 @@ html.dark-mode {
   --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+}
+
+/* Screen Reader Only Utility for WCAG 2.1 Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 /* Base Reset */

@@ -40,9 +40,19 @@ class LandingController extends Controller
         $totalArticles = Article::count();
         $totalCategories = Category::count();
 
-        // Real articles for live UI showcase
-        $featuredArticle = Article::with('category')->where('is_published', 1)->latest()->first();
-        $previewArticles = Article::with('category')->where('is_published', 1)->latest()->skip(1)->take(2)->get();
+        // Real articles for live UI showcase (Safe query with fallback)
+        try {
+            $featuredArticle = Article::published()->with(['category', 'user'])->latest('published_at')->first()
+                ?? Article::with(['category', 'user'])->latest()->first();
+
+            $previewArticles = Article::published()->with('category')->latest('published_at')->skip(1)->take(2)->get();
+            if ($previewArticles->isEmpty()) {
+                $previewArticles = Article::with('category')->latest()->skip(1)->take(2)->get();
+            }
+        } catch (\Throwable $e) {
+            $featuredArticle = null;
+            $previewArticles = collect();
+        }
 
         // Tripay payment channels
         $tripayChannels = \App\Services\TripayService::getChannels();

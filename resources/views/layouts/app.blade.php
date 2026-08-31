@@ -46,19 +46,25 @@
     <link rel="icon" type="image/svg+xml" href="{{ site_favicon() }}">
     <link rel="apple-touch-icon" href="{{ site_favicon() }}">
 
-    <!-- Google Fonts -->
+    <!-- DNS Prefetch & Preconnect for High Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome 6 Icons -->
+    <!-- FontAwesome 6 Icons (Async Loaded for Zero Render-Blocking) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Swiper Carousel CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- Theme Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v={{ time() }}">
+    <!-- Theme Stylesheet (Cached with Static Versioning) -->
+    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.4">
     @stack('styles')
 
     <!-- Early theme init: Default to light mode unless user explicitly selected dark -->
@@ -512,7 +518,7 @@
     </div>
 
     <!-- Swiper JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
     <!-- Google Translate Engine for Dual-Language Auto-Switching -->
     <div id="google_translate_element" style="display: none;"></div>
@@ -551,7 +557,7 @@
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 
     <!-- Theme Custom Scripts -->
-    <script src="{{ asset('js/smartnews.js') }}?v={{ time() }}"></script>
+    <script src="{{ asset('js/smartnews.js') }}?v=1.4" defer></script>
     @stack('scripts')
 </body>
 </html>

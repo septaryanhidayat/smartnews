@@ -77,7 +77,13 @@
     <header class="top-nav" id="topNav">
         <div class="top-nav__inner container">
             <div class="top-nav__left">
-                <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">
+                <!-- Mobile Top-Left Brand Logo (visible on mobile <= 768px) -->
+                <a href="{{ route('home') }}" class="top-nav__brand-mobile" aria-label="{{ setting('site_name', 'SmartNews') }}">
+                    <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-main site-logo-mobile-top">
+                </a>
+
+                <!-- Desktop Menu Toggle (hidden on mobile) -->
+                <button class="menu-toggle d-desktop-only" id="menuToggle" aria-label="Buka Menu">
                     <span class="menu-toggle__circle">
                         <i class="fas fa-bars"></i>
                     </span>
@@ -102,18 +108,54 @@
             </div>
 
             <div class="top-nav__right">
+                <!-- Mobile Search Toggle Button (visible on mobile) -->
+                <button class="btn-mobile-search" id="mobileSearchToggle" aria-label="Buka Pencarian" title="Cari Berita">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <!-- Dark Mode Toggle Button -->
                 <button class="btn-dark-mode" id="darkModeBtn" aria-label="Toggle dark mode" title="Mode Gelap / Terang">
                     <i class="fas fa-moon"></i>
                 </button>
 
                 @auth
-                    <a href="{{ route('admin.dashboard') }}" class="btn-admin">
-                        <i class="fas fa-tachometer-alt"></i> Panel Admin
+                    <a href="{{ route('admin.dashboard') }}" class="btn-admin" title="Panel Admin">
+                        <i class="fas fa-tachometer-alt"></i> <span class="btn-text">Admin</span>
                     </a>
                 @else
-                    <a href="{{ route('register') }}" class="btn-order">Daftar</a>
-                    <a href="{{ route('login') }}" class="btn-login">Login</a>
+                    <a href="{{ route('register') }}" class="btn-order d-desktop-only">Daftar</a>
+                    <a href="{{ route('login') }}" class="btn-login" title="Masuk">
+                        <i class="fas fa-user-circle"></i> <span class="btn-text">Login</span>
+                    </a>
                 @endauth
+
+                <!-- Mobile Menu Hamburger Button (visible on mobile) -->
+                <button class="menu-toggle-mobile" id="mobileMenuToggle" aria-label="Buka Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Expandable Search Bar -->
+        <div class="mobile-search-bar" id="mobileSearchBar">
+            <div class="container">
+                <form class="search-form search-form--mobile" action="{{ route('search') }}" method="GET" role="search">
+                    <button class="search-form__btn" type="submit" aria-label="Cari">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input
+                        class="search-form__input"
+                        id="mobileSearchInput"
+                        name="q"
+                        type="search"
+                        placeholder="Ketik kata kunci berita lalu tekan enter..."
+                        autocomplete="off"
+                        value="{{ request('q') ?? request('s') }}"
+                    />
+                    <button class="mobile-search-close" id="mobileSearchClose" type="button" aria-label="Tutup pencarian">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </header>
@@ -208,6 +250,40 @@
             </button>
         </div>
     </nav>
+
+    <!-- 4b. BREAKING NEWS MARQUEE TICKER -->
+    @if(isset($breakingNews) && $breakingNews->count() > 0)
+    <section class="breaking-news-bar" aria-label="Breaking News">
+        <div class="breaking-news__inner container">
+            <div class="breaking-news__badge">
+                <span class="breaking-news__pulse"></span>
+                <i class="fas fa-bolt"></i>
+                <span class="badge-text-desktop">BREAKING NEWS</span>
+                <span class="badge-text-mobile">BREAKING</span>
+            </div>
+            <div class="breaking-news__ticker-wrap">
+                <div class="breaking-news__ticker-track">
+                    @foreach($breakingNews as $bNews)
+                        <a href="{{ route('article.show', $bNews->slug) }}" class="breaking-news__item">
+                            <span class="breaking-news__category">{{ $bNews->category->name }}</span>
+                            <span class="breaking-news__title">{{ $bNews->title }}</span>
+                            <span class="breaking-news__time"><i class="far fa-clock"></i> {{ $bNews->published_at ? $bNews->published_at->diffForHumans() : '' }}</span>
+                            <span class="breaking-news__divider">&bull;</span>
+                        </a>
+                    @endforeach
+                    @foreach($breakingNews as $bNews)
+                        <a href="{{ route('article.show', $bNews->slug) }}" class="breaking-news__item" aria-hidden="true">
+                            <span class="breaking-news__category">{{ $bNews->category->name }}</span>
+                            <span class="breaking-news__title">{{ $bNews->title }}</span>
+                            <span class="breaking-news__time"><i class="far fa-clock"></i> {{ $bNews->published_at ? $bNews->published_at->diffForHumans() : '' }}</span>
+                            <span class="breaking-news__divider">&bull;</span>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
 
     <!-- 5. TRENDING TAGS TICKER -->
     @if(isset($trendingTags) && $trendingTags->count() > 0)

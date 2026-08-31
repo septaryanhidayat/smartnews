@@ -2,9 +2,41 @@
 
 @section('page_title', 'Dashboard Ringkasan')
 
+@push('styles')
+<style>
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 24px;
+    }
+    .dashboard-layout-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 24px;
+    }
+    @media (max-width: 1024px) {
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .dashboard-layout-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+    @media (max-width: 640px) {
+        .stats-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+    }
+</style>
+@endpush
+
 @section('content')
 <!-- Stats Cards -->
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 28px;">
+<div class="stats-grid">
     
     <div class="card" style="margin-bottom: 0; border-left: 4px solid #1a56db;">
         <div style="font-size: 12px; font-weight: 700; color: var(--admin-muted); text-transform: uppercase;">Total Artikel</div>
@@ -33,7 +65,7 @@
 </div>
 
 <!-- Quick Actions & Top Articles -->
-<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+<div class="dashboard-layout-grid">
     
     <!-- Left: Latest Articles -->
     <div class="card">
@@ -43,39 +75,41 @@
                 <i class="fas fa-plus"></i> Tulis Berita
             </a>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Judul Berita</th>
-                    <th>Kategori</th>
-                    <th>Pembaca</th>
-                    <th>Status</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($latestArticles as $art)
-                <tr>
-                    <td>
-                        <strong>{{ Str::limit($art->title, 45) }}</strong>
-                        <div style="font-size: 11px; color: var(--admin-muted);">{{ $art->published_at ? $art->published_at->format('d M Y H:i') : '-' }}</div>
-                    </td>
-                    <td><span class="badge badge-info">{{ $art->category->name }}</span></td>
-                    <td><strong>{{ number_format($art->views_count) }}</strong></td>
-                    <td>
-                        @if($art->status === 'published')
-                            <span class="badge badge-success">Publish</span>
-                        @else
-                            <span class="badge badge-danger">Draft</span>
-                        @endif
-                    </td>
-                    <td>
-                        <a href="{{ route('admin.articles.edit', $art->id) }}" class="btn btn-sm btn-primary" title="Edit"><i class="fas fa-edit"></i></a>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Judul Berita</th>
+                        <th>Kategori</th>
+                        <th>Pembaca</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($latestArticles as $art)
+                    <tr>
+                        <td>
+                            <strong>{{ Str::limit($art->title, 45) }}</strong>
+                            <div style="font-size: 11px; color: var(--admin-muted);">{{ $art->published_at ? $art->published_at->format('d M Y H:i') : '-' }}</div>
+                        </td>
+                        <td><span class="badge badge-info">{{ $art->category->name }}</span></td>
+                        <td><strong>{{ number_format($art->views_count) }}</strong></td>
+                        <td>
+                            @if($art->status === 'published')
+                                <span class="badge badge-success">Publish</span>
+                            @else
+                                <span class="badge badge-danger">Draft</span>
+                            @endif
+                        </td>
+                        <td>
+                            <a href="{{ route('admin.articles.edit', $art->id) }}" class="btn btn-sm btn-primary" title="Edit"><i class="fas fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- Right: Top 5 Most Viewed -->
@@ -100,3 +134,4 @@
 
 </div>
 @endsection
+

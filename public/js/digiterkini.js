@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
        3. OFFCANVAS MOBILE DRAWER & BACKDROP
        ========================================================================== */
     const menuToggle = document.getElementById('menuToggle');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const mobileNavToggle = document.getElementById('mobileNavToggle');
     const sidebarDrawer = document.getElementById('sidebarDrawer');
     const sidebarOverlay = document.getElementById('sidebarOverlay');
@@ -127,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (menuToggle) menuToggle.addEventListener('click', openDrawer);
+    if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', openDrawer);
     if (mobileNavToggle) mobileNavToggle.addEventListener('click', openDrawer);
     if (sidebarClose) sidebarClose.addEventListener('click', closeDrawer);
     if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeDrawer);
@@ -137,6 +139,31 @@ document.addEventListener('DOMContentLoaded', () => {
             closeDrawer();
         }
     });
+
+    /* ==========================================================================
+       3b. MOBILE EXPANDABLE SEARCH BAR
+       ========================================================================== */
+    const mobileSearchToggle = document.getElementById('mobileSearchToggle');
+    const mobileSearchBar = document.getElementById('mobileSearchBar');
+    const mobileSearchClose = document.getElementById('mobileSearchClose');
+    const mobileSearchInput = document.getElementById('mobileSearchInput');
+
+    if (mobileSearchToggle && mobileSearchBar) {
+        mobileSearchToggle.addEventListener('click', () => {
+            const isActive = mobileSearchBar.classList.toggle('active');
+            mobileSearchToggle.classList.toggle('active', isActive);
+            if (isActive && mobileSearchInput) {
+                setTimeout(() => mobileSearchInput.focus(), 150);
+            }
+        });
+    }
+
+    if (mobileSearchClose && mobileSearchBar) {
+        mobileSearchClose.addEventListener('click', () => {
+            mobileSearchBar.classList.remove('active');
+            if (mobileSearchToggle) mobileSearchToggle.classList.remove('active');
+        });
+    }
 
     /* ==========================================================================
        4. BACK TO TOP BUTTON

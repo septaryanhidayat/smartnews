@@ -101,7 +101,7 @@ class DashboardController extends Controller
                 \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS=0;');
             }
 
-            $tables = ['article_tag', 'articles', 'comments', 'tags', 'categories', 'site_settings', 'users'];
+            $tables = ['article_tag', 'articles', 'comments', 'tags', 'categories', 'site_settings'];
             foreach ($tables as $t) {
                 if (\Illuminate\Support\Facades\Schema::hasTable($t)) {
                     \Illuminate\Support\Facades\DB::table($t)->delete();
@@ -116,31 +116,43 @@ class DashboardController extends Controller
                 }
             }
 
-            // Ensure admin accounts and standard passwords
-            \Illuminate\Support\Facades\DB::table('users')->where('id', 1)->update([
-                'name' => 'Budi Santoso',
-                'email' => 'info@berandadigital.net',
-                'role' => 'admin',
-                'password' => \Illuminate\Support\Facades\Hash::make('password')
-            ]);
-            \Illuminate\Support\Facades\DB::table('users')->where('id', 3)->update([
-                'name' => 'Super Administrator',
-                'email' => 'admin@smartnews.id',
-                'role' => 'admin',
-                'password' => \Illuminate\Support\Facades\Hash::make('password')
-            ]);
-            \Illuminate\Support\Facades\DB::table('users')->where('id', 2)->update([
-                'name' => 'Siti Nurhaliza',
-                'email' => 'redaksi@smartnews.id',
-                'role' => 'editor',
-                'password' => \Illuminate\Support\Facades\Hash::make('password')
-            ]);
-            \Illuminate\Support\Facades\DB::table('users')->where('id', 4)->update([
-                'name' => 'Ahmad Fauzi (Wartawan)',
-                'email' => 'wartawan@smartnews.id',
-                'role' => 'author',
-                'password' => \Illuminate\Support\Facades\Hash::make('password')
-            ]);
+            // Ensure essential users always exist and have active passwords
+            \App\Models\User::updateOrCreate(
+                ['email' => 'admin@smartnews.id'],
+                [
+                    'name' => 'Super Administrator',
+                    'role' => 'admin',
+                    'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                    'email_verified_at' => now(),
+                ]
+            );
+            \App\Models\User::updateOrCreate(
+                ['email' => 'info@berandadigital.net'],
+                [
+                    'name' => 'Budi Santoso',
+                    'role' => 'admin',
+                    'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                    'email_verified_at' => now(),
+                ]
+            );
+            \App\Models\User::updateOrCreate(
+                ['email' => 'redaksi@smartnews.id'],
+                [
+                    'name' => 'Siti Nurhaliza',
+                    'role' => 'editor',
+                    'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                    'email_verified_at' => now(),
+                ]
+            );
+            \App\Models\User::updateOrCreate(
+                ['email' => 'wartawan@smartnews.id'],
+                [
+                    'name' => 'Ahmad Fauzi (Wartawan)',
+                    'role' => 'author',
+                    'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                    'email_verified_at' => now(),
+                ]
+            );
 
             if ($isSqlite) {
                 \Illuminate\Support\Facades\DB::statement('PRAGMA foreign_keys = ON;');

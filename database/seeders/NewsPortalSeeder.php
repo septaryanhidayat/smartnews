@@ -38,7 +38,7 @@ class NewsPortalSeeder extends Seeder
                     DB::statement('SET FOREIGN_KEY_CHECKS=0;');
                 }
 
-                $tables = ['article_tag', 'articles', 'comments', 'tags', 'categories', 'site_settings', 'users'];
+                $tables = ['article_tag', 'articles', 'comments', 'tags', 'categories', 'site_settings'];
                 foreach ($tables as $t) {
                     if (Schema::hasTable($t)) {
                         DB::table($t)->delete();
@@ -54,30 +54,42 @@ class NewsPortalSeeder extends Seeder
                 }
 
                 // Ensure admin accounts and standard passwords
-                DB::table('users')->where('id', 1)->update([
-                    'name' => 'Budi Santoso',
-                    'email' => 'info@berandadigital.net',
-                    'role' => 'admin',
-                    'password' => Hash::make('password')
-                ]);
-                DB::table('users')->where('id', 3)->update([
-                    'name' => 'Super Administrator',
-                    'email' => 'admin@smartnews.id',
-                    'role' => 'admin',
-                    'password' => Hash::make('password')
-                ]);
-                DB::table('users')->where('id', 2)->update([
-                    'name' => 'Siti Nurhaliza',
-                    'email' => 'redaksi@smartnews.id',
-                    'role' => 'editor',
-                    'password' => Hash::make('password')
-                ]);
-                DB::table('users')->where('id', 4)->update([
-                    'name' => 'Ahmad Fauzi (Wartawan)',
-                    'email' => 'wartawan@smartnews.id',
-                    'role' => 'author',
-                    'password' => Hash::make('password')
-                ]);
+                User::updateOrCreate(
+                    ['email' => 'admin@smartnews.id'],
+                    [
+                        'name' => 'Super Administrator',
+                        'role' => 'admin',
+                        'password' => Hash::make('password'),
+                        'email_verified_at' => now(),
+                    ]
+                );
+                User::updateOrCreate(
+                    ['email' => 'info@berandadigital.net'],
+                    [
+                        'name' => 'Budi Santoso',
+                        'role' => 'admin',
+                        'password' => Hash::make('password'),
+                        'email_verified_at' => now(),
+                    ]
+                );
+                User::updateOrCreate(
+                    ['email' => 'redaksi@smartnews.id'],
+                    [
+                        'name' => 'Siti Nurhaliza',
+                        'role' => 'editor',
+                        'password' => Hash::make('password'),
+                        'email_verified_at' => now(),
+                    ]
+                );
+                User::updateOrCreate(
+                    ['email' => 'wartawan@smartnews.id'],
+                    [
+                        'name' => 'Ahmad Fauzi (Wartawan)',
+                        'role' => 'author',
+                        'password' => Hash::make('password'),
+                        'email_verified_at' => now(),
+                    ]
+                );
 
                 if ($isSqlite) {
                     DB::statement('PRAGMA foreign_keys = ON;');

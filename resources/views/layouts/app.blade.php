@@ -58,19 +58,19 @@
     <link rel="icon" type="image/svg+xml" href="{{ site_favicon() }}">
     <link rel="apple-touch-icon" href="{{ site_favicon() }}">
 
-    <!-- Google Fonts (Async non-blocking with instant fallback) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Google Fonts (Low-priority non-blocking with instant system fallback) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap"></noscript>
     
-    <!-- FontAwesome 6 Icons (Async non-blocking) -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- FontAwesome 6 Icons (Low-priority background load) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
     <!-- Swiper Carousel CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <!-- Theme Stylesheet (Cached with Static Versioning) -->
-    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=2.1">
+    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=2.2">
     @stack('styles')
 
     <!-- Early theme init: Default to light mode unless user explicitly selected dark -->

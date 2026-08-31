@@ -339,27 +339,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================================================
-       7. AJAX LOAD MORE NEWS FEED
+       7. AJAX LOAD MORE / INFINITE SCROLL NEWS FEED
        ========================================================================== */
     const btnLoadMore = document.getElementById('btnLoadMore');
     const articleList = document.getElementById('articleList');
+    const infiniteSentinel = document.getElementById('infiniteScrollSentinel');
+    const infiniteLoading = document.getElementById('infiniteScrollLoading');
 
+    // 7A. Manual Click Load More
     if (btnLoadMore && articleList) {
         btnLoadMore.addEventListener('click', async () => {
             let currentPage = parseInt(btnLoadMore.getAttribute('data-page') || 1);
             let nextPage = currentPage + 1;
 
             btnLoadMore.disabled = true;
-            btnLoadMore.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memuat...';
+            btnLoadMore.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memuat berita...';
 
             try {
-                const response = await fetch(`/?page=${nextPage}`, {
+                const response = await fetch(`/?page=${nextPage}&ajax=1`, {
                     headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json'
                     }
                 });
 
-                if (!response.ok) throw new Error('Network error');
+                if (!response.ok) throw new Error('Network response not ok');
 
                 const data = await response.json();
 
@@ -367,14 +371,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     articleList.insertAdjacentHTML('beforeend', data.html);
                     btnLoadMore.setAttribute('data-page', nextPage);
 
-                    // Observe newly appended feed items
                     if (window.observeNewFadeUpElements) {
                         window.observeNewFadeUpElements(articleList);
                     }
                 }
 
                 if (!data.hasMore) {
-                    btnLoadMore.parentElement.innerHTML = '<p style="color: var(--text-muted); font-size: 13.5px; font-weight: 600;">Semua berita telah dimuat.</p>';
+                    btnLoadMore.parentElement.innerHTML = '<p style="color: var(--text-muted); font-size: 13.5px; font-weight: 600; text-align: center; margin: 16px 0;"><i class="fas fa-check-circle" style="color: #10b981;"></i> Seluruh berita terkini telah dimuat.</p>';
                 } else {
                     btnLoadMore.disabled = false;
                     btnLoadMore.innerHTML = '<i class="fas fa-sync-alt"></i> Muat Lainnya';
@@ -382,9 +385,72 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 console.error('Error loading more articles:', err);
                 btnLoadMore.disabled = false;
-                btnLoadMore.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Gagal, coba lagi';
+                btnLoadMore.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Gagal, klik untuk coba lagi';
             }
         });
+    }
+
+    // 7B. Infinite Scroll on Scroll
+    if (infiniteSentinel && articleList) {
+        let isFetchingInfinite = false;
+        let infiniteObserver = null;
+
+        async function fetchNextInfinitePage() {
+            if (isFetchingInfinite) return;
+            const hasMore = infiniteSentinel.getAttribute('data-has-more') === '1';
+            if (!hasMore) return;
+
+            let currentPage = parseInt(infiniteSentinel.getAttribute('data-page') || 1);
+            let nextPage = currentPage + 1;
+
+            isFetchingInfinite = true;
+            if (infiniteLoading) infiniteLoading.style.display = 'inline-flex';
+
+            try {
+                const response = await fetch(`/?page=${nextPage}&ajax=1`, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (!response.ok) throw new Error('Network error');
+                const data = await response.json();
+
+                if (data.html) {
+                    articleList.insertAdjacentHTML('beforeend', data.html);
+                    infiniteSentinel.setAttribute('data-page', nextPage);
+
+                    if (window.observeNewFadeUpElements) {
+                        window.observeNewFadeUpElements(articleList);
+                    }
+                }
+
+                if (!data.hasMore) {
+                    infiniteSentinel.setAttribute('data-has-more', '0');
+                    infiniteSentinel.innerHTML = '<p style="color: var(--text-muted); font-size: 13.5px; font-weight: 600; text-align: center; margin: 16px 0;"><i class="fas fa-check-circle" style="color: #10b981;"></i> Seluruh berita terkini telah dimuat.</p>';
+                    if (infiniteObserver) infiniteObserver.disconnect();
+                }
+            } catch (err) {
+                console.error('Infinite scroll error:', err);
+            } finally {
+                isFetchingInfinite = false;
+                if (infiniteLoading && infiniteSentinel.getAttribute('data-has-more') === '1') {
+                    infiniteLoading.style.display = 'none';
+                }
+            }
+        }
+
+        if ('IntersectionObserver' in window) {
+            infiniteObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    fetchNextInfinitePage();
+                }
+            }, {
+                rootMargin: '200px 0px 200px 0px'
+            });
+            infiniteObserver.observe(infiniteSentinel);
+        }
     }
 
     /* ==========================================================================

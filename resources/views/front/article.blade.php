@@ -101,9 +101,6 @@
                     </div>
                 </div>
 
-                <!-- 4. Top Share Bar -->
-                @include('partials.share-bar', ['title' => $article->title])
-
                 <!-- 5. Featured Media / Video Player -->
                 <div class="single-media">
                     @if($article->media_type === 'video' && $article->video_id)

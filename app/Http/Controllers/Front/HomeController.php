@@ -87,8 +87,8 @@ class HomeController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate(6);
 
-        // If AJAX load more request
-        if ($request->ajax()) {
+        // If AJAX load more / infinite scroll request
+        if ($request->ajax() || $request->wantsJson() || $request->header('X-Requested-With') === 'XMLHttpRequest' || $request->boolean('ajax')) {
             return response()->json([
                 'html' => view('partials.article-feed-items', ['articles' => $latestArticles])->render(),
                 'hasMore' => $latestArticles->hasMorePages(),

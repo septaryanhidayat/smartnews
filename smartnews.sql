@@ -27,8 +27,8 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Bima Saputra', 'admin@digiterkini.id', '2026-08-21 16:55:01', '$2y$12$CVe80cASXFM1l4LwNCyXF.2PYJqdUsMi3T78CQs7FAQjXyboH9C7O', NULL, '2026-08-21 16:55:01', '2026-08-21 16:55:01'),
-(2, 'Siti Nurhaliza', 'redaksi@digiterkini.id', '2026-08-21 16:55:01', '$2y$12$K3.8zQ/XyeELgoALhRLsfOX89eag3p8YGqG0VFsdYe7z9EByTAdKu', NULL, '2026-08-21 16:55:01', '2026-08-21 16:55:01');
+(1, 'Bima Saputra', 'admin@smartnews.id', '2026-08-21 16:55:01', '$2y$12$CVe80cASXFM1l4LwNCyXF.2PYJqdUsMi3T78CQs7FAQjXyboH9C7O', NULL, '2026-08-21 16:55:01', '2026-08-21 16:55:01'),
+(2, 'Siti Nurhaliza', 'redaksi@smartnews.id', '2026-08-21 16:55:01', '$2y$12$K3.8zQ/XyeELgoALhRLsfOX89eag3p8YGqG0VFsdYe7z9EByTAdKu', NULL, '2026-08-21 16:55:01', '2026-08-21 16:55:01');
 
 -- --------------------------------------------------------
 -- Struktur tabel: `categories`
@@ -308,11 +308,11 @@ CREATE TABLE `comments` (
 
 INSERT INTO `comments` (`id`, `article_id`, `name`, `email`, `comment`, `is_approved`, `created_at`, `updated_at`) VALUES
 (1, 1, 'Ahmad Fadhil', 'ahmad@example.com', 'Informasi yang sangat mencerahkan dan komprehensif. Semoga infrastruktur ini membawa manfaat nyata bagi petani dan ekonomi daerah!', 1, '2026-08-21 11:55:02', '2026-08-21 16:55:02'),
-(2, 1, 'Ratna Dewi', 'ratna@example.com', 'Pemberitaan yang sangat aktual dan berimbang. Sukses terus untuk redaksi Digiterkini!', 1, '2026-08-21 14:55:02', '2026-08-21 16:55:02'),
-(3, 2, 'Ahmad Fadhil', 'ahmad@example.com', 'Informasi yang sangat mencerahkan dan komprehensif. Semoga infrastruktur ini membawa manfaat nyata bagi petani dan ekonomi daerah!', 1, '2026-08-21 11:55:02', '2026-08-21 16:55:02'),
-(4, 2, 'Ratna Dewi', 'ratna@example.com', 'Pemberitaan yang sangat aktual dan berimbang. Sukses terus untuk redaksi Digiterkini!', 1, '2026-08-21 14:55:02', '2026-08-21 16:55:02'),
-(5, 3, 'Ahmad Fadhil', 'ahmad@example.com', 'Informasi yang sangat mencerahkan dan komprehensif. Semoga infrastruktur ini membawa manfaat nyata bagi petani dan ekonomi daerah!', 1, '2026-08-21 11:55:02', '2026-08-21 16:55:02'),
-(6, 3, 'Ratna Dewi', 'ratna@example.com', 'Pemberitaan yang sangat aktual dan berimbang. Sukses terus untuk redaksi Digiterkini!', 1, '2026-08-21 14:55:02', '2026-08-21 16:55:02'),
+(2, 1, 'Ratna Dewi', 'ratna@example.com', 'Pemberitaan yang sangat aktual dan berimbang. Sukses terus untuk redaksi SmartNews!', 1, '2026-08-21 14:55:02', '2026-08-21 16:55:02'),
+(3, 2, 'Budi Santoso', 'budi@example.com', 'Informasi yang sangat bermanfaat dan mudah dipahami pembaca awam.', 1, '2026-08-21 14:55:02', '2026-08-21 16:55:02'),
+(4, 2, 'Ratna Dewi', 'ratna@example.com', 'Pemberitaan yang sangat aktual dan berimbang. Sukses terus untuk redaksi SmartNews!', 1, '2026-08-21 14:55:02', '2026-08-21 16:55:02'),
+(5, 3, 'Budi Santoso', 'budi@example.com', 'Informasi yang sangat bermanfaat dan mudah dipahami pembaca awam.', 1, '2026-08-21 14:55:02', '2026-08-21 16:55:02'),
+(6, 3, 'Ratna Dewi', 'ratna@example.com', 'Pemberitaan yang sangat aktual dan berimbang. Sukses terus untuk redaksi SmartNews!', 1, '2026-08-21 14:55:02', '2026-08-21 16:55:02'),
 (7, 2, 'Budi Santoso', 'budi@example.com', 'Berita yang sangat informatif dan bermanfaat untuk masyarakat!', 1, '2026-08-21 17:01:38', '2026-08-21 17:01:38');
 
 -- --------------------------------------------------------
@@ -333,9 +333,9 @@ INSERT INTO `site_settings` (`id`, `key`, `value`, `created_at`, `updated_at`) V
 (1, 'site_name', 'SmartNews', '2026-08-21 16:55:02', '2026-08-21 17:11:39'),
 (2, 'site_tagline', 'Portal Berita Terpercaya & Cerdas', '2026-08-21 16:55:02', '2026-08-21 17:11:39'),
 (3, 'site_description', 'Portal berita Indonesia terpercaya, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.', '2026-08-21 16:55:02', '2026-08-21 16:55:02'),
-(4, 'site_address', 'Jl. Sudirman Kav. 52–53, Jakarta Pusat 10220', '2026-08-21 16:55:02', '2026-08-21 16:55:02'),
-(5, 'site_phone', '(012) 3456-7890', '2026-08-21 16:55:02', '2026-08-21 16:55:02'),
-(6, 'site_email', 'redaksi@digiterkini.id', '2026-08-21 16:55:02', '2026-08-21 16:55:02'),
+(4, 'contact_address', 'Jl. Sarjana, Timbangan, Ogan Ilir 30862', '2026-08-21 16:55:02', '2026-08-21 16:55:02'),
+(5, 'contact_phone', '(012) 3456-7890', '2026-08-21 16:55:02', '2026-08-21 16:55:02'),
+(6, 'contact_email', 'redaksi@smartnews.id', '2026-08-21 16:55:02', '2026-08-21 16:55:02'),
 (7, 'social_facebook', 'https://facebook.com', '2026-08-21 16:55:02', '2026-08-21 16:55:02'),
 (8, 'social_twitter', 'https://twitter.com', '2026-08-21 16:55:02', '2026-08-21 16:55:02'),
 (9, 'social_tiktok', 'https://tiktok.com', '2026-08-21 16:55:02', '2026-08-21 16:55:02'),

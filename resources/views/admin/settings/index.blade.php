@@ -134,7 +134,46 @@
             </div>
         </div>
 
-        <!-- 3. PENGATURAN SEO, META & OPEN GRAPH -->
+        <!-- 3. PENGATURAN PEMUATAN BERITA (LOAD MORE & PAGINATION) -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title"><i class="fas fa-sync-alt" style="color: #0284c7; margin-right: 6px;"></i> Metode Pemuatan Berita Beranda (Feed Pagination)</h3>
+                    <p style="font-size: 12.5px; color: var(--admin-muted); margin-top: 4px;">Pilih bagaimana pengunjung memuat daftar berita berikutnya di halaman utama (Berita Terkini).</p>
+                </div>
+            </div>
+
+            @php
+                $currentPagType = old('pagination_type', $settings['pagination_type'] ?? 'button');
+            @endphp
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                <label style="border: 2px solid {{ $currentPagType === 'button' ? '#0284c7' : 'var(--admin-border)' }}; background-color: {{ $currentPagType === 'button' ? '#f0f9ff' : 'var(--admin-card-bg)' }}; border-radius: 10px; padding: 16px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; transition: all 0.2s ease;">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-weight: 700; font-size: 14px; color: #0f172a;"><i class="fas fa-hand-pointer" style="color: #0284c7; margin-right: 4px;"></i> Tombol Klik</span>
+                        <input type="radio" name="pagination_type" value="button" {{ $currentPagType === 'button' ? 'checked' : '' }}>
+                    </div>
+                    <p style="font-size: 12px; color: var(--admin-muted); margin: 0; line-height: 1.4;">Pengunjung mengklik tombol <strong>"Muat Lainnya"</strong> untuk memuat artikel selanjutnya.</p>
+                </label>
+
+                <label style="border: 2px solid {{ $currentPagType === 'infinite' ? '#0284c7' : 'var(--admin-border)' }}; background-color: {{ $currentPagType === 'infinite' ? '#f0f9ff' : 'var(--admin-card-bg)' }}; border-radius: 10px; padding: 16px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; transition: all 0.2s ease;">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-weight: 700; font-size: 14px; color: #0f172a;"><i class="fas fa-arrows-alt-v" style="color: #0284c7; margin-right: 4px;"></i> Otomatis Scroll</span>
+                        <input type="radio" name="pagination_type" value="infinite" {{ $currentPagType === 'infinite' ? 'checked' : '' }}>
+                    </div>
+                    <p style="font-size: 12px; color: var(--admin-muted); margin: 0; line-height: 1.4;">Berita otomatis termuat tanpa henti saat pengunjung menggulir layar ke bawah (Infinite Scroll).</p>
+                </label>
+
+                <label style="border: 2px solid {{ $currentPagType === 'pagination' ? '#0284c7' : 'var(--admin-border)' }}; background-color: {{ $currentPagType === 'pagination' ? '#f0f9ff' : 'var(--admin-card-bg)' }}; border-radius: 10px; padding: 16px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; transition: all 0.2s ease;">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-weight: 700; font-size: 14px; color: #0f172a;"><i class="fas fa-list-ol" style="color: #0284c7; margin-right: 4px;"></i> Nomor Halaman</span>
+                        <input type="radio" name="pagination_type" value="pagination" {{ $currentPagType === 'pagination' ? 'checked' : '' }}>
+                    </div>
+                    <p style="font-size: 12px; color: var(--admin-muted); margin: 0; line-height: 1.4;">Navigasi nomor halaman tradisional (1, 2, 3... Selanjutnya) yang ramah navigasi langsung.</p>
+                </label>
+            </div>
+        </div>
+
+        <!-- 4. PENGATURAN SEO, META & OPEN GRAPH -->
         <div class="card">
             <div class="card-header">
                 <div>
@@ -228,7 +267,7 @@
                         id="contact_address"
                         name="contact_address"
                         class="form-control"
-                        value="{{ old('contact_address', $settings['contact_address'] ?? 'Jl. Sudirman Kav. 52–53, Jakarta Pusat 10220') }}"
+                        value="{{ old('contact_address', $settings['contact_address'] ?? 'Jl. Sarjana, Timbangan, Ogan Ilir 30862') }}"
                     >
                 </div>
             </div>

@@ -36,6 +36,7 @@ class SettingAdminController extends Controller
             'site_logo_dark' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg,webp|max:3072',
             'site_favicon' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg,webp,ico|max:1024',
             'hero_slider_count' => 'nullable|integer|min:1|max:10',
+            'pagination_type' => 'nullable|string|in:button,infinite,pagination',
         ], [
             'site_name.required' => 'Nama website wajib diisi.',
             'site_description.required' => 'Deskripsi website untuk SEO wajib diisi.',
@@ -47,6 +48,7 @@ class SettingAdminController extends Controller
             'hero_slider_count.integer' => 'Jumlah berita slider harus berupa angka.',
             'hero_slider_count.min' => 'Jumlah berita slider minimal 1.',
             'hero_slider_count.max' => 'Jumlah berita slider maksimal 10.',
+            'pagination_type.in' => 'Pilihan tipe pagination tidak valid.',
         ]);
 
         $uploadPath = public_path('uploads/settings');
@@ -86,6 +88,7 @@ class SettingAdminController extends Controller
             'site_keywords',
             'google_site_verification',
             'hero_slider_count',
+            'pagination_type',
             'contact_email',
             'contact_phone',
             'contact_address',
@@ -97,7 +100,7 @@ class SettingAdminController extends Controller
         ];
 
         foreach ($fields as $field) {
-            SiteSetting::set($field, $request->input($field, ''));
+            SiteSetting::set($field, $request->input($field, $field === 'pagination_type' ? 'button' : ''));
         }
 
         return redirect()->route('admin.settings.index')->with('success', 'Pengaturan website, logo, dan SEO berhasil disimpan.');

@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Theme Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('css/digiterkini.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v={{ time() }}">
     @stack('styles')
 
     <!-- Early theme init: Default to light mode unless user explicitly selected dark -->
@@ -331,7 +331,7 @@
                         <ul class="footer-contact">
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>{{ setting('contact_address', 'Jl. Sudirman Kav. 52–53, Jakarta Pusat 10220') }}</span>
+                                <span>{{ setting('contact_address', 'Jl. Sarjana, Timbangan, Ogan Ilir 30862') }}</span>
                             </li>
                             <li>
                                 <i class="fas fa-phone-alt"></i>
@@ -431,7 +431,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Theme Custom Scripts -->
-    <script src="{{ asset('js/digiterkini.js') }}?v={{ time() }}"></script>
+    <script src="{{ asset('js/smartnews.js') }}?v={{ time() }}"></script>
     @stack('scripts')
 </body>
 </html>

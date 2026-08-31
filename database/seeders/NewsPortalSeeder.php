@@ -21,7 +21,7 @@ class NewsPortalSeeder extends Seeder
     {
         // 1. Create Default Admin & Journalists
         $admin = User::firstOrCreate(
-            ['email' => 'admin@digiterkini.id'],
+            ['email' => 'admin@smartnews.id'],
             [
                 'name' => 'Bima Saputra',
                 'password' => Hash::make('password'),
@@ -30,7 +30,7 @@ class NewsPortalSeeder extends Seeder
         );
 
         $journalist2 = User::firstOrCreate(
-            ['email' => 'redaksi@digiterkini.id'],
+            ['email' => 'redaksi@smartnews.id'],
             [
                 'name' => 'Siti Nurhaliza',
                 'password' => Hash::make('password'),
@@ -91,7 +91,7 @@ class NewsPortalSeeder extends Seeder
             $tags[$slug] = Tag::firstOrCreate(['slug' => $slug], ['name' => $t]);
         }
 
-        // 4. Articles Data (Rich realistic news articles matching Digiterkini reference)
+        // 4. Articles Data (Rich realistic news articles matching SmartNews reference)
         $articlesData = [
             // Sticky Featured News
             [
@@ -416,7 +416,7 @@ class NewsPortalSeeder extends Seeder
                     ['article_id' => $article->id, 'email' => 'ratna@example.com'],
                     [
                         'name' => 'Ratna Dewi',
-                        'comment' => 'Pemberitaan yang sangat aktual dan berimbang. Sukses terus untuk redaksi Digiterkini!',
+                        'comment' => 'Pemberitaan yang sangat aktual dan berimbang. Sukses terus untuk redaksi SmartNews!',
                         'is_approved' => true,
                         'created_at' => now()->subHours(2),
                     ]
@@ -426,12 +426,12 @@ class NewsPortalSeeder extends Seeder
 
         // 5. Site Settings
         $settings = [
-            'site_name' => 'Digiterkini',
-            'site_tagline' => 'Portal Berita Indonesia Terpercaya',
+            'site_name' => 'SmartNews',
+            'site_tagline' => 'Portal Berita Terpercaya & Cerdas',
             'site_description' => 'Portal berita Indonesia terpercaya, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.',
-            'site_address' => 'Jl. Sudirman Kav. 52–53, Jakarta Pusat 10220',
-            'site_phone' => '(012) 3456-7890',
-            'site_email' => 'redaksi@digiterkini.id',
+            'contact_address' => 'Jl. Sarjana, Timbangan, Ogan Ilir 30862',
+            'contact_phone' => '(012) 3456-7890',
+            'contact_email' => 'redaksi@smartnews.id',
             'social_facebook' => 'https://facebook.com',
             'social_twitter' => 'https://twitter.com',
             'social_tiktok' => 'https://tiktok.com',

@@ -136,13 +136,32 @@
                         @include('partials.article-feed-items', ['articles' => $latestArticles])
                     </div>
 
-                    <!-- LOAD MORE AJAX BUTTON -->
-                    @if($latestArticles->hasMorePages())
-                    <div class="load-more-wrap">
-                        <button type="button" class="btn-load-more" id="btnLoadMore" data-page="1">
-                            <i class="fas fa-sync-alt"></i> Muat Lainnya
-                        </button>
-                    </div>
+                    <!-- NEWS FEED NAVIGATION / LOAD MORE / INFINITE SCROLL -->
+                    @php
+                        $paginationMode = setting('pagination_type', 'button');
+                    @endphp
+
+                    @if($paginationMode === 'pagination')
+                        <div class="pagination-wrap" style="margin-top: 28px;">
+                            {{ $latestArticles->links() }}
+                        </div>
+                    @elseif($paginationMode === 'infinite')
+                        <div class="infinite-scroll-sentinel" id="infiniteScrollSentinel" data-page="1" data-has-more="{{ $latestArticles->hasMorePages() ? '1' : '0' }}" style="padding: 24px 0; text-align: center;">
+                            @if($latestArticles->hasMorePages())
+                            <div class="infinite-scroll-loading" id="infiniteScrollLoading" style="display: none; align-items: center; justify-content: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--color-primary);">
+                                <i class="fas fa-spinner fa-spin"></i> Memuat berita selanjutnya...
+                            </div>
+                            @endif
+                        </div>
+                    @else
+                        {{-- Default: Manual Button Click --}}
+                        @if($latestArticles->hasMorePages())
+                        <div class="load-more-wrap">
+                            <button type="button" class="btn-load-more" id="btnLoadMore" data-page="1">
+                                <i class="fas fa-sync-alt"></i> Muat Lainnya
+                            </button>
+                        </div>
+                        @endif
                     @endif
 
                 </div>

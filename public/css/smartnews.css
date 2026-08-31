@@ -1835,62 +1835,128 @@ html.dark-mode .trending-tags__item:hover {
   gap: 5px;
 }
 
-/* Share Bar */
-.share-bar {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 24px;
+/* ==========================================================================
+   ARTICLE SOCIAL SHARE CARD (NEAT GRID LAYOUT)
+   ========================================================================== */
+.article-share-card {
+  background: var(--bg-muted, #f8fafc);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: 18px 20px;
+  margin: 28px 0;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
 }
 
-.share-bar__label {
-  font-weight: 700;
-  font-size: 13px;
-  color: var(--text-muted);
+.dark-mode .article-share-card {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: #334155;
 }
 
-.share-bar__buttons {
+.article-share-card__head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
 }
 
-.share-btn {
+.dark-mode .article-share-card__head {
+  border-bottom-color: #334155;
+}
+
+.article-share-card__title {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: var(--radius-full);
-  font-size: 12px;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-main, #0f172a);
+}
+
+.article-share-card__title i {
+  color: var(--color-primary, #cf2e2e);
+}
+
+.article-share-card__hint {
+  font-size: 11.5px;
+  color: var(--text-muted, #64748b);
+}
+
+.article-share-card__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .article-share-card {
+    padding: 14px 14px;
+    margin: 20px 0;
+  }
+  .article-share-card__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+.share-grid-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: var(--radius-md, 8px);
+  font-size: 12.5px;
   font-weight: 600;
   color: #ffffff !important;
-  text-decoration: none;
+  text-decoration: none !important;
   border: none;
   cursor: pointer;
-  transition: var(--transition);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, filter 0.2s ease;
+  user-select: none;
 }
 
-.share-btn--facebook { background-color: #1877f2; }
-.share-btn--twitter { background-color: #0f1419; }
-.share-btn--whatsapp { background-color: #25d366; }
-.share-btn--telegram { background-color: #229ed9; }
-.share-btn--threads { background-color: #000000; }
-.share-btn--instagram {
+.share-grid-btn i {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.share-grid-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  filter: brightness(1.05);
+}
+
+.share-grid-btn--wa { background-color: #25d366; }
+.share-grid-btn--tg { background-color: #229ed9; }
+.share-grid-btn--fb { background-color: #1877f2; }
+.share-grid-btn--threads { background-color: #111111; border: 1px solid rgba(255, 255, 255, 0.15); }
+.share-grid-btn--x { background-color: #0f1419; border: 1px solid rgba(255, 255, 255, 0.15); }
+.share-grid-btn--ig {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
-.share-btn--tiktok { background-color: #010101; }
-.share-btn--copy {
-  background-color: var(--bg-muted);
-  color: var(--text-main) !important;
-  border: 1px solid var(--border-color);
+.share-grid-btn--tiktok { background-color: #010101; border: 1px solid rgba(255, 255, 255, 0.15); }
+.share-grid-btn--copy {
+  background-color: var(--bg-card, #ffffff);
+  color: var(--text-main, #0f172a) !important;
+  border: 1px solid var(--border-color, #cbd5e1);
 }
 
-.share-btn:hover {
-  opacity: 0.95;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+.dark-mode .share-grid-btn--copy {
+  background-color: #1e293b;
+  border-color: #475569;
+  color: #f1f5f9 !important;
+}
+
+.share-grid-btn--copy:hover {
+  background-color: var(--color-primary, #cf2e2e);
+  color: #ffffff !important;
+  border-color: var(--color-primary, #cf2e2e);
 }
 
 /* Media Hero & Video Player */

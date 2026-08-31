@@ -25,7 +25,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="email">Alamat Email</label>
-                    <input type="email" id="email" name="email" class="form-control" value="{{ old('email', 'admin@digiterkini.id') }}" required autofocus>
+                    <input type="email" id="email" name="email" class="form-control" value="{{ old('email', 'admin@smartnews.id') }}" required autofocus>
                 </div>
 
                 <div class="form-group">
@@ -49,7 +49,7 @@
             </div>
             
             <div style="margin-top: 18px; padding: 10px; background-color: var(--bg-muted); border-radius: var(--radius-sm); font-size: 12px; text-align: center; color: var(--text-muted);">
-                Demo Admin: <strong>admin@digiterkini.id</strong> | Password: <strong>password</strong>
+                Demo Admin: <strong>admin@smartnews.id</strong> | Password: <strong>password</strong>
             </div>
 
         </div>

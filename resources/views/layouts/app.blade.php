@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- DNS Prefetch & Preconnect for High Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Critical LCP Image Preload: Highest Network Priority -->
+    @yield('preload')
+    @if(isset($sliderArticles) && $sliderArticles->count() > 0)
+    <link rel="preload" as="image" href="{{ $sliderArticles->first()->image_url }}" fetchpriority="high">
+    @endif
     
     <title>@yield('title', setting('site_name', 'SmartNews') . ' - ' . setting('site_tagline', 'Portal Berita Terpercaya & Cerdas'))</title>
     <meta name="description" content="@yield('meta_description', setting('site_description', 'SmartNews - Portal berita Indonesia terpercaya, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.'))">
@@ -46,10 +58,7 @@
     <link rel="icon" type="image/svg+xml" href="{{ site_favicon() }}">
     <link rel="apple-touch-icon" href="{{ site_favicon() }}">
 
-    <!-- DNS Prefetch & Preconnect for High Performance -->
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome 6 Icons -->
@@ -58,14 +67,8 @@
     <!-- Swiper Carousel CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-    <!-- LCP Hero Image Preload -->
-    @yield('preload')
-    @if(isset($sliderArticles) && $sliderArticles->count() > 0)
-    <link rel="preload" as="image" href="{{ $sliderArticles->first()->image_url }}" fetchpriority="high">
-    @endif
-
     <!-- Theme Stylesheet (Cached with Static Versioning) -->
-    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.9">
+    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=2.0">
     @stack('styles')
 
     <!-- Early theme init: Default to light mode unless user explicitly selected dark -->

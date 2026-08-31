@@ -74,7 +74,7 @@
     @endif
 
     <!-- Theme Stylesheet (Cached with Static Versioning) -->
-    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.7">
+    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.8">
     @stack('styles')
 
     <!-- Early theme init: Default to light mode unless user explicitly selected dark -->

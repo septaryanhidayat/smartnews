@@ -3470,25 +3470,30 @@ textarea.form-control {
     flex-shrink: 0;
   }
   .lang-switcher {
-    padding: 2px 5px !important;
-    font-size: 10.5px !important;
-    gap: 2px !important;
+    padding: 3px 6px !important;
+    font-size: 11px !important;
+    gap: 4px !important;
   }
   .lang-btn {
-    padding: 1.5px 5px !important;
-    font-size: 10px !important;
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   .btn-mobile-search,
   .menu-toggle-mobile {
     display: inline-flex !important;
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 12.5px !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 14px !important;
   }
   .btn-dark-mode {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 12.5px !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 14px !important;
   }
   .btn-login,
   .btn-admin,
@@ -3901,8 +3906,8 @@ textarea.form-control {
     text-align: center !important;
   }
   .footer-links ul li a {
-    font-size: 12.5px !important;
-    padding: 2px 0 !important;
+    font-size: 13px !important;
+    padding: 6px 4px !important;
     display: inline-block !important;
     text-align: center !important;
   }

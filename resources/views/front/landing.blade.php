@@ -505,18 +505,18 @@
         </div>
     </section>
 
-    <!-- 7. CLIENT TESTIMONIALS SECTION (8 AUTO-SLIDING TESTIMONIALS) -->
+    <!-- 7. CLIENT TESTIMONIALS SECTION (8 AUTO-SLIDING TESTIMONIALS - 3 VISIBLE) -->
     <section class="sn-section sn-section--alt" id="testimoni">
         <div class="sn-container">
             <div class="sn-section-header sn-fade-init">
                 <span class="sn-section-tag">TESTIMONI PENGGUNA</span>
                 <h2 class="sn-section-title">Dipercaya Pengelola Portal Media di Berbagai Daerah</h2>
                 <p class="sn-section-desc">
-                    Inilah pengalaman rekan-rekan redaksi dan pemilik portal berita yang telah mempercayakan medianya pada SmartNews CMS.
+                    Inilah pengalaman rekan-rekan pengelola dan pemilik portal berita yang telah menggunakan SmartNews CMS.
                 </p>
             </div>
 
-            <!-- Auto Slider Carousel Container -->
+            <!-- Auto Slider Carousel Container (3 Cards View on Desktop) -->
             <div class="sn-testi-slider-container sn-fade-init" id="testiSlider">
                 <div class="sn-testi-track" id="testiTrack">
                     <!-- Testimonial 1 -->
@@ -529,9 +529,9 @@
                                 "Kecepatan website sangat luar biasa, buka berita cuma 0.4 detik. Tim wartawan kami di lapangan yang masih awam teknologi langsung bisa pakai editornya tanpa kendala. Sangat membantu operasional harian redaksi."
                             </p>
                             <div class="sn-testi-meta">
-                                <div class="sn-testi-avatar-simple">H</div>
-                                <div class="sn-testi-name-clean">Hendra</div>
-                                <div class="sn-testi-role-clean">Pemimpin Redaksi Media Daerah</div>
+                                <div class="sn-testi-avatar-simple">DS</div>
+                                <div class="sn-testi-name-clean">Dedi Supriyadi</div>
+                                <div class="sn-testi-role-clean">Pengelola Media Daerah (Padang)</div>
                             </div>
                         </div>
                     </div>
@@ -543,12 +543,12 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="sn-testi-quote">
-                                "Sangat lengkap karena sudah ada halaman Pedoman Media Siber dan susunan redaksi sesuai standar Dewan Pers. Proses setup servernya cepat dan langsung online siap dipakai tanpa ribet setting teknis."
+                                "Sangat lengkap karena sudah ada halaman Pedoman Media Siber dan susunan redaksi standar Dewan Pers. Proses setup servernya cepat dan langsung online siap dipakai."
                             </p>
                             <div class="sn-testi-meta">
-                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #059669 0%, #1a56db 100%);">R</div>
-                                <div class="sn-testi-name-clean">Rahmat</div>
-                                <div class="sn-testi-role-clean">Pengelola Portal Berita</div>
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #059669 0%, #1a56db 100%);">TP</div>
+                                <div class="sn-testi-name-clean">Teguh Prasetyo</div>
+                                <div class="sn-testi-role-clean">Pengelola Portal Berita (Semarang)</div>
                             </div>
                         </div>
                     </div>
@@ -560,12 +560,12 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="sn-testi-quote">
-                                "Asisten AI SEO sangat membantu mengecek kelayakan artikel sebelum terbit. Desain tampilannya elegan dan terlihat seperti portal media berita nasional ternama saat dibuka di HP pembaca."
+                                "Asisten AI SEO sangat membantu mengecek kelayakan artikel sebelum tayang. Desain tampilannya rapi dan elegan saat diakses pembaca dari smartphone."
                             </p>
                             <div class="sn-testi-meta">
-                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #7c3aed 0%, #cf2e2e 100%);">S</div>
-                                <div class="sn-testi-name-clean">Siti</div>
-                                <div class="sn-testi-role-clean">Pemilik Media Siber</div>
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #7c3aed 0%, #cf2e2e 100%);">NH</div>
+                                <div class="sn-testi-name-clean">Nurul Hidayati</div>
+                                <div class="sn-testi-role-clean">Pemilik Website Berita (Makassar)</div>
                             </div>
                         </div>
                     </div>
@@ -577,12 +577,12 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="sn-testi-quote">
-                                "Fitur upload foto otomatis format WebP membuat server sangat hemat bandwidth. Halaman berita terbuka seketika bahkan saat pembaca menggunakan sinyal HP yang terbatas."
+                                "Fitur upload foto otomatis format WebP membuat server sangat hemat bandwidth. Halaman berita terbuka seketika bahkan saat pembaca berada di lokasi sinyal minim."
                             </p>
                             <div class="sn-testi-meta">
-                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #2563eb 0%, #059669 100%);">B</div>
-                                <div class="sn-testi-name-clean">Budi</div>
-                                <div class="sn-testi-role-clean">Pengelola Berita Komunitas</div>
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #2563eb 0%, #059669 100%);">WS</div>
+                                <div class="sn-testi-name-clean">Wahyu Setiawan</div>
+                                <div class="sn-testi-role-clean">Pengelola Media Online (Samarinda)</div>
                             </div>
                         </div>
                     </div>
@@ -594,12 +594,12 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="sn-testi-quote">
-                                "Manajemen multi-wartawan sangat rapi. Setiap jurnalis kami memiliki akun sendiri dan bisa fokus menulis liputan lapangan, sementara editor tinggal memvalidasi sebelum tayang."
+                                "Manajemen multi-wartawan sangat memudahkan pembagian tugas liputan. Setiap anggota tim punya akun sendiri dan bisa fokus menulis liputan setiap hari."
                             </p>
                             <div class="sn-testi-meta">
-                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);">A</div>
-                                <div class="sn-testi-name-clean">Agus</div>
-                                <div class="sn-testi-role-clean">Redaktur Berita Online</div>
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);">IM</div>
+                                <div class="sn-testi-name-clean">Ilham Maulana</div>
+                                <div class="sn-testi-role-clean">Pengelola Portal Informasi (Malang)</div>
                             </div>
                         </div>
                     </div>
@@ -611,12 +611,12 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="sn-testi-quote">
-                                "Pilihan tampilan Dark Mode dan peralihan bahasa sangat disukai oleh pembaca kami. Tampilannya bersih, tidak berat, dan sangat nyaman dibaca berlama-lama."
+                                "Pilihan tampilan Dark Mode dan peralihan bahasa sangat disukai pembaca setia kami. Desainnya bersih, tidak berat, dan sangat nyaman dibaca berlama-lama."
                             </p>
                             <div class="sn-testi-meta">
-                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #db2777 0%, #9333ea 100%);">D</div>
-                                <div class="sn-testi-name-clean">Dewi</div>
-                                <div class="sn-testi-role-clean">Jurnalis Independen</div>
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #db2777 0%, #9333ea 100%);">MA</div>
+                                <div class="sn-testi-name-clean">Maya Anggraini</div>
+                                <div class="sn-testi-role-clean">Jurnalis & Pengelola Web (Yogyakarta)</div>
                             </div>
                         </div>
                     </div>
@@ -628,12 +628,12 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="sn-testi-quote">
-                                "Bantuan teknis saat instalasi sangat cepat dan ramah. Semua data demo langsung terpasang rapi sehingga kami bisa langsung mengisi berita tanpa harus membuat kategori dari nol."
+                                "Bantuan teknis saat setup server sangat cepat dan ramah. Semua data berita demo langsung terpasang sehingga kami bisa langsung mengisi liputan daerah."
                             </p>
                             <div class="sn-testi-meta">
-                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);">F</div>
-                                <div class="sn-testi-name-clean">Fauzi</div>
-                                <div class="sn-testi-role-clean">Pengelola Portal Informasi</div>
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);">AF</div>
+                                <div class="sn-testi-name-clean">Ahmad Fauzi</div>
+                                <div class="sn-testi-role-clean">Pengelola Media Berita (Palembang)</div>
                             </div>
                         </div>
                     </div>
@@ -645,12 +645,12 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="sn-testi-quote">
-                                "Struktur website sangat ramah mesin pencari Google. Berita liputan kami cepat terindeks otomatis tanpa perlu membeli plugin SEO mahal lagi."
+                                "Struktur websitenya ramah mesin pencari Google. Berita liputan kami cepat terindeks otomatis tanpa perlu instalasi plugin yang rumit."
                             </p>
                             <div class="sn-testi-meta">
-                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);">R</div>
-                                <div class="sn-testi-name-clean">Ridwan</div>
-                                <div class="sn-testi-role-clean">Pemimpin Redaksi Media Siber</div>
+                                <div class="sn-testi-avatar-simple" style="background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);">YP</div>
+                                <div class="sn-testi-name-clean">Yudi Pratama</div>
+                                <div class="sn-testi-role-clean">Pemilik Portal Media (Bandung)</div>
                             </div>
                         </div>
                     </div>
@@ -835,6 +835,21 @@
         </div>
     </div>
 
+    <!-- LIVE SOCIAL PROOF NOTIFICATION TOAST -->
+    <div class="sn-social-proof" id="socialProofToast">
+        <button type="button" class="sn-sp-close" onclick="closeSocialProof()" aria-label="Tutup">&times;</button>
+        <div class="sn-sp-avatar" id="spAvatar">TP</div>
+        <div class="sn-sp-body">
+            <div id="spText">
+                <strong>Teguh P.</strong> (Semarang) baru saja memesan <strong>Paket Siap Pakai (Pro)</strong>
+            </div>
+            <div class="sn-sp-time">
+                <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                <span id="spTime">2 menit yang lalu • Transaksi Terverifikasi</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Minimal Vanilla JS -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -882,7 +897,7 @@
                 }
             }, { passive: true });
 
-            // 5. 8-Testimonial Auto Slider Carousel
+            // 5. Multi-Card Testimonial Auto-Slider (3 Visible on Desktop)
             const track = document.getElementById('testiTrack');
             const slides = document.querySelectorAll('.sn-testi-slide');
             const dotsContainer = document.getElementById('testiDots');
@@ -892,15 +907,28 @@
             const totalSlides = slides.length;
             let slideInterval = null;
 
+            function getVisibleCount() {
+                if (window.innerWidth <= 768) return 1;
+                if (window.innerWidth <= 992) return 2;
+                return 3;
+            }
+
+            function getMaxIndex() {
+                return Math.max(0, totalSlides - getVisibleCount());
+            }
+
             // Generate Dots
-            if (dotsContainer && totalSlides > 0) {
+            function renderDots() {
+                if (!dotsContainer) return;
                 dotsContainer.innerHTML = '';
-                for (let i = 0; i < totalSlides; i++) {
+                const maxIdx = getMaxIndex();
+                for (let i = 0; i <= maxIdx; i++) {
                     const dot = document.createElement('div');
                     dot.classList.add('sn-testi-dot');
-                    if (i === 0) dot.classList.add('active');
+                    if (i === currentIndex) dot.classList.add('active');
                     dot.addEventListener('click', () => {
-                        goToSlide(i);
+                        currentIndex = i;
+                        updateSlider();
                         resetInterval();
                     });
                     dotsContainer.appendChild(dot);
@@ -909,7 +937,10 @@
 
             function updateSlider() {
                 if (!track) return;
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                const visible = getVisibleCount();
+                const step = 100 / visible;
+                track.style.transform = `translateX(-${currentIndex * step}%)`;
+                
                 const dots = document.querySelectorAll('.sn-testi-dot');
                 dots.forEach((dot, idx) => {
                     if (idx === currentIndex) {
@@ -920,17 +951,24 @@
                 });
             }
 
-            function goToSlide(index) {
-                currentIndex = (index + totalSlides) % totalSlides;
+            function nextSlide() {
+                const maxIdx = getMaxIndex();
+                if (currentIndex >= maxIdx) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex++;
+                }
                 updateSlider();
             }
 
-            function nextSlide() {
-                goToSlide(currentIndex + 1);
-            }
-
             function prevSlide() {
-                goToSlide(currentIndex - 1);
+                const maxIdx = getMaxIndex();
+                if (currentIndex <= 0) {
+                    currentIndex = maxIdx;
+                } else {
+                    currentIndex--;
+                }
+                updateSlider();
             }
 
             if (nextBtn) {
@@ -966,10 +1004,72 @@
                 });
             }
 
+            window.addEventListener('resize', () => {
+                if (currentIndex > getMaxIndex()) {
+                    currentIndex = getMaxIndex();
+                }
+                renderDots();
+                updateSlider();
+            });
+
+            renderDots();
             startInterval();
+
+            // 6. Live Rotating Social Proof Toast
+            const purchases = [
+                { name: "Teguh P.", city: "Semarang", pkg: "Paket Siap Pakai (Pro)", time: "2 menit yang lalu", av: "TP", bg: "linear-gradient(135deg, #1a56db, #3b82f6)" },
+                { name: "Ahmad F.", city: "Palembang", pkg: "Paket Starter", time: "5 menit yang lalu", av: "AF", bg: "linear-gradient(135deg, #059669, #10b981)" },
+                { name: "Wahyu S.", city: "Samarinda", pkg: "Paket Siap Pakai (Pro)", time: "8 menit yang lalu", av: "WS", bg: "linear-gradient(135deg, #7c3aed, #a855f7)" },
+                { name: "Dedi S.", city: "Padang", pkg: "Paket Enterprise VIP", time: "12 menit yang lalu", av: "DS", bg: "linear-gradient(135deg, #cf2e2e, #ef4444)" },
+                { name: "Nurul H.", city: "Makassar", pkg: "Paket Siap Pakai (Pro)", time: "16 menit yang lalu", av: "NH", bg: "linear-gradient(135deg, #0284c7, #06b6d4)" },
+                { name: "Yudi P.", city: "Bandung", pkg: "Paket Siap Pakai (Pro)", time: "21 menit yang lalu", av: "YP", bg: "linear-gradient(135deg, #ea580c, #f97316)" },
+                { name: "Ilham M.", city: "Malang", pkg: "Paket Enterprise VIP", time: "28 menit yang lalu", av: "IM", bg: "linear-gradient(135deg, #2563eb, #1d4ed8)" },
+                { name: "Bambang K.", city: "Surabaya", pkg: "Paket Siap Pakai (Pro)", time: "35 menit yang lalu", av: "BK", bg: "linear-gradient(135deg, #059669, #047857)" }
+            ];
+            let spIndex = 0;
+            const spToast = document.getElementById('socialProofToast');
+
+            function showNextSocialProof() {
+                if (window.spDismissed || !spToast) return;
+                const item = purchases[spIndex];
+                const spAvatarEl = document.getElementById('spAvatar');
+                const spTextEl = document.getElementById('spText');
+                const spTimeEl = document.getElementById('spTime');
+                
+                if (spAvatarEl) {
+                    spAvatarEl.innerText = item.av;
+                    spAvatarEl.style.background = item.bg;
+                }
+                if (spTextEl) {
+                    spTextEl.innerHTML = '<strong>' + item.name + '</strong> (' + item.city + ') baru saja memesan <strong>' + item.pkg + '</strong>';
+                }
+                if (spTimeEl) {
+                    spTimeEl.innerText = item.time + ' • Transaksi Terverifikasi';
+                }
+
+                spToast.classList.add('show');
+
+                setTimeout(() => {
+                    if (spToast) spToast.classList.remove('show');
+                }, 4500);
+
+                spIndex = (spIndex + 1) % purchases.length;
+            }
+
+            setTimeout(() => {
+                showNextSocialProof();
+                setInterval(showNextSocialProof, 8500);
+            }, 3000);
         });
 
-        // 6. Checkout Modal
+        // 7. Close Social Proof
+        function closeSocialProof() {
+            window.spDismissed = true;
+            const spToast = document.getElementById('socialProofToast');
+            if (spToast) spToast.classList.remove('show');
+        }
+
+        // 8. Checkout Modal
         function openOrderModal(pkgId, pkgName, pkgPrice) {
             document.getElementById('modalPkgId').value = pkgId;
             document.getElementById('modalPkgName').innerText = pkgName;

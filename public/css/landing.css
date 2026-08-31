@@ -984,10 +984,10 @@ body.sn-landing-body {
   color: #991b1b;
 }
 
-/* 8.6. 8-TESTIMONIALS AUTO-SLIDER */
+/* 8.6. MULTI-CARD TESTIMONIALS AUTO-SLIDER */
 .sn-testi-slider-container {
   position: relative;
-  max-width: 860px;
+  max-width: 1140px;
   margin: 0 auto;
   overflow: hidden;
   padding: 10px 4px;
@@ -995,60 +995,70 @@ body.sn-landing-body {
 
 .sn-testi-track {
   display: flex;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
 
 .sn-testi-slide {
-  min-width: 100%;
+  flex: 0 0 33.333333%;
+  min-width: 33.333333%;
   box-sizing: border-box;
-  padding: 0 8px;
+  padding: 0 10px;
+  display: flex;
 }
 
 .sn-testi-card-inner {
   background: #ffffff;
   border: 1px solid var(--sn-border);
-  border-radius: var(--sn-radius-lg);
-  padding: 28px 24px;
+  border-radius: var(--sn-radius-md);
+  padding: 22px 18px;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  transition: var(--sn-trans);
+}
+
+.sn-testi-card-inner:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+  box-shadow: var(--sn-shadow-md);
 }
 
 .sn-testi-stars {
   color: #f59e0b;
-  font-size: 15px;
-  margin-bottom: 14px;
+  font-size: 14px;
+  margin-bottom: 10px;
   display: flex;
-  gap: 4px;
+  gap: 3px;
   justify-content: center;
 }
 
 .sn-testi-quote {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--sn-text-main);
-  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--sn-text-muted);
+  margin-bottom: 16px;
   font-style: italic;
-  max-width: 680px;
+  flex-grow: 1;
 }
 
 .sn-testi-meta {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding-top: 14px;
+  gap: 3px;
+  padding-top: 12px;
   border-top: 1px solid #f1f5f9;
   width: 100%;
-  max-width: 320px;
 }
 
 .sn-testi-avatar-simple {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: linear-gradient(135deg, #1a56db 0%, #cf2e2e 100%);
   color: #ffffff;
@@ -1056,18 +1066,18 @@ body.sn-landing-body {
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 15px;
-  margin-bottom: 4px;
+  font-size: 14px;
+  margin-bottom: 3px;
 }
 
 .sn-testi-name-clean {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 800;
   color: var(--sn-text-main);
 }
 
 .sn-testi-role-clean {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--sn-text-subtle);
   font-weight: 600;
 }
@@ -1119,8 +1129,82 @@ body.sn-landing-body {
 
 .sn-testi-dot.active {
   background: var(--sn-red);
-  width: 20px;
+  width: 18px;
   border-radius: 4px;
+}
+
+/* 8.7. LIVE SOCIAL PROOF NOTIFICATION TOAST */
+.sn-social-proof {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 2500;
+  background: #ffffff;
+  border: 1px solid var(--sn-border);
+  border-radius: var(--sn-radius-md);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.16);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 330px;
+  transform: translateY(120px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.sn-social-proof.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sn-sp-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--sn-blue);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sn-sp-body {
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--sn-text-main);
+  padding-right: 12px;
+}
+
+.sn-sp-time {
+  font-size: 10.5px;
+  color: var(--sn-text-subtle);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sn-sp-close {
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 4px;
+}
+
+.sn-sp-close:hover {
+  color: #0f172a;
 }
 
 /* 9. FAQ ACCORDION */
@@ -1377,12 +1461,17 @@ body.sn-landing-body {
   .sn-stats__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .sn-testi-slide {
+    flex: 0 0 50%;
+    min-width: 50%;
+    padding: 0 6px;
+  }
   .sn-testi-card-inner {
     text-align: center;
-    padding: 20px 16px;
+    padding: 18px 14px;
   }
   .sn-testi-quote {
-    font-size: 13.5px;
+    font-size: 13px;
     text-align: center;
   }
   .sn-testi-meta {
@@ -1400,6 +1489,17 @@ body.sn-landing-body {
 }
 
 @media (max-width: 768px) {
+  .sn-testi-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding: 0 4px;
+  }
+  .sn-social-proof {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: calc(100% - 24px);
+  }
   .sn-topbar {
     padding: 4px 8px;
     font-size: 10.5px;

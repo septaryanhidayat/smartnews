@@ -246,8 +246,8 @@
                     </li>
                     @php
                         $allNavCats = \App\Models\Category::orderBy('order', 'asc')->get();
-                        $primaryCats = $allNavCats->take(8);
-                        $moreCats = $allNavCats->slice(8);
+                        $primaryCats = $allNavCats->take(6);
+                        $moreCats = $allNavCats->slice(6);
                     @endphp
 
                     @foreach($primaryCats as $cat)

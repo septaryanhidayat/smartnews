@@ -30,6 +30,7 @@ Route::get('/penjualan', [LandingController::class, 'index'])->name('landing');
 Route::get('/beli', fn() => redirect()->route('landing'))->name('landing.buy');
 Route::get('/landing', fn() => redirect()->route('landing'));
 Route::get('/promo', fn() => redirect()->route('landing'));
+Route::post('/beli/tripay', [LandingController::class, 'tripayCheckout'])->name('landing.tripay.checkout');
 
 // Front-End Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');

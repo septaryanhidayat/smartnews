@@ -34,10 +34,14 @@ Route::post('/berita/{slug}/komentar', [CommentController::class, 'store'])->nam
 // Static Pages
 Route::get('/halaman/{page}', [PageController::class, 'show'])->name('page.show');
 Route::get('/tentang-kami', fn() => redirect()->route('page.show', 'tentang-kami'))->name('page.about');
-Route::get('/disclaimer', fn() => redirect()->route('page.show', 'disclaimer'))->name('page.disclaimer');
 Route::get('/redaksi', fn() => redirect()->route('page.show', 'redaksi'))->name('page.redaksi');
 Route::get('/pedoman-media-siber', fn() => redirect()->route('page.show', 'pedoman-media-siber'))->name('page.pedoman');
+Route::get('/kode-etik', fn() => redirect()->route('page.show', 'kode-etik'))->name('page.kode-etik');
+Route::get('/disclaimer', fn() => redirect()->route('page.show', 'kode-etik'))->name('page.disclaimer');
 Route::get('/kontak', fn() => redirect()->route('page.show', 'kontak'))->name('page.kontak');
+Route::get('/pasang-iklan', fn() => redirect()->route('page.show', 'pasang-iklan'))->name('page.pasang-iklan');
+Route::get('/privacy-policy', fn() => redirect()->route('page.show', 'privacy-policy'))->name('page.privacy');
+Route::get('/terms', fn() => redirect()->route('page.show', 'terms'))->name('page.terms');
 
 // Authentication Routes
 Route::middleware('guest')->group(function () {

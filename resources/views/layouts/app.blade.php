@@ -359,9 +359,9 @@
                                 <li><a href="{{ route('page.show', 'tentang-kami') }}">Tentang Kami</a></li>
                                 <li><a href="{{ route('page.show', 'redaksi') }}">Susunan Redaksi</a></li>
                                 <li><a href="{{ route('page.show', 'pedoman-media-siber') }}">Pedoman Media Siber</a></li>
-                                <li><a href="{{ route('page.show', 'disclaimer') }}">Kode Etik & Disclaimer</a></li>
+                                <li><a href="{{ route('page.show', 'kode-etik') }}">Kode Etik & Disclaimer</a></li>
                                 <li><a href="{{ route('page.show', 'kontak') }}">Hubungi Kami</a></li>
-                                <li><a href="{{ route('page.show', 'kontak') }}">Pasang Iklan</a></li>
+                                <li><a href="{{ route('page.show', 'pasang-iklan') }}">Pasang Iklan</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -383,8 +383,8 @@
                         <h4 class="footer-col__title">Informasi & Verifikasi</h4>
                         <nav class="footer-links">
                             <ul>
-                                <li><a href="{{ route('page.show', 'disclaimer') }}">Privacy Policy</a></li>
-                                <li><a href="{{ route('page.show', 'disclaimer') }}">Terms & Conditions</a></li>
+                                <li><a href="{{ route('page.show', 'privacy-policy') }}">Kebijakan Privasi (Privacy Policy)</a></li>
+                                <li><a href="{{ route('page.show', 'terms') }}">Syarat & Ketentuan (Terms)</a></li>
                                 <li><a href="{{ route('page.show', 'pedoman-media-siber') }}">Pedoman Media Siber</a></li>
                             </ul>
                         </nav>

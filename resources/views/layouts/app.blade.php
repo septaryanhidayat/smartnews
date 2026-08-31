@@ -66,11 +66,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-    <!-- Swiper Carousel CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Swiper Carousel CSS (Local HTTP/2 multiplexed) -->
+    <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}?v=11.0">
 
     <!-- Theme Stylesheet (Cached with Static Versioning) -->
-    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=2.2">
+    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=2.3">
     @stack('styles')
 
     <!-- Early theme init: Default to light mode unless user explicitly selected dark -->
@@ -532,8 +532,8 @@
         <div class="copy-modal__progress" id="copyModalProgress"></div>
     </div>
 
-    <!-- Swiper JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <!-- Swiper JS (Local) -->
+    <script src="{{ asset('js/swiper-bundle.min.js') }}?v=11.0" defer></script>
 
     <!-- Google Translate Engine for Dual-Language Auto-Switching -->
     <div id="google_translate_element" style="display: none;"></div>

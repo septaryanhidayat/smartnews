@@ -44,6 +44,12 @@
 
 /* Dark Mode Variables */
 html.dark-mode {
+  --color-primary: #60a5fa;
+  --color-primary-dark: #3b82f6;
+  --color-primary-light: #1e3a8a;
+  --color-accent: #f87171;
+  --color-accent-hover: #ef4444;
+
   --bg-body: #0b0f19;
   --bg-card: #151d2e;
   --bg-header: #0f172a;
@@ -3183,7 +3189,16 @@ textarea.form-control {
   padding: 18px 0;
   text-align: center;
   font-size: 12.5px;
-  color: #64748b;
+  color: #94a3b8;
+}
+
+.footer-copyright a {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.footer-copyright a:hover {
+  color: #93c5fd;
 }
 
 /* ==========================================================================
@@ -3274,7 +3289,7 @@ textarea.form-control {
 
 .copy-modal__desc {
   font-size: 12px;
-  color: #94a3b8;
+  color: #cbd5e1;
 }
 
 .copy-modal__progress {

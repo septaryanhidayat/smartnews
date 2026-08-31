@@ -54,8 +54,10 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Async Non-Blocking with Preload) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap"></noscript>
     
     <!-- FontAwesome 6 Icons (Async Non-Blocking) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
@@ -65,8 +67,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /></noscript>
 
+    <!-- LCP Hero Image Preload -->
+    @yield('preload')
+    @if(isset($sliderArticles) && $sliderArticles->count() > 0)
+    <link rel="preload" as="image" href="{{ $sliderArticles->first()->image_url }}" fetchpriority="high">
+    @endif
+
     <!-- Theme Stylesheet (Cached with Static Versioning) -->
-    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.6">
+    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.7">
     @stack('styles')
 
     <!-- Early theme init: Default to light mode unless user explicitly selected dark -->
@@ -283,7 +291,7 @@
     </aside>
 
     <!-- 3. SITE HEADER BRANDING -->
-    <section class="site-branding" id="siteBranding">
+    <section class="site-branding" id="siteBranding" aria-label="Identitas Portal Berita">
         <div class="container site-branding__inner">
             <div class="site-branding__logo">
                 <a href="{{ route('home') }}" class="custom-logo-link" rel="home" aria-label="{{ setting('site_name', 'SmartNews') }}">
@@ -328,7 +336,7 @@
             <div class="main-nav__actions">
                 @if($moreCats->count() > 0)
                 <div class="nav-dropdown d-desktop-only" id="navDropdownMore">
-                    <button type="button" class="nav-dropdown__btn" id="navDropdownBtn" aria-haspopup="true" aria-expanded="false" title="Kategori Lainnya">
+                    <button type="button" class="nav-dropdown__btn" id="navDropdownBtn" aria-haspopup="true" aria-expanded="false" aria-label="{{ __('messages.other_rubrics') }}" title="Kategori Lainnya">
                         <span>{{ __('messages.more') }}</span>
                         <i class="fas fa-chevron-down nav-dropdown__icon"></i>
                     </button>
@@ -393,7 +401,7 @@
 
     <!-- 5. TRENDING TAGS TICKER -->
     @if(isset($trendingTags) && $trendingTags->count() > 0)
-    <section class="trending-tags">
+    <section class="trending-tags" aria-label="Topik Hangat Populer">
         <div class="trending-tags__inner container">
             <span class="trending-tags__label">
                 <i class="fas fa-fire"></i> Trending:

@@ -2,7 +2,7 @@
 
     <!-- 1. Widget: Trending (Ranked 1 - 5) -->
     @if(isset($popularArticles) && $popularArticles->count() > 0)
-    <section class="sidebar-widget widget-popular">
+    <section class="sidebar-widget widget-popular" aria-label="{{ __('messages.popular_news') }}">
         <h3 class="widget-title">
             <i class="fas fa-fire"></i> {{ strtoupper(__('messages.popular_news')) }}
         </h3>
@@ -36,7 +36,7 @@
 
     <!-- 2. Widget: Berita Terbaru -->
     @if(isset($sidebarLatest) && $sidebarLatest->count() > 0)
-    <section class="sidebar-widget widget-recent">
+    <section class="sidebar-widget widget-recent" aria-label="{{ __('messages.latest_news') }}">
         <h3 class="widget-title">
             <i class="fas fa-bolt"></i> {{ strtoupper(__('messages.latest_news')) }}
         </h3>
@@ -69,7 +69,7 @@
 
     <!-- 3. Widget: Topik Populer (Tags Cloud) -->
     @if(isset($popularTags) && $popularTags->count() > 0)
-    <section class="sidebar-widget widget-tags">
+    <section class="sidebar-widget widget-tags" aria-label="{{ __('messages.trending_topics') }}">
         <h3 class="widget-title">
             <i class="fas fa-tags"></i> {{ strtoupper(__('messages.trending_topics')) }}
         </h3>

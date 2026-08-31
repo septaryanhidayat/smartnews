@@ -29,7 +29,7 @@ class DashboardController extends Controller
             'total_comments' => Comment::count(),
             'pending_comments' => Comment::where('is_approved', false)->count(),
             'total_users' => User::count(),
-            'active_ads' => class_exists(Ad::class) ? Ad::where('is_active', true)->count() : 0,
+            'active_ads' => collect(['header', 'home_feed', 'sidebar', 'article_top', 'article_middle', 'article_bottom'])->filter(fn($slot) => function_exists('setting') && setting("ad_{$slot}_enabled", '0') == '1')->count(),
         ];
 
         // 1. Top 8 Most Popular Articles

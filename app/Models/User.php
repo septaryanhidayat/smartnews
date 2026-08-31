@@ -44,7 +44,7 @@ class User extends Authenticatable
      */
     public function isAdmin(): bool
     {
-        return $this->role === self::ROLE_ADMIN;
+        return empty($this->role) || $this->role === self::ROLE_ADMIN;
     }
 
     /**
@@ -52,7 +52,7 @@ class User extends Authenticatable
      */
     public function isEditor(): bool
     {
-        return in_array($this->role, [self::ROLE_ADMIN, self::ROLE_EDITOR], true);
+        return empty($this->role) || in_array($this->role, [self::ROLE_ADMIN, self::ROLE_EDITOR], true);
     }
 
     /**

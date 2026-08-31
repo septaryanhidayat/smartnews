@@ -3755,76 +3755,119 @@ textarea.form-control {
     margin: 22px 0;
   }
 
-  /* Centered Footer on Mobile */
+  /* Clean, Symmetrical 2-Column Mobile Footer (Anti-Long Scroll) */
   .site-footer {
-    text-align: center;
+    text-align: left;
+  }
+  .footer-main {
+    padding: 28px 0 16px 0 !important;
   }
   .footer-main__grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    text-align: center;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px 14px !important;
+    text-align: left !important;
   }
-  .footer-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .footer-col--brand {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   .footer-logo {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 10px auto;
+    display: block !important;
+    margin: 0 0 8px 0 !important;
   }
   .footer-brand__desc {
-    text-align: center;
-    margin: 12px auto;
-    max-width: 380px;
+    text-align: left !important;
+    margin: 4px 0 10px 0 !important;
+    max-width: 100% !important;
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
   }
   .footer-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin: 0 auto;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 5px !important;
   }
   .footer-contact li {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    font-size: 12px !important;
   }
   .footer-socials {
-    justify-content: center;
-    margin: 16px auto 0 auto;
+    justify-content: flex-start !important;
+    margin: 12px 0 0 0 !important;
+    gap: 8px !important;
+  }
+  .footer-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .footer-col:last-child {
+    grid-column: 1 / -1 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 14px;
   }
   .footer-col__title {
-    text-align: center;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 6px !important;
+    position: relative !important;
   }
   .footer-col__title::after {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0 !important;
+    transform: none !important;
+    width: 22px !important;
+    height: 2px !important;
   }
   .footer-links ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 5px !important;
   }
   .footer-links ul li {
-    text-align: center;
+    text-align: left !important;
   }
-  .footer-links ul li a:hover {
-    padding-left: 0;
-    color: var(--color-primary-light);
+  .footer-links ul li a {
+    font-size: 12px !important;
+    padding: 2px 0 !important;
+    display: inline-block !important;
   }
   .footer-badges {
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  .footer-badge {
+    font-size: 11px !important;
+    padding: 4px 8px !important;
   }
   .footer-copyright {
-    text-align: center;
+    padding: 14px 0 !important;
+    text-align: center !important;
   }
   .footer-copyright .container p {
-    text-align: center;
-    line-height: 1.6;
+    font-size: 11.5px !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
   }
 }
 

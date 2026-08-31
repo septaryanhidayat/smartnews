@@ -85,7 +85,7 @@
         <div class="sn-container sn-topbar__inner">
             <span class="sn-topbar__badge">PROMO</span>
             <span class="sn-topbar__text">
-                Website Portal Berita Siap Terbit <strong>Mulai Rp 1,5 Jt - 3 Jt</strong> + Free Domain & Hosting!
+                Portal Berita AI Siap Pakai <strong>Mulai Rp 1,5 Jt - 3 Jt</strong> + Free Domain & Hosting
                 <a href="#harga" class="sn-topbar__link">Lihat Paket &rarr;</a>
             </span>
         </div>
@@ -107,53 +107,61 @@
             </ul>
 
             <div class="sn-nav-actions">
-                <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--outline" title="Lihat Live Demo Portal Berita">
+                <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--outline sn-desktop-btn" title="Lihat Live Demo Portal Berita">
                     <i class="fas fa-external-link-alt"></i> <span>Live Demo</span>
                 </a>
                 <a href="#harga" class="sn-btn sn-btn--primary sn-pulse" title="Pesan Paket Website">
-                    <i class="fas fa-shopping-cart"></i> <span>Pesan Web</span>
+                    <i class="fas fa-shopping-cart"></i> <span>Pesan Sekarang</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- 3. HERO SECTION -->
+    <!-- 3. HERO SECTION WITH AI HIGHLIGHTS -->
     <section class="sn-hero">
         <div class="sn-container">
             <div class="sn-hero__content sn-fade-init">
                 <div class="sn-pill-badge">
-                    <i class="fas fa-bolt"></i>
-                    <span>CMS PORTAL MEDIA ONLINE RESMI BERBASIS LARAVEL 12</span>
+                    <i class="fas fa-robot"></i>
+                    <span>WEBSITE PORTAL MEDIA RESMI BERTEKNOLOGI AI CERDAS</span>
                 </div>
 
                 <h1 class="sn-hero__title">
-                    Bangun Portal Media Online Profesional Sendiri: <span class="sn-gradient-brand-text">Siap Terbit, Dilengkapi AI SEO & 6 Slot Iklan Cuan</span>
+                    Miliki Website Portal Berita Modern Berteknologi AI: <span class="sn-gradient-brand-text">Siap Terbit, Otomatis Masuk Google, & Berpenghasilan Iklan</span>
                 </h1>
 
                 <p class="sn-hero__lead">
-                    Solusi instan untuk Penerbit Media, Wartawan, Media Daerah, Kampus, dan Perusahaan Pers. Dilengkapi <strong>Editor Berita ala Word</strong>, <strong>Asisten AI SEO Cerdas</strong>, <strong>6 Slot Iklan Cuan</strong>, dan <strong>Kompresi Gambar WebP Super Cepat</strong>. Beli source code mandiri atau terima jadi langsung online!
+                    Solusi praktis punya portal berita profesional tanpa ribet coding. Dilengkapi <strong>Asisten AI SEO</strong> untuk mempermudah tulisan tembus halaman 1 Google, <strong>6 Posisi Iklan Siap Cuan</strong>, dan langsung online lengkap dengan <strong>Free Hosting NVMe & Domain Pilihan</strong>!
                 </p>
 
+                <!-- 4 Interactive AI Selling Chips -->
+                <div class="sn-ai-chips-row">
+                    <span class="sn-ai-chip"><i class="fas fa-robot" style="color: #1a56db;"></i> Asisten AI SEO Cerdas</span>
+                    <span class="sn-ai-chip"><i class="fas fa-bolt" style="color: #cf2e2e;"></i> Loading 0.4 Detik WebP</span>
+                    <span class="sn-ai-chip"><i class="fas fa-dollar-sign" style="color: #059669;"></i> 6 Slot Iklan Cuan</span>
+                    <span class="sn-ai-chip"><i class="fas fa-shield-alt" style="color: #7c3aed;"></i> Standar Dewan Pers</span>
+                </div>
+
                 <div class="sn-hero__actions">
-                    <a href="#harga" class="sn-btn sn-btn--primary sn-btn--lg" title="Lihat 3 Pilihan Paket Harga">
-                        <i class="fas fa-tags"></i>
-                        <span>Pilih Paket Harga (Mulai Rp 1,5 Jt)</span>
+                    <a href="#harga" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" title="Pesan Paket Website Sekarang">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Pesan Sekarang</span>
                     </a>
                     <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--blue sn-btn--lg" title="Coba Live Demo Portal Berita">
                         <i class="fas fa-desktop"></i>
-                        <span>Jelajahi Live Demo</span>
+                        <span>Lihat Demo Website</span>
                     </a>
                 </div>
 
                 <div class="sn-hero__trust">
                     <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Kecepatan Buka 0.4 Detik (Lighthouse 95+)</span></div>
                     <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Pedoman Media Siber Dewan Pers Ready</span></div>
-                    <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>AI SEO Analyzer & Ringkasan Cerdas</span></div>
-                    <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>6 Slot Iklan Cuan Siap Monetisasi</span></div>
+                    <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Mudah Dipakai Seperti Mengetik di Word</span></div>
+                    <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>100% Hak Milik Full Source Code Lifetime</span></div>
                 </div>
             </div>
 
-            <!-- Visual UI Preview Card (Fast Loading & Zero Lag) -->
+            <!-- REAL SMARTNEWS PORTAL UI SHOWCASE (Dynamic Real Content from DB) -->
             <div class="sn-preview-box sn-fade-init" id="preview">
                 <div class="sn-preview-topbar">
                     <div class="sn-preview-dots">
@@ -163,57 +171,72 @@
                     </div>
                     <div class="sn-preview-url">
                         <i class="fas fa-lock" style="color: #10b981;"></i>
-                        <span>https://mediaberita-anda.com</span>
+                        <span>https://portalberita-anda.com</span>
                     </div>
                     <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--outline" style="padding: 3px 10px; font-size: 11px;">
-                        <i class="fas fa-external-link-alt"></i> Buka Web Asli
+                        <i class="fas fa-external-link-alt"></i> Buka Demo Asli
                     </a>
                 </div>
 
                 <div class="sn-preview-body">
                     <div class="sn-preview-header">
                         <div class="sn-preview-logo">
-                            SMART<span style="color: #ef4444;">NEWS</span> <span style="font-size: 10px; background: #cf2e2e; padding: 1px 5px; border-radius: 3px;">BREAKING</span>
+                            SMART<span style="color: #ef4444;">NEWS</span> <span style="font-size: 9.5px; background: #cf2e2e; padding: 1px 5px; border-radius: 3px;">BREAKING</span>
                         </div>
                         <div style="font-size: 11px; color: #94a3b8;">
-                            <span>Trending: Pilkada 2026, Ekonomi Digital, AI Teknologi</span>
+                            <span>Portal Berita Cerdas & Terpercaya Indonesia</span>
                         </div>
                     </div>
 
                     <div class="sn-preview-grid">
-                        <div class="sn-card-featured">
-                            <span class="sn-card-tag">NASIONAL</span>
-                            <div class="sn-card-title">Transformasi Digital Media Siber Indonesia Menuju Standar Jurnalisme Berkualitas</div>
+                        <!-- Real Featured Article -->
+                        <div class="sn-card-featured" style="background-image: url('{{ $featuredArticle->image_url ?? asset('images/default-news.webp') }}');">
+                            <span class="sn-card-tag">{{ strtoupper($featuredArticle->category->name ?? 'NASIONAL') }}</span>
+                            <div class="sn-card-title">{{ Str::limit($featuredArticle->title ?? 'Transformasi Digital Media Siber Indonesia Menuju Standar Jurnalisme Berkualitas', 85) }}</div>
                             <div class="sn-card-meta">
-                                <i class="fas fa-user-edit"></i> Redaksi &bull; <i class="fas fa-clock"></i> 5 Menit Baca &bull; <i class="fas fa-eye"></i> 14.820 Views
+                                <i class="fas fa-user-edit"></i> {{ $featuredArticle->user->name ?? 'Redaksi' }} &bull; <i class="fas fa-clock"></i> {{ $featuredArticle->reading_time ?? '4' }} Menit Baca &bull; <i class="fas fa-eye"></i> {{ number_format($featuredArticle->views ?? 12500) }} Views
                             </div>
                         </div>
 
+                        <!-- Real Sidebar Articles -->
                         <div class="sn-preview-side">
-                            <div class="sn-side-item">
-                                <div class="sn-side-thumb"></div>
-                                <div>
-                                    <strong style="color: #fff;">Pemerintah Rilis Kebijakan Media Baru</strong>
-                                    <div style="color: #94a3b8; font-size: 10.5px; margin-top: 2px;">2 jam lalu</div>
+                            @if(isset($previewArticles) && $previewArticles->count() > 0)
+                                @foreach($previewArticles as $pArt)
+                                <div class="sn-side-item">
+                                    <div class="sn-side-thumb" style="background-image: url('{{ $pArt->image_url ?? asset('images/default-news.webp') }}');"></div>
+                                    <div>
+                                        <strong style="color: #fff; font-size: 11.5px; line-height: 1.3; display: block;">{{ Str::limit($pArt->title, 55) }}</strong>
+                                        <div style="color: #94a3b8; font-size: 10px; margin-top: 2px;">{{ $pArt->category->name ?? 'Berita' }} &bull; {{ $pArt->published_at ? $pArt->published_at->diffForHumans() : 'Baru saja' }}</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="sn-side-item">
-                                <div class="sn-side-thumb"></div>
-                                <div>
-                                    <strong style="color: #fff;">Peluang Bisnis Portal Media Daerah</strong>
-                                    <div style="color: #94a3b8; font-size: 10.5px; margin-top: 2px;">4 jam lalu</div>
+                                @endforeach
+                            @else
+                                <div class="sn-side-item">
+                                    <div class="sn-side-thumb"></div>
+                                    <div>
+                                        <strong style="color: #fff;">Pemerintah Rilis Kebijakan Media Baru</strong>
+                                        <div style="color: #94a3b8; font-size: 10px; margin-top: 2px;">Nasional &bull; 2 jam lalu</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div style="background: rgba(239, 68, 68, 0.12); border: 1px dashed rgba(239, 68, 68, 0.4); border-radius: 6px; padding: 7px; text-align: center; font-size: 10.5px; color: #fca5a5;">
+                                <div class="sn-side-item">
+                                    <div class="sn-side-thumb"></div>
+                                    <div>
+                                        <strong style="color: #fff;">Peluang Bisnis Portal Media Daerah</strong>
+                                        <div style="color: #94a3b8; font-size: 10px; margin-top: 2px;">Bisnis &bull; 4 jam lalu</div>
+                                    </div>
+                                </div>
+                            @endif
+
+                            <div style="background: rgba(239, 68, 68, 0.12); border: 1px dashed rgba(239, 68, 68, 0.4); border-radius: 6px; padding: 6px; text-align: center; font-size: 10px; color: #fca5a5;">
                                 <i class="fas fa-ad"></i> SLOT IKLAN SIDEBAR (300x250)
                             </div>
                         </div>
                     </div>
 
                     <div class="sn-preview-badges-row">
-                        <span class="sn-mini-badge"><i class="fas fa-chart-line" style="color: #10b981;"></i> Skor AI SEO: 98/100 (A+)</span>
+                        <span class="sn-mini-badge"><i class="fas fa-robot" style="color: #10b981;"></i> Skor AI SEO: 98/100 (A+)</span>
                         <span class="sn-mini-badge"><i class="fas fa-bolt" style="color: #f59e0b;"></i> Loading: 0.4 Detik (WebP)</span>
-                        <span class="sn-mini-badge"><i class="fas fa-shield-alt" style="color: #60a5fa;"></i> Pedoman Media Siber</span>
+                        <span class="sn-mini-badge"><i class="fas fa-shield-alt" style="color: #60a5fa;"></i> Pedoman Media Siber Ready</span>
                     </div>
                 </div>
             </div>
@@ -357,7 +380,7 @@
 
                     <div class="sn-price-actions">
                         <button type="button" class="sn-btn sn-btn--blue sn-btn--block" onclick="openOrderModal('pkg1', 'Paket Starter (Source Code Saja)', 1500000)">
-                            <i class="fas fa-shopping-cart"></i> <span>Pesan Paket (Rp 1,5 Jt)</span>
+                            <i class="fas fa-shopping-cart"></i> <span>Pesan Sekarang</span>
                         </button>
                         <a href="{{ $waUrlPkg1 }}" target="_blank" class="sn-btn sn-btn--outline sn-btn--block" title="Pesan via WhatsApp">
                             <i class="fab fa-whatsapp"></i> <span>Chat WhatsApp</span>
@@ -390,10 +413,10 @@
 
                     <div class="sn-price-actions">
                         <button type="button" class="sn-btn sn-btn--primary sn-btn--block sn-pulse" onclick="openOrderModal('pkg2', 'Paket Pro (Siap Pakai + Hosting & Domain)', 3000000)">
-                            <i class="fas fa-bolt"></i> <span>Ambil Paket Siap Pakai (3 Jt)</span>
+                            <i class="fas fa-shopping-cart"></i> <span>Pesan Sekarang</span>
                         </button>
                         <a href="{{ $waUrlPkg2 }}" target="_blank" class="sn-btn sn-btn--whatsapp sn-btn--block" title="Pesan via WhatsApp">
-                            <i class="fab fa-whatsapp"></i> <span>Pesan via WhatsApp (3 Jt)</span>
+                            <i class="fab fa-whatsapp"></i> <span>Pesan via WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -422,10 +445,10 @@
 
                     <div class="sn-price-actions">
                         <button type="button" class="sn-btn sn-btn--blue sn-btn--block" onclick="openOrderModal('pkg3', 'Paket Enterprise VIP (Lifetime Update & Full Servis)', 5000000)">
-                            <i class="fas fa-crown"></i> <span>Pesan Paket VIP (Rp 5 Jt)</span>
+                            <i class="fas fa-shopping-cart"></i> <span>Pesan Sekarang</span>
                         </button>
                         <a href="{{ $waUrlPkg3 }}" target="_blank" class="sn-btn sn-btn--whatsapp sn-btn--block" title="Pesan via WhatsApp">
-                            <i class="fab fa-whatsapp"></i> <span>Pesan VIP via WhatsApp (5 Jt)</span>
+                            <i class="fab fa-whatsapp"></i> <span>Pesan via WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -570,7 +593,7 @@
             </p>
             <div class="sn-cta-buttons">
                 <button type="button" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" onclick="openOrderModal('pkg2', 'Paket Pro (Siap Pakai + Hosting & Domain)', 3000000)">
-                    <i class="fas fa-shopping-cart"></i> <span>Pesan Paket Siap Pakai (Rp 3 Juta)</span>
+                    <i class="fas fa-shopping-cart"></i> <span>Pesan Sekarang (Rp 3 Juta)</span>
                 </button>
                 <a href="{{ $waUrlPkg2 }}" target="_blank" class="sn-btn sn-btn--whatsapp sn-btn--lg" title="Konsultasi via WhatsApp">
                     <i class="fab fa-whatsapp" style="font-size: 18px;"></i>

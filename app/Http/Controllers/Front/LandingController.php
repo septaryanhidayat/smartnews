@@ -40,6 +40,10 @@ class LandingController extends Controller
         $totalArticles = Article::count();
         $totalCategories = Category::count();
 
+        // Real articles for live UI showcase
+        $featuredArticle = Article::with('category')->where('is_published', 1)->latest()->first();
+        $previewArticles = Article::with('category')->where('is_published', 1)->latest()->skip(1)->take(2)->get();
+
         // Tripay payment channels
         $tripayChannels = \App\Services\TripayService::getChannels();
 
@@ -54,6 +58,8 @@ class LandingController extends Controller
             'waUrlPkg3',
             'totalArticles',
             'totalCategories',
+            'featuredArticle',
+            'previewArticles',
             'tripayChannels'
         ));
     }

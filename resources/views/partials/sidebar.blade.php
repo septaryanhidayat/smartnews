@@ -4,7 +4,7 @@
     @if(isset($popularArticles) && $popularArticles->count() > 0)
     <section class="sidebar-widget widget-popular">
         <h3 class="widget-title">
-            <i class="fas fa-fire"></i> TRENDING
+            <i class="fas fa-fire"></i> {{ strtoupper(__('messages.popular_news')) }}
         </h3>
         <div class="widget-popular__list">
             @foreach($popularArticles as $index => $pop)
@@ -38,7 +38,7 @@
     @if(isset($sidebarLatest) && $sidebarLatest->count() > 0)
     <section class="sidebar-widget widget-recent">
         <h3 class="widget-title">
-            <i class="fas fa-bolt"></i> TERBARU
+            <i class="fas fa-bolt"></i> {{ strtoupper(__('messages.latest_news')) }}
         </h3>
         <div class="widget-recent__list">
             @foreach($sidebarLatest as $rec)
@@ -71,7 +71,7 @@
     @if(isset($popularTags) && $popularTags->count() > 0)
     <section class="sidebar-widget widget-tags">
         <h3 class="widget-title">
-            <i class="fas fa-tags"></i> TOPIK POPULER
+            <i class="fas fa-tags"></i> {{ strtoupper(__('messages.trending_topics')) }}
         </h3>
         <div class="widget-tags__cloud">
             @foreach($popularTags as $tag)

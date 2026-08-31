@@ -182,7 +182,7 @@
                 <div class="article-engagement-bar">
                     <div class="article-views-badge">
                         <i class="fas fa-eye"></i>
-                        <span><strong>{{ number_format($article->views_count ?? 0) }}</strong> kali dibaca</span>
+                        <span><strong>{{ number_format($article->views_count ?? 0) }}</strong> {{ __('messages.views') }}</span>
                     </div>
 
                     @include('partials.share-bar', ['title' => $article->title, 'class' => 'share-bar--engagement'])
@@ -196,13 +196,13 @@
                     <div class="author-box__body">
                         <div class="author-box__header">
                             <div>
-                                <span class="author-box__role">Jurnalis Senior</span>
+                                <span class="author-box__role">{{ __('messages.senior_journalist') }}</span>
                                 <h4 class="author-box__name">{{ $article->user->name ?? 'Budi Santoso' }}</h4>
-                                <span class="author-box__desk">Divisi Redaksi – SmartNews</span>
+                                <span class="author-box__desk">{{ __('messages.editorial_desk') }}</span>
                             </div>
                         </div>
                         <p class="author-box__desc">
-                            Jurnalis berpengalaman di bidang liputan nasional, investigasi, dan kebijakan publik dengan komitmen menyajikan berita faktual, berimbang, dan berintegritas tinggi untuk masyarakat.
+                            {{ __('messages.author_bio') }}
                         </p>
                     </div>
                 </div>
@@ -215,7 +215,7 @@
                             <img src="{{ $prevArticle->image_url }}" alt="{{ $prevArticle->title }}" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                         </div>
                         <div>
-                            <span class="article-nav__dir"><i class="fas fa-arrow-left"></i> Artikel Sebelumnya</span>
+                            <span class="article-nav__dir"><i class="fas fa-arrow-left"></i> {{ __('messages.prev_article') }}</span>
                             <h4 class="article-nav__title">{{ $prevArticle->title }}</h4>
                         </div>
                     </a>
@@ -229,7 +229,7 @@
                             <img src="{{ $nextArticle->image_url }}" alt="{{ $nextArticle->title }}" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                         </div>
                         <div>
-                            <span class="article-nav__dir">Artikel Selanjutnya <i class="fas fa-arrow-right"></i></span>
+                            <span class="article-nav__dir">{{ __('messages.next_article') }} <i class="fas fa-arrow-right"></i></span>
                             <h4 class="article-nav__title">{{ $nextArticle->title }}</h4>
                         </div>
                     </a>
@@ -239,7 +239,7 @@
                 <!-- 12. Related Articles Grid -->
                 @if(isset($relatedArticles) && $relatedArticles->count() > 0)
                 <div class="section-head" style="margin-top: 36px;">
-                    <h2 class="section-head__title"><i class="fas fa-layer-group"></i> Berita Terkait</h2>
+                    <h2 class="section-head__title"><i class="fas fa-layer-group"></i> {{ __('messages.related_articles') }}</h2>
                 </div>
                 <div class="article-grid">
                     @foreach($relatedArticles as $rel)
@@ -252,7 +252,7 @@
                 <section class="comments-section" id="comments">
                     <div class="section-head">
                         <h2 class="section-head__title">
-                            <i class="fas fa-comments"></i> Komentar ({{ $article->approvedComments->count() }})
+                            <i class="fas fa-comments"></i> {{ __('messages.comments') }} ({{ $article->approvedComments->count() }})
                         </h2>
                     </div>
 
@@ -268,28 +268,28 @@
                             <p class="comment-item__text">{{ $comment->comment }}</p>
                         </div>
                         @empty
-                        <p style="color: var(--text-muted); font-size: 14px; font-style: italic;">Belum ada komentar. Jadilah yang pertama memberikan tanggapan!</p>
+                        <p style="color: var(--text-muted); font-size: 14px; font-style: italic;">{{ __('messages.no_comments') }}</p>
                         @endforelse
                     </div>
 
                     <!-- Comment Submission Form -->
                     <form class="comment-form" id="commentForm" action="{{ route('comment.store', $article->slug) }}" method="POST">
                         @csrf
-                        <h3 class="comment-form__title">Tinggalkan Komentar</h3>
+                        <h3 class="comment-form__title">{{ __('messages.leave_comment') }}</h3>
                         <div class="form-group">
-                            <label for="commentName">Nama Lengkap *</label>
-                            <input type="text" id="commentName" name="name" class="form-control" placeholder="Masukkan nama Anda" required>
+                            <label for="commentName">{{ __('messages.comment_name') }} *</label>
+                            <input type="text" id="commentName" name="name" class="form-control" placeholder="{{ __('messages.comment_name') }}" required>
                         </div>
                         <div class="form-group">
-                            <label for="commentEmail">Alamat Email *</label>
+                            <label for="commentEmail">{{ __('messages.comment_email') }} *</label>
                             <input type="email" id="commentEmail" name="email" class="form-control" placeholder="nama@email.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="commentText">Tulis Komentar *</label>
-                            <textarea id="commentText" name="comment" class="form-control" placeholder="Sampaikan pendapat atau tanggapan Anda mengenai berita ini..." required></textarea>
+                            <label for="commentText">{{ __('messages.comment_body') }} *</label>
+                            <textarea id="commentText" name="comment" class="form-control" placeholder="{{ __('messages.comment_body') }}" required></textarea>
                         </div>
                         <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i> Kirim Komentar
+                            <i class="fas fa-paper-plane"></i> {{ __('messages.submit_comment') }}
                         </button>
                     </form>
                 </section>

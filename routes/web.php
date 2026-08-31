@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 // Front-End Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/lang/{locale}', [\App\Http\Controllers\Front\LocaleController::class, 'switch'])->name('lang.switch');
 Route::get('/berita/{slug}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/kategori/{slug}', [CategoryController::class, 'show'])->name('category.show');
 Route::get('/tag/{slug}', [TagController::class, 'show'])->name('tag.show');

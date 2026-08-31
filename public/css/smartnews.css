@@ -3972,4 +3972,51 @@ textarea.form-control {
   color: #475569;
 }
 
+/* ==========================================================================
+   Language Switcher Component
+   ========================================================================== */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background-color: var(--bg-muted, #f1f5f9);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-full, 999px);
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  user-select: none;
+}
+
+html.dark-mode .lang-switcher {
+  background-color: rgba(30, 41, 59, 0.8);
+  border-color: #334155;
+}
+
+.lang-btn {
+  color: var(--text-muted, #64748b);
+  text-decoration: none !important;
+  padding: 2px 6px;
+  border-radius: 999px;
+  transition: all 0.15s ease;
+  line-height: 1.2;
+}
+
+.lang-btn:hover {
+  color: var(--color-primary, #1a56db);
+}
+
+.lang-btn.active {
+  color: #ffffff !important;
+  background-color: var(--color-primary, #1a56db);
+  box-shadow: 0 1px 3px rgba(26, 86, 219, 0.35);
+}
+
+.lang-divider {
+  color: var(--border-color, #cbd5e1);
+  font-size: 9px;
+  opacity: 0.6;
+}
+
+
 

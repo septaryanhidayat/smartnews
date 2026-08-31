@@ -106,7 +106,7 @@
                         class="search-form__input"
                         name="q"
                         type="search"
-                        placeholder="Masukkan kata kunci berita..."
+                        placeholder="{{ __('messages.search_placeholder') }}"
                         autocomplete="off"
                         value="{{ request('q') ?? request('s') }}"
                     />
@@ -114,29 +114,40 @@
             </div>
 
             <div class="top-nav__right">
+                <!-- Language Switcher Pill -->
+                <div class="lang-switcher">
+                    <a href="{{ route('lang.switch', 'id') }}" class="lang-btn {{ app()->getLocale() === 'id' ? 'active' : '' }}" title="Bahasa Indonesia">
+                        <span>ID</span>
+                    </a>
+                    <span class="lang-divider">|</span>
+                    <a href="{{ route('lang.switch', 'en') }}" class="lang-btn {{ app()->getLocale() === 'en' ? 'active' : '' }}" title="English Language">
+                        <span>EN</span>
+                    </a>
+                </div>
+
                 <!-- Mobile Search Toggle Button (visible on mobile) -->
-                <button class="btn-mobile-search" id="mobileSearchToggle" aria-label="Buka Pencarian" title="Cari Berita">
+                <button class="btn-mobile-search" id="mobileSearchToggle" aria-label="{{ __('messages.search') }}" title="{{ __('messages.search') }}">
                     <i class="fas fa-search"></i>
                 </button>
 
                 <!-- Dark Mode Toggle Button -->
-                <button class="btn-dark-mode" id="darkModeBtn" aria-label="Toggle dark mode" title="Mode Gelap / Terang">
+                <button class="btn-dark-mode" id="darkModeBtn" aria-label="{{ __('messages.dark_mode') }}" title="{{ __('messages.dark_mode') }}">
                     <i class="fas fa-moon"></i>
                 </button>
 
                 @auth
-                    <a href="{{ route('admin.dashboard') }}" class="btn-admin" title="Panel Admin">
+                    <a href="{{ route('admin.dashboard') }}" class="btn-admin" title="{{ __('messages.admin_panel') }}">
                         <i class="fas fa-tachometer-alt"></i> <span class="btn-text">Admin</span>
                     </a>
                 @else
-                    <a href="{{ route('register') }}" class="btn-order d-desktop-only">Daftar</a>
-                    <a href="{{ route('login') }}" class="btn-login" title="Masuk">
-                        <i class="fas fa-user-circle"></i> <span class="btn-text">Login</span>
+                    <a href="{{ route('register') }}" class="btn-order d-desktop-only">{{ __('messages.register') }}</a>
+                    <a href="{{ route('login') }}" class="btn-login" title="{{ __('messages.login') }}">
+                        <i class="fas fa-user-circle"></i> <span class="btn-text">{{ __('messages.login') }}</span>
                     </a>
                 @endauth
 
                 <!-- Mobile Menu Hamburger Button (visible on mobile) -->
-                <button class="menu-toggle-mobile" id="mobileMenuToggle" aria-label="Buka Menu">
+                <button class="menu-toggle-mobile" id="mobileMenuToggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -181,14 +192,14 @@
         <div style="padding: 16px 20px 0;">
             <form class="search-form" action="{{ route('search') }}" method="GET">
                 <button class="search-form__btn" type="submit"><i class="fas fa-search"></i></button>
-                <input class="search-form__input" name="q" type="search" placeholder="Cari berita..." value="{{ request('q') }}">
+                <input class="search-form__input" name="q" type="search" placeholder="{{ __('messages.search_placeholder') }}" value="{{ request('q') }}">
             </form>
         </div>
 
         <nav class="sidebar-drawer__nav">
             <ul>
                 <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
-                    <a href="{{ route('home') }}"><i class="fas fa-home" style="margin-right: 8px; width: 16px;"></i> Beranda</a>
+                    <a href="{{ route('home') }}"><i class="fas fa-home" style="margin-right: 8px; width: 16px;"></i> {{ __('messages.home') }}</a>
                 </li>
                 @php
                     $drawerCategories = \App\Models\Category::orderBy('order', 'asc')->get();
@@ -201,8 +212,21 @@
             </ul>
         </nav>
 
+        <div style="padding: 0 20px 16px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 14px;">
+            <span style="font-size: 13px; font-weight: 600;">Bahasa / Language:</span>
+            <div class="lang-switcher">
+                <a href="{{ route('lang.switch', 'id') }}" class="lang-btn {{ app()->getLocale() === 'id' ? 'active' : '' }}" title="Bahasa Indonesia">
+                    <span>ID</span>
+                </a>
+                <span class="lang-divider">|</span>
+                <a href="{{ route('lang.switch', 'en') }}" class="lang-btn {{ app()->getLocale() === 'en' ? 'active' : '' }}" title="English Language">
+                    <span>EN</span>
+                </a>
+            </div>
+        </div>
+
         <div style="padding: 0 20px 16px; display: flex; align-items: center; justify-content: space-between;">
-            <span style="font-size: 13px; font-weight: 600;">Tema Tampilan:</span>
+            <span style="font-size: 13px; font-weight: 600;">{{ __('messages.dark_mode') }}:</span>
             <button class="btn-dark-mode" id="drawerDarkModeBtn" aria-label="Toggle tema">
                 <i class="fas fa-moon"></i>
             </button>
@@ -222,10 +246,10 @@
     </aside>
 
     <!-- 3. SITE HEADER BRANDING -->
-    <section class="site-header">
-        <div class="site-header__inner container">
-            <div class="site-header__logo">
-                <a href="{{ route('home') }}" class="logo-link">
+    <section class="site-branding" id="siteBranding">
+        <div class="container site-branding__inner">
+            <div class="site-branding__logo">
+                <a href="{{ route('home') }}" class="custom-logo-link" rel="home">
                     <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-main" style="height: 48px;">
                 </a>
             </div>
@@ -242,7 +266,7 @@
             <div class="main-nav__scroll-wrap">
                 <ul class="menu" id="header-main-menu">
                     <li class="{{ request()->routeIs('home') ? 'current-menu-item' : '' }}">
-                        <a href="{{ route('home') }}"><i class="fas fa-home"></i> Beranda</a>
+                        <a href="{{ route('home') }}"><i class="fas fa-home"></i> {{ __('messages.home') }}</a>
                     </li>
                     @php
                         $allNavCats = \App\Models\Category::orderBy('order', 'asc')->get();
@@ -268,12 +292,12 @@
                 @if($moreCats->count() > 0)
                 <div class="nav-dropdown d-desktop-only" id="navDropdownMore">
                     <button type="button" class="nav-dropdown__btn" id="navDropdownBtn" aria-haspopup="true" aria-expanded="false" title="Kategori Lainnya">
-                        <span>Lainnya</span>
+                        <span>{{ __('messages.more') }}</span>
                         <i class="fas fa-chevron-down nav-dropdown__icon"></i>
                     </button>
                     <div class="nav-dropdown__popover" id="navDropdownPopover">
                         <div class="nav-dropdown__popover-header">
-                            <span class="nav-dropdown__title"><i class="fas fa-layer-group"></i> Rubrik Lainnya</span>
+                            <span class="nav-dropdown__title"><i class="fas fa-layer-group"></i> {{ __('messages.other_rubrics') }}</span>
                         </div>
                         <div class="nav-dropdown__grid">
                             @foreach($moreCats as $mCat)
@@ -289,8 +313,8 @@
 
                 <button class="main-nav__all-toggle" id="mobileNavToggle" aria-label="Buka semua kategori">
                     <i class="fas fa-th-large"></i>
-                    <span class="d-desktop-only">Semua Rubrik</span>
-                    <span class="d-mobile-only">Semua</span>
+                    <span class="d-desktop-only">{{ __('messages.all_rubrics') }}</span>
+                    <span class="d-mobile-only">{{ __('messages.all_rubrics') }}</span>
                 </button>
             </div>
         </div>

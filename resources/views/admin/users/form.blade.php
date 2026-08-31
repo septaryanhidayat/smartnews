@@ -60,6 +60,24 @@
             </div>
 
             <div class="form-group">
+                <label for="role">Hak Akses & Peran (Role) <span style="color: #dc2626;">*</span></label>
+                <select name="role" id="role" class="form-control" required style="cursor: pointer; font-weight: 600;">
+                    <option value="author" {{ old('role', $isEdit ? $user->role : 'author') === 'author' ? 'selected' : '' }}>
+                        ✍️ Wartawan / Jurnalis (Hanya dapat mengelola artikel milik sendiri)
+                    </option>
+                    <option value="editor" {{ old('role', $isEdit ? $user->role : '') === 'editor' ? 'selected' : '' }}>
+                        📝 Editor / Redaktur (Dapat mengelola semua berita, kategori, topik tags, komentar)
+                    </option>
+                    <option value="admin" {{ old('role', $isEdit ? $user->role : '') === 'admin' ? 'selected' : '' }}>
+                        🛡️ Super Admin (Akses penuh seluruh menu, iklan, pengaturan website & pengguna)
+                    </option>
+                </select>
+                <small style="display: block; margin-top: 6px; color: var(--admin-muted); font-size: 12px;">
+                    Pilih wewenang dan hak akses dashboard yang sesuai untuk akun ini.
+                </small>
+            </div>
+
+            <div class="form-group">
                 <label for="password">
                     Password {{ $isEdit ? '(Kosongkan jika tidak ingin mengubah)' : '' }}
                     @if(!$isEdit) <span style="color: #dc2626;">*</span> @endif

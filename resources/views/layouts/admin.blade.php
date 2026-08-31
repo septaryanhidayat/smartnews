@@ -421,9 +421,17 @@
             <li class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                 <a href="{{ route('admin.dashboard') }}"><i class="fas fa-chart-pie"></i> Dashboard</a>
             </li>
+
+            {{-- Articles: Accessible by all roles --}}
             <li class="{{ request()->routeIs('admin.articles.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.articles.index') }}"><i class="fas fa-newspaper"></i> Kelola Berita</a>
+                <a href="{{ route('admin.articles.index') }}">
+                    <i class="fas fa-newspaper"></i>
+                    <span>{{ Auth::user()->isAuthor() ? 'Artikel Saya' : 'Kelola Berita' }}</span>
+                </a>
             </li>
+
+            {{-- Editorial Desk: Categories, Tags, Comments (Admin & Editor) --}}
+            @if(Auth::user()->isEditor())
             <li class="{{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
                 <a href="{{ route('admin.categories.index') }}"><i class="fas fa-folder"></i> Kategori</a>
             </li>
@@ -433,11 +441,12 @@
             <li class="{{ request()->routeIs('admin.comments.*') ? 'active' : '' }}">
                 <a href="{{ route('admin.comments.index') }}"><i class="fas fa-comments"></i> Komentar</a>
             </li>
+            @endif
+
+            {{-- Super Admin Only: Users, Settings, Ads --}}
+            @if(Auth::user()->isAdmin())
             <li class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
                 <a href="{{ route('admin.users.index') }}"><i class="fas fa-users-cog"></i> Kelola Pengguna</a>
-            </li>
-            <li class="{{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
-                <a href="{{ route('admin.profile.index') }}"><i class="fas fa-user-circle"></i> Pengaturan Profil</a>
             </li>
             <li class="{{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
                 <a href="{{ route('admin.settings.index') }}"><i class="fas fa-cog"></i> Pengaturan Website & SEO</a>
@@ -445,12 +454,20 @@
             <li class="{{ request()->routeIs('admin.ads.*') ? 'active' : '' }}">
                 <a href="{{ route('admin.ads.index') }}"><i class="fas fa-ad"></i> Manajemen Iklan (Ads)</a>
             </li>
+            @endif
+
+            {{-- Profile: Accessible by all --}}
+            <li class="{{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
+                <a href="{{ route('admin.profile.index') }}"><i class="fas fa-user-circle"></i> Pengaturan Profil</a>
+            </li>
+
             <li style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
                 <a href="{{ route('home') }}" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat Website</a>
             </li>
         </ul>
-        <div style="padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: #64748b;">
-            Logged as: <a href="{{ route('admin.profile.index') }}" style="color: #60a5fa; font-weight: 700; text-decoration: underline;">{{ Auth::user()->name ?? 'Administrator' }}</a>
+        <div style="padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: #94a3b8; display: flex; flex-direction: column; gap: 6px;">
+            <div>Masuk sebagai: <strong style="color: #ffffff;">{{ Auth::user()->name ?? 'Pengguna' }}</strong></div>
+            <div>{!! Auth::user()->role_badge_html !!}</div>
         </div>
     </aside>
 
@@ -466,8 +483,9 @@
                 </div>
             </div>
             <div class="admin-topbar__right">
-                <a href="{{ route('admin.profile.index') }}" class="btn btn-sm" style="background-color: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;" title="Profil Admin">
-                    <i class="fas fa-user-shield"></i> <span class="admin-topbar__btn-label">{{ Auth::user()->name ?? 'Admin' }}</span>
+                <a href="{{ route('admin.profile.index') }}" class="btn btn-sm" style="background-color: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;" title="Profil Saya">
+                    <i class="fas fa-user-shield"></i> <span class="admin-topbar__btn-label">{{ Auth::user()->name ?? 'Akun' }}</span>
+                    <span style="font-size: 10.5px; opacity: 0.8; margin-left: 2px;">({{ Auth::user()->role_label }})</span>
                 </a>
                 <a href="{{ route('home') }}" class="btn btn-sm btn-primary" target="_blank" title="Lihat Portal Publik">
                     <i class="fas fa-globe"></i> <span class="admin-topbar__btn-label">Portal</span>

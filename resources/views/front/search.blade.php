@@ -73,8 +73,8 @@
                 </div>
 
                 <!-- Pagination -->
-                <div style="margin-top: 28px;">
-                    {{ $articles->appends(['q' => $query])->links() }}
+                <div class="pagination-wrap">
+                    {{ $articles->appends(['q' => $query])->onEachSide(1)->links() }}
                 </div>
             </div>
 

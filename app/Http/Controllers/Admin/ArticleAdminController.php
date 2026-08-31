@@ -15,11 +15,15 @@ class ArticleAdminController extends Controller
 {
     public function index(Request $request)
     {
+        $user = Auth::user();
         $search = $request->input('search');
         $categoryId = $request->input('category_id');
         $status = $request->input('status');
 
         $articles = Article::with(['category', 'user'])
+            ->when($user->isAuthor(), function ($q) use ($user) {
+                $q->where('user_id', $user->id);
+            })
             ->when($search, function ($q) use ($search) {
                 $q->where('title', 'like', "%{$search}%");
             })
@@ -112,6 +116,12 @@ class ArticleAdminController extends Controller
     public function edit($id)
     {
         $article = Article::with('tags')->findOrFail($id);
+        $user = Auth::user();
+
+        if ($user->isAuthor() && $article->user_id !== $user->id) {
+            abort(403, 'Akses Ditolak: Anda hanya dapat mengedit artikel yang Anda tulis sendiri.');
+        }
+
         $categories = Category::orderBy('name')->get();
         $tags = Tag::orderBy('name')->get();
         return view('admin.articles.form', compact('article', 'categories', 'tags'));
@@ -120,6 +130,11 @@ class ArticleAdminController extends Controller
     public function update(Request $request, $id)
     {
         $article = Article::findOrFail($id);
+        $user = Auth::user();
+
+        if ($user->isAuthor() && $article->user_id !== $user->id) {
+            abort(403, 'Akses Ditolak: Anda hanya dapat memperbarui artikel yang Anda tulis sendiri.');
+        }
 
         $validated = $request->validate([
             'title' => 'required|string|max:255',
@@ -188,6 +203,12 @@ class ArticleAdminController extends Controller
     public function destroy($id)
     {
         $article = Article::findOrFail($id);
+        $user = Auth::user();
+
+        if ($user->isAuthor() && $article->user_id !== $user->id) {
+            abort(403, 'Akses Ditolak: Anda hanya dapat menghapus artikel yang Anda tulis sendiri.');
+        }
+
         $article->delete();
         return redirect()->route('admin.articles.index')->with('success', 'Berita berhasil dihapus.');
     }

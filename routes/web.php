@@ -57,34 +57,30 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middl
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    // Articles
+    // Articles (Accessible by all roles; authors scoped to own articles)
     Route::resource('articles', ArticleAdminController::class)->except(['show']);
 
-    // Categories
-    Route::resource('categories', CategoryAdminController::class)->only(['index', 'store', 'update', 'destroy']);
+    // Categories (Admin & Editor only)
+    Route::middleware('role:admin,editor')->group(function () {
+        Route::resource('categories', CategoryAdminController::class)->only(['index', 'store', 'update', 'destroy']);
+        Route::resource('tags', TagAdminController::class)->only(['index', 'store', 'update', 'destroy']);
+        Route::get('/comments', [CommentAdminController::class, 'index'])->name('comments.index');
+        Route::post('/comments/{id}/toggle', [CommentAdminController::class, 'toggleApproval'])->name('comments.toggle');
+        Route::delete('/comments/{id}', [CommentAdminController::class, 'destroy'])->name('comments.destroy');
+    });
 
-    // Tags
-    Route::resource('tags', TagAdminController::class)->only(['index', 'store', 'update', 'destroy']);
+    // Super Admin Only Operations (Users, Ads, Settings)
+    Route::middleware('role:admin')->group(function () {
+        Route::resource('users', UserAdminController::class)->except(['show']);
+        Route::get('/settings', [App\Http\Controllers\Admin\SettingAdminController::class, 'index'])->name('settings.index');
+        Route::put('/settings', [App\Http\Controllers\Admin\SettingAdminController::class, 'update'])->name('settings.update');
+        Route::get('/ads', [App\Http\Controllers\Admin\AdAdminController::class, 'index'])->name('ads.index');
+        Route::put('/ads', [App\Http\Controllers\Admin\AdAdminController::class, 'update'])->name('ads.update');
+    });
 
-    // Comments
-    Route::get('/comments', [CommentAdminController::class, 'index'])->name('comments.index');
-    Route::post('/comments/{id}/toggle', [CommentAdminController::class, 'toggleApproval'])->name('comments.toggle');
-    Route::delete('/comments/{id}', [CommentAdminController::class, 'destroy'])->name('comments.destroy');
-
-    // Users Management
-    Route::resource('users', UserAdminController::class)->except(['show']);
-
-    // Profile Settings
+    // Profile Settings (All authenticated users)
     Route::get('/profile', [ProfileAdminController::class, 'index'])->name('profile.index');
     Route::put('/profile', [ProfileAdminController::class, 'update'])->name('profile.update');
-
-    // Website & SEO Settings
-    Route::get('/settings', [App\Http\Controllers\Admin\SettingAdminController::class, 'index'])->name('settings.index');
-    Route::put('/settings', [App\Http\Controllers\Admin\SettingAdminController::class, 'update'])->name('settings.update');
-
-    // Ads Management (Manajemen Iklan)
-    Route::get('/ads', [App\Http\Controllers\Admin\AdAdminController::class, 'index'])->name('ads.index');
-    Route::put('/ads', [App\Http\Controllers\Admin\AdAdminController::class, 'update'])->name('ads.update');
 });
 
 // Storage Asset Delivery Route (Ensures 100% reliable image delivery on all web servers)

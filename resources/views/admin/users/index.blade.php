@@ -34,6 +34,7 @@
                     <th style="width: 60px;">ID</th>
                     <th>Nama Pengguna</th>
                     <th>Alamat Email</th>
+                    <th>Peran / Role</th>
                     <th>Jumlah Berita</th>
                     <th>Tanggal Terdaftar</th>
                     <th style="width: 140px; text-align: right;">Aksi</th>
@@ -55,12 +56,15 @@
                                             <span class="badge badge-info" style="margin-left: 4px;">Akun Anda</span>
                                         @endif
                                     </div>
-                                    <div style="font-size: 12px; color: var(--admin-muted);">Administrator / Penulis</div>
+                                    <div style="font-size: 12px; color: var(--admin-muted);">{{ $user->email }}</div>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <span style="font-family: monospace; font-size: 13px; color: #334155;">{{ $user->email }}</span>
+                        </td>
+                        <td>
+                            {!! $user->role_badge_html !!}
                         </td>
                         <td>
                             <span class="badge badge-success" style="font-size: 12px;">

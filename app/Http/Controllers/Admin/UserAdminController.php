@@ -30,12 +30,15 @@ class UserAdminController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email',
+            'role' => 'required|in:admin,editor,author',
             'password' => 'required|string|min:6|confirmed',
         ], [
             'name.required' => 'Nama lengkap wajib diisi.',
             'email.required' => 'Alamat email wajib diisi.',
             'email.email' => 'Format email tidak valid.',
             'email.unique' => 'Email ini sudah terdaftar.',
+            'role.required' => 'Peran (Role) pengguna wajib dipilih.',
+            'role.in' => 'Peran pengguna tidak valid.',
             'password.required' => 'Password wajib diisi.',
             'password.min' => 'Password minimal 6 karakter.',
             'password.confirmed' => 'Konfirmasi password tidak cocok.',
@@ -44,10 +47,11 @@ class UserAdminController extends Controller
         User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
+            'role' => $validated['role'],
             'password' => Hash::make($validated['password']),
         ]);
 
-        return redirect()->route('admin.users.index')->with('success', 'Pengguna baru berhasil ditambahkan.');
+        return redirect()->route('admin.users.index')->with('success', 'Pengguna baru dengan peran ' . ucfirst($validated['role']) . ' berhasil ditambahkan.');
     }
 
     public function edit(User $user)
@@ -60,18 +64,28 @@ class UserAdminController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+            'role' => 'required|in:admin,editor,author',
             'password' => 'nullable|string|min:6|confirmed',
         ], [
             'name.required' => 'Nama lengkap wajib diisi.',
             'email.required' => 'Alamat email wajib diisi.',
             'email.email' => 'Format email tidak valid.',
             'email.unique' => 'Email ini sudah digunakan oleh akun lain.',
+            'role.required' => 'Peran (Role) pengguna wajib dipilih.',
+            'role.in' => 'Peran pengguna tidak valid.',
             'password.min' => 'Password baru minimal 6 karakter.',
             'password.confirmed' => 'Konfirmasi password baru tidak cocok.',
         ]);
 
         $user->name = $validated['name'];
         $user->email = $validated['email'];
+        
+        // Prevent logged-in admin from demoting themselves
+        if ($user->id === Auth::id() && $validated['role'] !== User::ROLE_ADMIN) {
+            return redirect()->back()->with('error', 'Anda tidak dapat mengubah peran akun Anda sendiri yang sedang aktif menjadi selain Super Admin.');
+        }
+
+        $user->role = $validated['role'];
 
         if (!empty($validated['password'])) {
             $user->password = Hash::make($validated['password']);
@@ -79,7 +93,7 @@ class UserAdminController extends Controller
 
         $user->save();
 
-        return redirect()->route('admin.users.index')->with('success', 'Data pengguna berhasil diperbarui.');
+        return redirect()->route('admin.users.index')->with('success', 'Data pengguna & peran ' . $user->name . ' berhasil diperbarui.');
     }
 
     public function destroy(User $user)

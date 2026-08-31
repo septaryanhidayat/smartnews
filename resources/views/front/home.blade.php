@@ -143,7 +143,7 @@
 
                     @if($paginationMode === 'pagination')
                         <div class="pagination-wrap" style="margin-top: 28px;">
-                            {{ $latestArticles->links() }}
+                            {{ $latestArticles->onEachSide(1)->links() }}
                         </div>
                     @elseif($paginationMode === 'infinite')
                         <div class="infinite-scroll-sentinel" id="infiniteScrollSentinel" data-page="1" data-has-more="{{ $latestArticles->hasMorePages() ? '1' : '0' }}" style="padding: 24px 0; text-align: center;">

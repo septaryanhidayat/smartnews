@@ -75,8 +75,8 @@
                 </div>
 
                 <!-- Pagination -->
-                <div style="margin-top: 28px;">
-                    {{ $articles->links() }}
+                <div class="pagination-wrap">
+                    {{ $articles->onEachSide(1)->links() }}
                 </div>
             </div>
 

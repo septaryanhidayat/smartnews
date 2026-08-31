@@ -26,8 +26,15 @@ class LandingController extends Controller
             $waNumber = '6281234567890';
         }
 
-        $waMessage = rawurlencode("Halo Tim SmartNews, saya tertarik untuk memesan Paket Lengkap Website Portal Berita Media Online SmartNews (Rp 3 Juta). Mohon info prosedur pemesanan & pilihan domainnya.");
-        $waOrderUrl = "https://api.whatsapp.com/send?phone={$waNumber}&text={$waMessage}";
+        // WhatsApp URLs for the 3 packages
+        $waMsgPkg1 = rawurlencode("Halo Tim SmartNews, saya ingin memesan *Paket 1: Source Code Only (Rp 1.500.000)*. Mohon info nomor rekening / cara pembayarannya.");
+        $waMsgPkg2 = rawurlencode("Halo Tim SmartNews, saya ingin memesan *Paket 2: Siap Pakai + Hosting & Domain (Rp 3.000.000)*. Mohon bantu pilihkan domain & proses instalasinya.");
+        $waMsgPkg3 = rawurlencode("Halo Tim SmartNews, saya ingin memesan *Paket 3: VIP Lifetime Update & Full Servis (Rp 5.000.000)*. Mohon info panduan & mulai setupnya.");
+
+        $waUrlPkg1 = "https://api.whatsapp.com/send?phone={$waNumber}&text={$waMsgPkg1}";
+        $waUrlPkg2 = "https://api.whatsapp.com/send?phone={$waNumber}&text={$waMsgPkg2}";
+        $waUrlPkg3 = "https://api.whatsapp.com/send?phone={$waNumber}&text={$waMsgPkg3}";
+        $waOrderUrl = $waUrlPkg2; // Default popular package
 
         // Sample article stats for social proof
         $totalArticles = Article::count();
@@ -37,7 +44,11 @@ class LandingController extends Controller
             'siteName',
             'contactPhone',
             'contactEmail',
+            'waNumber',
             'waOrderUrl',
+            'waUrlPkg1',
+            'waUrlPkg2',
+            'waUrlPkg3',
             'totalArticles',
             'totalCategories'
         ));

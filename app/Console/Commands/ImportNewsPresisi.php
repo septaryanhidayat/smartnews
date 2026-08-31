@@ -156,6 +156,23 @@ class ImportNewsPresisi extends Command
                 ]
             );
 
+            // Clean all newspresisi mentions to SmartNews
+            $searchPatterns = [
+                '/https?:\/\/(?:www\.)?newspresisi\.id\/?/i' => 'https://smartnews.berandadigital.net/',
+                '/<a[^>]*href=["\'][^"\']*newspresisi\.id[^"\']*["\'][^>]*>(.*?)<\/a>/i' => '$1',
+                '/\bNEWSPRESISI\.ID\b/i' => 'SmartNews',
+                '/\bNewspresisi\.id\b/i' => 'SmartNews',
+                '/\bnewspresisi\.id\b/i' => 'smartnews.berandadigital.net',
+                '/\bNEWSPRESISI\b/i' => 'SmartNews',
+                '/\bNewspresisi\b/i' => 'SmartNews',
+                '/\bnewspresisi\b/i' => 'smartnews',
+            ];
+            foreach ($searchPatterns as $pattern => $replacement) {
+                $title = preg_replace($pattern, $replacement, $title);
+                $excerpt = preg_replace($pattern, $replacement, $excerpt);
+                $content = preg_replace($pattern, $replacement, $content);
+            }
+
             // 3. AI Summary Generation (Extract 3 key smart bullet points)
             $plainText = strip_tags($content);
             $sentences = preg_split('/(?<=[.?!])\s+(?=[A-Z0-9])/u', $plainText, -1, PREG_SPLIT_NO_EMPTY);
@@ -177,6 +194,9 @@ class ImportNewsPresisi extends Command
                 ];
             }
             $aiSummary = implode("\n", $summaryBullets);
+            foreach ($searchPatterns as $pattern => $replacement) {
+                $aiSummary = preg_replace($pattern, $replacement, $aiSummary);
+            }
 
             // 4. Save Article
             $article = Article::updateOrCreate(
@@ -189,8 +209,8 @@ class ImportNewsPresisi extends Command
                     'ai_summary' => $aiSummary,
                     'content' => $content,
                     'image' => $imagePath,
-                    'image_caption' => 'Liputan dokumentasi peristiwa resmi Newspresisi.id',
-                    'image_source' => 'Newspresisi.id',
+                    'image_caption' => 'Liputan dokumentasi peristiwa resmi SmartNews',
+                    'image_source' => 'SmartNews',
                     'media_type' => 'standard',
                     'status' => 'published',
                     'published_at' => $publishedAt,

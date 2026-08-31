@@ -5,7 +5,7 @@
     @endphp
 
     @if($isHighlight)
-    <article class="feed-item feed-item--big fade-up-init">
+    <article class="feed-item feed-item--big">
         <div class="feed-item__img-wrap feed-item__img-wrap--big">
             <a href="{{ route('article.show', $article->slug) }}">
                 <img class="feed-item__img feed-item__img--big" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy" onerror="this.src='{{ asset('images/default-news.webp') }}'">
@@ -46,7 +46,7 @@
         </div>
     </article>
     @else
-    <article class="feed-item fade-up-init">
+    <article class="feed-item">
         <div class="feed-item__img-wrap">
             <a href="{{ route('article.show', $article->slug) }}">
                 <img class="feed-item__img" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy" onerror="this.src='{{ asset('images/default-news.webp') }}'">

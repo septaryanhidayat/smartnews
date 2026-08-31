@@ -239,20 +239,45 @@
     <!-- 4. PRIMARY NAVIGATION MENU -->
     <nav class="main-nav" id="mainNav" aria-label="Navigasi Utama">
         <div class="main-nav__inner container">
-            <ul class="menu" id="header-main-menu">
-                <li class="{{ request()->routeIs('home') ? 'current-menu-item' : '' }}">
-                    <a href="{{ route('home') }}">Beranda</a>
-                </li>
-                @foreach(\App\Models\Category::orderBy('order', 'asc')->get() as $cat)
-                    <li class="{{ request()->is('kategori/' . $cat->slug) ? 'current-menu-item' : '' }}">
-                        <a href="{{ route('category.show', $cat->slug) }}">{{ $cat->name }}</a>
+            <div class="main-nav__scroll-wrap">
+                <ul class="menu" id="header-main-menu">
+                    <li class="{{ request()->routeIs('home') ? 'current-menu-item' : '' }}">
+                        <a href="{{ route('home') }}"><i class="fas fa-home"></i> Beranda</a>
                     </li>
-                @endforeach
-            </ul>
+                    @php
+                        $allNavCats = \App\Models\Category::orderBy('order', 'asc')->get();
+                        $primaryCats = $allNavCats->take(8);
+                        $moreCats = $allNavCats->slice(8);
+                    @endphp
 
-            <button class="main-nav__mobile-toggle" id="mobileNavToggle" aria-label="Buka semua menu">
+                    @foreach($primaryCats as $cat)
+                        <li class="{{ request()->is('kategori/' . $cat->slug) ? 'current-menu-item' : '' }}">
+                            <a href="{{ route('category.show', $cat->slug) }}">{{ $cat->name }}</a>
+                        </li>
+                    @endforeach
+
+                    @if($moreCats->count() > 0)
+                    <li class="menu-item-has-children nav-dropdown">
+                        <a href="javascript:void(0)" class="nav-dropdown__toggle" aria-expanded="false">
+                            <span>Lainnya</span> <i class="fas fa-chevron-down nav-dropdown__arrow"></i>
+                        </a>
+                        <ul class="sub-menu nav-dropdown__menu">
+                            @foreach($moreCats as $mCat)
+                                <li class="{{ request()->is('kategori/' . $mCat->slug) ? 'current-menu-item' : '' }}">
+                                    <a href="{{ route('category.show', $mCat->slug) }}">
+                                        <i class="fas fa-angle-right" style="font-size: 11px; opacity: 0.7; margin-right: 4px;"></i> {{ $mCat->name }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    @endif
+                </ul>
+            </div>
+
+            <button class="main-nav__all-toggle" id="mobileNavToggle" aria-label="Buka semua kategori">
                 <i class="fas fa-th-large"></i>
-                <span>Semua</span>
+                <span>Semua Rubrik</span>
             </button>
         </div>
     </nav>

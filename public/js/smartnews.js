@@ -346,6 +346,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const infiniteSentinel = document.getElementById('infiniteScrollSentinel');
     const infiniteLoading = document.getElementById('infiniteScrollLoading');
 
+    function appendNewArticles(html) {
+        if (!articleList || !html) return;
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+        const newArticles = Array.from(tempDiv.children);
+        newArticles.forEach(item => {
+            item.classList.add('fade-up-in');
+            articleList.appendChild(item);
+        });
+    }
+
     // 7A. Manual Click Load More
     if (btnLoadMore && articleList) {
         btnLoadMore.addEventListener('click', async () => {
@@ -355,8 +366,10 @@ document.addEventListener('DOMContentLoaded', () => {
             btnLoadMore.disabled = true;
             btnLoadMore.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memuat berita...';
 
+            const fetchUrl = `${window.location.pathname.replace(/\/$/, '')}/?page=${nextPage}&ajax=1`;
+
             try {
-                const response = await fetch(`/?page=${nextPage}&ajax=1`, {
+                const response = await fetch(fetchUrl, {
                     headers: {
                         'X-Requested-With': 'XMLHttpRequest',
                         'Accept': 'application/json'
@@ -368,12 +381,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (data.html) {
-                    articleList.insertAdjacentHTML('beforeend', data.html);
+                    appendNewArticles(data.html);
                     btnLoadMore.setAttribute('data-page', nextPage);
-
-                    if (window.observeNewFadeUpElements) {
-                        window.observeNewFadeUpElements(articleList);
-                    }
                 }
 
                 if (!data.hasMore) {
@@ -406,8 +415,10 @@ document.addEventListener('DOMContentLoaded', () => {
             isFetchingInfinite = true;
             if (infiniteLoading) infiniteLoading.style.display = 'inline-flex';
 
+            const fetchUrl = `${window.location.pathname.replace(/\/$/, '')}/?page=${nextPage}&ajax=1`;
+
             try {
-                const response = await fetch(`/?page=${nextPage}&ajax=1`, {
+                const response = await fetch(fetchUrl, {
                     headers: {
                         'X-Requested-With': 'XMLHttpRequest',
                         'Accept': 'application/json'
@@ -418,12 +429,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (data.html) {
-                    articleList.insertAdjacentHTML('beforeend', data.html);
+                    appendNewArticles(data.html);
                     infiniteSentinel.setAttribute('data-page', nextPage);
-
-                    if (window.observeNewFadeUpElements) {
-                        window.observeNewFadeUpElements(articleList);
-                    }
                 }
 
                 if (!data.hasMore) {
@@ -447,11 +454,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     fetchNextInfinitePage();
                 }
             }, {
-                rootMargin: '200px 0px 200px 0px'
+                rootMargin: '300px 0px 300px 0px'
             });
             infiniteObserver.observe(infiniteSentinel);
         }
     }
+
+    // 7C. Nav Dropdown Touch Toggle
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+    navDropdowns.forEach(dd => {
+        const toggle = dd.querySelector('.nav-dropdown__toggle');
+        const menu = dd.querySelector('.nav-dropdown__menu');
+        if (toggle && menu) {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const isShown = menu.style.display === 'block';
+                menu.style.display = isShown ? 'none' : 'block';
+            });
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown__menu').forEach(m => m.style.display = '');
+        }
+    });
 
     /* ==========================================================================
        8. AJAX COMMENT SUBMISSION

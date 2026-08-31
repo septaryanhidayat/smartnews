@@ -124,7 +124,7 @@
                 <div class="sn-hero__left">
                     <div class="sn-pill-badge">
                         <i class="fas fa-robot"></i>
-                        <span>WEBSITE PORTAL MEDIA RESMI BERTEKNOLOGI AI CERDAS</span>
+                        <span>PORTAL MEDIA RESMI LARAVEL 13 & PHP 8.4 DENGAN AI CERDAS</span>
                     </div>
 
                     <h1 class="sn-hero__title">
@@ -191,7 +191,7 @@
                         <div class="sn-phone-frame">
                             <div class="sn-phone-notch"></div>
                             <div class="sn-phone-screen">
-                                <img src="{{ asset('images/landing/preview-feed.png') }}" alt="Tampilan Mobile Portal SmartNews" class="sn-phone-img" loading="lazy">
+                                <img src="{{ asset('images/landing/preview-mobile.png') }}" alt="Tampilan Mobile Portal SmartNews" class="sn-phone-img" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -325,9 +325,9 @@
                     </div>
 
                     <ul class="sn-price-features">
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Full Source Code Laravel 12</strong> (Hak Milik Lifetime)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Full Source Code Laravel 13 & PHP 8.4</strong> (Hak Milik Lifetime)</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Database SQL Lengkap</strong> + Data Berita Demo</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Panduan Lengkap PDF & Video</strong> Langkah Instalasi</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Dokumentasi Panduan Lengkap (PDF)</strong> Langkah Instalasi</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bebas Dipasang</strong> di domain mana saja</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Fitur AI SEO Engine</strong> & 6 Slot Iklan Cuan</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-times-circle"></i> <span>Hosting & Domain (Disediakan pembeli)</span></li>
@@ -419,7 +419,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Full Source Code SmartNews (Laravel 12)</strong></td>
+                            <td><strong>Full Source Code SmartNews (Laravel 13 & PHP 8.4)</strong></td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> Ya (Lifetime)</td>
                             <td class="sn-highlight"><i class="fas fa-check" style="color: #10b981;"></i> Ya (Lifetime)</td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> Ya (Lifetime)</td>
@@ -456,7 +456,7 @@
                         </tr>
                         <tr>
                             <td><strong>Garansi & Perbaikan Error / Bug</strong></td>
-                            <td>Panduan PDF/Video</td>
+                            <td>Panduan PDF Lengkap</td>
                             <td class="sn-highlight">Garansi 6 Bulan</td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>LIFETIME FULL SERVICE</strong></td>
                         </tr>

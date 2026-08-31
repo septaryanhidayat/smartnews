@@ -3755,9 +3755,9 @@ textarea.form-control {
     margin: 22px 0;
   }
 
-  /* Clean, Symmetrical 2-Column Mobile Footer (Anti-Long Scroll) */
+  /* Clean, Symmetrical 2-Column Mobile Footer with Center Alignment */
   .site-footer {
-    text-align: left;
+    text-align: center;
   }
   .footer-main {
     padding: 28px 0 16px 0 !important;
@@ -3765,96 +3765,99 @@ textarea.form-control {
   .footer-main__grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px 14px !important;
-    text-align: left !important;
+    gap: 24px 14px !important;
+    text-align: center !important;
   }
   .footer-col--brand {
     grid-column: 1 / -1 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
-    text-align: left !important;
-    padding-bottom: 12px;
+    align-items: center !important;
+    text-align: center !important;
+    padding-bottom: 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   .footer-logo {
-    display: block !important;
-    margin: 0 0 8px 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 auto 8px auto !important;
   }
   .footer-brand__desc {
-    text-align: left !important;
-    margin: 4px 0 10px 0 !important;
-    max-width: 100% !important;
+    text-align: center !important;
+    margin: 4px auto 12px auto !important;
+    max-width: 380px !important;
     font-size: 12.5px !important;
     line-height: 1.55 !important;
   }
   .footer-contact {
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
+    justify-content: center !important;
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
     gap: 5px !important;
   }
   .footer-contact li {
-    justify-content: flex-start !important;
-    text-align: left !important;
+    justify-content: center !important;
+    text-align: center !important;
     font-size: 12px !important;
   }
   .footer-socials {
-    justify-content: flex-start !important;
-    margin: 12px 0 0 0 !important;
+    justify-content: center !important;
+    margin: 12px auto 0 auto !important;
     gap: 8px !important;
   }
   .footer-col {
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
-    text-align: left !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   .footer-col:last-child {
     grid-column: 1 / -1 !important;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 14px;
+    padding-top: 16px;
   }
   .footer-col__title {
-    font-size: 13px !important;
+    font-size: 13.5px !important;
     font-weight: 700 !important;
-    text-align: left !important;
-    margin-bottom: 10px !important;
+    text-align: center !important;
+    margin-bottom: 12px !important;
     padding-bottom: 6px !important;
     position: relative !important;
   }
   .footer-col__title::after {
-    left: 0 !important;
-    transform: none !important;
-    width: 22px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 24px !important;
     height: 2px !important;
   }
   .footer-links ul {
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     padding: 0 !important;
     margin: 0 !important;
-    gap: 5px !important;
+    gap: 6px !important;
   }
   .footer-links ul li {
-    text-align: left !important;
+    text-align: center !important;
   }
   .footer-links ul li a {
-    font-size: 12px !important;
+    font-size: 12.5px !important;
     padding: 2px 0 !important;
     display: inline-block !important;
+    text-align: center !important;
   }
   .footer-badges {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     gap: 8px !important;
-    margin-top: 8px !important;
+    margin-top: 10px !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
   }
   .footer-badge {
     font-size: 11px !important;

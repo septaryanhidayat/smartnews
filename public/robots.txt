@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /login
+Disallow: /daftar
+
+Sitemap: https://smartnews.berandadigital.net/sitemap.xml

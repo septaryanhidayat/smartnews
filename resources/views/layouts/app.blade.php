@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,7 +64,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Theme Stylesheet (Cached with Static Versioning) -->
-    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.4">
+    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.5">
     @stack('styles')
 
     <!-- Early theme init: Default to light mode unless user explicitly selected dark -->
@@ -81,6 +81,9 @@
     </script>
 </head>
 <body class="@yield('body_class', 'home blog')">
+
+    <!-- SKIP TO MAIN CONTENT LINK FOR KEYBOARD & SCREEN READERS (WCAG 2.1) -->
+    <a href="#mainContent" class="skip-link">Lewati ke konten utama</a>
 
     <!-- READING SCROLL PROGRESS BAR (RED METER) -->
     <div class="scroll-progress-bar" id="scrollProgressBar"></div>

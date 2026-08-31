@@ -53,6 +53,16 @@ Route::get('/pasang-iklan', fn() => redirect()->route('page.show', 'pasang-iklan
 Route::get('/privacy-policy', fn() => redirect()->route('page.show', 'privacy-policy'))->name('page.privacy');
 Route::get('/terms', fn() => redirect()->route('page.show', 'terms'))->name('page.terms');
 
+// Dynamic Sitemap for SEO
+Route::get('/sitemap.xml', function () {
+    $articles = \App\Models\Article::where('status', 'published')->orderBy('published_at', 'desc')->take(100)->get();
+    $categories = \App\Models\Category::all();
+    $tags = \App\Models\Tag::all();
+
+    return response()->view('sitemap', compact('articles', 'categories', 'tags'))
+        ->header('Content-Type', 'text/xml');
+})->name('sitemap');
+
 // Authentication Routes (Rate Limited for brute-force & mass-registration protection)
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');

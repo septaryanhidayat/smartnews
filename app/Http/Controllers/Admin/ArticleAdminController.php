@@ -85,6 +85,11 @@ class ArticleAdminController extends Controller
             }
         }
 
+        $isSticky = $request->boolean('is_sticky');
+        if ($isSticky) {
+            Article::where('is_sticky', true)->update(['is_sticky' => false]);
+        }
+
         $article = Article::create([
             'user_id' => Auth::id(),
             'category_id' => $validated['category_id'],
@@ -100,8 +105,8 @@ class ArticleAdminController extends Controller
             'media_badge' => $validated['media_badge'],
             'video_url' => $validated['video_url'],
             'video_id' => $videoId,
-            'is_sticky' => $request->has('is_sticky'),
-            'is_slider' => $request->has('is_slider'),
+            'is_sticky' => $isSticky,
+            'is_slider' => $request->boolean('is_slider'),
             'status' => $validated['status'],
             'published_at' => $validated['published_at'] ?? now(),
         ]);
@@ -118,7 +123,7 @@ class ArticleAdminController extends Controller
         $article = Article::with('tags')->findOrFail($id);
         $user = Auth::user();
 
-        if ($user->isAuthor() && $article->user_id !== $user->id) {
+        if ($user && $user->isAuthor() && $article->user_id !== $user->id) {
             abort(403, 'Akses Ditolak: Anda hanya dapat mengedit artikel yang Anda tulis sendiri.');
         }
 
@@ -132,7 +137,7 @@ class ArticleAdminController extends Controller
         $article = Article::findOrFail($id);
         $user = Auth::user();
 
-        if ($user->isAuthor() && $article->user_id !== $user->id) {
+        if ($user && $user->isAuthor() && $article->user_id !== $user->id) {
             abort(403, 'Akses Ditolak: Anda hanya dapat memperbarui artikel yang Anda tulis sendiri.');
         }
 
@@ -173,6 +178,11 @@ class ArticleAdminController extends Controller
             }
         }
 
+        $isSticky = $request->boolean('is_sticky');
+        if ($isSticky) {
+            Article::where('id', '!=', $article->id)->where('is_sticky', true)->update(['is_sticky' => false]);
+        }
+
         $article->update([
             'category_id' => $validated['category_id'],
             'title' => $validated['title'],
@@ -187,8 +197,8 @@ class ArticleAdminController extends Controller
             'media_badge' => $validated['media_badge'],
             'video_url' => $validated['video_url'],
             'video_id' => $videoId,
-            'is_sticky' => $request->has('is_sticky'),
-            'is_slider' => $request->has('is_slider'),
+            'is_sticky' => $isSticky,
+            'is_slider' => $request->boolean('is_slider'),
             'status' => $validated['status'],
             'published_at' => $validated['published_at'] ?? $article->published_at,
         ]);
@@ -200,12 +210,32 @@ class ArticleAdminController extends Controller
         return redirect()->route('admin.articles.index')->with('success', 'Berita berhasil diperbarui!');
     }
 
+    public function toggleSticky($id)
+    {
+        $article = Article::findOrFail($id);
+        $user = Auth::user();
+
+        if ($user && $user->isAuthor() && $article->user_id !== $user->id) {
+            abort(403, 'Akses Ditolak.');
+        }
+
+        if (!$article->is_sticky) {
+            // Unstick all other articles and stick this one
+            Article::where('is_sticky', true)->update(['is_sticky' => false]);
+            $article->update(['is_sticky' => true]);
+            return back()->with('success', "Artikel '{$article->title}' berhasil dijadikan Berita Utama (Sticky Post)!");
+        } else {
+            $article->update(['is_sticky' => false]);
+            return back()->with('success', "Tanda Sticky pada artikel '{$article->title}' berhasil dinonaktifkan.");
+        }
+    }
+
     public function destroy($id)
     {
         $article = Article::findOrFail($id);
         $user = Auth::user();
 
-        if ($user->isAuthor() && $article->user_id !== $user->id) {
+        if ($user && $user->isAuthor() && $article->user_id !== $user->id) {
             abort(403, 'Akses Ditolak: Anda hanya dapat menghapus artikel yang Anda tulis sendiri.');
         }
 

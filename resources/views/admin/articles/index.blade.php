@@ -72,13 +72,21 @@
                     @else
                         <span class="badge badge-danger">Draft</span>
                     @endif
-                </td>
                 <td>
-                    @if($art->is_sticky)
-                        <span class="badge badge-danger" title="Sticky Post"><i class="fas fa-thumbtack"></i> Sticky</span>
-                    @endif
+                    <form action="{{ route('admin.articles.toggle-sticky', $art->id) }}" method="POST" style="display: inline-block; margin-bottom: 2px;">
+                        @csrf
+                        @if($art->is_sticky)
+                            <button type="submit" class="badge badge-danger" style="border: none; cursor: pointer; padding: 4px 8px; font-weight: 700;" title="Klik untuk menonaktifkan Berita Utama">
+                                <i class="fas fa-thumbtack"></i> Sticky
+                            </button>
+                        @else
+                            <button type="submit" class="badge" style="border: 1px solid var(--admin-border); background-color: var(--admin-muted-bg, #f1f5f9); color: var(--admin-muted, #64748b); cursor: pointer; padding: 3px 6px; font-size: 11px;" title="Klik untuk menjadikan Berita Utama (Sticky Post)">
+                                <i class="fas fa-thumbtack"></i> Set
+                            </button>
+                        @endif
+                    </form>
                     @if($art->is_slider)
-                        <span class="badge badge-info" title="Hero Slider"><i class="fas fa-images"></i> Slider</span>
+                        <span class="badge badge-info" title="Tampil di Hero Slider"><i class="fas fa-images"></i> Slider</span>
                     @endif
                 </td>
                 <td>

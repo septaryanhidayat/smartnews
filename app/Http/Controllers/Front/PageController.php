@@ -98,7 +98,7 @@ class PageController extends Controller
                         <strong>Manajer SDM & Legalitas Perusahaan:</strong> Farida Rahmawati, S.Psi.</p>
 
                         <h3 style="color: var(--color-primary); border-bottom: 2px solid var(--color-primary); padding-bottom: 8px; margin-top: 24px;">3. Dewan Redaksi (Editorial Board)</h3>
-                        <p><strong>Pemimpin Redaksi / Penanggung Jawab:</strong> Bima Saputra, M.I.Kom.<br>
+                        <p><strong>Pemimpin Redaksi / Penanggung Jawab:</strong> Budi Santoso, M.I.Kom.<br>
                         <strong>Wakil Pemimpin Redaksi:</strong> Siti Nurhaliza, S.Sos., M.A.<br>
                         <strong>Redaktur Pelaksana (Managing Editor):</strong> Hendra Gunawan, S.I.Kom.<br>
                         <strong>Sekretaris Redaksi:</strong> Maya Puspitasari, S.Hum.</p>

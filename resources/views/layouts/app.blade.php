@@ -255,30 +255,37 @@
                             <a href="{{ route('category.show', $cat->slug) }}">{{ $cat->name }}</a>
                         </li>
                     @endforeach
-
-                    @if($moreCats->count() > 0)
-                    <li class="menu-item-has-children nav-dropdown">
-                        <a href="javascript:void(0)" class="nav-dropdown__toggle" aria-expanded="false">
-                            <span>Lainnya</span> <i class="fas fa-chevron-down nav-dropdown__arrow"></i>
-                        </a>
-                        <ul class="sub-menu nav-dropdown__menu">
-                            @foreach($moreCats as $mCat)
-                                <li class="{{ request()->is('kategori/' . $mCat->slug) ? 'current-menu-item' : '' }}">
-                                    <a href="{{ route('category.show', $mCat->slug) }}">
-                                        <i class="fas fa-angle-right" style="font-size: 11px; opacity: 0.7; margin-right: 4px;"></i> {{ $mCat->name }}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    @endif
                 </ul>
             </div>
 
-            <button class="main-nav__all-toggle" id="mobileNavToggle" aria-label="Buka semua kategori">
-                <i class="fas fa-th-large"></i>
-                <span>Semua Rubrik</span>
-            </button>
+            <div class="main-nav__actions">
+                @if($moreCats->count() > 0)
+                <div class="nav-dropdown" id="navDropdownMore">
+                    <button type="button" class="nav-dropdown__btn" id="navDropdownBtn" aria-haspopup="true" aria-expanded="false" title="Kategori Lainnya">
+                        <span>Lainnya</span>
+                        <i class="fas fa-chevron-down nav-dropdown__icon"></i>
+                    </button>
+                    <div class="nav-dropdown__popover" id="navDropdownPopover">
+                        <div class="nav-dropdown__popover-header">
+                            <span class="nav-dropdown__title"><i class="fas fa-layer-group"></i> Rubrik Lainnya</span>
+                        </div>
+                        <div class="nav-dropdown__grid">
+                            @foreach($moreCats as $mCat)
+                                <a href="{{ route('category.show', $mCat->slug) }}" class="nav-dropdown__item {{ request()->is('kategori/' . $mCat->slug) ? 'active' : '' }}">
+                                    <i class="fas fa-angle-right"></i>
+                                    <span>{{ $mCat->name }}</span>
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                @endif
+
+                <button class="main-nav__all-toggle" id="mobileNavToggle" aria-label="Buka semua kategori">
+                    <i class="fas fa-th-large"></i>
+                    <span>Semua Rubrik</span>
+                </button>
+            </div>
         </div>
     </nav>
 

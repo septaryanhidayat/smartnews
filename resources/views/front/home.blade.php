@@ -94,7 +94,7 @@
                             <div class="featured-article__meta">
                                 <span class="featured-article__author">
                                     <i class="fas fa-user-circle"></i>
-                                    <a href="#">{{ $featuredArticle->user->name ?? 'Bima Saputra' }}</a>
+                                    <a href="#">{{ $featuredArticle->user->name ?? 'Budi Santoso' }}</a>
                                 </span>
                                 <span class="featured-article__date">
                                     <i class="fas fa-calendar-alt"></i>

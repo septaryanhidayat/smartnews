@@ -58,6 +58,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     // Articles (Accessible by all roles; authors scoped to own articles)
+    Route::post('articles/{id}/toggle-sticky', [ArticleAdminController::class, 'toggleSticky'])->name('articles.toggle-sticky');
     Route::resource('articles', ArticleAdminController::class)->except(['show']);
 
     // Categories (Admin & Editor only)

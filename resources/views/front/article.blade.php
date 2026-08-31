@@ -181,13 +181,13 @@
                 <!-- 9. Author Box -->
                 <div class="author-box">
                     <div class="author-box__avatar">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80" alt="{{ $article->user->name }}">
+                        <img src="{{ asset('images/avatar-default.svg') }}" alt="{{ $article->user->name ?? 'Budi Santoso' }}">
                     </div>
                     <div class="author-box__body">
                         <div class="author-box__header">
                             <div>
                                 <span class="author-box__role">Jurnalis Senior</span>
-                                <h4 class="author-box__name">{{ $article->user->name ?? 'Bima Saputra' }}</h4>
+                                <h4 class="author-box__name">{{ $article->user->name ?? 'Budi Santoso' }}</h4>
                                 <span class="author-box__desk">Divisi Redaksi – SmartNews</span>
                             </div>
                         </div>

@@ -460,25 +460,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 7C. Nav Dropdown Touch Toggle
-    const navDropdowns = document.querySelectorAll('.nav-dropdown');
-    navDropdowns.forEach(dd => {
-        const toggle = dd.querySelector('.nav-dropdown__toggle');
-        const menu = dd.querySelector('.nav-dropdown__menu');
-        if (toggle && menu) {
-            toggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                const isShown = menu.style.display === 'block';
-                menu.style.display = isShown ? 'none' : 'block';
-            });
-        }
-    });
+    // 7C. Nav Dropdown Toggle (Lainnya)
+    const navDropdown = document.getElementById('navDropdownMore');
+    const navDropdownBtn = document.getElementById('navDropdownBtn');
 
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.nav-dropdown')) {
-            document.querySelectorAll('.nav-dropdown__menu').forEach(m => m.style.display = '');
-        }
-    });
+    if (navDropdown && navDropdownBtn) {
+        navDropdownBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const isActive = navDropdown.classList.toggle('active');
+            navDropdownBtn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        });
+
+        navDropdown.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        document.addEventListener('click', () => {
+            navDropdown.classList.remove('active');
+            navDropdownBtn.setAttribute('aria-expanded', 'false');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                navDropdown.classList.remove('active');
+                navDropdownBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 
     /* ==========================================================================
        8. AJAX COMMENT SUBMISSION

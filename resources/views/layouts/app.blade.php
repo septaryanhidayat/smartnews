@@ -57,14 +57,16 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome 6 Icons (Async Loaded for Zero Render-Blocking) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- FontAwesome 6 Icons (Async Non-Blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-    <!-- Swiper Carousel CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper Carousel CSS (Async Non-Blocking) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /></noscript>
 
     <!-- Theme Stylesheet (Cached with Static Versioning) -->
-    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.5">
+    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.6">
     @stack('styles')
 
     <!-- Early theme init: Default to light mode unless user explicitly selected dark -->
@@ -533,11 +535,27 @@
     <div id="google_translate_element" style="display: none;"></div>
     <script>
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'id',
-                includedLanguages: 'id,en',
-                autoDisplay: false
-            }, 'google_translate_element');
+            if (window.google && window.google.translate) {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'id',
+                    includedLanguages: 'id,en',
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
+        }
+
+        function loadGoogleTranslateScript() {
+            if (document.getElementById('gtScript')) return;
+            var script = document.createElement('script');
+            script.id = 'gtScript';
+            script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            script.defer = true;
+            document.body.appendChild(script);
+        }
+
+        // Only auto-load Google Translate if English cookie is active
+        if (document.cookie.indexOf('googtrans=/id/en') !== -1 || "{{ app()->getLocale() }}" === 'en') {
+            loadGoogleTranslateScript();
         }
 
         function switchLanguage(lang) {
@@ -563,10 +581,9 @@
             }
         }
     </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 
     <!-- Theme Custom Scripts -->
-    <script src="{{ asset('js/smartnews.js') }}?v=1.4" defer></script>
+    <script src="{{ asset('js/smartnews.js') }}?v=1.6" defer></script>
     @stack('scripts')
 </body>
 </html>

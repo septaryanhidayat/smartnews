@@ -24,7 +24,7 @@
                             <article class="slide-card">
                                 <div class="slide-card__img-wrap">
                                     <a href="{{ route('article.show', $slide->slug) }}" aria-label="{{ $slide->title }}">
-                                        <img class="slide-card__img" src="{{ $slide->image_url }}" alt="{{ $slide->title }}" {{ $loop->first ? 'fetchpriority="high"' : 'loading="lazy"' }} decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
+                                        <img class="slide-card__img" src="{{ $slide->image_url }}" alt="{{ $slide->title }}" width="500" height="300" {{ $loop->first ? 'fetchpriority="high"' : 'loading="lazy"' }} decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                                     </a>
                                     @if($slide->media_type === 'video')
                                         <div class="media-badge media-badge--video">
@@ -78,7 +78,7 @@
                     <article class="featured-article">
                         <div class="featured-article__img-wrap">
                             <a href="{{ route('article.show', $featuredArticle->slug) }}" aria-label="{{ $featuredArticle->title }}">
-                                <img class="featured-article__img" src="{{ $featuredArticle->image_url }}" alt="{{ $featuredArticle->title }}" loading="lazy" decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
+                                <img class="featured-article__img" src="{{ $featuredArticle->image_url }}" alt="{{ $featuredArticle->title }}" width="800" height="450" loading="lazy" decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
                             </a>
                         </div>
                         <div class="featured-article__body">

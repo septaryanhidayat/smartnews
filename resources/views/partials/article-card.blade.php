@@ -1,7 +1,7 @@
 <article class="article-card">
     <div class="article-card__img-wrap">
         <a href="{{ route('article.show', $article->slug) }}" aria-label="{{ $article->title }}">
-            <img class="article-card__img" src="{{ $article->image_url }}" alt="{{ $article->title }}" loading="lazy" decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
+            <img class="article-card__img" src="{{ $article->image_url }}" alt="{{ $article->title }}" width="400" height="250" loading="lazy" decoding="async" onerror="this.src='{{ asset('images/default-news.webp') }}'">
         </a>
         <a class="article-card__cat" href="{{ route('category.show', $article->category->slug) }}">
             {{ $article->category->name }}

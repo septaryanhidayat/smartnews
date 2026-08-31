@@ -22,8 +22,8 @@
   --bg-hover: #f1f5f9;
   
   --text-main: #0f172a;
-  --text-muted: #475569;
-  --text-light: #64748b;
+  --text-muted: #334155;
+  --text-light: #475569;
   --text-inverse: #ffffff;
   
   --border-color: #e2e8f0;
@@ -52,8 +52,8 @@ html.dark-mode {
   --bg-hover: #1e293b;
   
   --text-main: #f8fafc;
-  --text-muted: #cbd5e1;
-  --text-light: #94a3b8;
+  --text-muted: #e2e8f0;
+  --text-light: #cbd5e1;
   
   --border-color: #1e293b;
   --border-light: #1e293b;
@@ -117,6 +117,11 @@ button, input, textarea, select {
   border: none;
   outline: none;
   background: none;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .container {

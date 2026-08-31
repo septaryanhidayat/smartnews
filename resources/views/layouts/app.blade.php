@@ -95,7 +95,7 @@
                 </a>
 
                 <!-- Desktop Menu Toggle (hidden on mobile) -->
-                <button class="menu-toggle d-desktop-only" id="menuToggle" aria-label="Buka Menu">
+                <button class="menu-toggle d-desktop-only" id="menuToggle" type="button" aria-label="Buka Menu">
                     <span class="menu-toggle__circle">
                         <i class="fas fa-bars"></i>
                     </span>
@@ -135,12 +135,12 @@
                 </div>
 
                 <!-- Mobile Search Toggle Button (visible on mobile) -->
-                <button class="btn-mobile-search" id="mobileSearchToggle" aria-label="{{ __('messages.search') }}" title="{{ __('messages.search') }}">
+                <button class="btn-mobile-search" id="mobileSearchToggle" type="button" aria-label="{{ __('messages.search') }}" title="{{ __('messages.search') }}">
                     <i class="fas fa-search" aria-hidden="true"></i>
                 </button>
 
                 <!-- Dark Mode Toggle Button -->
-                <button class="btn-dark-mode" id="darkModeBtn" aria-label="{{ __('messages.dark_mode') }}" title="{{ __('messages.dark_mode') }}">
+                <button class="btn-dark-mode" id="darkModeBtn" type="button" aria-label="{{ __('messages.dark_mode') }}" title="{{ __('messages.dark_mode') }}">
                     <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
 
@@ -158,7 +158,7 @@
                 @endauth
 
                 <!-- Mobile Menu Hamburger Button (visible on mobile) -->
-                <button class="menu-toggle-mobile" id="mobileMenuToggle" aria-label="Menu">
+                <button class="menu-toggle-mobile" id="mobileMenuToggle" type="button" aria-label="Menu">
                     <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
             </div>
@@ -197,7 +197,7 @@
             <a href="{{ route('home') }}" class="brand-logo-img" aria-label="{{ setting('site_name', 'SmartNews') }}">
                 <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-img" style="height: 38px;">
             </a>
-            <button class="sidebar-drawer__close" id="sidebarClose" aria-label="Tutup menu">
+            <button class="sidebar-drawer__close" id="sidebarClose" type="button" aria-label="Tutup menu">
                 <i class="fas fa-times" aria-hidden="true"></i>
             </button>
         </div>
@@ -228,7 +228,7 @@
             </form>
         </div>
 
-        <nav class="sidebar-drawer__nav">
+        <nav class="sidebar-drawer__nav" aria-label="Navigasi Menu Drawer">
             <ul>
                 <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
                     <a href="{{ route('home') }}"><i class="fas fa-home" style="margin-right: 8px; width: 16px;"></i> {{ __('messages.home') }}</a>
@@ -259,7 +259,7 @@
 
         <div style="padding: 0 20px 16px; display: flex; align-items: center; justify-content: space-between;">
             <span style="font-size: 13px; font-weight: 600;">{{ __('messages.dark_mode') }}:</span>
-            <button class="btn-dark-mode" id="drawerDarkModeBtn" aria-label="Toggle tema mode gelap">
+            <button class="btn-dark-mode" id="drawerDarkModeBtn" type="button" aria-label="Toggle tema mode gelap">
                 <i class="fas fa-moon" aria-hidden="true"></i>
             </button>
         </div>
@@ -343,8 +343,8 @@
                 </div>
                 @endif
 
-                <button class="main-nav__all-toggle" id="mobileNavToggle" aria-label="Buka semua kategori">
-                    <i class="fas fa-th-large"></i>
+                <button class="main-nav__all-toggle" id="mobileNavToggle" type="button" aria-label="Buka semua kategori">
+                    <i class="fas fa-th-large" aria-hidden="true"></i>
                     <span class="d-desktop-only">{{ __('messages.all_rubrics') }}</span>
                     <span class="d-mobile-only">{{ __('messages.all_rubrics') }}</span>
                 </button>
@@ -373,7 +373,7 @@
                         </a>
                     @endforeach
                     @foreach($breakingNews as $bNews)
-                        <a href="{{ route('article.show', $bNews->slug) }}" class="breaking-news__item" aria-hidden="true">
+                        <a href="{{ route('article.show', $bNews->slug) }}" class="breaking-news__item" aria-hidden="true" tabindex="-1">
                             <span class="breaking-news__category">{{ $bNews->category->name }}</span>
                             <span class="breaking-news__title">{{ $bNews->title }}</span>
                             <span class="breaking-news__time"><i class="far fa-clock"></i> {{ $bNews->published_at ? $bNews->published_at->diffForHumans() : '' }}</span>
@@ -395,7 +395,7 @@
             </span>
             <div class="trending-tags__scroll">
                 @foreach($trendingTags as $tag)
-                    <a href="{{ route('tag.show', $tag->slug) }}" class="trending-tags__item">
+                    <a href="{{ route('tag.show', $tag->slug) }}" class="trending-tags__item" aria-label="Topik trending {{ $tag->name }}">
                         #{{ $tag->name }}
                     </a>
                 @endforeach
@@ -448,8 +448,8 @@
 
                     <!-- Col 2: About Links -->
                     <div class="footer-col">
-                        <h4 class="footer-col__title">Tentang Kami</h4>
-                        <nav class="footer-links">
+                        <h3 class="footer-col__title">Tentang Kami</h3>
+                        <nav class="footer-links" aria-label="Tautan Tentang Kami">
                             <ul>
                                 <li><a href="{{ route('page.show', 'tentang-kami') }}">Tentang Kami</a></li>
                                 <li><a href="{{ route('page.show', 'redaksi') }}">Susunan Redaksi</a></li>
@@ -464,8 +464,8 @@
 
                     <!-- Col 3: Categories -->
                     <div class="footer-col">
-                        <h4 class="footer-col__title">Kategori Berita</h4>
-                        <nav class="footer-links">
+                        <h3 class="footer-col__title">Kategori Berita</h3>
+                        <nav class="footer-links" aria-label="Tautan Kategori Berita">
                             <ul>
                                 @foreach(\App\Models\Category::orderBy('order', 'asc')->take(6)->get() as $fcat)
                                     <li><a href="{{ route('category.show', $fcat->slug) }}">{{ $fcat->name }}</a></li>
@@ -476,8 +476,8 @@
 
                     <!-- Col 4: Badges & Info -->
                     <div class="footer-col">
-                        <h4 class="footer-col__title">Informasi & Verifikasi</h4>
-                        <nav class="footer-links">
+                        <h3 class="footer-col__title">Informasi & Verifikasi</h3>
+                        <nav class="footer-links" aria-label="Tautan Informasi dan Kebijakan">
                             <ul>
                                 <li><a href="{{ route('page.show', 'privacy-policy') }}">Kebijakan Privasi (Privacy Policy)</a></li>
                                 <li><a href="{{ route('page.show', 'terms') }}">Syarat & Ketentuan (Terms)</a></li>
@@ -505,8 +505,8 @@
     </footer>
 
     <!-- BACK TO TOP BUTTON -->
-    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
-        <i class="fas fa-chevron-up"></i>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Kembali ke atas">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
     <!-- MODAL COPY LINK TOAST -->

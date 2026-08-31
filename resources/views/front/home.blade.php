@@ -40,11 +40,11 @@
                                     <a class="slide-card__cat" href="{{ route('category.show', $slide->category->slug) }}">
                                         {{ $slide->category->name }}
                                     </a>
-                                    <h3 class="slide-card__title">
+                                    <h2 class="slide-card__title">
                                         <a href="{{ route('article.show', $slide->slug) }}">
                                             {{ $slide->title }}
                                         </a>
-                                    </h3>
+                                    </h2>
                                     <span class="slide-card__time">
                                         <i class="fas fa-clock"></i> {{ $slide->published_at ? $slide->published_at->format('d F Y') : $slide->created_at->format('d F Y') }}
                                     </span>
@@ -58,7 +58,7 @@
                     <button class="swiper-button-prev hero-swiper__prev" type="button" aria-label="Slide sebelumnya"></button>
                     <button class="swiper-button-next hero-swiper__next" type="button" aria-label="Slide berikutnya"></button>
                     <!-- Swiper Pagination -->
-                    <div class="swiper-pagination hero-swiper__pagination"></div>
+                    <div class="swiper-pagination hero-swiper__pagination" aria-label="Navigasi slide"></div>
                 </div>
             </div>
         </div>
@@ -95,8 +95,8 @@
                             </p>
                             <div class="featured-article__meta">
                                 <span class="featured-article__author">
-                                    <i class="fas fa-user-circle"></i>
-                                    <a href="#">{{ $featuredArticle->user->name ?? 'Budi Santoso' }}</a>
+                                    <i class="fas fa-user-circle" aria-hidden="true"></i>
+                                    <span>{{ $featuredArticle->user->name ?? 'Budi Santoso' }}</span>
                                 </span>
                                 <span class="featured-article__date">
                                     <i class="fas fa-calendar-alt"></i>
@@ -159,8 +159,8 @@
                         {{-- Default: Manual Button Click --}}
                         @if($latestArticles->hasMorePages())
                         <div class="load-more-wrap">
-                            <button type="button" class="btn-load-more" id="btnLoadMore" data-page="1">
-                                <i class="fas fa-sync-alt"></i> Muat Lainnya
+                            <button type="button" class="btn-load-more" id="btnLoadMore" data-page="1" aria-label="Muat berita lainnya">
+                                <i class="fas fa-sync-alt" aria-hidden="true"></i> Muat Lainnya
                             </button>
                         </div>
                         @endif

@@ -75,7 +75,7 @@
         </h3>
         <div class="widget-tags__cloud">
             @foreach($popularTags as $tag)
-            <a href="{{ route('tag.show', $tag->slug) }}" class="widget-tag">
+            <a href="{{ route('tag.show', $tag->slug) }}" class="widget-tag" aria-label="Topik {{ $tag->name }}">
                 #{{ $tag->name }}
             </a>
             @endforeach

@@ -449,47 +449,62 @@ html.dark-mode .btn-login {
 /* ==========================================================================
    2. SITE HEADER & LOGO BRANDING
    ========================================================================== */
+.site-branding,
 .site-header {
   background-color: var(--bg-header);
-  padding: 20px 0;
+  padding: 14px 0;
   border-bottom: 1px solid var(--border-color);
   transition: var(--transition);
 }
 
+.site-branding__inner,
 .site-header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
+.site-branding__logo,
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-branding__logo .site-logo-main,
 .site-header__logo .site-logo-main {
-  height: 48px;
+  height: 44px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
   display: block;
   transition: transform 0.3s ease;
 }
 
+.site-branding__logo:hover .site-logo-main,
 .site-header__logo:hover .site-logo-main {
   transform: scale(1.02);
 }
 
 .header-banner-ad {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   flex-shrink: 0;
   white-space: nowrap;
-  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-  color: #fff;
-  padding: 10px 20px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: #ffffff;
+  padding: 8px 18px;
   border-radius: var(--radius-md);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-  animation: pulseSubtle 3s infinite ease-in-out;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
-@keyframes pulseSubtle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.95; transform: scale(0.995); }
+html.dark-mode .header-banner-ad {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #f1f5f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
@@ -1020,6 +1035,7 @@ html.dark-mode .trending-tags__item:hover {
    ========================================================================== */
 .hero-slider-section {
   margin-bottom: 30px;
+  min-height: 200px;
 }
 
 .hero-slider-section__overflow {
@@ -1031,6 +1047,7 @@ html.dark-mode .trending-tags__item:hover {
   overflow: hidden;
   border-radius: var(--radius-lg);
   padding-bottom: 4px;
+  min-height: 195px;
 }
 
 .hero-swiper .swiper-slide {

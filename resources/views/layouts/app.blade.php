@@ -47,25 +47,16 @@
     <link rel="apple-touch-icon" href="{{ site_favicon() }}">
 
     <!-- DNS Prefetch & Preconnect for High Performance -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
-    <!-- Google Fonts (Async Non-Blocking with Preload) -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome 6 Icons (Async Non-Blocking) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Swiper Carousel CSS (Async Non-Blocking) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /></noscript>
+    <!-- Swiper Carousel CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <!-- LCP Hero Image Preload -->
     @yield('preload')
@@ -74,7 +65,7 @@
     @endif
 
     <!-- Theme Stylesheet (Cached with Static Versioning) -->
-    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.8">
+    <link rel="stylesheet" href="{{ asset('css/smartnews.css') }}?v=1.9">
     @stack('styles')
 
     <!-- Early theme init: Default to light mode unless user explicitly selected dark -->
@@ -104,7 +95,7 @@
             <div class="top-nav__left">
                 <!-- Mobile Top-Left Brand Logo (visible on mobile <= 768px) -->
                 <a href="{{ route('home') }}" class="top-nav__brand-mobile" aria-label="{{ setting('site_name', 'SmartNews') }}">
-                    <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-main site-logo-mobile-top">
+                    <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-main site-logo-mobile-top" width="140" height="36" style="height: 36px; width: auto;">
                 </a>
 
                 <!-- Desktop Menu Toggle (hidden on mobile) -->
@@ -208,7 +199,7 @@
     <aside class="sidebar-drawer" id="sidebarDrawer" role="dialog" aria-label="Menu Navigasi">
         <div class="sidebar-drawer__header">
             <a href="{{ route('home') }}" class="brand-logo-img" aria-label="{{ setting('site_name', 'SmartNews') }}">
-                <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-img" style="height: 38px;">
+                <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-img" width="150" height="38" style="height: 38px; width: auto;">
             </a>
             <button class="sidebar-drawer__close" id="sidebarClose" type="button" aria-label="Tutup menu">
                 <i class="fas fa-times" aria-hidden="true"></i>
@@ -295,7 +286,7 @@
         <div class="container site-branding__inner">
             <div class="site-branding__logo">
                 <a href="{{ route('home') }}" class="custom-logo-link" rel="home" aria-label="{{ setting('site_name', 'SmartNews') }}">
-                    <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-main" style="height: 48px;">
+                    <img src="{{ site_logo() }}" data-logo-light="{{ site_logo() }}" data-logo-dark="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" class="site-logo-main" width="180" height="44" style="height: 44px; width: auto;">
                 </a>
             </div>
 
@@ -431,7 +422,7 @@
                     <!-- Col 1: Brand & Contact -->
                     <div class="footer-col footer-col--brand">
                         <a href="{{ route('home') }}" class="footer-logo" aria-label="{{ setting('site_name', 'SmartNews') }}">
-                            <img src="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" style="height: 44px; margin-bottom: 8px;">
+                            <img src="{{ site_logo_dark() }}" alt="{{ setting('site_name', 'SmartNews') }} Logo" width="180" height="44" style="height: 44px; width: auto; margin-bottom: 8px;">
                         </a>
                         <p class="footer-brand__desc">
                             {{ setting('site_description', 'Portal berita Indonesia terpercaya dan cerdas, menyajikan informasi terkini, akurat, dan berimbang untuk seluruh lapisan masyarakat.') }}

@@ -12,6 +12,8 @@ use App\Http\Controllers\Front\ArticleController;
 use App\Http\Controllers\Front\CategoryController;
 use App\Http\Controllers\Front\CommentController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\LandingController;
+use App\Http\Controllers\Front\LocaleController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\Front\SearchController;
 use App\Http\Controllers\Front\TagController;
@@ -22,6 +24,12 @@ use Illuminate\Support\Facades\Route;
 | Web Routes - SmartNews Portal
 |--------------------------------------------------------------------------
 */
+
+// Sales Landing Page (Digital Product Offer)
+Route::get('/penjualan', [LandingController::class, 'index'])->name('landing');
+Route::get('/beli', fn() => redirect()->route('landing'))->name('landing.buy');
+Route::get('/landing', fn() => redirect()->route('landing'));
+Route::get('/promo', fn() => redirect()->route('landing'));
 
 // Front-End Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');

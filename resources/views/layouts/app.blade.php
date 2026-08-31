@@ -140,7 +140,9 @@
                         <i class="fas fa-tachometer-alt"></i> <span class="btn-text">Admin</span>
                     </a>
                 @else
-                    <a href="{{ route('register') }}" class="btn-order d-desktop-only">{{ __('messages.register') }}</a>
+                    <a href="{{ route('landing') }}" class="btn-order d-desktop-only" style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: #ffffff !important; font-weight: 700; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);" title="Pesan Website Portal Berita Siap Pakai Rp 3 Juta">
+                        <i class="fas fa-shopping-cart" style="font-size: 11px;"></i> <span>Pesan Web</span>
+                    </a>
                     <a href="{{ route('login') }}" class="btn-login d-desktop-only" title="{{ __('messages.login') }}">
                         <i class="fas fa-user-circle"></i> <span class="btn-text">{{ __('messages.login') }}</span>
                     </a>
@@ -200,8 +202,8 @@
                     <a href="{{ route('login') }}" class="btn-login" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 8px; border-radius: 8px; font-weight: 600; text-decoration: none;">
                         <i class="fas fa-sign-in-alt"></i> &nbsp;{{ __('messages.login') }}
                     </a>
-                    <a href="{{ route('register') }}" class="btn-order" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 8px; border-radius: 8px; font-weight: 600; text-decoration: none;">
-                        {{ __('messages.register') }}
+                    <a href="{{ route('landing') }}" class="btn-order" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px; border-radius: 8px; font-weight: 700; text-decoration: none; background: #dc2626; color: #fff;">
+                        <i class="fas fa-shopping-cart"></i> Pesan Web
                     </a>
                 </div>
             @endauth
@@ -443,6 +445,7 @@
                                 <li><a href="{{ route('page.show', 'kode-etik') }}">Kode Etik & Disclaimer</a></li>
                                 <li><a href="{{ route('page.show', 'kontak') }}">Hubungi Kami</a></li>
                                 <li><a href="{{ route('page.show', 'pasang-iklan') }}">Pasang Iklan</a></li>
+                                <li><a href="{{ route('landing') }}" style="color: #f87171 !important; font-weight: 700;"><i class="fas fa-fire"></i> Beli Source Code Web (3 Juta)</a></li>
                             </ul>
                         </nav>
                     </div>

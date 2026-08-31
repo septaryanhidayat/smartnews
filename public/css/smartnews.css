@@ -723,6 +723,38 @@ html.dark-mode .nav-dropdown__item:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.menu-item-mobile-only {
+  display: none !important;
+}
+
+.d-mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .menu-item-mobile-only {
+    display: inline-flex !important;
+  }
+  .d-desktop-only {
+    display: none !important;
+  }
+  .d-mobile-only {
+    display: inline !important;
+  }
+  .main-nav__actions {
+    gap: 0;
+  }
+  .main-nav__all-toggle {
+    padding: 6px 10px;
+    font-size: 11.5px;
+    gap: 4px;
+  }
+  .main-nav ul.menu > li > a {
+    padding: 10px 11px;
+    font-size: 13px;
+  }
+}
+
 /* ==========================================================================
    3c. BREAKING NEWS MARQUEE BAR
    ========================================================================== */
@@ -2038,6 +2070,64 @@ html.dark-mode .trending-tags__item:hover {
 }
 
 /* ==========================================================================
+   ARTICLE ENGAGEMENT BAR (POST VIEWS ON LEFT & SOCIAL SHARE ON RIGHT)
+   ========================================================================== */
+.article-engagement-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 24px 0 20px 0;
+  padding: 12px 18px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+html.dark-mode .article-engagement-bar {
+  background-color: var(--bg-card, #151d2e);
+  border-color: #1e293b;
+}
+
+.article-views-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-muted, #64748b);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.article-views-badge i {
+  color: var(--color-primary, #1a56db);
+  font-size: 15px;
+}
+
+.article-views-badge strong {
+  color: var(--text-main, #0f172a);
+  font-weight: 700;
+}
+
+html.dark-mode .article-views-badge strong {
+  color: #f8fafc;
+}
+
+.article-engagement-bar .article-share-container {
+  margin: 0;
+  width: auto;
+}
+
+.article-engagement-bar .article-share-bar {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* ==========================================================================
    RIGHT-ALIGNED PRECISION ARTICLE SHARE BAR (SLEEK & NON-STACKED)
    ========================================================================== */
 .article-share-container {
@@ -2138,23 +2228,20 @@ html.dark-mode .trending-tags__item:hover {
   border-color: var(--color-primary, #1a56db);
 }
 
-@media (max-width: 576px) {
-  .article-share-container {
-    justify-content: flex-end;
+@media (max-width: 640px) {
+  .article-engagement-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
   }
-  .article-share-bar {
-    max-width: 100%;
-    padding: 6px 10px;
-    gap: 6px;
+  .article-engagement-bar .article-share-container {
+    width: 100%;
+    justify-content: flex-start;
   }
-  .article-share-bar__icons {
-    gap: 4px;
-    flex-wrap: wrap;
-  }
-  .share-btn {
-    width: 26px;
-    height: 26px;
-    font-size: 11px;
+  .article-engagement-bar .article-share-bar {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 

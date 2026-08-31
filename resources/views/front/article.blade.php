@@ -178,6 +178,16 @@
                 </div>
                 @endif
 
+                <!-- 8b. Article Engagement Bar (Views Count on Left & Social Share on Right) -->
+                <div class="article-engagement-bar">
+                    <div class="article-views-badge">
+                        <i class="fas fa-eye"></i>
+                        <span><strong>{{ number_format($article->views_count ?? 0) }}</strong> kali dibaca</span>
+                    </div>
+
+                    @include('partials.share-bar', ['title' => $article->title, 'class' => 'share-bar--engagement'])
+                </div>
+
                 <!-- 9. Author Box -->
                 <div class="author-box">
                     <div class="author-box__avatar">
@@ -196,9 +206,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- 10. Bottom Share Bar -->
-                @include('partials.share-bar', ['title' => $article->title, 'class' => 'share-bar--bottom'])
 
                 <!-- 11. Previous & Next Post Navigation -->
                 <nav class="article-nav">

@@ -255,12 +255,18 @@
                             <a href="{{ route('category.show', $cat->slug) }}">{{ $cat->name }}</a>
                         </li>
                     @endforeach
+
+                    @foreach($moreCats as $mCat)
+                        <li class="menu-item-mobile-only {{ request()->is('kategori/' . $mCat->slug) ? 'current-menu-item' : '' }}">
+                            <a href="{{ route('category.show', $mCat->slug) }}">{{ $mCat->name }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
 
             <div class="main-nav__actions">
                 @if($moreCats->count() > 0)
-                <div class="nav-dropdown" id="navDropdownMore">
+                <div class="nav-dropdown d-desktop-only" id="navDropdownMore">
                     <button type="button" class="nav-dropdown__btn" id="navDropdownBtn" aria-haspopup="true" aria-expanded="false" title="Kategori Lainnya">
                         <span>Lainnya</span>
                         <i class="fas fa-chevron-down nav-dropdown__icon"></i>
@@ -283,7 +289,8 @@
 
                 <button class="main-nav__all-toggle" id="mobileNavToggle" aria-label="Buka semua kategori">
                     <i class="fas fa-th-large"></i>
-                    <span>Semua Rubrik</span>
+                    <span class="d-desktop-only">Semua Rubrik</span>
+                    <span class="d-mobile-only">Semua</span>
                 </button>
             </div>
         </div>

@@ -16,6 +16,7 @@ class Article extends Model
         'title',
         'slug',
         'excerpt',
+        'ai_summary',
         'content',
         'image',
         'image_caption',
@@ -83,6 +84,59 @@ class Article extends Model
         $words = str_word_count(strip_tags($this->content));
         $minutes = ceil($words / 200);
         return max(1, $minutes);
+    }
+
+    /**
+     * AI Summary Bullet Points
+     */
+    public function getAiSummaryPointsAttribute()
+    {
+        // 1. If explicit ai_summary is provided in database
+        if (!empty($this->ai_summary)) {
+            $lines = preg_split('/\r\n|\r|\n/', trim($this->ai_summary));
+            $points = [];
+            foreach ($lines as $line) {
+                $line = trim(ltrim(trim($line), '•-*0123456789.'));
+                if (!empty($line)) {
+                    $points[] = $line;
+                }
+            }
+            if (count($points) > 0) {
+                return $points;
+            }
+        }
+
+        // 2. Intelligent extraction from article content and excerpt
+        $points = [];
+
+        // Parse HTML paragraphs
+        $text = strip_tags(str_replace(['</p>', '</blockquote>', '</li>', '<br>', '<br/>'], "\n", $this->content));
+        $paragraphs = array_filter(array_map('trim', explode("\n", $text)));
+
+        foreach ($paragraphs as $para) {
+            $sentences = preg_split('/(?<=[.!?])\s+/', $para, -1, PREG_SPLIT_NO_EMPTY);
+            foreach ($sentences as $s) {
+                $s = stripslashes(trim($s));
+                $s = trim($s, " \t\n\r\0\x0B\"'“”\\/`");
+                if (mb_strlen($s) >= 30 && mb_strlen($s) <= 240) {
+                    if (!in_array($s, $points)) {
+                        $points[] = $s;
+                        if (count($points) >= 3) {
+                            break 2;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (count($points) < 2 && !empty($this->excerpt)) {
+            $points[] = stripslashes(trim($this->excerpt, " \t\n\r\0\x0B\"'“”\\/`"));
+        }
+
+        return count($points) > 0 ? $points : [
+            $this->title,
+            'Simak ulasan mendalam dan fakta selengkapnya pada liputan artikel berikut ini.'
+        ];
     }
 
     public function getImageUrlAttribute()

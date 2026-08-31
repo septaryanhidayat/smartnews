@@ -31,6 +31,9 @@
     </section>
     @endif
 
+    <!-- OPTIONAL SIDEBAR SPONSOR BANNER AD -->
+    {!! ad_render('sidebar', 'ad-slot--sidebar') !!}
+
     <!-- 2. Widget: Berita Terbaru -->
     @if(isset($sidebarLatest) && $sidebarLatest->count() > 0)
     <section class="sidebar-widget widget-recent">

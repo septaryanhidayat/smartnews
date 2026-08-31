@@ -141,9 +141,15 @@
                     </div>
                 </div>
 
+                <!-- AI Summary Overview Box -->
+                @include('partials.ai-summary')
+
+                <!-- OPTIONAL TOP OF ARTICLE AD BANNER -->
+                {!! ad_render('article_top') !!}
+
                 <!-- 7. Article Body -->
                 <div class="article-body" id="articleBody">
-                    {!! $article->content !!}
+                    {!! inject_in_content_ad($article->content, 'article_middle') !!}
 
                     <!-- Inline Related Article ("Baca Juga") -->
                     @if(isset($inlineRelated))
@@ -159,6 +165,9 @@
                     </div>
                     @endif
                 </div>
+
+                <!-- OPTIONAL BOTTOM OF ARTICLE AD BANNER -->
+                {!! ad_render('article_bottom') !!}
 
                 <!-- 8. Tags Cloud -->
                 @if($article->tags->count() > 0)

@@ -77,6 +77,10 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     // Website & SEO Settings
     Route::get('/settings', [App\Http\Controllers\Admin\SettingAdminController::class, 'index'])->name('settings.index');
     Route::put('/settings', [App\Http\Controllers\Admin\SettingAdminController::class, 'update'])->name('settings.update');
+
+    // Ads Management (Manajemen Iklan)
+    Route::get('/ads', [App\Http\Controllers\Admin\AdAdminController::class, 'index'])->name('ads.index');
+    Route::put('/ads', [App\Http\Controllers\Admin\AdAdminController::class, 'update'])->name('ads.update');
 });
 
 // Storage Asset Delivery Route (Ensures 100% reliable image delivery on all web servers)

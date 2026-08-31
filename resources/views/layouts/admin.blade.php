@@ -282,6 +282,74 @@
             font-weight: 600;
         }
 
+        /* Custom Modern Pagination */
+        .custom-pagination {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--admin-border);
+        }
+        .custom-pagination__summary {
+            font-size: 13px;
+            color: var(--admin-muted);
+        }
+        .custom-pagination__list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 6px;
+            margin: 0;
+            padding: 0;
+        }
+        .custom-pagination__item {
+            display: inline-flex;
+        }
+        .custom-pagination__link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 34px;
+            height: 34px;
+            padding: 0 10px;
+            border-radius: 6px;
+            border: 1px solid var(--admin-border);
+            background-color: #ffffff;
+            color: var(--admin-text);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .custom-pagination__link:hover:not(.disabled) {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+            color: var(--admin-primary);
+        }
+        .custom-pagination__item.active .custom-pagination__link {
+            background-color: var(--admin-primary);
+            border-color: var(--admin-primary);
+            color: #ffffff;
+            box-shadow: 0 2px 6px rgba(26, 86, 219, 0.25);
+        }
+        .custom-pagination__item.disabled .custom-pagination__link {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background-color: #f8fafc;
+        }
+        /* Strict SVG size cap to avoid giant unstyled icons */
+        nav[role="navigation"] svg,
+        .custom-pagination svg {
+            max-width: 14px !important;
+            max-height: 14px !important;
+            width: 14px !important;
+            height: 14px !important;
+            display: inline-block !important;
+        }
+
         /* Responsive Breakpoints */
         @media (max-width: 992px) {
             .admin-sidebar {
@@ -374,12 +442,15 @@
             <li class="{{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
                 <a href="{{ route('admin.settings.index') }}"><i class="fas fa-cog"></i> Pengaturan Website & SEO</a>
             </li>
+            <li class="{{ request()->routeIs('admin.ads.*') ? 'active' : '' }}">
+                <a href="{{ route('admin.ads.index') }}"><i class="fas fa-ad"></i> Manajemen Iklan (Ads)</a>
+            </li>
             <li style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
                 <a href="{{ route('home') }}" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat Website</a>
             </li>
         </ul>
         <div style="padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: #64748b;">
-            Logged as: <a href="{{ route('admin.profile.index') }}" style="color: #60a5fa; font-weight: 700; text-decoration: underline;">{{ Auth::user()->name }}</a>
+            Logged as: <a href="{{ route('admin.profile.index') }}" style="color: #60a5fa; font-weight: 700; text-decoration: underline;">{{ Auth::user()->name ?? 'Administrator' }}</a>
         </div>
     </aside>
 
@@ -396,7 +467,7 @@
             </div>
             <div class="admin-topbar__right">
                 <a href="{{ route('admin.profile.index') }}" class="btn btn-sm" style="background-color: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;" title="Profil Admin">
-                    <i class="fas fa-user-shield"></i> <span class="admin-topbar__btn-label">{{ Auth::user()->name }}</span>
+                    <i class="fas fa-user-shield"></i> <span class="admin-topbar__btn-label">{{ Auth::user()->name ?? 'Admin' }}</span>
                 </a>
                 <a href="{{ route('home') }}" class="btn btn-sm btn-primary" target="_blank" title="Lihat Portal Publik">
                     <i class="fas fa-globe"></i> <span class="admin-topbar__btn-label">Portal</span>

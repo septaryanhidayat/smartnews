@@ -19,20 +19,34 @@ class HomeController extends Controller
             ->get();
 
         // 2. Hero Slider Articles
+        $heroSliderCount = (int) setting('hero_slider_count', 3);
+        if ($heroSliderCount < 1) {
+            $heroSliderCount = 3;
+        }
+
+        // Fetch enough articles to keep carousel sliding smoothly
+        $sliderFetchLimit = max(10, $heroSliderCount * 2);
+
         $sliderArticles = Article::with(['category', 'user'])
             ->published()
             ->where('is_slider', true)
             ->orderBy('published_at', 'desc')
-            ->take(6)
+            ->take($sliderFetchLimit)
             ->get();
 
-        // If not enough slider articles, fallback to latest articles
-        if ($sliderArticles->count() < 3) {
-            $sliderArticles = Article::with(['category', 'user'])
+        // If fewer than sliderFetchLimit articles have is_slider, supplement with latest published articles
+        if ($sliderArticles->count() < $sliderFetchLimit) {
+            $excludeIds = $sliderArticles->pluck('id')->toArray();
+            $needed = $sliderFetchLimit - $sliderArticles->count();
+
+            $additionalArticles = Article::with(['category', 'user'])
                 ->published()
+                ->whereNotIn('id', $excludeIds)
                 ->orderBy('published_at', 'desc')
-                ->take(6)
+                ->take($needed)
                 ->get();
+
+            $sliderArticles = $sliderArticles->merge($additionalArticles);
         }
 
         // 3. Featured / Sticky Article

@@ -5,12 +5,17 @@
 @section('content')
 <main id="mainContent">
 
+    @php
+        $heroSliderCols = (int) setting('hero_slider_count', 3);
+        if ($heroSliderCols < 1) $heroSliderCols = 3;
+    @endphp
+
     <!-- 1. HERO SLIDER SECTION (SWIPER CAROUSEL) -->
     @if(isset($sliderArticles) && $sliderArticles->count() > 0)
     <section class="hero-slider-section">
         <div class="container">
             <div class="hero-slider-section__overflow">
-                <div class="swiper hero-swiper" id="heroSwiper">
+                <div class="swiper hero-swiper hero-swiper--cols-{{ min($heroSliderCols, 8) }}" id="heroSwiper" data-per-view="{{ $heroSliderCols }}">
                     <div class="swiper-wrapper">
                         @foreach($sliderArticles as $slide)
                         <div class="swiper-slide">

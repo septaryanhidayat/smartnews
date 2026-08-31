@@ -30,6 +30,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        \Illuminate\Pagination\Paginator::defaultView('partials.pagination');
+        \Illuminate\Pagination\Paginator::defaultSimpleView('partials.pagination');
+
         \Illuminate\Support\Facades\View::composer('layouts.app', function ($view) {
             try {
                 $breakingNews = \App\Models\Article::with('category')

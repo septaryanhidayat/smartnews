@@ -303,6 +303,9 @@
     </section>
     @endif
 
+    <!-- OPTIONAL HEADER AD BANNER -->
+    {!! ad_render('header', 'container') !!}
+
     <!-- MAIN YIELD CONTENT -->
     @yield('content')
 

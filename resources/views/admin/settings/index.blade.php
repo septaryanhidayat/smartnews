@@ -98,7 +98,43 @@
             </div>
         </div>
 
-        <!-- 2. PENGATURAN SEO, META & OPEN GRAPH -->
+        <!-- 2. PENGATURAN TAMPILAN BERITA SLIDER / HEADLINE ATAS -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title"><i class="fas fa-sliders-h" style="color: #6366f1; margin-right: 6px;"></i> Pengaturan Slider Berita Headline (Bagian Atas)</h3>
+                    <p style="font-size: 12.5px; color: var(--admin-muted); margin-top: 4px;">Atur jumlah kartu berita yang tampil berdampingan pada slider atas di layar komputer/desktop.</p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="hero_slider_count">
+                        Jumlah Berita Ditampilkan Sekaligus (Desktop)
+                        <span style="font-weight: normal; font-size: 12px; color: var(--admin-muted);">(Default: 3)</span>
+                    </label>
+                    <select id="hero_slider_count" name="hero_slider_count" class="form-control" style="font-weight: 600;">
+                        @php
+                            $currentCount = (int) old('hero_slider_count', $settings['hero_slider_count'] ?? 3);
+                        @endphp
+                        <option value="2" {{ $currentCount == 2 ? 'selected' : '' }}>2 Berita (Ekstra Lebar)</option>
+                        <option value="3" {{ $currentCount == 3 ? 'selected' : '' }}>3 Berita (Standar / Default)</option>
+                        <option value="4" {{ $currentCount == 4 ? 'selected' : '' }}>4 Berita (Sedang)</option>
+                        <option value="5" {{ $currentCount == 5 ? 'selected' : '' }}>5 Berita (Ramping)</option>
+                        <option value="6" {{ $currentCount == 6 ? 'selected' : '' }}>6 Berita (Kompak)</option>
+                        <option value="7" {{ $currentCount == 7 ? 'selected' : '' }}>7 Berita (Padat)</option>
+                        <option value="8" {{ $currentCount == 8 ? 'selected' : '' }}>8 Berita (Mini)</option>
+                    </select>
+                </div>
+
+                <div style="background-color: #f1f5f9; border-left: 4px solid #6366f1; border-radius: 6px; padding: 12px 16px; font-size: 12.5px; color: #334155; line-height: 1.5;">
+                    <strong style="display: block; color: #1e293b; margin-bottom: 3px;"><i class="fas fa-info-circle" style="color: #6366f1;"></i> Penyesuaian Otomatis:</strong>
+                    Semakin banyak jumlah berita yang dipilih (misal 5 atau 7), ukuran kartu, foto, dan ukuran teks judul berita akan otomatis mengecil dan meramping agar pas dan rapi dalam 1 baris tampilan.
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. PENGATURAN SEO, META & OPEN GRAPH -->
         <div class="card">
             <div class="card-header">
                 <div>

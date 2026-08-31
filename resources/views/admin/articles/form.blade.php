@@ -42,8 +42,16 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="excerpt">Ringkasan Berita (Excerpt)</label>
-                    <textarea id="excerpt" name="excerpt" class="form-control" rows="3" placeholder="Ringkasan singkat 1-2 kalimat untuk pratinjau berita...">{{ old('excerpt', $article->excerpt ?? '') }}</textarea>
+                    <label for="excerpt">Ringkasan Berita Singkat (Excerpt)</label>
+                    <textarea id="excerpt" name="excerpt" class="form-control" rows="2" placeholder="Ringkasan singkat 1-2 kalimat untuk pratinjau berita...">{{ old('excerpt', $article->excerpt ?? '') }}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="ai_summary">
+                        <i class="fas fa-magic" style="color: #6366f1;"></i> Poin Ringkasan AI (Opsional)
+                        <span style="font-weight: normal; font-size: 12px; color: var(--admin-muted);">(1 poin per baris. Jika dikosongkan, AI otomatis mengekstrak 3 poin dari isi berita)</span>
+                    </label>
+                    <textarea id="ai_summary" name="ai_summary" class="form-control" rows="3" placeholder="• Poin 1: Fakta utama berita...&#10;• Poin 2: Pernyataan narasumber...&#10;• Poin 3: Dampak atau kelanjutan peristiwa...">{{ old('ai_summary', $article->ai_summary ?? '') }}</textarea>
                 </div>
 
                 <div class="form-group">

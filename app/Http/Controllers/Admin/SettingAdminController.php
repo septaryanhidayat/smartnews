@@ -35,6 +35,7 @@ class SettingAdminController extends Controller
             'site_logo' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg,webp|max:3072',
             'site_logo_dark' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg,webp|max:3072',
             'site_favicon' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg,webp,ico|max:1024',
+            'hero_slider_count' => 'nullable|integer|min:1|max:10',
         ], [
             'site_name.required' => 'Nama website wajib diisi.',
             'site_description.required' => 'Deskripsi website untuk SEO wajib diisi.',
@@ -43,6 +44,9 @@ class SettingAdminController extends Controller
             'site_logo_dark.mimes' => 'Format logo gelap harus berupa gambar (JPG, PNG, WebP, SVG).',
             'site_logo_dark.max' => 'Ukuran logo gelap maksimal 3MB.',
             'site_favicon.max' => 'Ukuran favicon maksimal 1MB.',
+            'hero_slider_count.integer' => 'Jumlah berita slider harus berupa angka.',
+            'hero_slider_count.min' => 'Jumlah berita slider minimal 1.',
+            'hero_slider_count.max' => 'Jumlah berita slider maksimal 10.',
         ]);
 
         $uploadPath = public_path('uploads/settings');
@@ -81,6 +85,7 @@ class SettingAdminController extends Controller
             'site_description',
             'site_keywords',
             'google_site_verification',
+            'hero_slider_count',
             'contact_email',
             'contact_phone',
             'contact_address',

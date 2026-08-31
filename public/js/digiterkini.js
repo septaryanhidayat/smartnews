@@ -7,10 +7,47 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        1. HERO SLIDER SWIPER INITIALIZATION
        ========================================================================== */
-    if (typeof Swiper !== 'undefined' && document.getElementById('heroSwiper')) {
+    const heroSwiperEl = document.getElementById('heroSwiper');
+    if (typeof Swiper !== 'undefined' && heroSwiperEl) {
+        const desktopSlides = parseInt(heroSwiperEl.dataset.perView || '3', 10);
+
+        // Dynamic responsive slides per view based on configured desktop setting
+        let bp576 = Math.min(2, desktopSlides);
+        let bp768 = Math.min(3, desktopSlides);
+        let bp1024 = desktopSlides > 4 ? Math.min(desktopSlides - 1, 4) : desktopSlides;
+        let bp1280 = desktopSlides;
+        let spacing = desktopSlides >= 6 ? 12 : (desktopSlides >= 4 ? 15 : 18);
+
+        if (desktopSlides <= 2) {
+            bp576 = 1.3;
+            bp768 = 2;
+            bp1024 = 2;
+            bp1280 = 2;
+        } else if (desktopSlides === 3) {
+            bp576 = 1.5;
+            bp768 = 2;
+            bp1024 = 3;
+            bp1280 = 3;
+        } else if (desktopSlides === 4) {
+            bp576 = 1.8;
+            bp768 = 2.5;
+            bp1024 = 3;
+            bp1280 = 4;
+        } else if (desktopSlides === 5) {
+            bp576 = 2;
+            bp768 = 3;
+            bp1024 = 4;
+            bp1280 = 5;
+        } else if (desktopSlides >= 6) {
+            bp576 = 2;
+            bp768 = 3;
+            bp1024 = Math.min(5, desktopSlides - 1);
+            bp1280 = desktopSlides;
+        }
+
         new Swiper('#heroSwiper', {
-            slidesPerView: 1,
-            spaceBetween: 18,
+            slidesPerView: 1.15,
+            spaceBetween: 12,
             loop: true,
             speed: 700,
             autoplay: {
@@ -19,13 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 pauseOnMouseEnter: true,
             },
             breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 18,
+                576: {
+                    slidesPerView: bp576,
+                    spaceBetween: 14,
+                },
+                768: {
+                    slidesPerView: bp768,
+                    spaceBetween: spacing,
                 },
                 1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
+                    slidesPerView: bp1024,
+                    spaceBetween: spacing,
+                },
+                1280: {
+                    slidesPerView: bp1280,
+                    spaceBetween: spacing,
                 }
             },
             navigation: {
@@ -195,22 +240,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const fontIncrease = document.getElementById('fontIncrease');
     const resizerBtns = [fontDecrease, fontReset, fontIncrease];
 
-    if (articleBody && fontReset) {
-        const sizes = {
-            small: '14.5px',
-            default: '16.5px',
-            large: '19.5px'
-        };
-
-        function setFontSize(sizeKey, activeBtn) {
-            articleBody.style.fontSize = sizes[sizeKey];
+    if (articleBody && (fontDecrease || fontReset || fontIncrease)) {
+        function applyArticleFontSize(sizeKey) {
+            articleBody.classList.remove('article-body--font-sm', 'article-body--font-md', 'article-body--font-lg');
             resizerBtns.forEach(btn => btn && btn.classList.remove('font-resizer__btn--active'));
-            if (activeBtn) activeBtn.classList.add('font-resizer__btn--active');
+
+            if (sizeKey === 'small') {
+                articleBody.classList.add('article-body--font-sm');
+                if (fontDecrease) fontDecrease.classList.add('font-resizer__btn--active');
+            } else if (sizeKey === 'large') {
+                articleBody.classList.add('article-body--font-lg');
+                if (fontIncrease) fontIncrease.classList.add('font-resizer__btn--active');
+            } else {
+                articleBody.classList.add('article-body--font-md');
+                if (fontReset) fontReset.classList.add('font-resizer__btn--active');
+            }
+
+            try {
+                localStorage.setItem('smartnews_article_fontsize', sizeKey);
+            } catch (e) {}
         }
 
-        if (fontDecrease) fontDecrease.addEventListener('click', () => setFontSize('small', fontDecrease));
-        if (fontReset) fontReset.addEventListener('click', () => setFontSize('default', fontReset));
-        if (fontIncrease) fontIncrease.addEventListener('click', () => setFontSize('large', fontIncrease));
+        // Restore saved preference if any
+        try {
+            const savedSize = localStorage.getItem('smartnews_article_fontsize');
+            if (savedSize && ['small', 'default', 'large'].includes(savedSize)) {
+                applyArticleFontSize(savedSize);
+            }
+        } catch (e) {}
+
+        if (fontDecrease) {
+            fontDecrease.addEventListener('click', (e) => {
+                e.preventDefault();
+                applyArticleFontSize('small');
+            });
+        }
+        if (fontReset) {
+            fontReset.addEventListener('click', (e) => {
+                e.preventDefault();
+                applyArticleFontSize('default');
+            });
+        }
+        if (fontIncrease) {
+            fontIncrease.addEventListener('click', (e) => {
+                e.preventDefault();
+                applyArticleFontSize('large');
+            });
+        }
     }
 
     /* ==========================================================================
@@ -424,6 +500,50 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     } else {
         animTargets.forEach(el => el.classList.add('fade-up-in'));
+    }
+
+    /* ==========================================================================
+       11. AI SUMMARY OVERVIEW TOGGLE (RINGKASAN ARTIKEL)
+       ========================================================================== */
+    const aiSummaryCard = document.getElementById('aiSummaryCard');
+    const aiSummaryToggle = document.getElementById('aiSummaryToggle');
+    const aiSummarySwitch = document.getElementById('aiSummarySwitch');
+    const aiSummaryBody = document.getElementById('aiSummaryBody');
+
+    if (aiSummaryCard && aiSummarySwitch && aiSummaryBody) {
+        function updateAiSummaryDisplay(isOpen) {
+            aiSummarySwitch.checked = isOpen;
+            if (isOpen) {
+                aiSummaryCard.classList.remove('collapsed');
+                aiSummaryBody.style.display = 'block';
+                if (aiSummaryToggle) aiSummaryToggle.setAttribute('aria-expanded', 'true');
+            } else {
+                aiSummaryCard.classList.add('collapsed');
+                aiSummaryBody.style.display = 'none';
+                if (aiSummaryToggle) aiSummaryToggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // Direct change on input checkbox
+        aiSummarySwitch.addEventListener('change', () => {
+            updateAiSummaryDisplay(aiSummarySwitch.checked);
+        });
+
+        // Click on header bar
+        if (aiSummaryToggle) {
+            aiSummaryToggle.addEventListener('click', (e) => {
+                if (e.target === aiSummarySwitch) return;
+                e.preventDefault();
+                updateAiSummaryDisplay(!aiSummarySwitch.checked);
+            });
+
+            aiSummaryToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    updateAiSummaryDisplay(!aiSummarySwitch.checked);
+                }
+            });
+        }
     }
 
 });

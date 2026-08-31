@@ -101,7 +101,6 @@
 
             <ul class="sn-nav-menu">
                 <li><a href="#fitur" class="sn-nav-link">Fitur Utama</a></li>
-                <li><a href="#preview" class="sn-nav-link">Tampilan Demo</a></li>
                 <li><a href="#harga" class="sn-nav-link">Pilihan Harga</a></li>
                 <li><a href="#faq" class="sn-nav-link">FAQ</a></li>
             </ul>
@@ -117,101 +116,83 @@
         </div>
     </header>
 
-    <!-- 3. HERO SECTION WITH AI HIGHLIGHTS -->
+    <!-- 3. HERO SECTION (2-COLUMN WITH DUAL DEVICE MOCKUP: LAPTOP + MOBILE) -->
     <section class="sn-hero">
         <div class="sn-container">
-            <div class="sn-hero__content sn-fade-init">
-                <div class="sn-pill-badge">
-                    <i class="fas fa-robot"></i>
-                    <span>WEBSITE PORTAL MEDIA RESMI BERTEKNOLOGI AI CERDAS</span>
-                </div>
+            <div class="sn-hero__grid sn-fade-init">
+                <!-- Left Column: Copywriting & CTA -->
+                <div class="sn-hero__left">
+                    <div class="sn-pill-badge">
+                        <i class="fas fa-robot"></i>
+                        <span>WEBSITE PORTAL MEDIA RESMI BERTEKNOLOGI AI CERDAS</span>
+                    </div>
 
-                <h1 class="sn-hero__title">
-                    Miliki Website Portal Berita Modern Berteknologi AI: <span class="sn-gradient-brand-text">Siap Terbit, Otomatis Masuk Google, & Berpenghasilan Iklan</span>
-                </h1>
+                    <h1 class="sn-hero__title">
+                        Miliki Website Portal Berita Modern Berteknologi AI: <span class="sn-gradient-brand-text">Siap Terbit, Otomatis Masuk Google, & Berpenghasilan Iklan</span>
+                    </h1>
 
-                <p class="sn-hero__lead">
-                    Solusi praktis punya portal berita profesional tanpa ribet coding. Dilengkapi <strong>Asisten AI SEO</strong> untuk mempermudah tulisan tembus halaman 1 Google, <strong>6 Posisi Iklan Siap Cuan</strong>, dan langsung online lengkap dengan <strong>Free Hosting NVMe & Domain Pilihan</strong>!
-                </p>
+                    <p class="sn-hero__lead">
+                        Solusi praktis punya portal berita profesional tanpa ribet coding. Dilengkapi <strong>Asisten AI SEO</strong> untuk mempermudah liputan tembus halaman 1 Google, <strong>6 Posisi Iklan Siap Cuan</strong>, dan langsung online lengkap dengan <strong>Free Hosting NVMe & Domain</strong>!
+                    </p>
 
-                <!-- 4 Interactive AI Selling Chips -->
-                <div class="sn-ai-chips-row">
-                    <span class="sn-ai-chip"><i class="fas fa-robot" style="color: #1a56db;"></i> Asisten AI SEO Cerdas</span>
-                    <span class="sn-ai-chip"><i class="fas fa-bolt" style="color: #cf2e2e;"></i> Loading 0.4 Detik WebP</span>
-                    <span class="sn-ai-chip"><i class="fas fa-dollar-sign" style="color: #059669;"></i> 6 Slot Iklan Cuan</span>
-                    <span class="sn-ai-chip"><i class="fas fa-shield-alt" style="color: #7c3aed;"></i> Standar Dewan Pers</span>
-                </div>
+                    <!-- 4 Interactive AI Chips -->
+                    <div class="sn-ai-chips-row">
+                        <span class="sn-ai-chip"><i class="fas fa-robot" style="color: #1a56db;"></i> Asisten AI SEO</span>
+                        <span class="sn-ai-chip"><i class="fas fa-bolt" style="color: #cf2e2e;"></i> Loading 0.4s WebP</span>
+                        <span class="sn-ai-chip"><i class="fas fa-dollar-sign" style="color: #059669;"></i> 6 Slot Iklan</span>
+                        <span class="sn-ai-chip"><i class="fas fa-shield-alt" style="color: #7c3aed;"></i> Standar Pers</span>
+                    </div>
 
-                <div class="sn-hero__actions">
-                    <a href="#harga" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" title="Pesan Paket Website Sekarang">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Pesan Sekarang</span>
-                    </a>
-                    <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--blue sn-btn--lg" title="Coba Live Demo Portal Berita">
-                        <i class="fas fa-desktop"></i>
-                        <span>Lihat Demo Website</span>
-                    </a>
-                </div>
-
-                <div class="sn-hero__trust">
-                    <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Kecepatan Buka 0.4 Detik (Lighthouse 95+)</span></div>
-                    <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Pedoman Media Siber Dewan Pers Ready</span></div>
-                    <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Mudah Dipakai Seperti Mengetik di Word</span></div>
-                    <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>100% Hak Milik Full Source Code Lifetime</span></div>
-                </div>
-            </div>
-
-            <!-- REAL SMARTNEWS PORTAL UI SHOWCASE (Interactive Tabbed Screenshots) -->
-            <div class="sn-showcase-wrapper sn-fade-init" id="preview">
-                <!-- Interactive Tabs -->
-                <div class="sn-showcase-tabs">
-                    <button type="button" class="sn-showcase-tab active" onclick="switchScreenshot(0)">
-                        <i class="fas fa-star" style="color: #f59e0b;"></i>
-                        <span>1. Beranda, Slider & Headline</span>
-                    </button>
-                    <button type="button" class="sn-showcase-tab" onclick="switchScreenshot(1)">
-                        <i class="fas fa-th-large" style="color: #1a56db;"></i>
-                        <span>2. Grid Liputan & Terpopuler</span>
-                    </button>
-                    <button type="button" class="sn-showcase-tab" onclick="switchScreenshot(2)">
-                        <i class="fas fa-stream" style="color: #059669;"></i>
-                        <span>3. Feed Berita & Standar Pers</span>
-                    </button>
-                </div>
-
-                <!-- Browser Display Mockup -->
-                <div class="sn-preview-box">
-                    <div class="sn-preview-topbar">
-                        <div class="sn-preview-dots">
-                            <span class="sn-preview-dot sn-dot--red"></span>
-                            <span class="sn-preview-dot sn-dot--yellow"></span>
-                            <span class="sn-preview-dot sn-dot--green"></span>
-                        </div>
-                        <div class="sn-preview-url">
-                            <i class="fas fa-lock" style="color: #10b981;"></i>
-                            <span>https://smartnews.berandadigital.net</span>
-                        </div>
-                        <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--outline" style="padding: 3px 10px; font-size: 11px;">
-                            <i class="fas fa-external-link-alt"></i> Buka Demo Asli
+                    <div class="sn-hero__actions">
+                        <a href="#harga" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" title="Pesan Paket Website Sekarang">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Pesan Sekarang</span>
+                        </a>
+                        <a href="{{ route('home') }}" target="_blank" class="sn-btn sn-btn--blue sn-btn--lg" title="Coba Live Demo Portal Berita">
+                            <i class="fas fa-desktop"></i>
+                            <span>Lihat Demo Website</span>
                         </a>
                     </div>
 
-                    <!-- 3 Real Screenshot Views -->
-                    <div class="sn-screenshot-display">
-                        <img src="{{ asset('images/landing/preview-hero.png') }}" alt="Tampilan Beranda, Slider Carousel & Headline SmartNews" class="sn-screenshot-img active" id="screenImg0" loading="lazy">
-                        <img src="{{ asset('images/landing/preview-grid.png') }}" alt="Tampilan Grid Berita Multimedia & Sidebar Terpopuler SmartNews" class="sn-screenshot-img" id="screenImg1" loading="lazy">
-                        <img src="{{ asset('images/landing/preview-feed.png') }}" alt="Tampilan Feed Infinite Berita & Footer Standar Dewan Pers SmartNews" class="sn-screenshot-img" id="screenImg2" loading="lazy">
+                    <div class="sn-hero__trust">
+                        <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Buka 0.4 Detik (Lighthouse 95+)</span></div>
+                        <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>Pedoman Media Siber Ready</span></div>
+                        <div class="sn-trust-pill"><i class="fas fa-check-circle"></i> <span>100% Hak Milik Full Source Code</span></div>
                     </div>
+                </div>
 
-                    <!-- Bottom Caption Bar -->
-                    <div class="sn-screenshot-caption">
-                        <div>
-                            <div class="sn-caption-text" id="screenCaptionTitle">Tampilan Atas: Header, Breaking News Ticker, Slider Carousel & Berita Utama Sticky</div>
-                            <div class="sn-caption-sub">Desain portal berita modern dengan kombinasi warna elegan, responsif di semua perangkat.</div>
+                <!-- Right Column: Dual Device Mockup (Laptop + Smartphone) -->
+                <div class="sn-hero__right">
+                    <div class="sn-dual-mockup">
+                        <!-- Floating Hero AI Score Badge -->
+                        <div class="sn-hero-float-badge">
+                            <i class="fas fa-chart-line" style="color: #10b981;"></i>
+                            <span>Skor AI SEO: 98/100 (A+)</span>
                         </div>
-                        <div class="sn-preview-badges-row" style="margin-top: 0;">
-                            <span class="sn-mini-badge"><i class="fas fa-robot" style="color: #10b981;"></i> AI SEO Ready</span>
-                            <span class="sn-mini-badge"><i class="fas fa-bolt" style="color: #f59e0b;"></i> WebP 0.4s</span>
+
+                        <!-- 1. Laptop Mockup Frame -->
+                        <div class="sn-laptop-frame">
+                            <div class="sn-laptop-header">
+                                <div class="sn-laptop-dots">
+                                    <span class="sn-laptop-dot sn-dot--red"></span>
+                                    <span class="sn-laptop-dot sn-dot--yellow"></span>
+                                    <span class="sn-laptop-dot sn-dot--green"></span>
+                                </div>
+                                <div style="font-size: 10px; color: #94a3b8; font-family: monospace;">smartnews.berandadigital.net</div>
+                                <div style="width: 20px;"></div>
+                            </div>
+                            <div class="sn-laptop-screen">
+                                <img src="{{ asset('images/landing/preview-hero.png') }}" alt="Tampilan Laptop Portal SmartNews" class="sn-laptop-img" loading="eager">
+                            </div>
+                            <div class="sn-laptop-base"></div>
+                        </div>
+
+                        <!-- 2. Smartphone Mockup Frame Overlapping -->
+                        <div class="sn-phone-frame">
+                            <div class="sn-phone-notch"></div>
+                            <div class="sn-phone-screen">
+                                <img src="{{ asset('images/landing/preview-feed.png') }}" alt="Tampilan Mobile Portal SmartNews" class="sn-phone-img" loading="lazy">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -322,14 +303,14 @@
         </div>
     </section>
 
-    <!-- 6. PILIHAN HARGA (3 PRICING TIERS: 1.5 JUTA, 3 JUTA, 5 JUTA) -->
+    <!-- 6. PILIHAN HARGA (3 PRICING TIERS - BERSIH & TIDAK BIKIN PUSING) -->
     <section class="sn-section" id="harga">
         <div class="sn-container">
             <div class="sn-section-header sn-fade-init">
-                <span class="sn-section-tag">PILIHAN PAKET INVESTASI</span>
-                <h2 class="sn-section-title">Pilih Paket yang Sesuai dengan Kebutuhan Anda</h2>
+                <span class="sn-section-tag">PILIHAN INVESTASI</span>
+                <h2 class="sn-section-title">Pilih Paket Sesuai Kebutuhan Anda</h2>
                 <p class="sn-section-desc">
-                    Tersedia paket beli source code mandiri untuk programmer, paket siap pakai terima jadi untuk redaksi, hingga paket VIP dengan update dan garansi selamanya.
+                    Tersedia paket beli source code mandiri, paket siap pakai terima jadi langsung online, hingga paket VIP dengan garansi perbaikan seumur hidup.
                 </p>
             </div>
 
@@ -338,20 +319,19 @@
                 <div class="sn-price-card sn-fade-init">
                     <div class="sn-price-card__header">
                         <h3 class="sn-price-card__plan">Paket Starter</h3>
-                        <p class="sn-price-card__for">Hanya Source Code (Untuk Programmer / Developer Mandiri)</p>
+                        <p class="sn-price-card__for">Hanya Source Code (Untuk Pasang Mandiri)</p>
                         <div class="sn-price-card__amount">Rp 1.500.000</div>
-                        <div class="sn-price-card__type">Sekali Bayar (Hak Milik Lifetime)</div>
+                        <div class="sn-price-card__type">Sekali Bayar (Hak Milik Selamanya)</div>
                     </div>
 
                     <ul class="sn-price-features">
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Full Source Code SmartNews CMS</strong> (Laravel 12)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Full Source Code Laravel 12</strong> (Hak Milik Lifetime)</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Database SQL Lengkap</strong> + Data Berita Demo</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bebas Dipasang</strong> di domain mana saja (Lifetime)</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Panduan Instalasi</strong> Dokumentasi PDF & Video Lengkap</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Modul AI SEO Engine</strong> & 6 Slot Iklan Cuan</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span>Update perbaikan bug versi saat ini (Support 1 Bulan)</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-times-circle"></i> <span>Hosting & Domain (Disediakan pembeli sendiri)</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-times-circle"></i> <span>Jasa instalasi server (Instalasi mandiri oleh pembeli)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Panduan Lengkap PDF & Video</strong> Langkah Instalasi</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bebas Dipasang</strong> di domain mana saja</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Fitur AI SEO Engine</strong> & 6 Slot Iklan Cuan</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-times-circle"></i> <span>Hosting & Domain (Disediakan pembeli)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-times-circle"></i> <span>Jasa instalasi server (Mandiri oleh pembeli)</span></li>
                     </ul>
 
                     <div class="sn-price-actions">
@@ -370,21 +350,19 @@
 
                     <div class="sn-price-card__header">
                         <h3 class="sn-price-card__plan">Paket Siap Pakai (Pro)</h3>
-                        <p class="sn-price-card__for">Kode + Hosting + Domain + Setup + Update 1 Tahun (Terima Jadi)</p>
+                        <p class="sn-price-card__for">Terima Jadi Siap Terbit (Paling Banyak Dipilih)</p>
                         <div class="sn-price-card__amount">Rp 3.000.000</div>
                         <div class="sn-price-card__type">Sekali Bayar (Tanpa Biaya Bulanan)</div>
                     </div>
 
                     <ul class="sn-price-features">
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Semua fasilitas Paket Starter (1,5 Juta)</strong></span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Cloud Hosting NVMe Cepat (1 Tahun)</strong></span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Domain Bebas Pilih</strong> (.com, .net, .web.id, .my.id 1 Thn)</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Jasa Instalasi & Setup Server 100%</strong> sampai online</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Desain Logo Eksklusif & Favicon</strong> Brand Media</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Import Data Demo Lengkap</strong> (Persis demo)</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FREE Update Fitur & Sistem 1 Tahun Penuh</strong> (Berkala)</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Garansi Setup & Bantuan Teknis 6 Bulan</strong></span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Sertifikat Keamanan SSL (HTTPS)</strong> Aktif Otomatis</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Semua Fasilitas Paket Starter (1,5 Jt)</strong></span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>GRATIS Cloud Hosting NVMe Cepat (1 Tahun)</strong></span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>GRATIS Domain Pilihan Bebas</strong> (.com / .net / .id 1 Thn)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>GRATIS Setup Server 100%</strong> Sampai Siap Pakai</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>GRATIS Desain Logo & Favicon</strong> Eksklusif Media</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>GRATIS Update Sistem & Fitur</strong> Selama 1 Tahun</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Garansi & Bantuan Teknis</strong> Selama 6 Bulan</span></li>
                     </ul>
 
                     <div class="sn-price-actions">
@@ -409,14 +387,12 @@
                     </div>
 
                     <ul class="sn-price-features">
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Semua fasilitas Paket Siap Pakai (3 Juta)</strong></span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Cloud Hosting NVMe Dedicated / High Spec</strong> (1 Tahun)</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>LIFETIME Free Update Fitur Baru</strong> (Gratis selamanya)</span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>FULL SERVIS Perbaikan Error / Bug Selamanya</strong> (Lifetime)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Semua Fasilitas Paket Siap Pakai (3 Jt)</strong></span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Cloud Hosting NVMe High Spec</strong> (1 Tahun)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>LIFETIME Free Update Fitur Baru</strong> (Gratis Selamanya)</span></li>
+                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>LIFETIME Full Service & Garansi Error</strong> (Seumur Hidup)</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Prioritas Support VIP via WhatsApp 24/7</strong></span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bantuan Integrasi Payment Gateway</strong> (QRIS & VA)</span></li>
                         <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Bantuan Setup Google Search Console & AdSense</strong></span></li>
-                        <li class="sn-price-feature-item"><i class="fas fa-check-circle"></i> <span><strong>Konsultasi Dokumen Standar Dewan Pers</strong></span></li>
                     </ul>
 
                     <div class="sn-price-actions">
@@ -455,7 +431,7 @@
                             <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk (High Spec)</strong></td>
                         </tr>
                         <tr>
-                            <td><strong>Domain Bebas (.com/.net/.web.id/.my.id)</strong></td>
+                            <td><strong>Domain Bebas (.com / .net / .id)</strong></td>
                             <td><i class="fas fa-times" style="color: #cbd5e1;"></i> Tidak</td>
                             <td class="sn-highlight"><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk (1 Tahun)</strong></td>
                             <td><i class="fas fa-check" style="color: #10b981;"></i> <strong>Termasuk (1 Tahun)</strong></td>
@@ -503,12 +479,12 @@
                 <!-- FAQ 1 -->
                 <div class="sn-faq-card active">
                     <div class="sn-faq-head">
-                        <span>Apa perbedaan utama antara Paket 1,5 Jt, 3 Jt, dan 5 Jt?</span>
+                        <span>Apa perbedaan utama dari ketiga paket harga?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="sn-faq-content">
                         <strong>Paket 1,5 Juta (Starter)</strong> khusus untuk Anda yang paham teknis dan ingin memasang source code sendiri di hosting pribadi.<br><br>
-                        <strong>Paket 3 Juta (Siap Pakai - Best Seller)</strong> adalah paket terima jadi paling praktis: sudah kami sediakan Cloud Hosting 1 tahun, Domain pilihan, jasa instalasi server, desain logo, import data berita demo, dan update fitur gratis selama 1 tahun.<br><br>
+                        <strong>Paket 3 Juta (Siap Pakai - Paling Laris)</strong> adalah paket terima jadi paling praktis: sudah kami sediakan Cloud Hosting 1 tahun, Domain pilihan, jasa instalasi server sampai online, desain logo, import data berita demo, dan update fitur gratis selama 1 tahun.<br><br>
                         <strong>Paket 5 Juta (VIP Ultimate)</strong> adalah kemitraan VIP seumur hidup: jika di masa depan ada error/masalah teknis akan kami perbaiki gratis selamanya (lifetime full servis), dan mendapatkan update fitur-fitur baru SmartNews tanpa biaya lagi seumur hidup.
                     </div>
                 </div>
@@ -516,7 +492,7 @@
                 <!-- FAQ 2 -->
                 <div class="sn-faq-card">
                     <div class="sn-faq-head">
-                        <span>Berapa lama proses pembuatan sampai website bisa saya gunakan?</span>
+                        <span>Berapa lama proses pembuatan sampai website online?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="sn-faq-content">
@@ -527,7 +503,7 @@
                 <!-- FAQ 3 -->
                 <div class="sn-faq-card">
                     <div class="sn-faq-head">
-                        <span>Apakah saya bisa menambahkan wartawan / penulis tanpa batas?</span>
+                        <span>Apakah saya bisa menambah wartawan tanpa batas?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="sn-faq-content">
@@ -538,7 +514,7 @@
                 <!-- FAQ 4 -->
                 <div class="sn-faq-card">
                     <div class="sn-faq-head">
-                        <span>Bagaimana metode pembayaran yang tersedia?</span>
+                        <span>Bagaimana cara pembayaran dan pemesanannya?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="sn-faq-content">
@@ -549,7 +525,7 @@
                 <!-- FAQ 5 -->
                 <div class="sn-faq-card">
                     <div class="sn-faq-head">
-                        <span>Apakah ada biaya bulanan atau biaya perpanjangan?</span>
+                        <span>Apakah ada biaya bulanan atau perpanjangan?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="sn-faq-content">
@@ -568,9 +544,9 @@
                 Dapatkan portal berita berkecepatan tinggi, berfitur AI SEO cerdas, siap menghasilkan cuan iklan, dan memenuhi standar Dewan Pers Indonesia.
             </p>
             <div class="sn-cta-buttons">
-                <button type="button" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" onclick="openOrderModal('pkg2', 'Paket Pro (Siap Pakai + Hosting & Domain)', 3000000)">
-                    <i class="fas fa-shopping-cart"></i> <span>Pesan Sekarang (Rp 3 Juta)</span>
-                </button>
+                <a href="#harga" class="sn-btn sn-btn--primary sn-btn--lg sn-pulse" title="Pesan Paket Website">
+                    <i class="fas fa-shopping-cart"></i> <span>Pesan Sekarang</span>
+                </a>
                 <a href="{{ $waUrlPkg2 }}" target="_blank" class="sn-btn sn-btn--whatsapp sn-btn--lg" title="Konsultasi via WhatsApp">
                     <i class="fab fa-whatsapp" style="font-size: 18px;"></i>
                     <span>Konsultasi via WhatsApp</span>
@@ -723,49 +699,6 @@
                 closeOrderModal();
             }
         });
-
-        // 6. Interactive Screenshot Showcase Switcher
-        const screenshotData = [
-            {
-                title: "Tampilan Atas: Header, Breaking News Ticker, Slider Carousel & Berita Utama Sticky",
-                sub: "Desain portal berita modern dengan kombinasi warna elegan, responsif di semua perangkat."
-            },
-            {
-                title: "Tampilan Tengah: 6 Grid Berita Multimedia & Sidebar Berita Terpopuler 1-5",
-                sub: "Tata letak berita rapi dilengkapi tag kategori, estimasi waktu baca, dan widget terpopuler."
-            },
-            {
-                title: "Tampilan Bawah: Feed Berita Ajax, Widget Topik Hangat & Footer Standar Dewan Pers",
-                sub: "Navigasi lengkap mencakup susunan redaksi, pedoman media siber, dan tautan verifikasi pers."
-            }
-        ];
-
-        function switchScreenshot(index) {
-            const tabs = document.querySelectorAll('.sn-showcase-tab');
-            tabs.forEach((tab, i) => {
-                if (i === index) {
-                    tab.classList.add('active');
-                } else {
-                    tab.classList.remove('active');
-                }
-            });
-
-            for (let i = 0; i < 3; i++) {
-                const img = document.getElementById('screenImg' + i);
-                if (img) {
-                    if (i === index) {
-                        img.classList.add('active');
-                    } else {
-                        img.classList.remove('active');
-                    }
-                }
-            }
-
-            const captionTitle = document.getElementById('screenCaptionTitle');
-            if (captionTitle && screenshotData[index]) {
-                captionTitle.innerText = screenshotData[index].title;
-            }
-        }
     </script>
 </body>
 </html>
